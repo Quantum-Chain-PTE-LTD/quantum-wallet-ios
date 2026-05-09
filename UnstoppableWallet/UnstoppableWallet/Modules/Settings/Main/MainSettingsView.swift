@@ -536,7 +536,7 @@ struct MainSettingsView: View {
             }
             .fixedSize(horizontal: true, vertical: false)
 
-            Image("HS Logo Image")
+            Image("Q Logo Image")
                 .onTapGesture {
                     Coordinator.shared.present(url: AppConfig.companyWebPageLink)
                     stat(page: .settings, event: .open(page: .externalCompanyWebsite))

@@ -3,7 +3,7 @@ import Combine
 import Foundation
 
 class DeepLinkManager {
-    static let deepLinkScheme = "unstoppable.money"
+    static let deepLinkScheme = "quantumcha.in"
     static let tonDeepLinkScheme = "ton"
     static let tonUniversalHost = "ton-connect"
     static let tonDeepLinkHost = "tc"

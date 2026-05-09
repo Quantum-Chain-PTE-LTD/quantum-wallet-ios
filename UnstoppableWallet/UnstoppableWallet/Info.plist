@@ -24,16 +24,16 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLName</key>
-            <string>io.horizontalsystems.bank-wallet</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>unstoppable.money</string>
-            </array>
-        </dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.quantum.chain.wallet</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>quantumcha.in</string>
+			</array>
+		</dict>
         <dict>
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
@@ -125,7 +125,7 @@
 	<string>We need access to photo library to save NFT images</string>
 	<key>NSUbiquitousContainers</key>
 	<dict>
-		<key>iCloud.io.horizontalsystems.bank-wallet.shared</key>
+		<key>iCloud.com.quantum.chain.wallet.shared</key>
 		<dict>
 			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
 			<true/>
@@ -134,7 +134,7 @@
 			<key>NSUbiquitousContainerSupportedFolderLevels</key>
 			<string>Any</string>
 		</dict>
-		<key>iCloud.io.horizontalsystems.bank-wallet.shared.dev</key>
+		<key>iCloud.com.quantum.chain.wallet.shared.dev</key>
 		<dict>
 			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
 			<true/>

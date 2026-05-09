@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 class BackupSharedWebCredentialsService: NSObject, IBackupPasswordStorage {
-    private static let server = "unstoppable.money"
+    private static let server = "quantumcha.in"
 
     private var loadContinuation: CheckedContinuation<String?, Never>?
 

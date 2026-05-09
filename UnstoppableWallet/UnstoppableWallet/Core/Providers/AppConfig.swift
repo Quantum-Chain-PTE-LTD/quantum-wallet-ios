@@ -3,47 +3,47 @@ import MarketKit
 import UIKit
 
 enum AppConfig {
-    static let label = "io.horizontalsystems.unstoppable"
-    static let backupSalt = "unstoppable"
+    static let label = "com.quantum.chain.wallet"
+    static let backupSalt = "quantum"
 
-    static let companyName = "Horizontal Systems"
-    static let reportEmail = "support.unstoppable@protonmail.com"
-    static let companyWebPageLink = "https://horizontalsystems.io"
-    static let appWebPageLink = "https://unstoppable.money"
-    static let analyticsLink = "https://unstoppable.money/analytics"
-    static let privacyPolicyLink = "https://unstoppable.money/privacy-policy"
+    static let companyName = "Quantum Chain"
+    static let reportEmail = "contact@quantumcha.in"
+    static let companyWebPageLink = "https://www.quantumcha.in"
+    static let appWebPageLink = "https://www.quantumcha.in"
+    static let analyticsLink = "https://www.quantumcha.in"
+    static let privacyPolicyLink = "https://www.quantumcha.in/privacy-policy"
     static let appleTermsOfServiceLink = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula"
     static let nymVpnLink = "https://nymtechnologies.pxf.io/N9vnr1"
-    static let appGitHubAccount = "horizontalsystems"
-    static let appGitHubRepository = "unstoppable-wallet-ios"
-    static let appTwitterAccount = "unstoppablebyhs"
-    static let appTelegramAccount = "unstoppable_announcements"
-    static let appTelegramSupportSlug = "-uTI4HwKZWNi"
+    static let appGitHubAccount = "Quantum-Chain-PTE-LTD"
+    static let appGitHubRepository = "quantum-wallet-ios"
+    static let appTwitterAccount = "qntmchain"
+    static let appTelegramAccount = "+XF1OapBYfu1iMzg0"
+    static let appTelegramSupportSlug = "XF1OapBYfu1iMzg0"
     static let appTokenTelegramAccount = "BeUnstoppable_bot"
     static let mempoolSpaceUrl = "https://mempool.space"
     static let guidesIndexUrl = URL(string: "https://raw.githubusercontent.com/horizontalsystems/blockchain-crypto-guides/v1.2/index.json")!
     static let faqIndexUrl = URL(string: "https://raw.githubusercontent.com/horizontalsystems/unstoppable-wallet-website/master/src/faq.json")!
     static let eduIndexUrl = URL(string: "https://raw.githubusercontent.com/horizontalsystems/Unstoppable-Wallet-Website/refs/tags/v1.4/src/edu.json")!
     static let donationAddresses: [BlockchainType: String] = [
-        .bitcoin: "bc1qxt5u5swx3sk6y2923whr4tvjreza43g37czv67",
-        .bitcoinCash: "bitcoincash:qz6sy9fq66yvfl5mvpfv3v2nqw5pervvkc425nj9g0\n",
-        .ecash: "ecash:qp6t4rqd4qdlq0vlucjhucjxygn5969j3cdan6ykzr\n",
-        .litecoin: "ltc1q05f90wt464h8dft9t7q9sp9n0qeprlv30070at\n",
-        .dash: "Xp24AqFUP9nF3ycLCmTDvgezxSt3RAKP2r",
-        .zcash: "zs1jpd8u7zghtq5eg48l384y6fpy7cr0xmqehnw5mujpm8v2u7jr9a3j7luftqpthf6a8f720vdfyn",
-        .ethereum: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .binanceSmartChain: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .polygon: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .avalanche: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .optimism: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .base: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .zkSync: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .arbitrumOne: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .gnosis: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .fantom: "0xA24c159C7f1E4A04dab7c364C2A8b87b3dBa4cd1",
-        .ton: "UQAYLATDlfKgn3cKZAgznvowhXzpqgxrIicesxJfo9f6PN3k",
-        .tron: "TQzANCd363w5CjRWDtswm8Y5nFPAdnwekF",
-        .solana: "5gattKnvu5f1NDHBuZ6VfDXjRrJa9UcAArkZ3ys3e82F",
+        .bitcoin: "bc1qxq0ctg3fs6av34j6a0kkyqevrh3d2gkllqmmr9",
+        .bitcoinCash: "bitcoincash:qzanu93476zlqgmwgqpyrfwk0p9f74k4nuq20v378j\n",
+        .ecash: "ecash:qzlus6latftw8kw57fvy7vpgle5zp4x8hufej0n03p\n",
+        .litecoin: "ltc1q3hnl3qga5ndd3gjvn8p5jmmm8ucntsgmwn2qw4\n",
+        .dash: "XvXRo4hE39CPMJwq3Xxii9jSBVFmmVbjxQ",
+        .zcash: "zs1xd2cy2t6s63e9k2tp00p5gudf65p7erqxaqyxf4rwrcrtj2klrxmqdzjudf6p4frsmuavph5pxw",
+        .ethereum: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .binanceSmartChain: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .polygon: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .avalanche: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .optimism: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .base: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .zkSync: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .arbitrumOne: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .gnosis: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .fantom: "0xB30251931DFc7B16624E6D34930F76fDb5536Dd7",
+        .ton: "UQCTUO1DBqiU1dwsJRmzuoX_Cd6nK-e3EFUpp05FW7SSwq6K",
+        .tron: "TYYRAomNGQGE2B1uLhKREbCmVe4wDW3mKy",
+        .solana: "GTqNrvXp9R3ur1Jt8BZw9DUUJFLUY5oXrLBXirDfBkCG",
     ]
 
     static var appVersion: String {

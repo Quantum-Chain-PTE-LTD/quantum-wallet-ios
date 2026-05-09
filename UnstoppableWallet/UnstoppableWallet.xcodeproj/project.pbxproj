@@ -5355,8 +5355,8 @@
 		D3833AFE2BF335D100ACECFB /* MarketNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketNewsViewModel.swift; sourceTree = "<group>"; };
 		D3833B012BF38A8000ACECFB /* MarketTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTabViewModel.swift; sourceTree = "<group>"; };
 		D3833B042BF4AFB800ACECFB /* MarqueeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
-		D38405CE218317DF007D50AD /* Unstoppable D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unstoppable D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D38406BE21831B3D007D50AD /* Unstoppable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unstoppable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38405CE218317DF007D50AD /* Quantum Wallet D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quantum Wallet D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38406BE21831B3D007D50AD /* Quantum Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quantum Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38406C3218327B1007D50AD /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		D38406C821832968007D50AD /* AppIconDev.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIconDev.xcassets; sourceTree = "<group>"; };
 		D38955942DE5B3E70012114F /* CheckAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAddressViewModel.swift; sourceTree = "<group>"; };
@@ -9861,8 +9861,8 @@
 		D3285F4320BD158E00644076 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D38405CE218317DF007D50AD /* Unstoppable D.app */,
-				D38406BE21831B3D007D50AD /* Unstoppable.app */,
+				D38405CE218317DF007D50AD /* Quantum Wallet D.app */,
+				D38406BE21831B3D007D50AD /* Quantum Wallet.app */,
 				D3948EF02ADA846400FAE566 /* WidgetExtension Dev.appex */,
 				D3948F192ADA88D800FAE566 /* IntentExtension Dev.appex */,
 				D3BA25912ADFAD7C002B13EA /* WidgetExtension Prod.appex */,
@@ -10290,7 +10290,7 @@
 				D3ABE2732F73F29B00B72F23 /* CryptoSwift */,
 			);
 			productName = Wallet;
-			productReference = D38405CE218317DF007D50AD /* Unstoppable D.app */;
+			productReference = D38405CE218317DF007D50AD /* Quantum Wallet D.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D38405D021831B3D007D50AD /* Production */ = {
@@ -10351,7 +10351,7 @@
 				D3ABE2752F73F2D500B72F23 /* CryptoSwift */,
 			);
 			productName = Wallet;
-			productReference = D38406BE21831B3D007D50AD /* Unstoppable.app */;
+			productReference = D38406BE21831B3D007D50AD /* Quantum Wallet.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D3948EEF2ADA846400FAE566 /* WidgetExtension Dev */ = {
@@ -14421,16 +14421,20 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = UnstoppableWallet/Configuration/Development.entitlements;
 				DEVELOPMENT_TEAM = HC4MCAXJ66;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quantum Wallet Dev";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.dev";
-				PRODUCT_MODULE_NAME = Unstoppable_Dev;
-				PRODUCT_NAME = "Unstoppable D";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development io.horizontalsystems.bank-wallet.dev";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.dev;
+				PRODUCT_MODULE_NAME = Quantum_Wallet_Dev;
+				PRODUCT_NAME = "Quantum Wallet D";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.quantum.chain.wallet.dev";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				ShowBuildNumber = true;
 				ShowTestNetSwitcher = true;
 				TARGETED_DEVICE_FAMILY = 1;
+				private_cloud_container_id = iCloud.com.quantum.chain.wallet.dev;
+				shared_cloud_container_id = iCloud.com.quantum.chain.wallet.shared.dev;
 			};
 			name = Debug;
 		};
@@ -14440,16 +14444,20 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = UnstoppableWallet/Configuration/Development.entitlements;
 				DEVELOPMENT_TEAM = HC4MCAXJ66;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quantum Wallet Dev";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.dev";
-				PRODUCT_MODULE_NAME = Unstoppable_Dev;
-				PRODUCT_NAME = "Unstoppable D";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc io.horizontalsystems.bank-wallet.dev";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.dev;
+				PRODUCT_MODULE_NAME = Quantum_Wallet_Dev;
+				PRODUCT_NAME = "Quantum Wallet D";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.quantum.chain.wallet.dev";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				ShowBuildNumber = true;
 				ShowTestNetSwitcher = true;
 				TARGETED_DEVICE_FAMILY = 1;
+				private_cloud_container_id = iCloud.com.quantum.chain.wallet.dev;
+				shared_cloud_container_id = iCloud.com.quantum.chain.wallet.shared.dev;
 			};
 			name = Release;
 		};
@@ -14460,15 +14468,19 @@
 				CODE_SIGN_ENTITLEMENTS = UnstoppableWallet/Configuration/Production.entitlements;
 				DEVELOPMENT_TEAM = HC4MCAXJ66;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HC4MCAXJ66;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quantum Wallet";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet";
-				PRODUCT_MODULE_NAME = Unstoppable;
-				PRODUCT_NAME = Unstoppable;
-				PROVISIONING_PROFILE_SPECIFIER = "match Development io.horizontalsystems.bank-wallet";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development io.horizontalsystems.bank-wallet";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet;
+				PRODUCT_MODULE_NAME = Quantum_Wallet;
+				PRODUCT_NAME = "Quantum Wallet";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.quantum.chain.wallet";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.quantum.chain.wallet";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = 1;
+				private_cloud_container_id = iCloud.com.quantum.chain.wallet;
+				shared_cloud_container_id = iCloud.com.quantum.chain.wallet.shared;
 			};
 			name = Debug;
 		};
@@ -14478,14 +14490,18 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = UnstoppableWallet/Configuration/Production.entitlements;
 				DEVELOPMENT_TEAM = HC4MCAXJ66;
+				INFOPLIST_KEY_CFBundleDisplayName = "Quantum Wallet";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet";
-				PRODUCT_MODULE_NAME = Unstoppable;
-				PRODUCT_NAME = Unstoppable;
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore io.horizontalsystems.bank-wallet";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet;
+				PRODUCT_MODULE_NAME = Quantum_Wallet;
+				PRODUCT_NAME = "Quantum Wallet";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.quantum.chain.wallet";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = 1;
+				private_cloud_container_id = iCloud.com.quantum.chain.wallet;
+				shared_cloud_container_id = iCloud.com.quantum.chain.wallet.shared;
 			};
 			name = Release;
 		};
@@ -14514,9 +14530,9 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.dev.widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.dev.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development io.horizontalsystems.bank-wallet.dev.widget";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.quantum.chain.wallet.dev.widget";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -14550,9 +14566,9 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.dev.widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.dev.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc io.horizontalsystems.bank-wallet.dev.widget";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.quantum.chain.wallet.dev.widget";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -14584,10 +14600,10 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.dev.intent";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.dev.intent;
 				PRODUCT_MODULE_NAME = IntentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development io.horizontalsystems.bank-wallet.dev.intent";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.quantum.chain.wallet.dev.intent";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -14618,10 +14634,10 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.dev.intent";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.dev.intent;
 				PRODUCT_MODULE_NAME = IntentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc io.horizontalsystems.bank-wallet.dev.intent";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.quantum.chain.wallet.dev.intent";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -14656,9 +14672,9 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development io.horizontalsystems.bank-wallet.widget";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.quantum.chain.wallet.widget";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -14692,9 +14708,9 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.widget";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore io.horizontalsystems.bank-wallet.widget";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.quantum.chain.wallet.widget";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -14726,10 +14742,10 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.intent";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.intent;
 				PRODUCT_MODULE_NAME = IntentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development io.horizontalsystems.bank-wallet.intent";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.quantum.chain.wallet.intent";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -14760,10 +14776,10 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.horizontalsystems.bank-wallet.intent";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.intent;
 				PRODUCT_MODULE_NAME = IntentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore io.horizontalsystems.bank-wallet.intent";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.quantum.chain.wallet.intent";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

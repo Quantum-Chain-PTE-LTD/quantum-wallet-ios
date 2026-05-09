@@ -12,7 +12,7 @@ class MerkleTransactionAdapter {
     ]
 
     static let baseUrl: URL = .init(string: "https://mempool.merkle.io/rpc/")!
-    static let sourceTag = "unstoppable-wallet-ios"
+    static let sourceTag = "quantum-wallet-ios"
     static let protectedKey = "protected"
 
     let merkleTransactionHashManager: MerkleTransactionHashManager

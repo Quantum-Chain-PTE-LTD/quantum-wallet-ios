@@ -7,20 +7,27 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>applinks:unstoppable.money</string>
+		<string>applinks:quantumcha.in</string>
 		<string>webcredentials:unstoppable.money?mode=developer</string>
+		<string>webcredentials:quantumcha.in</string>
 	</array>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.io.horizontalsystems.bank-wallet</string>
-		<string>iCloud.io.horizontalsystems.bank-wallet.shared</string>
+		<string>iCloud.com.quantum.chain.wallet</string>
+		<string>iCloud.com.quantum.chain.wallet.shared</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>
 		<string>CloudDocuments</string>
 	</array>
+	<key>com.apple.developer.ubiquity-container-identifiers</key>
+	<array>
+		<string>iCloud.com.quantum.chain.wallet</string>
+		<string>iCloud.com.quantum.chain.wallet.shared</string>
+	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.io.horizontalsystems.bank-wallet</string>
+		<string>group.com.quantum.chain.wallet</string>
 	</array>
 </dict>
 </plist>

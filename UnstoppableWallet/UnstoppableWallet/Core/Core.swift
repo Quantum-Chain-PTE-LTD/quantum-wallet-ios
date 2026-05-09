@@ -140,7 +140,7 @@ class Core {
 
         userDefaultsStorage = UserDefaultsStorage()
         localStorage = LocalStorage(userDefaultsStorage: userDefaultsStorage)
-        keychainStorage = KeychainStorage(service: "io.horizontalsystems.bank.dev", logger: logger)
+        keychainStorage = KeychainStorage(service: "com.quantum.chain.bank", logger: logger)
         let sharedLocalStorage = SharedLocalStorage()
 
         try StorageMigrator.migrate(dbPool: dbPool, localStorage: localStorage)

@@ -1,7 +1,7 @@
 import Foundation
 
 class BackupKeychainService: IBackupPasswordStorage {
-    private static let service = "unstoppable.money"
+    private static let service = "quantumcha.in"
 
     var requiresUnlock: Bool { true }
 
