@@ -96,6 +96,10 @@
 	<string>${hashdit_api_key}</string>
 	<key>HsProviderApiKey</key>
 	<string>$(hs_provider_api_key)</string>
+	<key>QuantumChainApiBaseUrl</key>
+	<string>${quantum_chain_api_base_url}</string>
+	<key>QuantumChainApiKey</key>
+	<string>$(quantum_chain_api_key)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>MayaAffiliate</key>

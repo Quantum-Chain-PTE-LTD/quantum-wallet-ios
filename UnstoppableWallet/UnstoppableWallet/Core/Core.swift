@@ -151,6 +151,8 @@ class Core {
         marketKit = try MarketKit.Kit.instance(
             hsApiBaseUrl: AppConfig.marketApiUrl,
             hsProviderApiKey: AppConfig.hsProviderApiKey,
+            qcApiBaseUrl: AppConfig.quantumChainApiBaseUrl,
+            qcApiKey: AppConfig.quantumChainApiKey,
             minLogLevel: .error
         )
         marketKit.sync()

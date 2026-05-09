@@ -67,6 +67,10 @@ enum AppConfig {
         (Bundle.main.object(forInfoDictionaryKey: "MarketApiUrl") as? String) ?? ""
     }
 
+    static var quantumChainApiBaseUrl: String {
+        (Bundle.main.object(forInfoDictionaryKey: "QuantumChainApiBaseUrl") as? String) ?? ""
+    }
+
     static var swapApiUrl: String {
         (Bundle.main.object(forInfoDictionaryKey: "SwapApiUrl") as? String) ?? ""
     }
@@ -117,6 +121,10 @@ enum AppConfig {
 
     static var hsProviderApiKey: String? {
         (Bundle.main.object(forInfoDictionaryKey: "HsProviderApiKey") as? String).flatMap { $0.isEmpty ? nil : $0 }
+    }
+
+    static var quantumChainApiKey: String? {
+        (Bundle.main.object(forInfoDictionaryKey: "QuantumChainApiKey") as? String).flatMap { $0.isEmpty ? nil : $0 }
     }
 
     static var tronGridApiKeys: [String] {

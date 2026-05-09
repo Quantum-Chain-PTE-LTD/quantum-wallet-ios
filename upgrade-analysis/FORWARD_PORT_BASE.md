@@ -2,17 +2,17 @@
 
 ## Repositories
 
-| Role | Prompt name | Actual local path | Status |
-| --- | --- | --- | --- |
-| Old Quantum reference | `quantum-wallet-ios-old` | `c:\Users\ricar\Documents\Quantum\quantum-wallet-ios` | Read-only reference |
-| New target | `unstoppable-wallet-ios-new` | `c:\Users\ricar\Documents\Quantum\unstoppable-wallet-ios` | Target for changes |
+| Role                  | Prompt name                  | Actual local path                                         | Status              |
+| --------------------- | ---------------------------- | --------------------------------------------------------- | ------------------- |
+| Old Quantum reference | `quantum-wallet-ios-old`     | `c:\Users\ricar\Documents\Quantum\quantum-wallet-ios`     | Read-only reference |
+| New target            | `unstoppable-wallet-ios-new` | `c:\Users\ricar\Documents\Quantum\unstoppable-wallet-ios` | Target for changes  |
 
 ## Current Git State
 
-| Repo | Branch | Commit | Remote | Worktree |
-| --- | --- | --- | --- | --- |
-| Old Quantum reference | `master` | `883c162354780cd25f0840b077f184f51f37a991` | `https://quantum-chain-admin@bitbucket.org/quantum-chain/quantum-wallet-ios.git` | Clean |
-| New target | `feature/QWIOS-ID01-forward-port-quantum-wallet` | `705d8c431eba659f50cce1c1f32330a04fbe1758` | `https://github.com/Quantum-Chain-PTE-LTD/quantum-wallet-ios.git` | Clean before analysis docs |
+| Repo                  | Branch                                           | Commit                                     | Remote                                                                           | Worktree                   |
+| --------------------- | ------------------------------------------------ | ------------------------------------------ | -------------------------------------------------------------------------------- | -------------------------- |
+| Old Quantum reference | `master`                                         | `883c162354780cd25f0840b077f184f51f37a991` | `https://quantum-chain-admin@bitbucket.org/quantum-chain/quantum-wallet-ios.git` | Clean                      |
+| New target            | `feature/QWIOS-ID01-forward-port-quantum-wallet` | `705d8c431eba659f50cce1c1f32330a04fbe1758` | `https://github.com/Quantum-Chain-PTE-LTD/quantum-wallet-ios.git`                | Clean before analysis docs |
 
 The target branch was created from target `master` before writing these analysis files.
 
@@ -58,18 +58,18 @@ PRODUCT_BUNDLE_IDENTIFIER | PRODUCT_NAME | DEVELOPMENT_TEAM | CODE_SIGN_ENTITLEM
 
 ## Main App / Project Inventory
 
-| Area | Old Quantum reference | New target |
-| --- | --- | --- |
-| App folder | `QuantumWallet/QuantumWallet` | `UnstoppableWallet/UnstoppableWallet` |
-| Workspace | `QuantumWallet/QuantumWallet.xcworkspace` | `UnstoppableWallet/UnstoppableWallet.xcworkspace` |
-| Project | `QuantumWallet/QuantumWallet.xcodeproj` | `UnstoppableWallet/UnstoppableWallet.xcodeproj` |
-| Shared schemes | `Development`, `Production` | `Development`, `Production` |
-| Widget | `QuantumWallet/Widget` | `UnstoppableWallet/Widget` |
-| Intent extension | `QuantumWallet/IntentExtension` | `UnstoppableWallet/IntentExtension` |
-| App config | `Core/Providers/AppConfig.swift` | `Core/Providers/AppConfig.swift` |
-| Core container | `Core/App.swift` | `Core/Core.swift` |
-| Dependency/project refs | Xcode project + `Gemfile` + `TonConnectAPI` package | Xcode project + `Gemfile` |
-| Fastlane | `fastlane/` | `fastlane/` |
+| Area                    | Old Quantum reference                               | New target                                        |
+| ----------------------- | --------------------------------------------------- | ------------------------------------------------- |
+| App folder              | `QuantumWallet/QuantumWallet`                       | `UnstoppableWallet/UnstoppableWallet`             |
+| Workspace               | `QuantumWallet/QuantumWallet.xcworkspace`           | `UnstoppableWallet/UnstoppableWallet.xcworkspace` |
+| Project                 | `QuantumWallet/QuantumWallet.xcodeproj`             | `UnstoppableWallet/UnstoppableWallet.xcodeproj`   |
+| Shared schemes          | `Development`, `Production`                         | `Development`, `Production`                       |
+| Widget                  | `QuantumWallet/Widget`                              | `UnstoppableWallet/Widget`                        |
+| Intent extension        | `QuantumWallet/IntentExtension`                     | `UnstoppableWallet/IntentExtension`               |
+| App config              | `Core/Providers/AppConfig.swift`                    | `Core/Providers/AppConfig.swift`                  |
+| Core container          | `Core/App.swift`                                    | `Core/Core.swift`                                 |
+| Dependency/project refs | Xcode project + `Gemfile` + `TonConnectAPI` package | Xcode project + `Gemfile`                         |
+| Fastlane                | `fastlane/`                                         | `fastlane/`                                       |
 
 ## Important Decisions
 
