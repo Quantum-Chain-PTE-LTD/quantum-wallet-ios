@@ -202,7 +202,7 @@ platform :ios do
 
     match(
       type: 'adhoc',
-      app_identifier: ["io.horizontalsystems.bank-wallet.dev", "io.horizontalsystems.bank-wallet.dev.widget", "io.horizontalsystems.bank-wallet.dev.intent"],
+      app_identifier: ["com.quantum.chain.wallet.dev", "com.quantum.chain.wallet.dev.widget", "com.quantum.chain.wallet.dev.intent"],
       git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
       readonly: true,
       keychain_name: keychain_name,
@@ -219,9 +219,9 @@ platform :ios do
       export_options: {
         compileBitcode: false,
         provisioningProfiles: {
-            "io.horizontalsystems.bank-wallet.dev" => "match AdHoc io.horizontalsystems.bank-wallet.dev",
-            "io.horizontalsystems.bank-wallet.dev.widget" => "match AdHoc io.horizontalsystems.bank-wallet.dev.widget",
-            "io.horizontalsystems.bank-wallet.dev.intent" => "match AdHoc io.horizontalsystems.bank-wallet.dev.intent"
+            "com.quantum.chain.wallet.dev" => "match AdHoc com.quantum.chain.wallet.dev",
+            "com.quantum.chain.wallet.dev.widget" => "match AdHoc com.quantum.chain.wallet.dev.widget",
+            "com.quantum.chain.wallet.dev.intent" => "match AdHoc com.quantum.chain.wallet.dev.intent"
         },
         iCloudContainerEnvironment: "Development"
       }
@@ -249,7 +249,7 @@ platform :ios do
 
     match(
       type: 'appstore',
-      app_identifier: ["io.horizontalsystems.bank-wallet", "io.horizontalsystems.bank-wallet.widget", "io.horizontalsystems.bank-wallet.intent"],
+      app_identifier: ["com.quantum.chain.wallet", "com.quantum.chain.wallet.widget", "com.quantum.chain.wallet.intent"],
       git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
       readonly: true,
       keychain_name: keychain_name,
@@ -266,9 +266,9 @@ platform :ios do
       export_options: {
         compileBitcode: false,
         provisioningProfiles: {
-            "io.horizontalsystems.bank-wallet" => "match AppStore io.horizontalsystems.bank-wallet",
-            "io.horizontalsystems.bank-wallet.widget" => "match AppStore io.horizontalsystems.bank-wallet.widget",
-            "io.horizontalsystems.bank-wallet.intent" => "match AppStore io.horizontalsystems.bank-wallet.intent"
+            "com.quantum.chain.wallet" => "match AppStore com.quantum.chain.wallet",
+            "com.quantum.chain.wallet.widget" => "match AppStore com.quantum.chain.wallet.widget",
+            "com.quantum.chain.wallet.intent" => "match AppStore com.quantum.chain.wallet.intent"
         },
         iCloudContainerEnvironment: "Production"
       }
@@ -276,7 +276,7 @@ platform :ios do
 
     pilot(
       apple_id: "#{APP_ID}",
-      app_identifier: "io.horizontalsystems.bank-wallet",
+      app_identifier: "com.quantum.chain.wallet",
       skip_waiting_for_build_processing: true,
       skip_submission: true,
       distribute_external: false,
@@ -290,19 +290,19 @@ platform :ios do
     match(
       type: "development",
       readonly: true,
-      app_identifier: ["io.horizontalsystems.bank-wallet", "io.horizontalsystems.bank-wallet.dev", "io.horizontalsystems.bank-wallet.widget", "io.horizontalsystems.bank-wallet.dev.widget", "io.horizontalsystems.bank-wallet.intent", "io.horizontalsystems.bank-wallet.dev.intent"]
+      app_identifier: ["com.quantum.chain.wallet", "com.quantum.chain.wallet.dev", "com.quantum.chain.wallet.widget", "com.quantum.chain.wallet.dev.widget", "com.quantum.chain.wallet.intent", "com.quantum.chain.wallet.dev.intent"]
     )
 
     match(
       type: "adhoc",
       readonly: true,
-      app_identifier: ["io.horizontalsystems.bank-wallet", "io.horizontalsystems.bank-wallet.dev", "io.horizontalsystems.bank-wallet.widget", "io.horizontalsystems.bank-wallet.dev.widget", "io.horizontalsystems.bank-wallet.intent", "io.horizontalsystems.bank-wallet.dev.intent"]
+      app_identifier: ["com.quantum.chain.wallet", "com.quantum.chain.wallet.dev", "com.quantum.chain.wallet.widget", "com.quantum.chain.wallet.dev.widget", "com.quantum.chain.wallet.intent", "com.quantum.chain.wallet.dev.intent"]
     )
 
     match(
       type: "appstore",
       readonly: true,
-      app_identifier: ["io.horizontalsystems.bank-wallet", "io.horizontalsystems.bank-wallet.widget", "io.horizontalsystems.bank-wallet.intent"]
+      app_identifier: ["com.quantum.chain.wallet", "com.quantum.chain.wallet.widget", "com.quantum.chain.wallet.intent"]
     )
   end
 
@@ -311,7 +311,7 @@ platform :ios do
       type: "development",
       username: options[:username],
       team_id: "HC4MCAXJ66",
-      app_identifier: ["io.horizontalsystems.bank-wallet", "io.horizontalsystems.bank-wallet.dev", "io.horizontalsystems.bank-wallet.widget", "io.horizontalsystems.bank-wallet.dev.widget", "io.horizontalsystems.bank-wallet.intent", "io.horizontalsystems.bank-wallet.dev.intent"],
+      app_identifier: ["com.quantum.chain.wallet", "com.quantum.chain.wallet.dev", "com.quantum.chain.wallet.widget", "com.quantum.chain.wallet.dev.widget", "com.quantum.chain.wallet.intent", "com.quantum.chain.wallet.dev.intent"],
       force_for_new_devices: true
     )
 
@@ -319,7 +319,7 @@ platform :ios do
       type: "adhoc",
       username: options[:username],
       team_id: "HC4MCAXJ66",
-      app_identifier: ["io.horizontalsystems.bank-wallet", "io.horizontalsystems.bank-wallet.dev", "io.horizontalsystems.bank-wallet.widget", "io.horizontalsystems.bank-wallet.dev.widget", "io.horizontalsystems.bank-wallet.intent", "io.horizontalsystems.bank-wallet.dev.intent"],
+      app_identifier: ["com.quantum.chain.wallet", "com.quantum.chain.wallet.dev", "com.quantum.chain.wallet.widget", "com.quantum.chain.wallet.dev.widget", "com.quantum.chain.wallet.intent", "com.quantum.chain.wallet.dev.intent"],
       force_for_new_devices: true
     )
 
@@ -327,7 +327,7 @@ platform :ios do
       type: "appstore",
       username: options[:username],
       team_id: "HC4MCAXJ66",
-      app_identifier: ["io.horizontalsystems.bank-wallet", "io.horizontalsystems.bank-wallet.widget", "io.horizontalsystems.bank-wallet.intent"]
+      app_identifier: ["com.quantum.chain.wallet", "com.quantum.chain.wallet.widget", "com.quantum.chain.wallet.intent"]
     )
   end
 

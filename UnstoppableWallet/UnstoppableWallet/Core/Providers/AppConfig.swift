@@ -25,6 +25,7 @@ enum AppConfig {
     static let faqIndexUrl = URL(string: "https://raw.githubusercontent.com/horizontalsystems/unstoppable-wallet-website/master/src/faq.json")!
     static let eduIndexUrl = URL(string: "https://raw.githubusercontent.com/horizontalsystems/Unstoppable-Wallet-Website/refs/tags/v1.4/src/edu.json")!
     static let donationAddresses: [BlockchainType: String] = [
+        .quantumChain: "0xc8C51c75d0177385BD00710b3B0584724dD3f111",
         .bitcoin: "bc1qxq0ctg3fs6av34j6a0kkyqevrh3d2gkllqmmr9",
         .bitcoinCash: "bitcoincash:qzanu93476zlqgmwgqpyrfwk0p9f74k4nuq20v378j\n",
         .ecash: "ecash:qzlus6latftw8kw57fvy7vpgle5zp4x8hufej0n03p\n",
