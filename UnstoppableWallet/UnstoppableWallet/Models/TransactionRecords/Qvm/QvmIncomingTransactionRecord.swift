@@ -1,0 +1,23 @@
+import QvmKit
+import Foundation
+import MarketKit
+
+class QvmIncomingTransactionRecord: QvmTransactionRecord, TransferEventsProvider {
+    let from: String
+    let value: AppValue
+
+    init(source: TransactionSource, transaction: Transaction, baseToken: Token, from: String, value: AppValue, spam: Bool = false) {
+        self.from = from
+        self.value = value
+
+        super.init(source: source, transaction: transaction, baseToken: baseToken, ownTransaction: false, spam: spam)
+    }
+
+    override var mainValue: AppValue? {
+        value
+    }
+
+    var transferEvents: TransferEvents {
+        .init(incoming: [.init(address: from, value: value)])
+    }
+}

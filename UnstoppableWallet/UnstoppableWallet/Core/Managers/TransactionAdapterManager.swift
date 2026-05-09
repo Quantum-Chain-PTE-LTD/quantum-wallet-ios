@@ -7,6 +7,7 @@ class TransactionAdapterManager {
 
     private let adapterManager: AdapterManager
     private let evmBlockchainManager: EvmBlockchainManager
+    private let qvmBlockchainManager: QvmBlockchainManager
     private let adapterFactory: AdapterFactory
 
     private let adaptersReadyRelay = PublishRelay<Void>()
@@ -14,9 +15,10 @@ class TransactionAdapterManager {
     private let queue = DispatchQueue(label: "\(AppConfig.label).transactions_adapter_manager", qos: .userInitiated)
     private var _adapterMap = [TransactionSource: ITransactionsAdapter]()
 
-    init(adapterManager: AdapterManager, evmBlockchainManager: EvmBlockchainManager, adapterFactory: AdapterFactory) {
+    init(adapterManager: AdapterManager, evmBlockchainManager: EvmBlockchainManager, qvmBlockchainManager: QvmBlockchainManager, adapterFactory: AdapterFactory) {
         self.adapterManager = adapterManager
         self.evmBlockchainManager = evmBlockchainManager
+        self.qvmBlockchainManager = qvmBlockchainManager
         self.adapterFactory = adapterFactory
 
         adapterManager.adapterDataReadyObservable
@@ -41,6 +43,8 @@ class TransactionAdapterManager {
 
             if evmBlockchainManager.allBlockchains.contains(where: { $0.type == source.blockchainType }) {
                 transactionsAdapter = adapterFactory.evmTransactionsAdapter(transactionSource: source)
+            } else if qvmBlockchainManager.allBlockchains.contains(where: { $0.type == source.blockchainType }) {
+                transactionsAdapter = adapterFactory.qvmTransactionsAdapter(transactionSource: source)
             } else if source.blockchainType == .tron {
                 transactionsAdapter = adapterFactory.tronTransactionsAdapter(transactionSource: source)
             } else if source.blockchainType == .ton {

@@ -696,6 +696,30 @@ enum StorageMigrator {
             }
         }
 
+        migrator.registerMigration("Create QvmSyncSourceRecord") { db in
+            try db.create(table: QvmSyncSourceRecord.databaseTableName) { t in
+                t.column(QvmSyncSourceRecord.Columns.blockchainTypeUid.name, .text).notNull()
+                t.column(QvmSyncSourceRecord.Columns.url.name, .text).notNull()
+                t.column(QvmSyncSourceRecord.Columns.auth.name, .text)
+
+                t.primaryKey([QvmSyncSourceRecord.Columns.blockchainTypeUid.name, QvmSyncSourceRecord.Columns.url.name], onConflict: .replace)
+            }
+        }
+
+        migrator.registerMigration("Create QvmMethodLabels") { db in
+            try db.create(table: QvmMethodLabel.databaseTableName) { t in
+                t.column(QvmMethodLabel.Columns.methodId.name, .text).notNull().primaryKey(onConflict: .replace)
+                t.column(QvmMethodLabel.Columns.label.name, .text).notNull()
+            }
+        }
+
+        migrator.registerMigration("Create QvmAddressLabels") { db in
+            try db.create(table: QvmAddressLabel.databaseTableName) { t in
+                t.column(QvmAddressLabel.Columns.address.name, .text).notNull().primaryKey(onConflict: .replace)
+                t.column(QvmAddressLabel.Columns.label.name, .text).notNull()
+            }
+        }
+
         migrator.registerMigration("Update EnabledWallet entities") { db in
             try db.drop(table: EnabledWalletCache_v_0_36.databaseTableName)
             try db.create(table: EnabledWalletCache_v_0_36.databaseTableName) { t in

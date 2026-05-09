@@ -1,9 +1,11 @@
 import BitcoinCore
 import Foundation
+import QvmKit
 import TronKit
 
 enum FeeData {
     case evm(evmFeeData: EvmFeeData)
+    case qvm(qvmFeeData: QvmFeeData)
     case bitcoin(params: SendParameters)
     case monero(amount: MoneroSendAmount, address: String)
     case tron(fees: [Fee])
@@ -12,6 +14,7 @@ enum FeeData {
     var gasLimit: Int? {
         switch self {
         case let .evm(evmFeeData): return evmFeeData.gasLimit
+        case let .qvm(qvmFeeData): return qvmFeeData.gasLimit
         default: return nil
         }
     }

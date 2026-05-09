@@ -6,6 +6,7 @@ import HdWalletKit
 import Hodler
 import HsToolKit
 import OneInchKit
+import QvmKit
 
 // use convertedError to convert user relevant errors from kits to show them localized in UI
 // localize converted error via AppError
@@ -130,6 +131,44 @@ extension EvmKit.JsonRpcResponse.ResponseError: ConvertibleError {
 
             if rpcError.message.contains("max priority fee per gas higher than max fee per gas") {
                 return AppError.ethereum(reason: .tipsHigherThanMaxFee)
+            }
+
+            return self
+        default: return self
+        }
+    }
+}
+
+extension QvmKit.JsonRpcResponse.ResponseError: ConvertibleError {
+    var convertedError: Error {
+        switch self {
+        case let .rpcError(rpcError):
+            if rpcError.message == "insufficient funds for transfer" || rpcError.message.starts(with: "gas required exceeds allowance") {
+                return AppError.quantum(reason: .insufficientBalanceWithFee)
+            }
+
+            if rpcError.message.starts(with: "execution reverted") {
+                return AppError.quantum(reason: .executionReverted(message: rpcError.message))
+            }
+
+            if rpcError.message.contains("max fee per gas less than block base fee") {
+                return AppError.quantum(reason: .lowerThanBaseGasLimit)
+            }
+
+            if rpcError.message.contains("nonce too low") {
+                return AppError.quantum(reason: .nonceAlreadyInBlock)
+            }
+
+            if rpcError.message.contains("replacement transaction underpriced") {
+                return AppError.quantum(reason: .replacementTransactionUnderpriced)
+            }
+
+            if rpcError.message.contains("transaction underpriced") {
+                return AppError.quantum(reason: .transactionUnderpriced)
+            }
+
+            if rpcError.message.contains("max priority fee per gas higher than max fee per gas") {
+                return AppError.quantum(reason: .tipsHigherThanMaxFee)
             }
 
             return self

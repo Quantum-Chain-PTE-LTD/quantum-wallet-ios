@@ -4,6 +4,7 @@ import EvmKit
 import Foundation
 import HdWalletKit
 import MarketKit
+import QvmKit
 import TronKit
 
 enum AccountType: Identifiable {
@@ -12,6 +13,7 @@ enum AccountType: Identifiable {
     case trcPrivateKey(data: Data)
     case stellarSecretKey(secretSeed: String)
     case evmAddress(address: EvmKit.Address)
+    case qvmAddress(address: QvmKit.Address)
     case tronAddress(address: TronKit.Address)
     case tonAddress(address: String)
     case stellarAccount(accountId: String)
@@ -55,6 +57,8 @@ enum AccountType: Identifiable {
             privateData = secretSeed.hs.data
         case let .evmAddress(address):
             privateData = address.hex.hs.data
+        case let .qvmAddress(address):
+            privateData = address.hex.hs.data
         case let .tronAddress(address):
             privateData = address.hex.hs.data
         case let .tonAddress(address):
@@ -90,6 +94,7 @@ enum AccountType: Identifiable {
             case (.zano, .native): return true
             case (.zano, .zanoAsset): return true
             case (.ethereum, .native), (.ethereum, .eip20): return true
+            case (.quantumChain, .native), (.quantumChain, .eip20): return true
             case (.binanceSmartChain, .native), (.binanceSmartChain, .eip20): return true
             case (.polygon, .native), (.polygon, .eip20): return true
             case (.avalanche, .native), (.avalanche, .eip20): return true
@@ -133,6 +138,11 @@ enum AccountType: Identifiable {
             case (.optimism, .native), (.optimism, .eip20): return true
             case (.base, .native), (.base, .eip20): return true
             case (.zkSync, .native), (.zkSync, .eip20): return true
+            default: return false
+            }
+        case .qvmAddress:
+            switch (token.blockchainType, token.type) {
+            case (.quantumChain, .native), (.quantumChain, .eip20): return true
             default: return false
             }
         case .stellarSecretKey, .stellarAccount:
@@ -191,6 +201,8 @@ enum AccountType: Identifiable {
             return "Stellar Secret Key"
         case .evmAddress:
             return "EVM Address"
+        case .qvmAddress:
+            return "QVM Address"
         case .tronAddress:
             return "TRON Address"
         case .tonAddress:
@@ -231,6 +243,8 @@ enum AccountType: Identifiable {
             return "stellar_secret_key"
         case .evmAddress:
             return "evm_address"
+        case .qvmAddress:
+            return "qvm_address"
         case .tronAddress:
             return "tron_address"
         case .tonAddress:
@@ -262,6 +276,8 @@ enum AccountType: Identifiable {
         switch self {
         case let .evmAddress(address):
             return address.eip55
+        case let .qvmAddress(address):
+            return address.qip55
         case let .tronAddress(address):
             return address.base58
         case let .tonAddress(address):
@@ -289,7 +305,7 @@ enum AccountType: Identifiable {
         watchAddress?.shortened ?? description
     }
 
-    func evmAddress(chain: Chain) -> EvmKit.Address? {
+    func evmAddress(chain: EvmKit.Chain) -> EvmKit.Address? {
         switch self {
         case .mnemonic:
             guard let mnemonicSeed else {
@@ -299,6 +315,19 @@ enum AccountType: Identifiable {
             return try? EvmKit.Signer.address(seed: mnemonicSeed, chain: chain)
         case let .evmPrivateKey(data):
             return EvmKit.Signer.address(privateKey: data)
+        default:
+            return nil
+        }
+    }
+
+    func qvmAddress(chain: QvmKit.Chain) -> QvmKit.Address? {
+        switch self {
+        case .mnemonic:
+            guard let mnemonicSeed else {
+                return nil
+            }
+
+            return try? QvmKit.Signer.address(seed: mnemonicSeed.prefix(32), chain: chain)
         default:
             return nil
         }
@@ -327,7 +356,7 @@ enum AccountType: Identifiable {
             }
 
             guard let chain = try? Core.shared.evmBlockchainManager.chain(blockchainType: .ethereum),
-                  let privateKey = try? Signer.privateKey(seed: mnemonicSeed, chain: chain)
+                  let privateKey = try? EvmKit.Signer.privateKey(seed: mnemonicSeed, chain: chain)
             else {
                 return nil
             }
@@ -385,6 +414,8 @@ extension AccountType {
             return AccountType.btcAddress(address: address, blockchainType: BlockchainType(uid: blockchainTypeUid), tokenType: tokenType)
         case .evmAddress:
             return (try? EvmKit.Address(hex: string)).map { AccountType.evmAddress(address: $0) }
+        case .qvmAddress:
+            return (try? QvmKit.Address(hex: string)).map { AccountType.qvmAddress(address: $0) }
         case .tronAddress:
             let hexData = string.hs.hexData ?? Data()
 
@@ -419,6 +450,7 @@ extension AccountType {
         case trcPrivateKey = "tron_private_key"
         case stellarSecretKey = "stellar_secret_key"
         case evmAddress = "evm_address"
+        case qvmAddress = "qvm_address"
         case tronAddress = "tron_address"
         case tonAddress = "ton_address"
         case stellarAccount = "stellar_account"
@@ -433,6 +465,7 @@ extension AccountType {
             case .trcPrivateKey: self = .trcPrivateKey
             case .stellarSecretKey: self = .stellarSecretKey
             case .evmAddress: self = .evmAddress
+            case .qvmAddress: self = .qvmAddress
             case .tronAddress: self = .tronAddress
             case .tonAddress: self = .tonAddress
             case .stellarAccount: self = .stellarAccount
@@ -456,6 +489,8 @@ extension AccountType: Hashable {
         case let (.stellarSecretKey(lhsSecretSeed), .stellarSecretKey(rhsSecretSeed)):
             return lhsSecretSeed == rhsSecretSeed
         case let (.evmAddress(lhsAddress), .evmAddress(rhsAddress)):
+            return lhsAddress == rhsAddress
+        case let (.qvmAddress(lhsAddress), .qvmAddress(rhsAddress)):
             return lhsAddress == rhsAddress
         case let (.tronAddress(lhsAddress), .tronAddress(rhsAddress)):
             return lhsAddress == rhsAddress
@@ -491,6 +526,9 @@ extension AccountType: Hashable {
             hasher.combine(secretSeed)
         case let .evmAddress(address):
             hasher.combine("evmAddress")
+            hasher.combine(address.raw)
+        case let .qvmAddress(address):
+            hasher.combine("qvmAddress")
             hasher.combine(address.raw)
         case let .tronAddress(address):
             hasher.combine("tronAddress")

@@ -9,6 +9,7 @@ class AdapterManager {
     private let adapterFactory: AdapterFactory
     private let walletManager: WalletManager
     private let evmBlockchainManager: EvmBlockchainManager
+    private let qvmBlockchainManager: QvmBlockchainManager
     private let tronKitManager: TronKitManager
     private let tonKitManager: TonKitManager
     private let stellarKitManager: StellarKitManager
@@ -22,12 +23,13 @@ class AdapterManager {
     private let initAdaptersQueue = DispatchQueue(label: "\(AppConfig.label).adapter_manager.init_adapters", qos: .userInitiated)
     private var _adapterData = AdapterData(adapterMap: [:], account: nil)
 
-    init(adapterFactory: AdapterFactory, walletManager: WalletManager, evmBlockchainManager: EvmBlockchainManager,
+    init(adapterFactory: AdapterFactory, walletManager: WalletManager, evmBlockchainManager: EvmBlockchainManager, qvmBlockchainManager: QvmBlockchainManager,
          tronKitManager: TronKitManager, tonKitManager: TonKitManager, stellarKitManager: StellarKitManager, zanoKitManager: ZanoKitManager, btcBlockchainManager: BtcBlockchainManager, moneroNodeManager: MoneroNodeManager, zanoNodeManager: ZanoNodeManager)
     {
         self.adapterFactory = adapterFactory
         self.walletManager = walletManager
         self.evmBlockchainManager = evmBlockchainManager
+        self.qvmBlockchainManager = qvmBlockchainManager
         self.tronKitManager = tronKitManager
         self.tonKitManager = tonKitManager
         self.stellarKitManager = stellarKitManager
@@ -45,6 +47,11 @@ class AdapterManager {
         for blockchain in evmBlockchainManager.allBlockchains {
             if let manager = try? evmBlockchainManager.evmKitManager(blockchainType: blockchain.type) {
                 subscribe(disposeBag, manager.evmKitUpdatedObservable) { [weak self] in self?.handleUpdatedEvmKit(blockchainType: blockchain.type) }
+            }
+        }
+        for blockchain in qvmBlockchainManager.allBlockchains {
+            if let manager = try? qvmBlockchainManager.qvmKitManager(blockchainType: blockchain.type) {
+                subscribe(disposeBag, manager.qvmKitUpdatedObservable) { [weak self] in self?.handleUpdatedEvmKit(blockchainType: blockchain.type) }
             }
         }
         subscribe(disposeBag, btcBlockchainManager.restoreModeUpdatedObservable) { [weak self] in self?.handleUpdatedRestoreMode(blockchainType: $0) }
@@ -174,6 +181,10 @@ extension AdapterManager {
                 try? self.evmBlockchainManager.evmKitManager(blockchainType: blockchain.type).evmKitWrapper?.evmKit.refresh()
             }
 
+            for blockchain in self.qvmBlockchainManager.allBlockchains {
+                try? self.qvmBlockchainManager.qvmKitManager(blockchainType: blockchain.type).qvmKitWrapper?.qvmKit.refresh()
+            }
+
             for (_, adapter) in self._adapterData.adapterMap {
                 adapter.refresh()
             }
@@ -189,6 +200,8 @@ extension AdapterManager {
         DispatchQueue.global(qos: .background).async {
             if let blockchainType = self.evmBlockchainManager.blockchain(token: wallet.token)?.type {
                 try? self.evmBlockchainManager.evmKitManager(blockchainType: blockchainType).evmKitWrapper?.evmKit.refresh()
+            } else if let blockchainType = self.qvmBlockchainManager.blockchain(token: wallet.token)?.type {
+                try? self.qvmBlockchainManager.qvmKitManager(blockchainType: blockchainType).qvmKitWrapper?.qvmKit.refresh()
             } else if wallet.token.blockchainType == .tron {
                 self.tronKitManager.tronKitWrapper?.tronKit.refresh()
             } else if wallet.token.blockchainType == .ton {

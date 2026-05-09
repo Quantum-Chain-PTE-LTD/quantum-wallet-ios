@@ -2,13 +2,15 @@ import BitcoinCore
 import EvmKit
 import Foundation
 import MarketKit
+import QvmKit
 import StellarKit
 import TonSwift
 import TronKit
 import ZcashLightClientKit
 
 enum SendData {
-    case evm(blockchainType: BlockchainType, transactionData: TransactionData)
+    case evm(blockchainType: BlockchainType, transactionData: EvmKit.TransactionData)
+    case qvm(blockchainType: BlockchainType, transactionData: QvmKit.TransactionData)
     case bitcoin(token: Token, params: SendParameters)
     case zcash(amount: Decimal, recipient: Recipient, memo: String?)
     case zcashShield(amount: Decimal, recipient: Recipient?, memo: String?)

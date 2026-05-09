@@ -71,6 +71,20 @@ enum AddressParserFactory {
             }
 
             return handlers
+        case .quantumChain:
+            let qvmAddressParserItem = QvmAddressParser(blockchainType: blockchainType)
+
+            var handlers = [IAddressParserItem]()
+            handlers.append(qvmAddressParserItem)
+            if withEns {
+                if let httpSyncSource = Core.shared.qvmSyncSourceManager.httpSyncSource(blockchainType: .quantumChain),
+                   let qnsAddressParserItem = QnsAddressParserItem(rpcSource: httpSyncSource.rpcSource, rawAddressParserItem: qvmAddressParserItem)
+                {
+                    handlers.append(qnsAddressParserItem)
+                }
+            }
+
+            return handlers
         case .tron:
             return [TronAddressParser()]
         case .zcash:

@@ -5,6 +5,8 @@ enum SendHandlerFactory {
         switch sendData {
         case let .evm(blockchainType, transactionData):
             return EvmSendHandler.instance(blockchainType: blockchainType, transactionData: transactionData)
+        case let .qvm(blockchainType, transactionData):
+            return QvmSendHandler.instance(blockchainType: blockchainType, transactionData: transactionData)
         case let .bitcoin(token, params):
             return BitcoinSendHandler.instance(token: token, params: params)
         case let .zcash(amount, recipient, memo):
@@ -37,6 +39,10 @@ enum SendHandlerFactory {
 
         if let adapter = adapter as? ISendEthereumAdapter & IBalanceAdapter {
             return EvmPreSendHandler(token: wallet.token, adapter: adapter)
+        }
+
+        if let adapter = adapter as? ISendQuantumAdapter & IBalanceAdapter {
+            return QvmPreSendHandler(token: wallet.token, adapter: adapter)
         }
 
         if let adapter = adapter as? BitcoinBaseAdapter {

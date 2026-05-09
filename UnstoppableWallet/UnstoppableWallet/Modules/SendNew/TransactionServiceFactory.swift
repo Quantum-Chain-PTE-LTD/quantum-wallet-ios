@@ -9,6 +9,13 @@ enum TransactionServiceFactory {
             return transactionService
         }
 
+        if QvmBlockchainManager.blockchainTypes.contains(baseToken.blockchainType),
+           let qvmKit = try? Core.shared.qvmBlockchainManager.qvmKitManager(blockchainType: baseToken.blockchainType).qvmKitWrapper?.qvmKit,
+           let transactionService = QvmTransactionService(blockchainType: baseToken.blockchainType, qvmKit: qvmKit, initialTransactionSettings: initialTransactionSettings)
+        {
+            return transactionService
+        }
+
         if BtcBlockchainManager.blockchainTypes.contains(baseToken.blockchainType), let adapter = Core.shared.adapterManager.adapter(for: baseToken) as? BitcoinBaseAdapter {
             return UtxoTransactionService(blockchainType: baseToken.blockchainType, adapter: adapter)
         }

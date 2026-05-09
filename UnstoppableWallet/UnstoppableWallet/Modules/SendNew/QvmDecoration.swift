@@ -1,0 +1,118 @@
+import QvmKit
+import Foundation
+import MarketKit
+
+struct QvmDecoration {
+    let type: Type
+    let customSendButtonTitle: String?
+
+    var rateCoins: [Coin] {
+        switch type {
+        case let .outgoingQip20(_, _, token): return [token.coin]
+        case let .approveQip20(_, _, token): return [token.coin]
+        default: return []
+        }
+    }
+
+    func flowSection(baseToken: Token, currency: Currency, rates: [String: Decimal]) -> SendDataSection? {
+        switch type {
+        case let .outgoingQvm(to, value):
+            return outgoingFlow(token: baseToken, to: to, value: value, currency: currency, rates: rates)
+        case let .outgoingQip20(to, value, token):
+            return outgoingFlow(token: token, to: to, value: value, currency: currency, rates: rates)
+        case let .approveQip20(spender, value, token):
+            return approveFlowSection(token: token, spender: spender, value: value, currency: currency, rates: rates)
+        case let .unknown(to, value, _, _):
+            return outgoingFlow(token: baseToken, to: to, value: value, currency: currency, rates: rates)
+        }
+    }
+
+    func fields(baseToken: Token, currency: Currency, rates: [String: Decimal]) -> [SendField] {
+        switch type {
+        case .outgoingQvm, .outgoingQip20:
+            return []
+        case let .approveQip20(spender, _, _):
+            return approveFields(baseToken: baseToken, spender: spender)
+        case let .unknown(to, value, input, method):
+            return unknownFields(baseToken: baseToken, to: to, value: value, input: input, method: method, currency: currency, rates: rates)
+        }
+    }
+
+    private func outgoingFlow(token: Token, to: QvmKit.Address, value: Decimal, currency: Currency, rates: [String: Decimal]) -> SendDataSection {
+        let appValue = AppValue(token: token, value: value)
+        let rate = rates[token.coin.uid]
+        let currencyValue = rate.map { CurrencyValue(currency: currency, value: $0 * value) }
+
+        return .init([
+            .amount(
+                token: token,
+                appValueType: .regular(appValue: appValue),
+                currencyValue: currencyValue,
+            ),
+            .address(
+                value: to.qip55,
+                blockchainType: token.blockchainType
+            ),
+        ], isFlow: true)
+    }
+
+    private func approveFlowSection(token: Token, spender _: QvmKit.Address, value: Decimal, currency: Currency, rates: [String: Decimal]) -> SendDataSection {
+        let isRevokeAllowance = value == 0 // Check approved new value or revoked last allowance
+
+        let amountField: SendField
+
+        if isRevokeAllowance {
+            amountField = .amount(
+                token: token,
+                appValueType: .withoutAmount(code: token.coin.code),
+                currencyValue: nil,
+            )
+        } else {
+            amountField = self.amountField(
+                token: token,
+                value: value,
+                currency: currency,
+                rate: rates[token.coin.uid],
+            )
+        }
+
+        return .init([amountField])
+    }
+
+    private func unknownFields(baseToken _: Token, to _: QvmKit.Address, value _: Decimal, input: Data, method: String?, currency _: Currency, rates _: [String: Decimal]) -> [SendField] {
+        var fields: [SendField] = [
+            .simpleValue(title: "send.confirmation.input".localized, value: input.toHexString()),
+        ]
+
+        if let method {
+            fields.append(.simpleValue(title: "send.confirmation.method".localized, value: method))
+        }
+
+        return fields
+    }
+
+    private func approveFields(baseToken: Token, spender: QvmKit.Address) -> [SendField] {
+        [
+            .recipient(spender.qip55, copyable: true, blockchainType: baseToken.blockchainType),
+        ]
+    }
+
+    private func amountField(token: Token, value: Decimal, currency: Currency, rate: Decimal?) -> SendField {
+        let appValue = AppValue(token: token, value: Decimal(sign: .plus, exponent: value.exponent, significand: value.significand))
+
+        return .amount(
+            token: token,
+            appValueType: appValue.isMaxValue ? .infinity(code: appValue.code) : .regular(appValue: appValue),
+            currencyValue: appValue.isMaxValue ? nil : rate.map { CurrencyValue(currency: currency, value: $0 * value) },
+        )
+    }
+}
+
+extension QvmDecoration {
+    enum `Type` {
+        case outgoingQvm(to: QvmKit.Address, value: Decimal)
+        case outgoingQip20(to: QvmKit.Address, value: Decimal, token: Token)
+        case approveQip20(spender: QvmKit.Address, value: Decimal, token: Token)
+        case unknown(to: QvmKit.Address, value: Decimal, input: Data, method: String?)
+    }
+}

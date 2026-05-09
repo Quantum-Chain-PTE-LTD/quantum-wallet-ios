@@ -30,4 +30,12 @@ extension HsLabelProvider {
         let request = networkManager.session.request("\(apiUrl)/v1/addresses/labels", headers: headers)
         return networkManager.single(request: request)
     }
+
+    func qvmMethodLabelsSingle() -> Single<[QvmMethodLabel]> {
+        Single.just([])
+    }
+
+    func qvmAddressLabelsSingle() -> Single<[QvmAddressLabel]> {
+        Single.just([])
+    }
 }

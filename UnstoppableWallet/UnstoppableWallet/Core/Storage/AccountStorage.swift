@@ -2,6 +2,7 @@ import EvmKit
 import Foundation
 import HdWalletKit
 import MarketKit
+import QvmKit
 import TronKit
 
 class AccountStorage {
@@ -63,6 +64,12 @@ class AccountStorage {
             }
 
             type = .evmAddress(address: EvmKit.Address(raw: data))
+        case .qvmAddress:
+            guard let data = recoverData(id: id, typeName: typeName, keyName: .data) else {
+                return nil
+            }
+
+            type = .qvmAddress(address: QvmKit.Address(raw: data))
         case .tronAddress:
             guard let data = recoverData(id: id, typeName: typeName, keyName: .data) else {
                 return nil
@@ -151,6 +158,9 @@ class AccountStorage {
         case let .evmAddress(address):
             typeName = .evmAddress
             dataKey = try store(data: address.raw, id: id, typeName: typeName, keyName: .data)
+        case let .qvmAddress(address):
+            typeName = .qvmAddress
+            dataKey = try store(data: address.raw, id: id, typeName: typeName, keyName: .data)
         case let .tronAddress(address):
             typeName = .tronAddress
             dataKey = try store(data: address.raw, id: id, typeName: typeName, keyName: .data)
@@ -204,6 +214,8 @@ class AccountStorage {
             try keychainStorage.removeValue(for: secureKey(id: id, typeName: .stellarSecretKey, keyName: .data))
         case .evmAddress:
             try keychainStorage.removeValue(for: secureKey(id: id, typeName: .evmAddress, keyName: .data))
+        case .qvmAddress:
+            try keychainStorage.removeValue(for: secureKey(id: id, typeName: .qvmAddress, keyName: .data))
         case .tronAddress:
             try keychainStorage.removeValue(for: secureKey(id: id, typeName: .tronAddress, keyName: .data))
         case .hdExtendedKey:
@@ -296,6 +308,7 @@ extension AccountStorage {
         case trcPrivateKey
         case stellarSecretKey
         case evmAddress = "address"
+        case qvmAddress
         case tronAddress
         case tonAddress
         case stellarAccount

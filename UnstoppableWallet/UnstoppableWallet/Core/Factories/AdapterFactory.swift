@@ -1,13 +1,16 @@
 import BitcoinCore
 import EvmKit
 import MarketKit
+import QvmKit
 import RxRelay
 import RxSwift
 import StellarKit
 
 class AdapterFactory {
     private let evmBlockchainManager: EvmBlockchainManager
+    private let qvmBlockchainManager: QvmBlockchainManager
     private let evmSyncSourceManager: EvmSyncSourceManager
+    private let qvmSyncSourceManager: QvmSyncSourceManager
     private let moneroNodeManager: MoneroNodeManager
     private let btcBlockchainManager: BtcBlockchainManager
     private let tronKitManager: TronKitManager
@@ -18,13 +21,16 @@ class AdapterFactory {
     private let coinManager: CoinManager
     private let spamWrapper: SpamWrapper
     private let evmLabelManager: EvmLabelManager
+    private let qvmLabelManager: QvmLabelManager
 
-    init(evmBlockchainManager: EvmBlockchainManager, evmSyncSourceManager: EvmSyncSourceManager, moneroNodeManager: MoneroNodeManager,
+    init(evmBlockchainManager: EvmBlockchainManager, qvmBlockchainManager: QvmBlockchainManager, evmSyncSourceManager: EvmSyncSourceManager, qvmSyncSourceManager: QvmSyncSourceManager, moneroNodeManager: MoneroNodeManager,
          btcBlockchainManager: BtcBlockchainManager, tronKitManager: TronKitManager, tonKitManager: TonKitManager, stellarKitManager: StellarKitManager,
-         zanoKitManager: ZanoKitManager, restoreSettingsManager: RestoreSettingsManager, coinManager: CoinManager, spamWrapper: SpamWrapper, evmLabelManager: EvmLabelManager)
+         zanoKitManager: ZanoKitManager, restoreSettingsManager: RestoreSettingsManager, coinManager: CoinManager, spamWrapper: SpamWrapper, evmLabelManager: EvmLabelManager, qvmLabelManager: QvmLabelManager)
     {
         self.evmBlockchainManager = evmBlockchainManager
+        self.qvmBlockchainManager = qvmBlockchainManager
         self.evmSyncSourceManager = evmSyncSourceManager
+        self.qvmSyncSourceManager = qvmSyncSourceManager
         self.moneroNodeManager = moneroNodeManager
         self.btcBlockchainManager = btcBlockchainManager
         self.tronKitManager = tronKitManager
@@ -35,6 +41,7 @@ class AdapterFactory {
         self.coinManager = coinManager
         self.spamWrapper = spamWrapper
         self.evmLabelManager = evmLabelManager
+        self.qvmLabelManager = qvmLabelManager
     }
 
     private func evmAdapter(wallet: Wallet) -> IAdapter? {
@@ -66,6 +73,38 @@ class AdapterFactory {
             baseToken: baseToken,
             coinManager: coinManager,
             evmLabelManager: evmLabelManager
+        )
+    }
+
+    private func qvmAdapter(wallet: Wallet) -> IAdapter? {
+        guard let blockchainType = qvmBlockchainManager.blockchain(token: wallet.token)?.type else {
+            return nil
+        }
+        guard let qvmKitWrapper = try? qvmBlockchainManager.qvmKitManager(blockchainType: blockchainType).qvmKitWrapper(account: wallet.account, blockchainType: blockchainType) else {
+            return nil
+        }
+
+        return QvmAdapter(qvmKitWrapper: qvmKitWrapper)
+    }
+
+    private func qip20Adapter(address: String, wallet: Wallet, coinManager: CoinManager) -> IAdapter? {
+        guard let blockchainType = qvmBlockchainManager.blockchain(token: wallet.token)?.type else {
+            return nil
+        }
+        guard let qvmKitWrapper = try? qvmBlockchainManager.qvmKitManager(blockchainType: blockchainType).qvmKitWrapper(account: wallet.account, blockchainType: blockchainType) else {
+            return nil
+        }
+        guard let baseToken = qvmBlockchainManager.baseToken(blockchainType: blockchainType) else {
+            return nil
+        }
+
+        return try? Qip20Adapter(
+            qvmKitWrapper: qvmKitWrapper,
+            contractAddress: address,
+            wallet: wallet,
+            baseToken: baseToken,
+            coinManager: coinManager,
+            qvmLabelManager: qvmLabelManager
         )
     }
 
@@ -111,6 +150,27 @@ extension AdapterFactory {
                 coinManager: coinManager,
                 spamWrapper: spamWrapper,
                 evmLabelManager: evmLabelManager
+            )
+        }
+
+        return nil
+    }
+
+    func qvmTransactionsAdapter(transactionSource: TransactionSource) -> ITransactionsAdapter? {
+        let blockchainType = transactionSource.blockchainType
+
+        if let qvmKitWrapper = try? qvmBlockchainManager.qvmKitManager(blockchainType: blockchainType).qvmKitWrapper,
+           let baseToken = qvmBlockchainManager.baseToken(blockchainType: blockchainType)
+        {
+            let syncSource = qvmSyncSourceManager.syncSource(blockchainType: blockchainType)
+            return QvmTransactionsAdapter(
+                qvmKitWrapper: qvmKitWrapper,
+                source: transactionSource,
+                baseToken: baseToken,
+                qvmTransactionSource: syncSource.transactionSource,
+                coinManager: coinManager,
+                spamWrapper: spamWrapper,
+                qvmLabelManager: qvmLabelManager
             )
         }
 
@@ -209,6 +269,12 @@ extension AdapterFactory {
 
         case let (.eip20(address), .ethereum), let (.eip20(address), .binanceSmartChain), let (.eip20(address), .polygon), let (.eip20(address), .avalanche), let (.eip20(address), .optimism), let (.eip20(address), .arbitrumOne), let (.eip20(address), .gnosis), let (.eip20(address), .fantom), let (.eip20(address), .base), let (.eip20(address), .zkSync):
             return eip20Adapter(address: address, wallet: wallet, coinManager: coinManager)
+
+        case (.native, .quantumChain):
+            return qvmAdapter(wallet: wallet)
+
+        case let (.eip20(address), .quantumChain):
+            return qip20Adapter(address: address, wallet: wallet, coinManager: coinManager)
 
         case (.native, .tron):
             return tronAdapter(wallet: wallet)

@@ -69,11 +69,14 @@ class Core {
 
     let btcBlockchainManager: BtcBlockchainManager
     let evmSyncSourceManager: EvmSyncSourceManager
+    let qvmSyncSourceManager: QvmSyncSourceManager
     let moneroNodeManager: MoneroNodeManager
     let zanoNodeManager: ZanoNodeManager
     let restoreStateManager: RestoreStateManager
     let evmBlockchainManager: EvmBlockchainManager
+    let qvmBlockchainManager: QvmBlockchainManager
     let evmLabelManager: EvmLabelManager
+    let qvmLabelManager: QvmLabelManager
     let tronAccountManager: TronAccountManager
     let tonKitManager: TonKitManager
     let stellarKitManager: StellarKitManager
@@ -213,6 +216,9 @@ class Core {
         let evmSyncSourceStorage = EvmSyncSourceStorage(dbPool: dbPool)
         evmSyncSourceManager = EvmSyncSourceManager(testNetManager: testNetManager, blockchainSettingsStorage: blockchainSettingsStorage, evmSyncSourceStorage: evmSyncSourceStorage)
 
+        let qvmSyncSourceStorage = QvmSyncSourceStorage(dbPool: dbPool)
+        qvmSyncSourceManager = QvmSyncSourceManager(testNetManager: testNetManager, blockchainSettingsStorage: blockchainSettingsStorage, qvmSyncSourceStorage: qvmSyncSourceStorage)
+
         let moneroNodeStorage = MoneroNodeStorage(dbPool: dbPool)
         moneroNodeManager = MoneroNodeManager(blockchainSettingsStorage: blockchainSettingsStorage, moneroNodeStorage: moneroNodeStorage)
 
@@ -225,10 +231,16 @@ class Core {
         let evmAccountManagerFactory = EvmAccountManagerFactory(accountManager: accountManager, walletManager: walletManager, restoreStateManager: restoreStateManager, marketKit: marketKit)
         evmBlockchainManager = EvmBlockchainManager(syncSourceManager: evmSyncSourceManager, testNetManager: testNetManager, marketKit: marketKit, accountManagerFactory: evmAccountManagerFactory)
 
+        let qvmAccountManagerFactory = QvmAccountManagerFactory(accountManager: accountManager, walletManager: walletManager, restoreStateManager: restoreStateManager, marketKit: marketKit)
+        qvmBlockchainManager = QvmBlockchainManager(syncSourceManager: qvmSyncSourceManager, testNetManager: testNetManager, marketKit: marketKit, accountManagerFactory: qvmAccountManagerFactory)
+
         let hsLabelProvider = HsLabelProvider(networkManager: networkManager)
         let evmLabelStorage = EvmLabelStorage(dbPool: dbPool)
         let syncerStateStorage = SyncerStateStorage(dbPool: dbPool)
         evmLabelManager = EvmLabelManager(provider: hsLabelProvider, storage: evmLabelStorage, syncerStateStorage: syncerStateStorage)
+
+        let qvmLabelStorage = QvmLabelStorage(dbPool: dbPool)
+        qvmLabelManager = QvmLabelManager(provider: hsLabelProvider, storage: qvmLabelStorage, syncerStateStorage: syncerStateStorage)
 
         let tronKitManager = TronKitManager(testNetManager: testNetManager, evmSyncSourceManager: evmSyncSourceManager)
         tronAccountManager = TronAccountManager(accountManager: accountManager, walletManager: walletManager, marketKit: marketKit, tronKitManager: tronKitManager, restoreStateManager: restoreStateManager)
@@ -290,7 +302,9 @@ class Core {
 
         let adapterFactory = AdapterFactory(
             evmBlockchainManager: evmBlockchainManager,
+            qvmBlockchainManager: qvmBlockchainManager,
             evmSyncSourceManager: evmSyncSourceManager,
+            qvmSyncSourceManager: qvmSyncSourceManager,
             moneroNodeManager: moneroNodeManager,
             btcBlockchainManager: btcBlockchainManager,
             tronKitManager: tronKitManager,
@@ -300,12 +314,14 @@ class Core {
             restoreSettingsManager: restoreSettingsManager,
             coinManager: coinManager,
             spamWrapper: spamWrapper,
-            evmLabelManager: evmLabelManager
+            evmLabelManager: evmLabelManager,
+            qvmLabelManager: qvmLabelManager
         )
         adapterManager = AdapterManager(
             adapterFactory: adapterFactory,
             walletManager: walletManager,
             evmBlockchainManager: evmBlockchainManager,
+            qvmBlockchainManager: qvmBlockchainManager,
             tronKitManager: tronKitManager,
             tonKitManager: tonKitManager,
             stellarKitManager: stellarKitManager,
@@ -317,6 +333,7 @@ class Core {
         transactionAdapterManager = TransactionAdapterManager(
             adapterManager: adapterManager,
             evmBlockchainManager: evmBlockchainManager,
+            qvmBlockchainManager: qvmBlockchainManager,
             adapterFactory: adapterFactory
         )
 
@@ -392,6 +409,7 @@ class Core {
                 networkManager: networkManager
             )
         )
+        contractAddressValidator.append(validator: Qip20AddressValidator())
         contractAddressValidator.append(validator: Trc20AddressValidator(networkManager: networkManager))
 
         valueFormatter = CurrencyValueFormatter(amountRoundingManager: amountRoundingManager)

@@ -6,6 +6,7 @@ enum AppError: Error {
     case binance(reason: BinanceError)
     case zcash(reason: ZcashError)
     case ethereum(reason: EthereumError)
+    case quantum(reason: QuantumError)
     case oneInch(reason: OneInchError)
     case invalidWords(count: Int)
     case wordsChecksum
@@ -36,6 +37,17 @@ enum AppError: Error {
         case replacementTransactionUnderpriced
         case transactionUnderpriced
         case tipsHigherThanMaxFee
+    }
+
+    enum QuantumError: Error {
+        case insufficientBalanceWithFee
+        case executionReverted(message: String)
+        case lowerThanBaseGasLimit
+        case nonceAlreadyInBlock
+        case replacementTransactionUnderpriced
+        case transactionUnderpriced
+        case tipsHigherThanMaxFee
+        case notAllowed
     }
 
     enum OneInchError: Error {
@@ -72,6 +84,17 @@ extension AppError: LocalizedError {
             case .replacementTransactionUnderpriced: return "ethereum_transaction.error.replacement_transaction_underpriced".localized
             case .transactionUnderpriced: return "ethereum_transaction.error.transaction_underpriced".localized
             case .tipsHigherThanMaxFee: return "ethereum_transaction.error.tips_higher_than_max_fee".localized
+            }
+        case let .quantum(reason):
+            switch reason {
+            case .insufficientBalanceWithFee: return "" // localized in modules
+            case let .executionReverted(message): return "quantum_transaction.error.reverted".localized(message)
+            case .lowerThanBaseGasLimit: return "quantum_transaction.error.lower_than_base_gas_limit".localized
+            case .nonceAlreadyInBlock: return "quantum_transaction.error.nonce_already_in_block".localized
+            case .replacementTransactionUnderpriced: return "quantum_transaction.error.replacement_transaction_underpriced".localized
+            case .transactionUnderpriced: return "quantum_transaction.error.transaction_underpriced".localized
+            case .tipsHigherThanMaxFee: return "quantum_transaction.error.tips_higher_than_max_fee".localized
+            case .notAllowed: return "quantum_transaction.error.not_allowed".localized
             }
         case let .oneInch(reason):
             switch reason {

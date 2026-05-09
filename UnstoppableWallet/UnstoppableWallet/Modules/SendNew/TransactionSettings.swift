@@ -1,8 +1,10 @@
 import EvmKit
 import MoneroKit
+import QvmKit
 
 enum TransactionSettings {
     case evm(gasPriceData: GasPriceData, nonce: Int?)
+    case qvm(gasPriceData: QvmGasPriceData, nonce: Int?)
     case bitcoin(satoshiPerByte: Int)
     case monero(priority: MoneroKit.SendPriority)
 
@@ -13,9 +15,17 @@ enum TransactionSettings {
         }
     }
 
+    var qvmGasPriceData: QvmGasPriceData? {
+        switch self {
+        case let .qvm(gasPriceData, _): return gasPriceData
+        default: return nil
+        }
+    }
+
     var nonce: Int? {
         switch self {
         case let .evm(_, nonce): return nonce
+        case let .qvm(_, nonce): return nonce
         default: return nil
         }
     }

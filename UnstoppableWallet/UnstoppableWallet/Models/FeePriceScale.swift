@@ -3,19 +3,20 @@ import Foundation
 enum FeePriceScale {
     case satoshi
     case gwei
+    case gqwei
     case nAvax
 
     var scaleValue: Int {
         switch self {
         case .satoshi: return 1
-        case .gwei, .nAvax: return 1_000_000_000
+        case .gwei, .gqwei, .nAvax: return 1_000_000_000
         }
     }
 
     var scaleDecimals: Int {
         switch self {
         case .satoshi: return 0
-        case .gwei, .nAvax: return 9
+        case .gwei, .gqwei, .nAvax: return 9
         }
     }
 
@@ -23,6 +24,7 @@ enum FeePriceScale {
         switch self {
         case .satoshi: return "sat/byte"
         case .gwei: return "Gwei"
+        case .gqwei: return "Gqwei"
         case .nAvax: return "nAVAX"
         }
     }

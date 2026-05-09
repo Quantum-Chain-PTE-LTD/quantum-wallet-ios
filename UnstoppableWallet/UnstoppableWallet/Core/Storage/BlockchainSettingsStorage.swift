@@ -7,6 +7,7 @@ class BlockchainSettingsStorage {
     private let keyBtcTransactionSort = "btc-transaction-sort"
     private let keyBtcTransactionRbf = "btc-transaction-rbf"
     private let keyEvmSyncSource = "evm-sync-source"
+    private let keyQvmSyncSource = "qvm-sync-source"
     private let keyMoneroNode = "monero-node"
     private let keyZanoNode = "zano-node"
     init(storage: BlockchainSettingRecordStorage) {
@@ -57,6 +58,15 @@ extension BlockchainSettingsStorage {
 
     func save(evmSyncSourceUrl: String, blockchainType: BlockchainType) {
         let record = BlockchainSettingRecord(blockchainUid: blockchainType.uid, key: keyEvmSyncSource, value: evmSyncSourceUrl)
+        try? storage.save(record: record)
+    }
+
+    func qvmSyncSourceUrl(blockchainType: BlockchainType) -> String? {
+        try? storage.record(blockchainUid: blockchainType.uid, key: keyQvmSyncSource).map(\.value)
+    }
+
+    func save(qvmSyncSourceUrl: String, blockchainType: BlockchainType) {
+        let record = BlockchainSettingRecord(blockchainUid: blockchainType.uid, key: keyQvmSyncSource, value: qvmSyncSourceUrl)
         try? storage.save(record: record)
     }
 

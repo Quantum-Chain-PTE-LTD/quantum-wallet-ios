@@ -6,6 +6,7 @@ import EvmKit
 import GRDB
 import HsToolKit
 import MarketKit
+import QvmKit
 import RxSwift
 import TonKit
 import TonSwift
@@ -126,7 +127,13 @@ protocol ISendDashAdapter {
 protocol ISendEthereumAdapter {
     var evmKitWrapper: EvmKitWrapper { get }
     var balanceData: BalanceData { get }
-    func transactionData(amount: BigUInt, address: EvmKit.Address) -> TransactionData
+    func transactionData(amount: BigUInt, address: EvmKit.Address) -> EvmKit.TransactionData
+}
+
+protocol ISendQuantumAdapter {
+    var qvmKitWrapper: QvmKitWrapper { get }
+    var balanceData: BalanceData { get }
+    func transactionData(amount: BigUInt, address: QvmKit.Address) -> QvmKit.TransactionData
 }
 
 protocol ISendTronAdapter {
@@ -145,6 +152,11 @@ protocol IAllowanceAdapter {
     func allowance(spenderAddress: Address, defaultBlockParameter: BlockParameter) async throws -> Decimal
 }
 
+protocol IQrc20Adapter {
+    var pendingTransactions: [TransactionRecord] { get }
+    func allowance(spenderAddress: QvmKit.Address, defaultBlockParameter: QvmKit.DefaultBlockParameter) async throws -> Decimal
+}
+
 enum BlockParameter {
     case blockNumber(value: Int)
     case earliest
@@ -153,6 +165,10 @@ enum BlockParameter {
 }
 
 protocol IApproveDataProvider {
+    func approveSendData(token: MarketKit.Token, spenderAddress: Address, amount: BigUInt) throws -> SendData
+}
+
+protocol IApproveQvmDataProvider {
     func approveSendData(token: MarketKit.Token, spenderAddress: Address, amount: BigUInt) throws -> SendData
 }
 

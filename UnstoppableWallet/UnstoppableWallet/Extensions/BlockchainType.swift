@@ -15,6 +15,7 @@ extension BlockchainType {
         .monero,
         .zano,
         .ethereum,
+        .quantumChain,
         .polygon,
         .avalanche,
         .optimism,
@@ -39,7 +40,12 @@ extension BlockchainType {
 
     var imageUrl: String {
         let scale = Int(UIScreen.main.scale)
-        return "https://cdn.blocksdecoded.com/blockchain-icons/32px/\(uid)@\(scale)x.png"
+        switch self {
+        case .quantumChain:
+            return "https://quantum-static-prod-s3-apse1.s3.ap-southeast-1.amazonaws.com/qwallet/blockchain-icons/32px/\(uid)@\(scale)x.png"
+        default:
+            return "https://cdn.blocksdecoded.com/blockchain-icons/32px/\(uid)@\(scale)x.png"
+        }
     }
 
     var restoreSettingTypes: [RestoreSettingType] {
@@ -51,6 +57,7 @@ extension BlockchainType {
 
     var order: Int {
         let blockchainTypes: [BlockchainType] = [
+            .quantumChain,
             .bitcoin,
             .ethereum,
             .monero,
@@ -97,6 +104,7 @@ extension BlockchainType {
         switch self {
         case .bitcoin, .bitcoinCash, .dash, .litecoin, .ecash: return .satoshi
         case .avalanche: return .nAvax
+        case .quantumChain: return .gqwei
         default: return .gwei
         }
     }
@@ -130,6 +138,8 @@ extension BlockchainType {
                 return true
             default: return false
             }
+        case .qvmAddress:
+            return self == .quantumChain
         case .trcPrivateKey:
             switch self {
             case .tron: return true
@@ -164,6 +174,7 @@ extension BlockchainType {
         switch self {
         case .bitcoin: return "BTC (BIP44, BIP49, BIP84, BIP86)"
         case .ethereum: return "ETH, ERC20 tokens"
+        case .quantumChain: return "Q, QRC20 tokens"
         case .binanceSmartChain: return "BNB, BEP20 tokens"
         case .polygon: return "MATIC, ERC20 tokens"
         case .avalanche: return "AVAX, ERC20 tokens"
@@ -190,6 +201,7 @@ extension BlockchainType {
     var brandColor: UIColor? {
         switch self {
         case .ethereum: return UIColor(hex: 0x6B7196)
+        case .quantumChain: return UIColor(hex: 0xFFFFFF)
         case .binanceSmartChain: return UIColor(hex: 0xF3BA2F)
         case .polygon: return UIColor(hex: 0x8247E5)
         case .avalanche: return UIColor(hex: 0xD74F49)
@@ -203,6 +215,7 @@ extension BlockchainType {
     var brandColorNew: Color? {
         switch self {
         case .ethereum: return Color(hex: 0x6B7196)
+        case .quantumChain: return Color(hex: 0xFFFFFF)
         case .binanceSmartChain: return Color(hex: 0xF3BA2F)
         case .polygon: return Color(hex: 0x8247E5)
         case .avalanche: return Color(hex: 0xD74F49)
@@ -260,7 +273,7 @@ extension BlockchainType {
 
     var blockTime: TimeInterval? {
         switch self {
-        case .ethereum: return 12
+        case .ethereum, .quantumChain: return 12
         case .binanceSmartChain, .tron: return 3
         case .polygon, .avalanche, .optimism, .fantom, .base, .zkSync: return 2
         case .gnosis, .stellar, .ton: return 5

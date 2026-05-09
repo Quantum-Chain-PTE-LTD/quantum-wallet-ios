@@ -362,6 +362,88 @@
 		11B3551E5E9A6D167F7BA078 /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B35BEEC0AB0B09C7E4209A /* LaunchScreenManager.swift */; };
 		11B3551F51D987A150C3BC26 /* TabButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B351DBFA79DAF0A82A1925 /* TabButtonStyle.swift */; };
 		11B35521FDF21F9B1667AF72 /* Eip20Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3524B273DD5AB2FF5C7A6 /* Eip20Kit.swift */; };
+		7B0000050000000000000001 /* Qip20Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000001 /* Qip20Kit.swift */; };
+		7B0000050000000000000002 /* QvmKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000002 /* QvmKit.swift */; };
+		7B0000050000000000000003 /* BaseQvmAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000003 /* BaseQvmAdapter.swift */; };
+		7B0000050000000000000004 /* Qip20Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000004 /* Qip20Adapter.swift */; };
+		7B0000050000000000000005 /* QvmAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000005 /* QvmAdapter.swift */; };
+		7B0000050000000000000006 /* QvmTransactionConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000006 /* QvmTransactionConverter.swift */; };
+		7B0000050000000000000007 /* QvmTransactionsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000007 /* QvmTransactionsAdapter.swift */; };
+		7B0000050000000000000008 /* Qip20AddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000008 /* Qip20AddressValidator.swift */; };
+		7B0000050000000000000009 /* QnsAddressParserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000009 /* QnsAddressParserItem.swift */; };
+		7B0000050000000000000010 /* QvmAddressParserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000010 /* QvmAddressParserItem.swift */; };
+		7B0000050000000000000011 /* QvmAccountManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000011 /* QvmAccountManagerFactory.swift */; };
+		7B0000050000000000000012 /* QvmAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000012 /* QvmAccountManager.swift */; };
+		7B0000050000000000000013 /* QvmBlockchainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000013 /* QvmBlockchainManager.swift */; };
+		7B0000050000000000000014 /* QvmKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000014 /* QvmKitManager.swift */; };
+		7B0000050000000000000015 /* QvmLabelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000015 /* QvmLabelManager.swift */; };
+		7B0000050000000000000016 /* QvmSyncSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000016 /* QvmSyncSourceManager.swift */; };
+		7B0000050000000000000017 /* QvmCoinServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000017 /* QvmCoinServiceFactory.swift */; };
+		7B0000050000000000000018 /* QvmLabelStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000018 /* QvmLabelStorage.swift */; };
+		7B0000050000000000000019 /* QvmSyncSourceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000019 /* QvmSyncSourceStorage.swift */; };
+		7B0000050000000000000020 /* QvmAddressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000020 /* QvmAddressLabel.swift */; };
+		7B0000050000000000000021 /* QvmMethodLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000021 /* QvmMethodLabel.swift */; };
+		7B0000050000000000000022 /* QvmSyncSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000022 /* QvmSyncSource.swift */; };
+		7B0000050000000000000023 /* QvmSyncSourceRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000023 /* QvmSyncSourceRecord.swift */; };
+		7B0000050000000000000024 /* QvmUpdateStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000024 /* QvmUpdateStatus.swift */; };
+		7B0000050000000000000025 /* QvmApproveTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000025 /* QvmApproveTransactionRecord.swift */; };
+		7B0000050000000000000026 /* QvmContractCallTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000026 /* QvmContractCallTransactionRecord.swift */; };
+		7B0000050000000000000027 /* QvmContractCreationTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000027 /* QvmContractCreationTransactionRecord.swift */; };
+		7B0000050000000000000028 /* QvmExternalContractCallTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000028 /* QvmExternalContractCallTransactionRecord.swift */; };
+		7B0000050000000000000029 /* QvmIncomingTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000029 /* QvmIncomingTransactionRecord.swift */; };
+		7B0000050000000000000030 /* QvmOutgoingTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000030 /* QvmOutgoingTransactionRecord.swift */; };
+		7B0000050000000000000031 /* QvmTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000031 /* QvmTransactionRecord.swift */; };
+		7B0000050000000000000032 /* BaseSendQvmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000032 /* BaseSendQvmData.swift */; };
+		7B0000050000000000000033 /* QvmDecoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000033 /* QvmDecoration.swift */; };
+		7B0000050000000000000034 /* QvmDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000034 /* QvmDecorator.swift */; };
+		7B0000050000000000000035 /* QvmFeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000035 /* QvmFeeData.swift */; };
+		7B0000050000000000000036 /* QvmFeeEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000036 /* QvmFeeEstimator.swift */; };
+		7B0000050000000000000037 /* QvmGasPriceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000037 /* QvmGasPriceData.swift */; };
+		7B0000050000000000000038 /* QvmPreSendHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000038 /* QvmPreSendHandler.swift */; };
+		7B0000050000000000000039 /* QvmSendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000039 /* QvmSendData.swift */; };
+		7B0000050000000000000040 /* QvmSendHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000040 /* QvmSendHandler.swift */; };
+		7B0000050000000000000041 /* QvmTransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000041 /* QvmTransactionService.swift */; };
+		7B0000060000000000000001 /* Qip20Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000001 /* Qip20Kit.swift */; };
+		7B0000060000000000000002 /* QvmKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000002 /* QvmKit.swift */; };
+		7B0000060000000000000003 /* BaseQvmAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000003 /* BaseQvmAdapter.swift */; };
+		7B0000060000000000000004 /* Qip20Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000004 /* Qip20Adapter.swift */; };
+		7B0000060000000000000005 /* QvmAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000005 /* QvmAdapter.swift */; };
+		7B0000060000000000000006 /* QvmTransactionConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000006 /* QvmTransactionConverter.swift */; };
+		7B0000060000000000000007 /* QvmTransactionsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000007 /* QvmTransactionsAdapter.swift */; };
+		7B0000060000000000000008 /* Qip20AddressValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000008 /* Qip20AddressValidator.swift */; };
+		7B0000060000000000000009 /* QnsAddressParserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000009 /* QnsAddressParserItem.swift */; };
+		7B0000060000000000000010 /* QvmAddressParserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000010 /* QvmAddressParserItem.swift */; };
+		7B0000060000000000000011 /* QvmAccountManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000011 /* QvmAccountManagerFactory.swift */; };
+		7B0000060000000000000012 /* QvmAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000012 /* QvmAccountManager.swift */; };
+		7B0000060000000000000013 /* QvmBlockchainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000013 /* QvmBlockchainManager.swift */; };
+		7B0000060000000000000014 /* QvmKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000014 /* QvmKitManager.swift */; };
+		7B0000060000000000000015 /* QvmLabelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000015 /* QvmLabelManager.swift */; };
+		7B0000060000000000000016 /* QvmSyncSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000016 /* QvmSyncSourceManager.swift */; };
+		7B0000060000000000000017 /* QvmCoinServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000017 /* QvmCoinServiceFactory.swift */; };
+		7B0000060000000000000018 /* QvmLabelStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000018 /* QvmLabelStorage.swift */; };
+		7B0000060000000000000019 /* QvmSyncSourceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000019 /* QvmSyncSourceStorage.swift */; };
+		7B0000060000000000000020 /* QvmAddressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000020 /* QvmAddressLabel.swift */; };
+		7B0000060000000000000021 /* QvmMethodLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000021 /* QvmMethodLabel.swift */; };
+		7B0000060000000000000022 /* QvmSyncSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000022 /* QvmSyncSource.swift */; };
+		7B0000060000000000000023 /* QvmSyncSourceRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000023 /* QvmSyncSourceRecord.swift */; };
+		7B0000060000000000000024 /* QvmUpdateStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000024 /* QvmUpdateStatus.swift */; };
+		7B0000060000000000000025 /* QvmApproveTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000025 /* QvmApproveTransactionRecord.swift */; };
+		7B0000060000000000000026 /* QvmContractCallTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000026 /* QvmContractCallTransactionRecord.swift */; };
+		7B0000060000000000000027 /* QvmContractCreationTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000027 /* QvmContractCreationTransactionRecord.swift */; };
+		7B0000060000000000000028 /* QvmExternalContractCallTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000028 /* QvmExternalContractCallTransactionRecord.swift */; };
+		7B0000060000000000000029 /* QvmIncomingTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000029 /* QvmIncomingTransactionRecord.swift */; };
+		7B0000060000000000000030 /* QvmOutgoingTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000030 /* QvmOutgoingTransactionRecord.swift */; };
+		7B0000060000000000000031 /* QvmTransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000031 /* QvmTransactionRecord.swift */; };
+		7B0000060000000000000032 /* BaseSendQvmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000032 /* BaseSendQvmData.swift */; };
+		7B0000060000000000000033 /* QvmDecoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000033 /* QvmDecoration.swift */; };
+		7B0000060000000000000034 /* QvmDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000034 /* QvmDecorator.swift */; };
+		7B0000060000000000000035 /* QvmFeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000035 /* QvmFeeData.swift */; };
+		7B0000060000000000000036 /* QvmFeeEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000036 /* QvmFeeEstimator.swift */; };
+		7B0000060000000000000037 /* QvmGasPriceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000037 /* QvmGasPriceData.swift */; };
+		7B0000060000000000000038 /* QvmPreSendHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000038 /* QvmPreSendHandler.swift */; };
+		7B0000060000000000000039 /* QvmSendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000039 /* QvmSendData.swift */; };
+		7B0000060000000000000040 /* QvmSendHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000040 /* QvmSendHandler.swift */; };
+		7B0000060000000000000041 /* QvmTransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000041 /* QvmTransactionService.swift */; };
 		11B3552937152C5A4169C018 /* PasscodeLockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3505A43D9C2787B3BD153 /* PasscodeLockManager.swift */; };
 		11B35529AB46C98BC35C72E4 /* CoinPriceListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B35EE1C1F555F4160AC201 /* CoinPriceListProvider.swift */; };
 		11B35530A9FC0972D8716C31 /* ValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B357A5569EAC7D20CD40B2 /* ValueFormatter.swift */; };
@@ -3119,6 +3201,12 @@
 		D3604E4328F02A020066C366 /* EvmKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3604E4228F02A020066C366 /* EvmKit */; };
 		D3604E4528F02A260066C366 /* EvmKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3604E4428F02A260066C366 /* EvmKit */; };
 		D3604E4A28F02A8C0066C366 /* Eip20Kit in Frameworks */ = {isa = PBXBuildFile; productRef = D3604E4928F02A8C0066C366 /* Eip20Kit */; };
+		7B0000030000000000000001 /* QvmKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B0000020000000000000001 /* QvmKit */; };
+		7B0000030000000000000002 /* QvmKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B0000020000000000000002 /* QvmKit */; };
+		7B0000030000000000000003 /* Qip20Kit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B0000020000000000000003 /* Qip20Kit */; };
+		7B0000030000000000000004 /* TfaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B0000020000000000000004 /* TfaKit */; };
+		7B0000030000000000000005 /* Qip20Kit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B0000020000000000000005 /* Qip20Kit */; };
+		7B0000030000000000000006 /* TfaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B0000020000000000000006 /* TfaKit */; };
 		D3604E4D28F02AB40066C366 /* NftKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3604E4C28F02AB40066C366 /* NftKit */; };
 		D3604E5028F02AE70066C366 /* UniswapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3604E4F28F02AE70066C366 /* UniswapKit */; };
 		D3604E5328F02B150066C366 /* OneInchKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3604E5228F02B150066C366 /* OneInchKit */; };
@@ -3839,6 +3927,47 @@
 		11B3522A9A7774977CF39A1D /* NftImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NftImageView.swift; sourceTree = "<group>"; };
 		11B3522CBA84677E00D44983 /* CoinTreasuriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinTreasuriesViewModel.swift; sourceTree = "<group>"; };
 		11B3524B273DD5AB2FF5C7A6 /* Eip20Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eip20Kit.swift; sourceTree = "<group>"; };
+		7B0000040000000000000001 /* Qip20Kit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qip20Kit.swift; sourceTree = "<group>"; };
+		7B0000040000000000000002 /* QvmKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmKit.swift; sourceTree = "<group>"; };
+		7B0000040000000000000003 /* BaseQvmAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseQvmAdapter.swift; sourceTree = "<group>"; };
+		7B0000040000000000000004 /* Qip20Adapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qip20Adapter.swift; sourceTree = "<group>"; };
+		7B0000040000000000000005 /* QvmAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmAdapter.swift; sourceTree = "<group>"; };
+		7B0000040000000000000006 /* QvmTransactionConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmTransactionConverter.swift; sourceTree = "<group>"; };
+		7B0000040000000000000007 /* QvmTransactionsAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmTransactionsAdapter.swift; sourceTree = "<group>"; };
+		7B0000040000000000000008 /* Qip20AddressValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Qip20AddressValidator.swift; sourceTree = "<group>"; };
+		7B0000040000000000000009 /* QnsAddressParserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QnsAddressParserItem.swift; sourceTree = "<group>"; };
+		7B0000040000000000000010 /* QvmAddressParserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmAddressParserItem.swift; sourceTree = "<group>"; };
+		7B0000040000000000000011 /* QvmAccountManagerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmAccountManagerFactory.swift; sourceTree = "<group>"; };
+		7B0000040000000000000012 /* QvmAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmAccountManager.swift; sourceTree = "<group>"; };
+		7B0000040000000000000013 /* QvmBlockchainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmBlockchainManager.swift; sourceTree = "<group>"; };
+		7B0000040000000000000014 /* QvmKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmKitManager.swift; sourceTree = "<group>"; };
+		7B0000040000000000000015 /* QvmLabelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmLabelManager.swift; sourceTree = "<group>"; };
+		7B0000040000000000000016 /* QvmSyncSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmSyncSourceManager.swift; sourceTree = "<group>"; };
+		7B0000040000000000000017 /* QvmCoinServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmCoinServiceFactory.swift; sourceTree = "<group>"; };
+		7B0000040000000000000018 /* QvmLabelStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmLabelStorage.swift; sourceTree = "<group>"; };
+		7B0000040000000000000019 /* QvmSyncSourceStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmSyncSourceStorage.swift; sourceTree = "<group>"; };
+		7B0000040000000000000020 /* QvmAddressLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmAddressLabel.swift; sourceTree = "<group>"; };
+		7B0000040000000000000021 /* QvmMethodLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmMethodLabel.swift; sourceTree = "<group>"; };
+		7B0000040000000000000022 /* QvmSyncSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmSyncSource.swift; sourceTree = "<group>"; };
+		7B0000040000000000000023 /* QvmSyncSourceRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmSyncSourceRecord.swift; sourceTree = "<group>"; };
+		7B0000040000000000000024 /* QvmUpdateStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmUpdateStatus.swift; sourceTree = "<group>"; };
+		7B0000040000000000000025 /* QvmApproveTransactionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmApproveTransactionRecord.swift; sourceTree = "<group>"; };
+		7B0000040000000000000026 /* QvmContractCallTransactionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmContractCallTransactionRecord.swift; sourceTree = "<group>"; };
+		7B0000040000000000000027 /* QvmContractCreationTransactionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmContractCreationTransactionRecord.swift; sourceTree = "<group>"; };
+		7B0000040000000000000028 /* QvmExternalContractCallTransactionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmExternalContractCallTransactionRecord.swift; sourceTree = "<group>"; };
+		7B0000040000000000000029 /* QvmIncomingTransactionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmIncomingTransactionRecord.swift; sourceTree = "<group>"; };
+		7B0000040000000000000030 /* QvmOutgoingTransactionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmOutgoingTransactionRecord.swift; sourceTree = "<group>"; };
+		7B0000040000000000000031 /* QvmTransactionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmTransactionRecord.swift; sourceTree = "<group>"; };
+		7B0000040000000000000032 /* BaseSendQvmData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSendQvmData.swift; sourceTree = "<group>"; };
+		7B0000040000000000000033 /* QvmDecoration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmDecoration.swift; sourceTree = "<group>"; };
+		7B0000040000000000000034 /* QvmDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmDecorator.swift; sourceTree = "<group>"; };
+		7B0000040000000000000035 /* QvmFeeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmFeeData.swift; sourceTree = "<group>"; };
+		7B0000040000000000000036 /* QvmFeeEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmFeeEstimator.swift; sourceTree = "<group>"; };
+		7B0000040000000000000037 /* QvmGasPriceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmGasPriceData.swift; sourceTree = "<group>"; };
+		7B0000040000000000000038 /* QvmPreSendHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmPreSendHandler.swift; sourceTree = "<group>"; };
+		7B0000040000000000000039 /* QvmSendData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmSendData.swift; sourceTree = "<group>"; };
+		7B0000040000000000000040 /* QvmSendHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmSendHandler.swift; sourceTree = "<group>"; };
+		7B0000040000000000000041 /* QvmTransactionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmTransactionService.swift; sourceTree = "<group>"; };
 		11B35252F90F25774BDD2CB3 /* NftActivityModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NftActivityModule.swift; sourceTree = "<group>"; };
 		11B352648C452D611F1EDF61 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		11B35264F7CE80AD5D9A540A /* CoinInvestment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinInvestment.swift; sourceTree = "<group>"; };
@@ -5551,6 +5680,9 @@
 				D3DDFA342DDF2D02003CADDF /* TonConnectAPI in Frameworks */,
 				D3604E5528F02B280066C366 /* Eip20Kit in Frameworks */,
 				D3604E4528F02A260066C366 /* EvmKit in Frameworks */,
+				7B0000030000000000000005 /* Qip20Kit in Frameworks */,
+				7B0000030000000000000006 /* TfaKit in Frameworks */,
+				7B0000030000000000000002 /* QvmKit in Frameworks */,
 				D3604E9028F03DC00066C366 /* MarketKit in Frameworks */,
 				D36E0C2C28D084CB00B622B9 /* CollectionViewCenteredFlowLayout in Frameworks */,
 				D3604E8A28F03DBF0066C366 /* BitcoinKit in Frameworks */,
@@ -5598,6 +5730,9 @@
 				D3BF1E5C274BC29D00229A00 /* Down in Frameworks */,
 				D3604E4A28F02A8C0066C366 /* Eip20Kit in Frameworks */,
 				D3604E4328F02A020066C366 /* EvmKit in Frameworks */,
+				7B0000030000000000000003 /* Qip20Kit in Frameworks */,
+				7B0000030000000000000004 /* TfaKit in Frameworks */,
+				7B0000030000000000000001 /* QvmKit in Frameworks */,
 				6BD766422EA0E109008DDEA7 /* ZcashLightClientKit in Frameworks */,
 				6BDB59EB2F151A45005FA626 /* ReownRouter in Frameworks */,
 				D0EC34DB2A4450B100BB308B /* HCaptcha in Frameworks */,
@@ -5796,6 +5931,8 @@
 				11B351958604DF0B0AB3346C /* Publisher.swift */,
 				11B35E9873D262F88015F120 /* EvmKit.swift */,
 				11B3524B273DD5AB2FF5C7A6 /* Eip20Kit.swift */,
+				7B0000040000000000000002 /* QvmKit.swift */,
+				7B0000040000000000000001 /* Qip20Kit.swift */,
 				11B35665980CEA4D009A9B77 /* NftKit.swift */,
 				11B3514BC3FF2FAC76ADF9F7 /* OneInchKit.swift */,
 			);
@@ -6151,6 +6288,7 @@
 				11B35480153660045A6CF9AC /* Managers */,
 				11B3573D2F4B70997D4BBAD3 /* Storage */,
 				11B355EAC554044B280B08AC /* Ethereum */,
+				7B0000070000000000000003 /* Quantum */,
 				1A5646D49060C3EFF06D0479 /* Core.swift */,
 				11B35A5DE20DD6DD486FAFC0 /* Protocols.swift */,
 				58AAA3E6E0C24ACD0ECFC877 /* Fiat */,
@@ -6180,6 +6318,11 @@
 				11B35CEBC4B32E57AA2469AA /* PasteboardManager.swift */,
 				3C7B94F32F315F4F753D89AD /* UrlManager.swift */,
 				58AAAC5B00009B199A687EF3 /* EvmKitManager.swift */,
+				7B0000040000000000000014 /* QvmKitManager.swift */,
+				7B0000040000000000000012 /* QvmAccountManager.swift */,
+				7B0000040000000000000013 /* QvmBlockchainManager.swift */,
+				7B0000040000000000000015 /* QvmLabelManager.swift */,
+				7B0000040000000000000016 /* QvmSyncSourceManager.swift */,
 				11B35872950C107E4810AB6B /* AccountManager.swift */,
 				11B355E86612AEE00ED19CFE /* BackupManager.swift */,
 				11B352884D47E0B23DCF2C2C /* AppManager.swift */,
@@ -6500,6 +6643,14 @@
 			path = Ethereum;
 			sourceTree = "<group>";
 		};
+		7B0000070000000000000003 /* Quantum */ = {
+			isa = PBXGroup;
+			children = (
+				7B0000040000000000000017 /* QvmCoinServiceFactory.swift */,
+			);
+			path = Quantum;
+			sourceTree = "<group>";
+		};
 		11B3563CCEF5817CCA5A0C6A /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -6564,6 +6715,11 @@
 				11B35E3F01D5A5CFE5A4E94B /* EvmMethodLabel.swift */,
 				11B353282C7000D3BDFC7FD0 /* EvmAddressLabel.swift */,
 				11B35E5C80435645132BCDD2 /* EvmUpdateStatus.swift */,
+				7B0000040000000000000021 /* QvmMethodLabel.swift */,
+				7B0000040000000000000020 /* QvmAddressLabel.swift */,
+				7B0000040000000000000024 /* QvmUpdateStatus.swift */,
+				7B0000040000000000000022 /* QvmSyncSource.swift */,
+				7B0000040000000000000023 /* QvmSyncSourceRecord.swift */,
 				11B354BDDCAF7AF5A0582CAA /* SyncerState.swift */,
 				11B354C4EB27186435736BBA /* BalancePrimaryValue.swift */,
 				11B35588D5C27AD3673DEE2F /* AppIcon.swift */,
@@ -6694,6 +6850,7 @@
 				11B359D88585F2BBFA56CB77 /* FeeRateProviderFactory.swift */,
 				11B3583932F270503C1DF3F0 /* AdapterFactory.swift */,
 				11B35F980B34E005B9F02B8F /* EvmAccountManagerFactory.swift */,
+				7B0000040000000000000011 /* QvmAccountManagerFactory.swift */,
 				ABC9A1057AD189DA1CE31BF5 /* PredefinedBlockchainService.swift */,
 			);
 			path = Factories;
@@ -6758,9 +6915,11 @@
 				11B35888BDB55DCFD0ECF655 /* AppVersionRecordStorage.swift */,
 				11B35025FD5E96FD1AB359E9 /* EnabledWalletCacheStorage.swift */,
 				11B35F007444A766AF8CD20D /* EvmLabelStorage.swift */,
+				7B0000040000000000000018 /* QvmLabelStorage.swift */,
 				11B35FA71AA140CD3764C6BC /* SyncerStateStorage.swift */,
 				11B35999E6C5518115365410 /* RestoreStateStorage.swift */,
 				11B3564E87C69B2989E6A3D2 /* EvmSyncSourceStorage.swift */,
+				7B0000040000000000000019 /* QvmSyncSourceStorage.swift */,
 				D0709C052E507FAC0012C0E7 /* MoneroNodeStorage.swift */,
 				F4DF2362F7424C8CB3F8AE1F /* ZanoNodeStorage.swift */,
 				11B35A6DE18A1E6E837DFB21 /* ContactBookManager.swift */,
@@ -7275,6 +7434,7 @@
 			children = (
 				6BA9718E2ECB3B7B00DEC017 /* Zcash */,
 				D05E96AB2A287155002CCD71 /* Evm */,
+				7B0000070000000000000001 /* Qvm */,
 				D023D26F2A25CF18004F65B0 /* Tron */,
 				D0F43D87237030F800016EF5 /* Compatibility */,
 				11B3583EB648C6F867BD9C1A /* Nft */,
@@ -7727,6 +7887,9 @@
 				D06F60012D195FBC0033A288 /* AddressSecurityIssueType.swift */,
 				58AAA7305EF2A12D3DC82B32 /* AddressParserChain.swift */,
 				58AAAAC62C5B05463D339BCC /* EvmAddressParserItem.swift */,
+				7B0000040000000000000010 /* QvmAddressParserItem.swift */,
+				7B0000040000000000000009 /* QnsAddressParserItem.swift */,
+				7B0000040000000000000008 /* Qip20AddressValidator.swift */,
 				58AAAD40C9A99F0EDEFCAD14 /* AddressUriParser.swift */,
 				58AAAAA7456EB952A3E5A53F /* AddressService.swift */,
 				58AAA246206AF337B91809BE /* BitcoinAddressParserItem.swift */,
@@ -9512,6 +9675,7 @@
 				6BEA17752DE5B9D500BF73DD /* Zcash */,
 				D04D98E9268055A2001A3135 /* TransactionRecord.swift */,
 				D04D98EE2680620F001A3135 /* Evm */,
+				7B0000070000000000000002 /* Qvm */,
 				D04D98ED268061EF001A3135 /* Bitcoin */,
 				D05E96952A262132002CCD71 /* Tron */,
 				11B358FF5AC3462CCE9C318E /* Ton */,
@@ -9580,6 +9744,20 @@
 			path = Evm;
 			sourceTree = "<group>";
 		};
+		7B0000070000000000000002 /* Qvm */ = {
+			isa = PBXGroup;
+			children = (
+				7B0000040000000000000031 /* QvmTransactionRecord.swift */,
+				7B0000040000000000000029 /* QvmIncomingTransactionRecord.swift */,
+				7B0000040000000000000030 /* QvmOutgoingTransactionRecord.swift */,
+				7B0000040000000000000025 /* QvmApproveTransactionRecord.swift */,
+				7B0000040000000000000026 /* QvmContractCallTransactionRecord.swift */,
+				7B0000040000000000000027 /* QvmContractCreationTransactionRecord.swift */,
+				7B0000040000000000000028 /* QvmExternalContractCallTransactionRecord.swift */,
+			);
+			path = Qvm;
+			sourceTree = "<group>";
+		};
 		D05E96952A262132002CCD71 /* Tron */ = {
 			isa = PBXGroup;
 			children = (
@@ -9604,6 +9782,18 @@
 				2FA5DD0A8C1E757651F3CA3B /* EvmTransactionsAdapter.swift */,
 			);
 			path = Evm;
+			sourceTree = "<group>";
+		};
+		7B0000070000000000000001 /* Qvm */ = {
+			isa = PBXGroup;
+			children = (
+				7B0000040000000000000003 /* BaseQvmAdapter.swift */,
+				7B0000040000000000000005 /* QvmAdapter.swift */,
+				7B0000040000000000000004 /* Qip20Adapter.swift */,
+				7B0000040000000000000006 /* QvmTransactionConverter.swift */,
+				7B0000040000000000000007 /* QvmTransactionsAdapter.swift */,
+			);
+			path = Qvm;
 			sourceTree = "<group>";
 		};
 		D06F756D2A8BA33000184227 /* Donate */ = {
@@ -9798,6 +9988,7 @@
 				11B35B91B5EAF2E193FDC04E /* SendView.swift */,
 				11B35BEF6F80BDF166173819 /* SendViewModel.swift */,
 				11B35B0F9BC5C4CDBC5B041D /* EvmSendHandler.swift */,
+				7B0000040000000000000040 /* QvmSendHandler.swift */,
 				11B35D8B730D82D948B27210 /* ISendHandler.swift */,
 				11B35613DBD19C0B86D83B49 /* EvmSendHelper.swift */,
 				11B355A2FFA369C4E89DFF53 /* ISendData.swift */,
@@ -9805,22 +9996,31 @@
 				11B353B02ADF5EC5CC83FB33 /* SendHandlerFactory.swift */,
 				11B3562F83BCEE2720B1C23F /* ITransactionService.swift */,
 				11B3564FC860C383807BFBE3 /* EvmTransactionService.swift */,
+				7B0000040000000000000041 /* QvmTransactionService.swift */,
 				11B352D4978C011048EC985F /* TransactionServiceFactory.swift */,
 				11B3514BFFAE3CE09F4DB2EA /* TransactionSettings.swift */,
 				11B35B1EC5A29D1B77C1BCB6 /* EvmFeeData.swift */,
+				7B0000040000000000000035 /* QvmFeeData.swift */,
 				11B359F3E7E0DB7A55C079CD /* EvmFeeEstimator.swift */,
+				7B0000040000000000000036 /* QvmFeeEstimator.swift */,
+				7B0000040000000000000037 /* QvmGasPriceData.swift */,
 				D3DD67392BC3CFF300EC7F78 /* UtxoSendHelper.swift */,
 				11B35AD24681D0A122E6A3C5 /* SendData.swift */,
 				11B353355FF7FBE72BF60981 /* PreSendView.swift */,
 				11B357FD9D760D9671A3DF24 /* PreSendViewModel.swift */,
 				D3B73E262BDBC6120067429D /* IPreSendHandler.swift */,
 				D3B73E292BDBC61D0067429D /* EvmPreSendHandler.swift */,
+				7B0000040000000000000038 /* QvmPreSendHandler.swift */,
 				D0E5E84E2BE22172005080A4 /* BitcoinSendHandler.swift */,
 				D0E5E8512BE260C8005080A4 /* BitcoinPreSendHandler.swift */,
 				D3F9B0242BE38AF1009FFA95 /* RegularSendView.swift */,
 				D3F9B0302BE3B39D009FFA95 /* EvmDecoration.swift */,
 				D3F9B0332BE3B3A7009FFA95 /* EvmDecorator.swift */,
 				D3A580872BE4DAA2003953F4 /* EvmSendData.swift */,
+				7B0000040000000000000033 /* QvmDecoration.swift */,
+				7B0000040000000000000034 /* QvmDecorator.swift */,
+				7B0000040000000000000032 /* BaseSendQvmData.swift */,
+				7B0000040000000000000039 /* QvmSendData.swift */,
 				D0E5E8542BE38AA2005080A4 /* TronSendHandler.swift */,
 				D0A690242BFCB51800E59296 /* TronPresendHandler.swift */,
 				D0A690272BFF50D900E59296 /* TronSendData.swift */,
@@ -10254,6 +10454,9 @@
 				D36E0C2B28D084CB00B622B9 /* CollectionViewCenteredFlowLayout */,
 				D3604E4428F02A260066C366 /* EvmKit */,
 				D3604E5428F02B280066C366 /* Eip20Kit */,
+				7B0000020000000000000002 /* QvmKit */,
+				7B0000020000000000000005 /* Qip20Kit */,
+				7B0000020000000000000006 /* TfaKit */,
 				D3604E5628F02B280066C366 /* NftKit */,
 				D3604E5828F02B280066C366 /* UniswapKit */,
 				D3604E5A28F02B280066C366 /* OneInchKit */,
@@ -10316,6 +10519,9 @@
 				D36E0C2928D084AB00B622B9 /* CollectionViewCenteredFlowLayout */,
 				D3604E4228F02A020066C366 /* EvmKit */,
 				D3604E4928F02A8C0066C366 /* Eip20Kit */,
+				7B0000020000000000000001 /* QvmKit */,
+				7B0000020000000000000003 /* Qip20Kit */,
+				7B0000020000000000000004 /* TfaKit */,
 				D3604E4C28F02AB40066C366 /* NftKit */,
 				D3604E4F28F02AE70066C366 /* UniswapKit */,
 				D3604E5228F02B150066C366 /* OneInchKit */,
@@ -10490,6 +10696,9 @@
 				D36E0C2828D084AB00B622B9 /* XCRemoteSwiftPackageReference "CollectionViewCenteredFlowLayout" */,
 				D3604E4128F02A020066C366 /* XCRemoteSwiftPackageReference "EvmKit" */,
 				D3604E4828F02A8B0066C366 /* XCRemoteSwiftPackageReference "Eip20Kit" */,
+				7B0000010000000000000001 /* XCRemoteSwiftPackageReference "QvmKit" */,
+				7B0000010000000000000002 /* XCRemoteSwiftPackageReference "Qip20Kit" */,
+				7B0000010000000000000003 /* XCRemoteSwiftPackageReference "TfaKit" */,
 				D3604E4B28F02AB40066C366 /* XCRemoteSwiftPackageReference "NftKit" */,
 				D3604E4E28F02AE60066C366 /* XCRemoteSwiftPackageReference "UniswapKit" */,
 				D3604E5128F02B150066C366 /* XCRemoteSwiftPackageReference "OneInchKit" */,
@@ -11760,6 +11969,47 @@
 				11B3508877059D245C78131E /* EvmKit.swift in Sources */,
 				D34338EF2C885895001FCAD2 /* JettonAdapter.swift in Sources */,
 				11B35819C7596909297311B2 /* Eip20Kit.swift in Sources */,
+				7B0000050000000000000001 /* Qip20Kit.swift in Sources */,
+				7B0000050000000000000002 /* QvmKit.swift in Sources */,
+				7B0000050000000000000003 /* BaseQvmAdapter.swift in Sources */,
+				7B0000050000000000000004 /* Qip20Adapter.swift in Sources */,
+				7B0000050000000000000005 /* QvmAdapter.swift in Sources */,
+				7B0000050000000000000006 /* QvmTransactionConverter.swift in Sources */,
+				7B0000050000000000000007 /* QvmTransactionsAdapter.swift in Sources */,
+				7B0000050000000000000008 /* Qip20AddressValidator.swift in Sources */,
+				7B0000050000000000000009 /* QnsAddressParserItem.swift in Sources */,
+				7B0000050000000000000010 /* QvmAddressParserItem.swift in Sources */,
+				7B0000050000000000000011 /* QvmAccountManagerFactory.swift in Sources */,
+				7B0000050000000000000012 /* QvmAccountManager.swift in Sources */,
+				7B0000050000000000000013 /* QvmBlockchainManager.swift in Sources */,
+				7B0000050000000000000014 /* QvmKitManager.swift in Sources */,
+				7B0000050000000000000015 /* QvmLabelManager.swift in Sources */,
+				7B0000050000000000000016 /* QvmSyncSourceManager.swift in Sources */,
+				7B0000050000000000000017 /* QvmCoinServiceFactory.swift in Sources */,
+				7B0000050000000000000018 /* QvmLabelStorage.swift in Sources */,
+				7B0000050000000000000019 /* QvmSyncSourceStorage.swift in Sources */,
+				7B0000050000000000000020 /* QvmAddressLabel.swift in Sources */,
+				7B0000050000000000000021 /* QvmMethodLabel.swift in Sources */,
+				7B0000050000000000000022 /* QvmSyncSource.swift in Sources */,
+				7B0000050000000000000023 /* QvmSyncSourceRecord.swift in Sources */,
+				7B0000050000000000000024 /* QvmUpdateStatus.swift in Sources */,
+				7B0000050000000000000025 /* QvmApproveTransactionRecord.swift in Sources */,
+				7B0000050000000000000026 /* QvmContractCallTransactionRecord.swift in Sources */,
+				7B0000050000000000000027 /* QvmContractCreationTransactionRecord.swift in Sources */,
+				7B0000050000000000000028 /* QvmExternalContractCallTransactionRecord.swift in Sources */,
+				7B0000050000000000000029 /* QvmIncomingTransactionRecord.swift in Sources */,
+				7B0000050000000000000030 /* QvmOutgoingTransactionRecord.swift in Sources */,
+				7B0000050000000000000031 /* QvmTransactionRecord.swift in Sources */,
+				7B0000050000000000000032 /* BaseSendQvmData.swift in Sources */,
+				7B0000050000000000000033 /* QvmDecoration.swift in Sources */,
+				7B0000050000000000000034 /* QvmDecorator.swift in Sources */,
+				7B0000050000000000000035 /* QvmFeeData.swift in Sources */,
+				7B0000050000000000000036 /* QvmFeeEstimator.swift in Sources */,
+				7B0000050000000000000037 /* QvmGasPriceData.swift in Sources */,
+				7B0000050000000000000038 /* QvmPreSendHandler.swift in Sources */,
+				7B0000050000000000000039 /* QvmSendData.swift in Sources */,
+				7B0000050000000000000040 /* QvmSendHandler.swift in Sources */,
+				7B0000050000000000000041 /* QvmTransactionService.swift in Sources */,
 				11B35EA628D9401F5C3A9CB8 /* NftKit.swift in Sources */,
 				11B35DE5BD5716307300AD2F /* OneInchKit.swift in Sources */,
 				D3833AD82BEE1A7900ACECFB /* MarketWatchlistView.swift in Sources */,
@@ -13467,6 +13717,47 @@
 				11B35C343013C028B5D20B4A /* EvmKit.swift in Sources */,
 				D34338EE2C885895001FCAD2 /* JettonAdapter.swift in Sources */,
 				11B35521FDF21F9B1667AF72 /* Eip20Kit.swift in Sources */,
+				7B0000060000000000000001 /* Qip20Kit.swift in Sources */,
+				7B0000060000000000000002 /* QvmKit.swift in Sources */,
+				7B0000060000000000000003 /* BaseQvmAdapter.swift in Sources */,
+				7B0000060000000000000004 /* Qip20Adapter.swift in Sources */,
+				7B0000060000000000000005 /* QvmAdapter.swift in Sources */,
+				7B0000060000000000000006 /* QvmTransactionConverter.swift in Sources */,
+				7B0000060000000000000007 /* QvmTransactionsAdapter.swift in Sources */,
+				7B0000060000000000000008 /* Qip20AddressValidator.swift in Sources */,
+				7B0000060000000000000009 /* QnsAddressParserItem.swift in Sources */,
+				7B0000060000000000000010 /* QvmAddressParserItem.swift in Sources */,
+				7B0000060000000000000011 /* QvmAccountManagerFactory.swift in Sources */,
+				7B0000060000000000000012 /* QvmAccountManager.swift in Sources */,
+				7B0000060000000000000013 /* QvmBlockchainManager.swift in Sources */,
+				7B0000060000000000000014 /* QvmKitManager.swift in Sources */,
+				7B0000060000000000000015 /* QvmLabelManager.swift in Sources */,
+				7B0000060000000000000016 /* QvmSyncSourceManager.swift in Sources */,
+				7B0000060000000000000017 /* QvmCoinServiceFactory.swift in Sources */,
+				7B0000060000000000000018 /* QvmLabelStorage.swift in Sources */,
+				7B0000060000000000000019 /* QvmSyncSourceStorage.swift in Sources */,
+				7B0000060000000000000020 /* QvmAddressLabel.swift in Sources */,
+				7B0000060000000000000021 /* QvmMethodLabel.swift in Sources */,
+				7B0000060000000000000022 /* QvmSyncSource.swift in Sources */,
+				7B0000060000000000000023 /* QvmSyncSourceRecord.swift in Sources */,
+				7B0000060000000000000024 /* QvmUpdateStatus.swift in Sources */,
+				7B0000060000000000000025 /* QvmApproveTransactionRecord.swift in Sources */,
+				7B0000060000000000000026 /* QvmContractCallTransactionRecord.swift in Sources */,
+				7B0000060000000000000027 /* QvmContractCreationTransactionRecord.swift in Sources */,
+				7B0000060000000000000028 /* QvmExternalContractCallTransactionRecord.swift in Sources */,
+				7B0000060000000000000029 /* QvmIncomingTransactionRecord.swift in Sources */,
+				7B0000060000000000000030 /* QvmOutgoingTransactionRecord.swift in Sources */,
+				7B0000060000000000000031 /* QvmTransactionRecord.swift in Sources */,
+				7B0000060000000000000032 /* BaseSendQvmData.swift in Sources */,
+				7B0000060000000000000033 /* QvmDecoration.swift in Sources */,
+				7B0000060000000000000034 /* QvmDecorator.swift in Sources */,
+				7B0000060000000000000035 /* QvmFeeData.swift in Sources */,
+				7B0000060000000000000036 /* QvmFeeEstimator.swift in Sources */,
+				7B0000060000000000000037 /* QvmGasPriceData.swift in Sources */,
+				7B0000060000000000000038 /* QvmPreSendHandler.swift in Sources */,
+				7B0000060000000000000039 /* QvmSendData.swift in Sources */,
+				7B0000060000000000000040 /* QvmSendHandler.swift in Sources */,
+				7B0000060000000000000041 /* QvmTransactionService.swift in Sources */,
 				11B355734D16C412220BBEBD /* NftKit.swift in Sources */,
 				11B352309B81355B88BF6B66 /* OneInchKit.swift in Sources */,
 				D3833AD72BEE1A7900ACECFB /* MarketWatchlistView.swift in Sources */,
@@ -14994,6 +15285,30 @@
 				version = 2.0.4;
 			};
 		};
+		7B0000010000000000000001 /* XCRemoteSwiftPackageReference "QvmKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://bitbucket.org/quantum-chain/QvmKit.Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		7B0000010000000000000002 /* XCRemoteSwiftPackageReference "Qip20Kit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://bitbucket.org/quantum-chain/Qip20Kit.Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.4;
+			};
+		};
+		7B0000010000000000000003 /* XCRemoteSwiftPackageReference "TfaKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://bitbucket.org/quantum-chain/TfaKit.Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
 		D3604E4B28F02AB40066C366 /* XCRemoteSwiftPackageReference "NftKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/horizontalsystems/NftKit.Swift";
@@ -15044,10 +15359,10 @@
 		};
 		D3604E6E28F03AC70066C366 /* XCRemoteSwiftPackageReference "MarketKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/horizontalsystems/MarketKit.Swift";
+			repositoryURL = "https://bitbucket.org/quantum-chain/MarketKit.Swift";
 			requirement = {
-				kind = exactVersion;
-				version = 3.6.11;
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.1;
 			};
 		};
 		D3604E7D28F03C1D0066C366 /* XCRemoteSwiftPackageReference "Chart" */ = {
@@ -15389,6 +15704,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D3604E4828F02A8B0066C366 /* XCRemoteSwiftPackageReference "Eip20Kit" */;
 			productName = Eip20Kit;
+		};
+		7B0000020000000000000001 /* QvmKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B0000010000000000000001 /* XCRemoteSwiftPackageReference "QvmKit" */;
+			productName = QvmKit;
+		};
+		7B0000020000000000000002 /* QvmKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B0000010000000000000001 /* XCRemoteSwiftPackageReference "QvmKit" */;
+			productName = QvmKit;
+		};
+		7B0000020000000000000003 /* Qip20Kit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B0000010000000000000002 /* XCRemoteSwiftPackageReference "Qip20Kit" */;
+			productName = Qip20Kit;
+		};
+		7B0000020000000000000004 /* TfaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B0000010000000000000003 /* XCRemoteSwiftPackageReference "TfaKit" */;
+			productName = TfaKit;
+		};
+		7B0000020000000000000005 /* Qip20Kit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B0000010000000000000002 /* XCRemoteSwiftPackageReference "Qip20Kit" */;
+			productName = Qip20Kit;
+		};
+		7B0000020000000000000006 /* TfaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B0000010000000000000003 /* XCRemoteSwiftPackageReference "TfaKit" */;
+			productName = TfaKit;
 		};
 		D3604E5628F02B280066C366 /* NftKit */ = {
 			isa = XCSwiftPackageProductDependency;
