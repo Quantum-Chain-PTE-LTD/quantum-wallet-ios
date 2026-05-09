@@ -2,7 +2,7 @@ name: Deploy Dev to AppCenter
 
 on:
   push:
-    branches: [ version/* ]
+    branches: [version/*]
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
       - name: Setup Xcode to 26.4
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '26.4'
+          xcode-version: "26.4"
 
       - name: Checkout repository
         uses: actions/checkout@v4
