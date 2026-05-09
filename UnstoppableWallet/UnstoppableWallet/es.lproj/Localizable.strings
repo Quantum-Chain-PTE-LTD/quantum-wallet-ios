@@ -341,9 +341,9 @@
 "balance.token.not_relayed.info.description" = "La transacción que contiene esta cantidad ha sido transmitida pero aún no ha sido aceptada por la red";
 "balance.token.transparent" = "Transparente";
 "balance.token.transparent.info.title" = "Monto transparente";
-"balance.token.transparent.info.description" = "Tienes un saldo de ZEC en una dirección transparente. Para usarlo en Unstoppable, debe ser protegido (shielded) para garantizar total privacidad.";
+"balance.token.transparent.info.description" = "Tienes un saldo de ZEC en una dirección transparente. Para usarlo en Quantum Wallet, debe ser protegido (shielded) para garantizar total privacidad.";
 "balance.token.transparent.detected.title" = "ZEC transparente detectado";
-"balance.token.transparent.detected.description" = "Tienes un saldo de ZEC en una dirección transparente. Para usarlo en Unstoppable, debe ser protegido (shielded) para garantizar total privacidad.";
+"balance.token.transparent.detected.description" = "Tienes un saldo de ZEC en una dirección transparente. Para usarlo en Quantum Wallet, debe ser protegido (shielded) para garantizar total privacidad.";
 "balance.token.shield" = "Blindado";
 
 "balance.token.receive_address" = "Dirección de recepción";
@@ -677,11 +677,11 @@
 // Swap Terms
 
 "swap.terms.title" = "Términos de swap";
-"swap.terms.description" = "Unstoppable agrega múltiples proveedores de swap descentralizados (DEX) y centralizados para ofrecer tasas competitivas y un amplio soporte de activos.";
+"swap.terms.description" = "Quantum Wallet agrega múltiples proveedores de swap descentralizados (DEX) y centralizados para ofrecer tasas competitivas y un amplio soporte de activos.";
 "swap.terms.risk_of_restrictions" = "Riesgo de restricciones";
 "swap.terms.risk_of_restrictions.description" = "Entiendo que algunos proveedores de swap no DEX aplican un screening de transacciones %@. Dichos proveedores pueden rechazar (y reembolsar) swaps o, en casos raros (CSAM y terrorismo), congelar fondos y solicitar datos KYC.";
 "swap.terms.user_responsibility" = "Responsabilidad del usuario";
-"swap.terms.user_responsibility.description" = "Entiendo que el uso de proveedores no DEX introduce riesgos adicionales y que estos riesgos son mi responsabilidad. Unstoppable no puede garantizar el comportamiento de los proveedores.";
+"swap.terms.user_responsibility.description" = "Entiendo que el uso de proveedores no DEX introduce riesgos adicionales y que estos riesgos son mi responsabilidad. Quantum Wallet no puede garantizar el comportamiento de los proveedores.";
 "swap.terms.footer" = "Elige siempre un proveedor de swap que se ajuste a tus requisitos.";
 
 // Swap Advanced Settings
@@ -1434,7 +1434,7 @@
 "settings.donate.title" = "Donar";
 "settings.rate_us" = "Califícanos";
 "settings.tell_friends" = "Recomendar a un amigo";
-"settings.social_networks.label" = "Be Unstoppable";
+"settings.social_networks.label" = "Be Quantum Secure";
 "settings.dapp_connection" = "Conexión DApp";
 "settings.appearance" = "Apariencia";
 
@@ -1473,7 +1473,7 @@
 
 // Settings -> Tell Friends
 
-"settings_tell_friends.text" = "Be Unstoppable";
+"settings_tell_friends.text" = "Be Quantum Secure";
 
 // Settings -> Blockchain Settings
 
@@ -1620,7 +1620,7 @@
 "security_settings.delete_alert_button" = "Eliminar del teléfono";
 
 "btc_blockchain_settings.restore_source" = "Restaurar Fuente";
-"btc_blockchain_settings.restore_source.description" = "Elige la fuente que la aplicación Unstoppable debería usar para sincronizar la(s) cartera(s).";
+"btc_blockchain_settings.restore_source.description" = "Elige la fuente que la aplicación Quantum Wallet debería usar para sincronizar la(s) cartera(s).";
 "btc_blockchain_settings.restore_source.alert" = "Después de cambiar la Fuente de Restauración, la cartera tendrá que resincronizarse con la cadena de bloques %@.";
 
 "btc_restore_mode.blockchair" = "Rápido, sin privado";
@@ -1673,7 +1673,7 @@
 "settings.privacy.allow" = "Compartir datos de UI";
 "settings.privacy.allow.description" = "Esta configuración te permite desactivar el análisis de UI/UX y garantizar total confidencialidad.";
 "settings.privacy.nym" = "Consigue Nym VPN";
-"settings.privacy.nym.description" = "Aprovecha la mejor oferta de Nym VPN con Unstoppable: mayor privacidad a un mejor precio.";
+"settings.privacy.nym.description" = "Aprovecha la mejor oferta de Nym VPN con Quantum Wallet: mayor privacidad a un mejor precio.";
 
 // Settings -> Appearance
 
@@ -1729,7 +1729,7 @@
 
 // Settings -> Support
 
-"settings.vip_support.description" = "Obtén acceso exclusivo a nuestro Grupo VIP, donde usuarios premium y el equipo de Unstoppable Wallet colaboran. Recibe asistencia directa, discute futuras actualizaciones y ayuda a dar forma a la evolución de la cartera.";
+"settings.vip_support.description" = "Obtén acceso exclusivo a nuestro Grupo VIP, donde los usuarios premium y el equipo de Quantum Wallet colaboran. Recibe asistencia directa, discute futuras actualizaciones y ayuda a dar forma a la evolución de la cartera.";
 "settings.vip_support.start_chat" = "Únete al Grupo VIP";
 
 // Settings -> Contacts
@@ -2062,7 +2062,7 @@
 "evm_network.rpc_source" = "Fuente RPC";
 "evm_network.added" = "Añadido";
 "evm_network.add_new" = "Añadir Nuevo";
-"evm_network.description" = "Elige la fuente que la aplicación Unstoppable debería usar para sincronizar la(s) cartera(s).";
+"evm_network.description" = "Elige la fuente que la aplicación Quantum Wallet debería usar para sincronizar la(s) cartera(s).";
 
 // Add RPC Source
 
@@ -2078,7 +2078,7 @@
 "monero_network.node" = "Nodo";
 "monero_network.added" = "Añadido";
 "monero_network.add_new" = "Añadir Nuevo";
-"monero_network.description" = "Elige el nodo que la aplicación Unstoppable debe usar para sincronizar la(s) wallet(s).";
+"monero_network.description" = "Elige el nodo que la aplicación Quantum Wallet debe usar para sincronizar la(s) wallet(s).";
 "monero_network.settings.title" = "Preferencias de nodo";
 "monero_network.settings.description" = "Nodo de confianza – Cuando está habilitado, la wallet confía en el nodo seleccionado y acepta sus datos sin verificación adicional. \n\nActivado → Las transacciones aparecen como pendientes inmediatamente después de la transmisión (sincronización más rápida, pero menor privacidad y mayor dependencia del nodo).\n\nDesactivado → Las transacciones aparecen solo después de las confirmaciones de la red (más lento, pero más seguro y privado).";
 "monero_network.settings.trust" = "Confiar";
@@ -2096,7 +2096,7 @@
 "zano_network.node" = "Nodo";
 "zano_network.added" = "Añadido";
 "zano_network.add_new" = "Añadir nuevo";
-"zano_network.description" = "Elija el nodo que la app Unstoppable debe usar para sincronizar la(s) wallet(s).";
+"zano_network.description" = "Elija el nodo que la app Quantum Wallet debe usar para sincronizar la(s) wallet(s).";
 
 "add_zano_node.title" = "Añadir nodo";
 "add_zano_node.node_url" = "URL del nodo";
@@ -2279,7 +2279,7 @@
 
 "no_passcode.info_text" = "Esta aplicación requiere que el teléfono tenga habilitado el código de acceso (bloqueo de pantalla).\n\nPuedes activarlo en los ajustes de iOS.\n\nTen en cuenta que cuando desactivas el PIN a nivel del sistema operativo, las medidas de seguridad en el almacenamiento seguro de tu teléfono invalidan los datos almacenados previamente. Necesitarás Restaurar las claves de tu cartera para volver a acceder a tu cartera.";
 "cannot_check_passcode.info_text" = "No se puede verificar el estado del código de acceso (bloqueo de pantalla). Por favor, reinicia la aplicación.";
-"jailbreak.info_text" = "El equipo de Unstoppable recomienda ejecutar la aplicación solo en teléfonos no rooteados (no jailbreak).\n\nTenga en cuenta que cuando usa un dispositivo rooteado, la aplicación ya no puede garantizar la seguridad de su criptomoneda contra software malicioso.";
+"jailbreak.info_text" = "El equipo de Quantum Chain recomienda ejecutar la aplicación solo en teléfonos no rooteados (no jailbreak).\n\nTenga en cuenta que cuando usa un dispositivo rooteado, la aplicación ya no puede garantizar la seguridad de su criptomoneda contra software malicioso.";
 
 // Transaction Filter
 
@@ -2332,7 +2332,7 @@
 "purchases.swap_control.info" = "Por defecto, seleccionamos la mejor oferta disponible. Con Premium, puedes elegir un proveedor diferente.";
 "purchases.priority_support" = "Soporte prioritario";
 "purchases.priority_support.description" = "Acceso directo a nuestro equipo de soporte.";
-"purchases.priority_support.info" = "Te da acceso directo a soporte prioritario. Obtén ayuda rápida y personalizada del equipo de Unstoppable.";
+"purchases.priority_support.info" = "Te da acceso directo a soporte prioritario. Obtén ayuda rápida y personalizada del equipo de Quantum Wallet.";
 
 // Market Insights
 "purchases.market_insights" = "Análisis del mercado";
@@ -2419,3 +2419,26 @@
 // Secure Send Bottom Sheet
 "secure_send.bottom_sheet.title" = "Envío Seguro";
 "secure_send.bottom_sheet.description" = "Elige las verificaciones de seguridad.";
+
+// Quantum Wallet
+"quantum_transaction.error.title" = "Erreur";
+"quantum_transaction.error.insufficient_balance" = "La transacción requiere %@ para enviar.";
+"quantum_transaction.error.insufficient_balance_with_fee" = "El saldo actual de %@ es inferior al monto requerido para procesar esta transacción, incluida la tarifa de transacción.";
+"quantum_transaction.error.lower_than_base_gas_limit" = "El valor de la comisión seleccionada es demasiado bajo y será rechazado!";
+"quantum_transaction.error.nonce_already_in_block" = "La transacción ya está en bloque!";
+"quantum_transaction.error.replacement_transaction_underpriced" = "Cuota no suficiente para reemplazar la transacción";
+"quantum_transaction.error.transaction_underpriced" = "Cuota no suficiente para enviar la transacción";
+"quantum_transaction.error.tips_higher_than_max_fee" = "La tarifa máxima no puede ser inferior a los consejos, ya que la tarifa máxima incluye los consejos.";
+"quantum_transaction.error.reverted" = "La transacción no pudo ser ejecutada: %@";
+"quantum_transaction.error.not_allowed" = "Cuenta en periodo de bloqueo. Espere a que finalice el periodo de bloqueo.";
+"add_qvm_sync_source.title" = "Añadir fuente RPC";
+"add_qvm_sync_source.name" = "Nombre";
+"add_qvm_sync_source.rpc_url" = "RPC URL";
+"add_qvm_sync_source.basic_auth" = "Auth Básica (opcional)";
+"add_qvm_sync_source.warning.url_exists" = "La fuente RPC con esta url ya existe";
+"add_qvm_sync_source.error.invalid_url" = "La url introducida no es válida. La url válida debe tener uno de los siguientes esquemas: http, https, ws, wss";
+"qvm_send_settings.nonce" = "Transacción Nonce";
+"qvm_send_settings.nonce.info" = "El nonce es un valor entero único para una transacción dentro de la cartera del usuario. Normalmente se incrementa con cada transacción enviada y no necesita cambiar. Los usuarios avanzados pueden configurarlo igual a un nonce de una transacción pendiente para cancelar y reemplazar esa transacción, mientras la nueva transacción tenga una comisión lo suficientemente alta como para evitar que la antigua sea confirmada (por ejemplo, pueden querer acelerar su confirmación, o cambiar completamente los parámetros de transacción). Cuando múltiples transacciones pendientes tienen la misma nunca, sólo una se confirma, típicamente la que tiene la comisión más alta.";
+"qvm_send_settings.nonce.errors.already_in_use" = "Usado Nonce";
+"qvm_send_settings.nonce.errors.already_in_use.info" = "Una transacción ejecutada con este nonce ya existe.";
+"purchases.address_phishing.info" = "Una dirección incorrecta, y tu cripto desaparece para siempre. Quantum Wallet escanea automáticamente las direcciones de los destinatarios en busca de patrones sospechosos y te defiende contra las últimas amenazas de phishing, evitando que envíes fondos a un hacker. Bloquea transferencias fraudulentas antes de que ocurran.";

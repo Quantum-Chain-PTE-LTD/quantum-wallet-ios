@@ -341,9 +341,9 @@
 "balance.token.not_relayed.info.description" = "이 금액을 보유한 거래는 방송되었지만 아직 네트워크에서 수락되지 않았습니다.";
 "balance.token.transparent" = "透明";
 "balance.token.transparent.info.title" = "투명 잔액";
-"balance.token.transparent.info.description" = "투명 주소에 보유 중인 ZEC 잔액이 있습니다. Unstoppable에서 사용하려면 완전한 프라이버시 보호를 위해 보호(Shield) 처리해야 합니다.";
+"balance.token.transparent.info.description" = "투명 주소에 보유 중인 ZEC 잔액이 있습니다. Quantum Wallet에서 사용하려면 완전한 프라이버시 보호를 위해 보호(Shield) 처리해야 합니다.";
 "balance.token.transparent.detected.title" = "투명 ZEC 감지됨";
-"balance.token.transparent.detected.description" = "투명 주소에 보유 중인 ZEC 잔액이 있습니다. Unstoppable에서 사용하려면 완전한 프라이버시 보호를 위해 보호(Shield) 처리해야 합니다.";
+"balance.token.transparent.detected.description" = "투명 주소에 보유 중인 ZEC 잔액이 있습니다. Quantum Wallet에서 사용하려면 완전한 프라이버시 보호를 위해 보호(Shield) 처리해야 합니다.";
 "balance.token.shield" = "차폐(Shield)";
 
 "balance.token.receive_address" = "수신 주소";
@@ -677,11 +677,11 @@
 // Swap Terms
 
 "swap.terms.title" = "스왑 약관";
-"swap.terms.description" = "Unstoppable은 경쟁력 있는 환율과 폭넓은 자산 지원을 제공하기 위해 여러 탈중앙화(DEX) 및 중앙화 스왑 제공업체를 통합합니다.";
+"swap.terms.description" = "Quantum Wallet은 경쟁력 있는 환율과 폭넓은 자산 지원을 제공하기 위해 여러 탈중앙화(DEX) 및 중앙화 스왑 제공업체를 통합합니다.";
 "swap.terms.risk_of_restrictions" = "제한 위험";
 "swap.terms.risk_of_restrictions.description" = "일부 비-DEX 스왑 제공업체는 트랜잭션 스크리닝 %@을 적용한다는 점을 이해합니다. 이러한 제공업체는 스왑을 거부(및 환불)할 수 있으며, 드문 경우(CSAM 및 테러리즘)에는 자금을 동결하고 KYC 데이터를 요청할 수 있습니다.";
 "swap.terms.user_responsibility" = "사용자 책임";
-"swap.terms.user_responsibility.description" = "비-DEX 제공업체를 사용하는 것은 추가적인 위험을 수반하며, 이러한 위험은 전적으로 본인의 책임임을 이해합니다. Unstoppable은 제공업체의 행위를 보장할 수 없습니다.";
+"swap.terms.user_responsibility.description" = "비-DEX 제공업체를 사용하는 것은 추가적인 위험을 수반하며, 이러한 위험은 전적으로 본인의 책임임을 이해합니다. Quantum Wallet은 제공업체의 행위를 보장할 수 없습니다.";
 "swap.terms.footer" = "항상 자신의 요구사항에 부합하는 스왑 제공업체를 선택하세요.";
 
 // Swap Advanced Settings
@@ -1434,7 +1434,7 @@
 "settings.donate.title" = "후원하기";
 "settings.rate_us" = "앱 평가";
 "settings.tell_friends" = "친구에게 추천하기";
-"settings.social_networks.label" = "Be Unstoppable";
+"settings.social_networks.label" = "Be Quantum Secure";
 "settings.dapp_connection" = "디앱 연결";
 "settings.appearance" = "디자인";
 
@@ -1473,7 +1473,7 @@
 
 // Settings -> Tell Friends
 
-"settings_tell_friends.text" = "Be Unstoppable";
+"settings_tell_friends.text" = "Be Quantum Secure";
 
 // Settings -> Blockchain Settings
 
@@ -1673,7 +1673,7 @@
 "settings.privacy.allow" = "UI 데이터 공유";
 "settings.privacy.allow.description" = "이 설정을 통해 UI/UX 분석을 비활성화하고 완전한 기밀성을 보장할 수 있습니다.";
 "settings.privacy.nym" = "Nym VPN 받기";
-"settings.privacy.nym.description" = "Unstoppable을 통해 Nym VPN을 최고의 조건으로 이용하세요 — 더 나은 가격에 더 강력한 프라이버시 보호를 누리세요.";
+"settings.privacy.nym.description" = "Quantum Wallet을 통해 Nym VPN을 최고의 조건으로 이용하세요 — 더 나은 가격에 더 강력한 프라이버시 보호를 누리세요.";
 
 // Settings -> Appearance
 
@@ -1729,7 +1729,7 @@
 
 // Settings -> Support
 
-"settings.vip_support.description" = "프리미엄 사용자와 Unstoppable Wallet 팀이 함께하는 VIP 그룹에 독점적으로 참여하세요. 직접적인 지원을 받고, 향후 업데이트를 논의하며, 지갑의 발전에 기여할 수 있습니다.";
+"settings.vip_support.description" = "프리미엄 사용자와 Quantum Wallet 팀이 협력하는 VIP 그룹에 독점 액세스하세요. 직접적인 지원을 받고, 향후 업데이트에 대해 논의하며, 지갑의 발전 방향을 함께 만들어 나가세요.";
 "settings.vip_support.start_chat" = "VIP 그룹 참여";
 
 // Settings -> Contacts
@@ -2078,7 +2078,7 @@
 "monero_network.node" = "노드";
 "monero_network.added" = "추가됨";
 "monero_network.add_new" = "신규로 추가";
-"monero_network.description" = "Unstoppable 앱이 지갑 동기화에 사용할 노드를 선택하세요.";
+"monero_network.description" = "Quantum Wallet 앱이 지갑 동기화에 사용할 노드를 선택하세요.";
 "monero_network.settings.title" = "노드 설정";
 "monero_network.settings.description" = "신뢰 노드 – 활성화하면 지갑은 선택된 노드를 신뢰하고 추가 검증 없이 해당 데이터를 수락합니다. \n\n켜기 → 트랜잭션이 브로드캐스트 직후 대기 중으로 표시됩니다 (더 빠른 동기화, 그러나 프라이버시가 낮고 노드에 대한 의존도가 높음).\n\n끄기 → 트랜잭션이 네트워크 확인 후에만 표시됩니다 (더 느리지만 더 안전하고 프라이버시 보호가 높음).";
 "monero_network.settings.trust" = "신뢰";
@@ -2096,7 +2096,7 @@
 "zano_network.node" = "노드";
 "zano_network.added" = "추가됨";
 "zano_network.add_new" = "새로 추가";
-"zano_network.description" = "Unstoppable 앱이 지갑 동기화에 사용할 노드를 선택하세요.";
+"zano_network.description" = "Quantum Wallet 앱이 지갑 동기화에 사용할 노드를 선택하세요.";
 
 "add_zano_node.title" = "노드 추가";
 "add_zano_node.node_url" = "노드 URL";
@@ -2279,7 +2279,7 @@
 
 "no_passcode.info_text" = "이 앱은 전화에 패스코드(화면 잠금)가 활성화되어 있어야 합니다.\n\niOS 설정에서 활성화할 수 있습니다.\n\nOS 수준에서 PIN을 비활성화하면 전화의 안전한 저장소의 보안 조치로 이전에 저장된 데이터가 무효화됩니다. 지갑 키를 복원하여 지갑으로 돌아가야 합니다.";
 "cannot_check_passcode.info_text" = "패스코드 (화면 잠금) 상태를 확인할 수 없습니다. 애플리케이션을 다시 시작하십시오.";
-"jailbreak.info_text" = "Unstoppable 팀은 비루팅 (jailbreak되지 않은) 전화에서만 앱을 실행하는 것을 권장합니다.\n\n루트된 디바이스를 사용할 때 앱은 더 이상 악성 소프트웨어로부터 암호화폐의 안전을 보장할 수 없음을 주의하세요.";
+"jailbreak.info_text" = "Quantum Chain 팀은 비루팅 (jailbreak되지 않은) 전화에서만 앱을 실행하는 것을 권장합니다.\n\n루트된 디바이스를 사용할 때 앱은 더 이상 악성 소프트웨어로부터 암호화폐의 안전을 보장할 수 없음을 주의하세요.";
 
 // Transaction Filter
 
@@ -2332,7 +2332,7 @@
 "purchases.swap_control.info" = "기본적으로 가장 유리한 제안을 자동으로 선택합니다. Premium을 사용하면 다른 제공업체를 선택할 수 있습니다.";
 "purchases.priority_support" = "우선 지원";
 "purchases.priority_support.description" = "지원팀에 직접 접근할 수 있습니다.";
-"purchases.priority_support.info" = "우선 지원에 직접 접근할 수 있습니다. Unstoppable 팀으로부터 빠르고 개인화된 도움을 받으세요.";
+"purchases.priority_support.info" = "우선 지원에 직접 접근할 수 있습니다. Quantum Wallet 팀으로부터 빠르고 개인화된 도움을 받으세요.";
 
 // Market Insights
 "purchases.market_insights" = "시장 인사이트";
@@ -2419,3 +2419,26 @@
 // Secure Send Bottom Sheet
 "secure_send.bottom_sheet.title" = "보안 전송";
 "secure_send.bottom_sheet.description" = "보안 검사를 선택하세요.";
+
+// Quantum Wallet
+"quantum_transaction.error.title" = "오류";
+"quantum_transaction.error.insufficient_balance" = "거래에서 전송하려면 %@가 필요합니다.";
+"quantum_transaction.error.insufficient_balance_with_fee" = "현재 %@ 잔액은 거래 수수료를 포함하여이 거래를 처리하는 데 필요한 금액보다 적습니다.";
+"quantum_transaction.error.lower_than_base_gas_limit" = "선택한 수수료 값이 너무 낮아 거부됩니다!";
+"quantum_transaction.error.nonce_already_in_block" = "이미 차단된 거래!";
+"quantum_transaction.error.replacement_transaction_underpriced" = "거래를 대체하기에 충분하지 않은 수수료";
+"quantum_transaction.error.transaction_underpriced" = "거래를 보내기에 수수료가 충분하지 않음";
+"quantum_transaction.error.tips_higher_than_max_fee" = "최대 수수료에는 팁이 포함되어 있으므로 최대 수수료는 팁보다 낮을 수 없습니다.";
+"quantum_transaction.error.reverted" = "거래를 실행할 수 없습니다: %@";
+"quantum_transaction.error.not_allowed" = "계정이 잠금 기간 중입니다. 잠금 기간이 끝날 때까지 기다려 주세요.";
+"add_qvm_sync_source.title" = "RPC 소스 추가";
+"add_qvm_sync_source.name" = "이름";
+"add_qvm_sync_source.rpc_url" = "RPC URL";
+"add_qvm_sync_source.basic_auth" = "기본 인증(선택 사항)";
+"add_qvm_sync_source.warning.url_exists" = "이 URL이 있는 RPC 소스가 이미 존재합니다.";
+"add_qvm_sync_source.error.invalid_url" = "입력한 URL이 잘못되었습니다. 유효한 URL은 http, https, ws, wss 스키마 중 하나여야 합니다.";
+"qvm_send_settings.nonce" = "트랜잭션 Nonce";
+"qvm_send_settings.nonce.info" = "Nonce(논스)는 사용자 지갑 내에서 거래마다 고유한 정수값입니다. 보통 각 제출된 거래마다 증가하며 변경할 필요가 없습니다. 고급 사용자는 새 거래가 충분히 높은 수수료로 설정되어 이전 거래가 대신 확인되지 않도록 하기 위해 보류 중인 거래의 논스 값을 설정할 수 있습니다. (예를 들어, 거래 확인을 가속화하거나 거래 매개변수를 완전히 변경하려는 경우). 여러 보류 중인 거래가 동일한 논스를 가지면 일반적으로 가장 높은 수수료를 가진 거래만 확인됩니다.";
+"qvm_send_settings.nonce.errors.already_in_use" = "중고 Nonce";
+"qvm_send_settings.nonce.errors.already_in_use.info" = "이 nonce를 사용하여 실행된 트랜잭션이 이미 존재합니다.";
+"purchases.address_phishing.info" = "주소 하나만 잘못 입력하면 암호화폐가 영원히 사라질 수 있습니다. Quantum Wallet은 수신자 주소의 의심스러운 패턴을 자동으로 스캔하고 최신 피싱 위협으로부터 방어하여 해커에게 자금을 보내는 것을 방지합니다. 사기성 거래가 발생하기 전에 차단하세요.";

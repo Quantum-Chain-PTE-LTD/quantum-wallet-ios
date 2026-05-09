@@ -341,9 +341,9 @@
 "balance.token.not_relayed.info.description" = "Bu miktarı içeren işlem yayınlandı ancak henüz ağ tarafından kabul edilmedi";
 "balance.token.transparent" = "Şeffaf";
 "balance.token.transparent.info.title" = "Şeffaf Tutar";
-"balance.token.transparent.info.description" = "Şeffaf bir adreste tutulan ZEC bakiyeniz var. Unstoppable’da kullanmak için tam gizlilik amacıyla shield edilmesi gerekir.";
+"balance.token.transparent.info.description" = "Şeffaf bir adreste tutulan ZEC bakiyeniz var. Quantum Wallet’da kullanmak için tam gizlilik amacıyla shield edilmesi gerekir.";
 "balance.token.transparent.detected.title" = "Şeffaf ZEC Tespit Edildi";
-"balance.token.transparent.detected.description" = "Şeffaf bir adreste tutulan ZEC bakiyeniz var. Unstoppable’da kullanmak için tam gizlilik amacıyla shield edilmesi gerekir.";
+"balance.token.transparent.detected.description" = "Şeffaf bir adreste tutulan ZEC bakiyeniz var. Quantum Wallet’da kullanmak için tam gizlilik amacıyla shield edilmesi gerekir.";
 "balance.token.shield" = "Shield";
 
 "balance.token.receive_address" = "Alım Adresi";
@@ -677,11 +677,11 @@
 // Swap Terms
 
 "swap.terms.title" = "Swap Koşulları";
-"swap.terms.description" = "Unstoppable, rekabetçi oranlar ve geniş varlık desteği sunmak için birden fazla merkeziyetsiz (DEX) ve merkezi swap sağlayıcısını bir araya getirir.";
+"swap.terms.description" = "Quantum Wallet, rekabetçi oranlar ve geniş varlık desteği sunmak için birden fazla merkeziyetsiz (DEX) ve merkezi swap sağlayıcısını bir araya getirir.";
 "swap.terms.risk_of_restrictions" = "Kısıtlama riski";
 "swap.terms.risk_of_restrictions.description" = "Bazı DEX olmayan swap sağlayıcılarının %@ oranında işlem taraması (transaction screening) uyguladığını anlıyorum.\n\nBu tür sağlayıcılar swap işlemlerini reddedebilir (ve fonları iade edebilir) veya nadir durumlarda (CSAM ve terörizm ile ilişkili işlemler gibi) fonları dondurarak KYC bilgileri talep edebilir.";
 "swap.terms.user_responsibility" = "Kullanıcı sorumluluğu";
-"swap.terms.user_responsibility.description" = "DEX olmayan sağlayıcıları kullanmanın ek riskler içerdiğini ve bu risklerin tamamen benim sorumluluğumda olduğunu anlıyorum.\n\nUnstoppable, swap sağlayıcılarının davranışlarını veya kararlarını garanti edemez.";
+"swap.terms.user_responsibility.description" = "DEX olmayan sağlayıcıları kullanmanın ek riskler içerdiğini ve bu risklerin tamamen benim sorumluluğumda olduğunu anlıyorum.\n\nQuantum Wallet, swap sağlayıcılarının davranışlarını veya kararlarını garanti edemez.";
 "swap.terms.footer" = "Her zaman kendi gereksinimlerinize ve risk toleransınıza uygun bir swap sağlayıcısı seçin.";
 
 // Swap Advanced Settings
@@ -1434,7 +1434,7 @@
 "settings.donate.title" = "Bağış yapmak";
 "settings.rate_us" = "Bizi Değerlendirin";
 "settings.tell_friends" = "Arkadaşlarına bahset";
-"settings.social_networks.label" = "Be Unstoppable";
+"settings.social_networks.label" = "Be Quantum Secure";
 "settings.dapp_connection" = "DApp Bağlantısı";
 "settings.appearance" = "Görünüm";
 
@@ -1473,7 +1473,7 @@
 
 // Settings -> Tell Friends
 
-"settings_tell_friends.text" = "Be Unstoppable";
+"settings_tell_friends.text" = "Be Quantum Secure";
 
 // Settings -> Blockchain Settings
 
@@ -1673,7 +1673,7 @@
 "settings.privacy.allow" = "UI Verilerini Paylaş";
 "settings.privacy.allow.description" = "Bu ayar, UI/UX analizlerini devre dışı bırakmanıza ve tam gizlilik sağlamanıza olanak tanır.";
 "settings.privacy.nym" = "Nym VPN Edinin";
-"settings.privacy.nym.description" = "Unstoppable ile Nym VPN’de en iyi fırsatı yakalayın — daha iyi fiyata daha güçlü gizlilikten yararlanın.";
+"settings.privacy.nym.description" = "Quantum Wallet ile Nym VPN’de en iyi fırsatı yakalayın — daha iyi fiyata daha güçlü gizlilikten yararlanın.";
 
 // Settings -> Appearance
 
@@ -1729,7 +1729,7 @@
 
 // Settings -> Support
 
-"settings.vip_support.description" = "Premium kullanıcıların ve Unstoppable Wallet ekibinin bir araya geldiği VIP Grubumuza özel erişim kazanın. Doğrudan destek alın, gelecek güncellemeleri tartışın ve cüzdanın gelişimine katkıda bulunun.";
+"settings.vip_support.description" = "Get exclusive access to our VIP Group, where premium users and the Quantum Wallet team collaborate. Receive direct assistance, discuss future updates, and help shape the wallet’s evolution.";
 "settings.vip_support.start_chat" = "VIP Gruba Katılın";
 
 // Settings -> Contacts
@@ -2078,7 +2078,7 @@
 "monero_network.node" = "Node";
 "monero_network.added" = "Eklendi";
 "monero_network.add_new" = "Yeni ekle";
-"monero_network.description" = "Unstoppable uygulamasının cüzdan(lar)ı senkronize etmek için kullanacağı node’u seçin.";
+"monero_network.description" = "Quantum Wallet uygulamasının cüzdan(lar)ı senkronize etmek için kullanacağı node’u seçin.";
 "monero_network.settings.title" = "Node Tercihleri";
 "monero_network.settings.description" = "Güvenilir düğüm – Etkinleştirildiğinde, cüzdan seçilen düğüme güvenir ve verilerini ek doğrulama olmadan kabul eder. \n\nAçık → İşlemler yayınlandıktan hemen sonra Beklemede olarak görünür (daha hızlı senkronizasyon, ancak daha düşük gizlilik ve düğüme daha fazla bağımlılık).\n\nKapalı → İşlemler yalnızca ağ onaylarından sonra görünür (daha yavaş, ancak daha güvenli ve daha gizli).";
 "monero_network.settings.trust" = "Güven";
@@ -2096,7 +2096,7 @@
 "zano_network.node" = "Düğüm";
 "zano_network.added" = "Eklendi";
 "zano_network.add_new" = "Yeni Ekle";
-"zano_network.description" = "Unstoppable uygulamasının cüzdan(lar)ı senkronize etmek için kullanacağı düğümü seçin.";
+"zano_network.description" = "Quantum Wallet uygulamasının cüzdan(lar)ı senkronize etmek için kullanacağı düğümü seçin.";
 
 "add_zano_node.title" = "Düğüm Ekle";
 "add_zano_node.node_url" = "Düğüm URL'si";
@@ -2279,7 +2279,7 @@
 
 "no_passcode.info_text" = "Bu uygulama, telefonunuzda şifre (ekran kilidi) etkinleştirilmesini gerektirir.\n\nBunu iOS ayarlarında etkinleştirebilirsiniz.\n\nLütfen, işletim sistemi seviyesinde PIN'i devre dışı bıraktığınızda, telefonunuzun güvenli depolamasındaki güvenlik önlemlerinin daha önce depolanan verileri geçersiz kıldığını unutmayın. Cüzdanınıza geri dönebilmek için cüzdan anahtarlarınızı Geri Yüklemeniz gerekecek.";
 "cannot_check_passcode.info_text" = "Şifre (ekran kilidi) durumu kontrol edilemiyor. Lütfen uygulamayı yeniden başlatın.";
-"jailbreak.info_text" = "Unstoppable ekibi, uygulamanın yalnızca rootlanmamış (jailbreak yapılmamış) telefonlarda çalıştırılmasını önerir.\n\nLütfen, rootlanmış bir cihaz kullandığınızda, uygulamanın artık kripto paranızın kötü amaçlı yazılımlardan güvenliğini garanti edemeyeceğini unutmayın.";
+"jailbreak.info_text" = "Quantum Chain ekibi, uygulamanın yalnızca rootlanmamış (jailbreak yapılmamış) telefonlarda çalıştırılmasını önerir.\n\nLütfen, rootlanmış bir cihaz kullandığınızda, uygulamanın artık kripto paranızın kötü amaçlı yazılımlardan güvenliğini garanti edemeyeceğini unutmayın.";
 
 // Transaction Filter
 
@@ -2332,7 +2332,7 @@
 "purchases.swap_control.info" = "Varsayılan olarak mevcut en iyi teklifi seçeriz. Premium ile farklı bir sağlayıcı seçebilirsiniz.";
 "purchases.priority_support" = "Öncelikli destek";
 "purchases.priority_support.description" = "Destek ekibimize doğrudan erişim.";
-"purchases.priority_support.info" = "Öncelikli destek ekibimize doğrudan erişim sağlar. Unstoppable ekibinden hızlı ve kişisel destek alırsınız.";
+"purchases.priority_support.info" = "Öncelikli destek ekibimize doğrudan erişim sağlar. Quantum Wallet ekibinden hızlı ve kişisel destek alırsınız.";
 
 // Market Insights
 "purchases.market_insights" = "Piyasa İçgörüleri";
@@ -2419,3 +2419,26 @@
 // Secure Send Bottom Sheet
 "secure_send.bottom_sheet.title" = "Güvenli Gönderim";
 "secure_send.bottom_sheet.description" = "Güvenlik kontrollerini seçin.";
+
+// Quantum Wallet
+"quantum_transaction.error.title" = "Hata";
+"quantum_transaction.error.insufficient_balance" = "İşlem, göndermek için %@ gerektirir.";
+"quantum_transaction.error.insufficient_balance_with_fee" = "Mevcut %@ bakiyesi, işlem ücreti dahil bu işlemi gerçekleştirmek için gereken miktarın altında.";
+"quantum_transaction.error.lower_than_base_gas_limit" = "Seçilen ücret tutarı çok düşüktür ve reddedilecektir!";
+"quantum_transaction.error.nonce_already_in_block" = "İşlem zaten blokta!";
+"quantum_transaction.error.replacement_transaction_underpriced" = "İşlemi değiştirmek için yeterli ücret yok";
+"quantum_transaction.error.transaction_underpriced" = "Ücret işlemi göndermek için yeterli değil";
+"quantum_transaction.error.tips_higher_than_max_fee" = "Maksi. ücret tipsden daha düşük olamaz, çünkü Maks. ücret tipsi içerir.";
+"quantum_transaction.error.reverted" = "İşlem gerçekleştirilemiyor: %@";
+"quantum_transaction.error.not_allowed" = "Hesap kilitlenme döneminde. Lütfen kilitleme süresi bitene kadar bekleyin.";
+"add_qvm_sync_source.title" = "RPC Kaynağı Ekle";
+"add_qvm_sync_source.name" = "İsim";
+"add_qvm_sync_source.rpc_url" = "RPC URL";
+"add_qvm_sync_source.basic_auth" = "Basic Auth (isteğe bağlı)";
+"add_qvm_sync_source.warning.url_exists" = "Bu URL'ye sahip RPC kaynak zaten var";
+"add_qvm_sync_source.error.invalid_url" = "Girilen Url geçersiz. Geçerli url aşağıdaki şemalardan birine sahip olmalıdır: http, https, ws, wss";
+"qvm_send_settings.nonce" = "İşlem Nonce";
+"qvm_send_settings.nonce.info" = "Nonce, kullanıcının cüzdanındaki bir işlem için benzersiz bir tamsayı değeridir. Normalde gönderilen her işlemle birlikte artar ve değiştirilmesi gerekmez. İleri düzey kullanıcılar, yeni işlemin eskisinin onaylanmasını önlemek için yeterince yüksek bir ücrete sahip olduğu sürece, bu işlemi iptal etmek ve değiştirmek için bekleyen bir işlemin bir nonsine eşit olarak ayarlayabilirler (örneğin, onayını hızlandırmak veya işlem parametrelerini tamamen değiştirmek isteyebilirler). Birden fazla bekleyen işlem aynı nonce'a sahip olduğunda, genellikle en yüksek ücrete sahip olan biri onaylanır.";
+"qvm_send_settings.nonce.errors.already_in_use" = "Kullanılmış Nonce";
+"qvm_send_settings.nonce.errors.already_in_use.info" = "Bu nonce ile gerçekleştirilen bir işlem zaten var.";
+"purchases.address_phishing.info" = "Yanlış bir adres ve kripto paranız sonsuza dek kaybolur. Quantum Wallet, alıcı adreslerini şüpheli kalıplar açısından otomatik olarak tarar ve en son oltalama tehditlerine karşı savunur, fonları bir hackera göndermenizi önler. Dolandırıcılık transferlerini gerçekleşmeden önce engelleyin.";
