@@ -15,6 +15,9 @@ struct BlockchainSettingsView: View {
                 }
 
                 ListSection {
+                    ForEach(viewModel.qvmItems, id: \.blockchain.uid) { item in
+                        ItemView(item: item)
+                    }
                     ForEach(viewModel.evmItems, id: \.blockchain.uid) { item in
                         ItemView(item: item)
                     }
@@ -37,6 +40,12 @@ struct BlockchainSettingsView: View {
                 case .evm:
                     Coordinator.shared.present { isPresented in
                         EvmNetworkView(blockchain: item.blockchain, isPresented: isPresented)
+                    }
+
+                    stat(page: .blockchainSettings, event: .openBlockchainSettingsEvm(chainUid: item.blockchain.uid))
+                case .qvm:
+                    Coordinator.shared.present { isPresented in
+                        QvmNetworkView(blockchain: item.blockchain, isPresented: isPresented)
                     }
 
                     stat(page: .blockchainSettings, event: .openBlockchainSettingsEvm(chainUid: item.blockchain.uid))

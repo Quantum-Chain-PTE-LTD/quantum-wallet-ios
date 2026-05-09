@@ -11,6 +11,45 @@ struct WatchSelectView: View {
         ThemeView(style: .list) {
             BottomGradientWrapper {
                 switch items {
+                case let .watchTargets(targets):
+                    ThemeList(targets) { target in
+                        let blockchain = target.blockchain
+
+                        Cell(
+                            left: {
+                                KFImage.url(URL(string: blockchain.type.imageUrl))
+                                    .resizable()
+                                    .placeholder { RoundedRectangle(cornerRadius: .cornerRadius8).fill(Color.themeBlade) }
+                                    .clipShape(RoundedRectangle(cornerRadius: .cornerRadius8))
+                                    .frame(width: .iconSize32, height: .iconSize32)
+                            },
+                            middle: {
+                                MultiText(
+                                    title: blockchain.name,
+                                    subtitle: blockchain.type.description
+                                )
+                            },
+                            right: {
+                                let uid = target.uid
+
+                                Toggle(isOn: Binding(
+                                    get: {
+                                        enabledUids.contains(uid)
+                                    },
+                                    set: {
+                                        if $0 {
+                                            enabledUids.insert(uid)
+                                        } else {
+                                            enabledUids.remove(uid)
+                                        }
+                                    }
+                                )) {}
+                                    .labelsHidden()
+                                    .toggleStyle(SwitchToggleStyle(tint: .themeYellow))
+                            }
+                        )
+                    }
+
                 case let .blockchains(blockchains):
                     ThemeList(blockchains) { blockchain in
                         Cell(

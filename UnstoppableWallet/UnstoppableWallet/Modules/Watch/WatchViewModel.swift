@@ -3,6 +3,7 @@ import EvmKit
 import Foundation
 import HdWalletKit
 import MarketKit
+import QvmKit
 import RxSwift
 import TronKit
 import UIKit
@@ -11,6 +12,7 @@ class WatchViewModel: ObservableObject {
     private let accountManager = Core.shared.accountManager
     private let walletManager = Core.shared.walletManager
     private let evmBlockchainManager = Core.shared.evmBlockchainManager
+    private let qvmBlockchainManager = Core.shared.qvmBlockchainManager
     private let marketKit = Core.shared.marketKit
     private let accountFactory = Core.shared.accountFactory
     private let restoreSettingsManager = Core.shared.restoreSettingsManager
@@ -101,6 +103,7 @@ class WatchViewModel: ObservableObject {
                 + BtcBlockchainManager.blockchainTypes.flatMap {
                     AddressParserFactory.parserChainHandlers(blockchainType: $0, withEns: false)
                 }
+                + AddressParserFactory.parserChainHandlers(blockchainType: .quantumChain)
                 + AddressParserFactory.parserChainHandlers(blockchainType: .tron)
                 + AddressParserFactory.parserChainHandlers(blockchainType: .ton)
                 + AddressParserFactory.parserChainHandlers(blockchainType: .stellar)
@@ -186,6 +189,8 @@ class WatchViewModel: ObservableObject {
                 switch address.blockchainType {
                 case let evmAddress where EvmBlockchainManager.blockchainTypes.contains(where: { $0 == evmAddress }):
                     accountType = try .evmAddress(address: EvmKit.Address(hex: address.raw))
+                case let qvmAddress where QvmBlockchainManager.blockchainTypes.contains(where: { $0 == qvmAddress }):
+                    accountType = try .qvmAddress(address: QvmKit.Address(hex: address.raw))
                 case .tron:
                     accountType = try .tronAddress(address: TronKit.Address(address: address.raw))
                 case .ton:
@@ -234,8 +239,23 @@ class WatchViewModel: ObservableObject {
         case .mnemonic, .evmPrivateKey, .trcPrivateKey, .stellarSecretKey:
             return nil
 
-        case .evmAddress:
-            let blockchains = evmBlockchainManager.allBlockchains
+        case let .evmAddress(address):
+            var targets = evmBlockchainManager.allBlockchains
+                .sorted(by: { $0.type.order < $1.type.order })
+                .map { WatchTarget(blockchain: $0, accountType: accountType) }
+
+            if let qvmAddress = try? QvmKit.Address(hex: address.hex) {
+                let qvmAccountType = AccountType.qvmAddress(address: qvmAddress)
+                let qvmTargets = qvmBlockchainManager.allBlockchains
+                    .sorted(by: { $0.type.order < $1.type.order })
+                    .map { WatchTarget(blockchain: $0, accountType: qvmAccountType) }
+                targets.append(contentsOf: qvmTargets)
+            }
+
+            return .watchTargets(targets: targets)
+
+        case .qvmAddress:
+            let blockchains = qvmBlockchainManager.allBlockchains
                 .sorted(by: { $0.type.order < $1.type.order })
 
             return .blockchains(blockchains: blockchains)
@@ -295,9 +315,30 @@ class WatchViewModel: ObservableObject {
                 }
                 wallets.append(contentsOf: blockchainNativeTokenWallets)
             } catch {}
+
+        case .watchTargets:
+            ()
         }
 
         walletManager.save(wallets: wallets)
+    }
+
+    private func watchTargets(targets: [WatchTarget], enabledUids: [String], accountName: String) {
+        let enabledTargets = targets.filter { enabledUids.contains($0.uid) }
+        let groupedTargets = Dictionary(grouping: enabledTargets, by: \.accountType)
+
+        for (accountType, targets) in groupedTargets {
+            let account = accountFactory.watchAccount(type: accountType, name: accountName)
+            accountManager.save(account: account)
+
+            let tokenQueries = targets.map { $0.blockchain.type.defaultTokenQuery }
+            let wallets = (try? marketKit.tokens(queries: tokenQueries).map { token in
+                Wallet(token: token, account: account)
+            }) ?? []
+            walletManager.save(wallets: wallets)
+
+            stat(page: .watchWallet, event: .watchWallet(walletType: accountType.statDescription))
+        }
     }
 
     private func clearRequiredFields() {
@@ -326,6 +367,8 @@ extension WatchViewModel {
 
         if case let .coins(tokens) = items, tokens.count <= 1 {
             watch(items: items, enabledUids: tokens.map(\.tokenQuery.id))
+        } else if case let .watchTargets(targets) = items, targets.count <= 1 {
+            watch(items: items, enabledUids: targets.map(\.uid))
         } else {
             itemsSubject.send(items)
         }
@@ -338,6 +381,13 @@ extension WatchViewModel {
 
         let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
         let accountName = trimmedName.isEmpty ? defaultAccountName : trimmedName
+
+        if case let .watchTargets(targets) = items {
+            watchTargets(targets: targets, enabledUids: enabledUids, accountName: accountName)
+            successSubject.send()
+            return
+        }
+
         let account = accountFactory.watchAccount(type: accountType, name: accountName)
 
         accountManager.save(account: account)
@@ -369,12 +419,22 @@ extension WatchViewModel {
     enum Items: Hashable {
         case coins(tokens: [Token])
         case blockchains(blockchains: [Blockchain])
+        case watchTargets(targets: [WatchTarget])
 
         var title: String {
             switch self {
-            case .blockchains: return "watch_address.choose_blockchain".localized
+            case .blockchains, .watchTargets: return "watch_address.choose_blockchain".localized
             case .coins: return "watch_address.choose_coin".localized
             }
+        }
+    }
+
+    struct WatchTarget: Hashable {
+        let blockchain: Blockchain
+        let accountType: AccountType
+
+        var uid: String {
+            blockchain.uid
         }
     }
 

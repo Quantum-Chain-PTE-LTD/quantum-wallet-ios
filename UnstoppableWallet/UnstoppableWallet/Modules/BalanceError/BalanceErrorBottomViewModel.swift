@@ -5,6 +5,7 @@ class BalanceErrorBottomViewModel: ObservableObject {
     private let adapterManager = Core.shared.adapterManager
     private let btcBlockchainManager = Core.shared.btcBlockchainManager
     private let evmBlockchainManager = Core.shared.evmBlockchainManager
+    private let qvmBlockchainManager = Core.shared.qvmBlockchainManager
     private let reachabilityManager = Core.shared.reachabilityManager
 
     let item: Item
@@ -16,6 +17,8 @@ class BalanceErrorBottomViewModel: ObservableObject {
             sourceType = .btc(blockchain: blockchain)
         } else if let blockchain = evmBlockchainManager.blockchain(token: wallet.token) {
             sourceType = .evm(blockchain: blockchain)
+        } else if let blockchain = qvmBlockchainManager.blockchain(token: wallet.token) {
+            sourceType = .qvm(blockchain: blockchain)
         } else if wallet.token.blockchainType == .tron {
             sourceType = .evm(blockchain: wallet.token.blockchain)
         } else if wallet.token.blockchainType == .monero {
@@ -46,6 +49,7 @@ extension BalanceErrorBottomViewModel {
     enum SourceType {
         case btc(blockchain: Blockchain)
         case evm(blockchain: Blockchain)
+        case qvm(blockchain: Blockchain)
         case monero(blockchain: Blockchain)
         case zano(blockchain: Blockchain)
     }

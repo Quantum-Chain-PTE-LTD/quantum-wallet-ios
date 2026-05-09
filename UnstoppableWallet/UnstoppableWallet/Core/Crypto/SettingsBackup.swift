@@ -3,6 +3,7 @@ import Foundation
 
 class SettingsBackup: Codable {
     let evmSyncSources: EvmSyncSourceManager.SyncSourceBackup
+    let qvmSyncSources: QvmSyncSourceManager.SyncSourceBackup
     var moneroNodes: MoneroNodeManager.NodeBackup
     var zanoNodes: ZanoNodeManager.NodeBackup
     let btcModes: [BtcBlockchainManager.BtcRestoreModeBackup]
@@ -26,6 +27,7 @@ class SettingsBackup: Codable {
 
     enum CodingKeys: String, CodingKey {
         case evmSyncSources = "evm_sync_sources"
+        case qvmSyncSources = "qvm_sync_sources"
         case moneroNodes = "monero_nodes"
         case zanoNodes = "zano_nodes"
         case btcModes = "btc_modes"
@@ -48,6 +50,7 @@ class SettingsBackup: Codable {
 
     init(
         evmSyncSources: EvmSyncSourceManager.SyncSourceBackup,
+        qvmSyncSources: QvmSyncSourceManager.SyncSourceBackup,
         moneroNodes: MoneroNodeManager.NodeBackup,
         zanoNodes: ZanoNodeManager.NodeBackup,
         btcModes: [BtcBlockchainManager.BtcRestoreModeBackup],
@@ -68,6 +71,7 @@ class SettingsBackup: Codable {
         appIcon: String
     ) {
         self.evmSyncSources = evmSyncSources
+        self.qvmSyncSources = qvmSyncSources
         self.moneroNodes = moneroNodes
         self.zanoNodes = zanoNodes
         self.btcModes = btcModes
@@ -91,6 +95,7 @@ class SettingsBackup: Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         evmSyncSources = try container.decode(EvmSyncSourceManager.SyncSourceBackup.self, forKey: .evmSyncSources)
+        qvmSyncSources = (try? container.decode(QvmSyncSourceManager.SyncSourceBackup.self, forKey: .qvmSyncSources)) ?? .init(selected: [], custom: [])
         moneroNodes = (try? container.decode(MoneroNodeManager.NodeBackup.self, forKey: .moneroNodes)) ?? .init(selected: [], custom: [])
         zanoNodes = (try? container.decode(ZanoNodeManager.NodeBackup.self, forKey: .zanoNodes)) ?? .init(selected: [], custom: [])
         btcModes = try container.decode([BtcBlockchainManager.BtcRestoreModeBackup].self, forKey: .btcModes)

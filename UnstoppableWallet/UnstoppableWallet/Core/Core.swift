@@ -346,6 +346,7 @@ class Core {
             walletManager: walletManager,
             watchlistManager: watchlistManager,
             evmSyncSourceManager: evmSyncSourceManager,
+            qvmSyncSourceManager: qvmSyncSourceManager,
             moneroNodeManager: moneroNodeManager,
             zanoNodeManager: zanoNodeManager,
             btcBlockchainManager: btcBlockchainManager,

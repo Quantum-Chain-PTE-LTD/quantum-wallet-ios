@@ -444,6 +444,18 @@
 		7B0000060000000000000039 /* QvmSendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000039 /* QvmSendData.swift */; };
 		7B0000060000000000000040 /* QvmSendHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000040 /* QvmSendHandler.swift */; };
 		7B0000060000000000000041 /* QvmTransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000040000000000000041 /* QvmTransactionService.swift */; };
+		7B0000090000000000000001 /* QvmNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000001 /* QvmNetworkView.swift */; };
+		7B0000090000000000000002 /* QvmNetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000002 /* QvmNetworkViewModel.swift */; };
+		7B0000090000000000000003 /* AddQvmSyncSourceModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000003 /* AddQvmSyncSourceModule.swift */; };
+		7B0000090000000000000004 /* AddQvmSyncSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000004 /* AddQvmSyncSourceViewController.swift */; };
+		7B0000090000000000000005 /* AddQvmSyncSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000005 /* AddQvmSyncSourceViewModel.swift */; };
+		7B0000090000000000000006 /* AddQvmSyncSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000006 /* AddQvmSyncSourceService.swift */; };
+		7B00000A0000000000000001 /* QvmNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000001 /* QvmNetworkView.swift */; };
+		7B00000A0000000000000002 /* QvmNetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000002 /* QvmNetworkViewModel.swift */; };
+		7B00000A0000000000000003 /* AddQvmSyncSourceModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000003 /* AddQvmSyncSourceModule.swift */; };
+		7B00000A0000000000000004 /* AddQvmSyncSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000004 /* AddQvmSyncSourceViewController.swift */; };
+		7B00000A0000000000000005 /* AddQvmSyncSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000005 /* AddQvmSyncSourceViewModel.swift */; };
+		7B00000A0000000000000006 /* AddQvmSyncSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0000080000000000000006 /* AddQvmSyncSourceService.swift */; };
 		11B3552937152C5A4169C018 /* PasscodeLockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3505A43D9C2787B3BD153 /* PasscodeLockManager.swift */; };
 		11B35529AB46C98BC35C72E4 /* CoinPriceListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B35EE1C1F555F4160AC201 /* CoinPriceListProvider.swift */; };
 		11B35530A9FC0972D8716C31 /* ValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B357A5569EAC7D20CD40B2 /* ValueFormatter.swift */; };
@@ -3968,6 +3980,12 @@
 		7B0000040000000000000039 /* QvmSendData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmSendData.swift; sourceTree = "<group>"; };
 		7B0000040000000000000040 /* QvmSendHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmSendHandler.swift; sourceTree = "<group>"; };
 		7B0000040000000000000041 /* QvmTransactionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmTransactionService.swift; sourceTree = "<group>"; };
+		7B0000080000000000000001 /* QvmNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QvmNetworkView.swift; sourceTree = "<group>"; };
+		7B0000080000000000000002 /* QvmNetworkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvmNetworkViewModel.swift; sourceTree = "<group>"; };
+		7B0000080000000000000003 /* AddQvmSyncSourceModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQvmSyncSourceModule.swift; sourceTree = "<group>"; };
+		7B0000080000000000000004 /* AddQvmSyncSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQvmSyncSourceViewController.swift; sourceTree = "<group>"; };
+		7B0000080000000000000005 /* AddQvmSyncSourceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQvmSyncSourceViewModel.swift; sourceTree = "<group>"; };
+		7B0000080000000000000006 /* AddQvmSyncSourceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQvmSyncSourceService.swift; sourceTree = "<group>"; };
 		11B35252F90F25774BDD2CB3 /* NftActivityModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NftActivityModule.swift; sourceTree = "<group>"; };
 		11B352648C452D611F1EDF61 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		11B35264F7CE80AD5D9A540A /* CoinInvestment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinInvestment.swift; sourceTree = "<group>"; };
@@ -6414,6 +6432,16 @@
 			path = EvmNetwork;
 			sourceTree = "<group>";
 		};
+		7B0000080000000000000101 /* QvmNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				7B0000080000000000000001 /* QvmNetworkView.swift */,
+				7B0000080000000000000002 /* QvmNetworkViewModel.swift */,
+				7B0000080000000000000102 /* AddQvmSyncSource */,
+			);
+			path = QvmNetwork;
+			sourceTree = "<group>";
+		};
 		11B354AB3C3435F2D5F39EE6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -6469,6 +6497,7 @@
 				11B354A8CDEDDE93B3C354FE /* EvmNetwork */,
 				D0709C172E50A9180012C0E7 /* MoneroNetwork */,
 				6E0CC944EC1243B6AEE0C4FA /* ZanoNetwork */,
+				7B0000080000000000000101 /* QvmNetwork */,
 				58AAA1C57EF90D7B94C6ED2D /* Swap */,
 				58AAA1EF2C6D61338F6DF12E /* SwapSettings */,
 				58AAA8CDAF16B76AE70B0DD2 /* SwapSelectProvider */,
@@ -7119,6 +7148,17 @@
 				11B35F8A77664848396B7567 /* AddEvmSyncSourceService.swift */,
 			);
 			path = AddEvmSyncSource;
+			sourceTree = "<group>";
+		};
+		7B0000080000000000000102 /* AddQvmSyncSource */ = {
+			isa = PBXGroup;
+			children = (
+				7B0000080000000000000003 /* AddQvmSyncSourceModule.swift */,
+				7B0000080000000000000004 /* AddQvmSyncSourceViewController.swift */,
+				7B0000080000000000000005 /* AddQvmSyncSourceViewModel.swift */,
+				7B0000080000000000000006 /* AddQvmSyncSourceService.swift */,
+			);
+			path = AddQvmSyncSource;
 			sourceTree = "<group>";
 		};
 		11B35A52DF53F381A5B84BD4 /* RestoreSettings */ = {
@@ -12010,6 +12050,12 @@
 				7B0000050000000000000039 /* QvmSendData.swift in Sources */,
 				7B0000050000000000000040 /* QvmSendHandler.swift in Sources */,
 				7B0000050000000000000041 /* QvmTransactionService.swift in Sources */,
+				7B0000090000000000000001 /* QvmNetworkView.swift in Sources */,
+				7B0000090000000000000002 /* QvmNetworkViewModel.swift in Sources */,
+				7B0000090000000000000003 /* AddQvmSyncSourceModule.swift in Sources */,
+				7B0000090000000000000004 /* AddQvmSyncSourceViewController.swift in Sources */,
+				7B0000090000000000000005 /* AddQvmSyncSourceViewModel.swift in Sources */,
+				7B0000090000000000000006 /* AddQvmSyncSourceService.swift in Sources */,
 				11B35EA628D9401F5C3A9CB8 /* NftKit.swift in Sources */,
 				11B35DE5BD5716307300AD2F /* OneInchKit.swift in Sources */,
 				D3833AD82BEE1A7900ACECFB /* MarketWatchlistView.swift in Sources */,
@@ -13758,6 +13804,12 @@
 				7B0000060000000000000039 /* QvmSendData.swift in Sources */,
 				7B0000060000000000000040 /* QvmSendHandler.swift in Sources */,
 				7B0000060000000000000041 /* QvmTransactionService.swift in Sources */,
+				7B00000A0000000000000001 /* QvmNetworkView.swift in Sources */,
+				7B00000A0000000000000002 /* QvmNetworkViewModel.swift in Sources */,
+				7B00000A0000000000000003 /* AddQvmSyncSourceModule.swift in Sources */,
+				7B00000A0000000000000004 /* AddQvmSyncSourceViewController.swift in Sources */,
+				7B00000A0000000000000005 /* AddQvmSyncSourceViewModel.swift in Sources */,
+				7B00000A0000000000000006 /* AddQvmSyncSourceService.swift in Sources */,
 				11B355734D16C412220BBEBD /* NftKit.swift in Sources */,
 				11B352309B81355B88BF6B66 /* OneInchKit.swift in Sources */,
 				D3833AD72BEE1A7900ACECFB /* MarketWatchlistView.swift in Sources */,

@@ -29,6 +29,7 @@ class CreateAccountViewModel: ObservableObject {
         let tokenQueries = [
             TokenQuery(blockchainType: .bitcoin, tokenType: .derived(derivation: .bip84)), // TODO: make derivation supports accountType
             TokenQuery(blockchainType: .ethereum, tokenType: .native),
+            TokenQuery(blockchainType: .quantumChain, tokenType: .native),
             TokenQuery(blockchainType: .monero, tokenType: .native),
             TokenQuery(blockchainType: .tron, tokenType: .native),
             TokenQuery(blockchainType: .binanceSmartChain, tokenType: .native),

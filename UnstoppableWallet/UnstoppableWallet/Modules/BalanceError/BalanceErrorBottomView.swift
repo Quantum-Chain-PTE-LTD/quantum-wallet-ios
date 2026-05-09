@@ -43,6 +43,10 @@ struct BalanceErrorBottomView: View {
                         Coordinator.shared.present { isPresented in
                             EvmNetworkView(blockchain: blockchain, isPresented: isPresented)
                         }
+                    case let .qvm(blockchain):
+                        Coordinator.shared.present { isPresented in
+                            QvmNetworkView(blockchain: blockchain, isPresented: isPresented)
+                        }
                     case let .monero(blockchain):
                         Coordinator.shared.present { isPresented in
                             MoneroNetworkView(blockchain: blockchain, isPresented: isPresented)
