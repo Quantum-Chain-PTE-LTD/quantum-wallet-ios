@@ -21,7 +21,7 @@ struct SwapOptionsView: View {
                             Image("telegram").cornerRadius(4)
                         },
                         middle: {
-                            MultiText(title: "Unstoppable Telegram bot")
+                            MultiText(title: "Swap Telegram bot")
                         },
                         right: {
                             ThemeImage("arrow_b_right", size: 20)
@@ -44,7 +44,7 @@ struct SwapOptionsView: View {
                             Image("unstoppable").cornerRadius(4)
                         },
                         middle: {
-                            MultiText(title: "Unstoppable Swap site")
+                            MultiText(title: "Swap site")
                         },
                         right: {
                             ThemeImage("arrow_b_right", size: 20)

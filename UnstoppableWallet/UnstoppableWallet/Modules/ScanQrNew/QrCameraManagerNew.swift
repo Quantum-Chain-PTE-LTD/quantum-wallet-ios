@@ -3,7 +3,7 @@ import Combine
 
 class QrCameraManagerNew: NSObject {
     private let captureSession = AVCaptureSession()
-    private let scanQueue = DispatchQueue(label: "io.horizontalsystems.unstoppable.qr_camera_new", qos: .default)
+    private let scanQueue = DispatchQueue(label: "com.quantum.chain.wallet.qr_camera_new", qos: .default)
     private let scannedSubject = PassthroughSubject<String, Never>()
     private let errorSubject = PassthroughSubject<Error, Never>()
     private var isConfigured = false

@@ -4,7 +4,7 @@ import StoreKit
 class PurchaseManager: NSObject {
     private let localStorage: LocalStorage
 
-    private let offerUpdateQueue = DispatchQueue(label: "\(AppConfig.label).unstoppable-wallet.offer-update", qos: .userInitiated)
+    private let offerUpdateQueue = DispatchQueue(label: "\(AppConfig.label).quantum-wallet.offer-update", qos: .userInitiated)
     private let dataAccessQueue = DispatchQueue(label: "\(AppConfig.label).data-access", qos: .userInitiated)
 
     static let productName = "premium"

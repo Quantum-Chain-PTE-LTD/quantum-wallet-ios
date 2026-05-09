@@ -73,7 +73,7 @@ struct CoinListView: View {
         GeometryReader { proxy in
             ListSection {
                 ForEach(items, id: \.uid) { item in
-                    Link(destination: URL(string: "unstoppable.money://coin/\(item.uid)")!) {
+                    Link(destination: URL(string: "quantumcha.in://coin/\(item.uid)")!) {
                         rowBuilder(item)
                             .padding(.horizontal, .margin16)
                             .frame(maxHeight: .infinity)

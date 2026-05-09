@@ -294,7 +294,7 @@ struct MainSettingsView: View {
                     stat(page: .settings, event: .open(page: .appearance))
                 }
         }) {
-            ThemeImage("uw_logo", size: .iconSize24)
+            ThemeImage("manage", size: .iconSize24)
             Text("settings.appearance".localized).themeBody()
             Image.disclosureIcon
         }

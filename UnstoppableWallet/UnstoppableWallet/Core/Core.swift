@@ -262,7 +262,7 @@ class Core {
             name: AppConfig.appName,
             description: "",
             url: AppConfig.appWebPageLink,
-            icons: ["https://raw.githubusercontent.com/horizontalsystems/HS-Design/master/PressKit/UW-AppIcon-on-light.png"]
+            icons: ["https://raw.githubusercontent.com/Quantum-Chain-PTE-LTD/quantum-wallet-ios/master/QuantumWallet/QuantumWallet/AppIcon.xcassets/AppIcon.appiconset/qwallet_1024.png"]
         )
 
         let walletConnectService = WalletConnectService(

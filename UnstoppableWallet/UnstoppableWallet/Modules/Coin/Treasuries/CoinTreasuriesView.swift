@@ -107,7 +107,7 @@ struct CoinTreasuriesView: View {
             ListRow {
                 itemContent(
                     imageUrl: nil,
-                    fund: "Unstoppable",
+                    fund: "Quantum Wallet",
                     amount: "123.45 BTC",
                     country: "KG",
                     amountInCurrency: "$123.45"

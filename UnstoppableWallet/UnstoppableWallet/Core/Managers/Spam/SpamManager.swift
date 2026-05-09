@@ -46,7 +46,7 @@ final class SpamManager {
         self.outputCache = outputCache
         self.logger = logger
 
-        queue = DispatchQueue(label: "io.horizontalsystems.spam-manager.\(blockchainType.uid)", qos: .userInitiated)
+        queue = DispatchQueue(label: "\(AppConfig.label).spam-manager.\(blockchainType.uid)", qos: .userInitiated)
     }
 
     // MARK: - Public API
