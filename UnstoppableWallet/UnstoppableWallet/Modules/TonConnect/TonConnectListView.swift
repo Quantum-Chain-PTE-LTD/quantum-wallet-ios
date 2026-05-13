@@ -76,7 +76,7 @@ struct TonConnectListView: View {
 //                                                                tonConnectApp = nil
                         },
                     ])),
-                ],
+                ]
             )
         }
     }

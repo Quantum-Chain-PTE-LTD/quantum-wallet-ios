@@ -26,7 +26,7 @@ struct DefenseSystemView: View {
         BubbleView(
             tailPosition: tailPosition,
             strokeColor: style.strokeColor,
-            fillColor: style.fillColor,
+            fillColor: style.fillColor
         ) {
             VStack(spacing: 12) {
                 VStack(spacing: 8) {

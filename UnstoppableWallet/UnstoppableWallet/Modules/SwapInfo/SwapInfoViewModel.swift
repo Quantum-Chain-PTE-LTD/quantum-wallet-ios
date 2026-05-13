@@ -82,12 +82,12 @@ class SwapInfoViewModel: ObservableObject {
                 .amount(
                     token: swap.tokenIn,
                     appValueType: .regular(appValue: AppValue(token: swap.tokenIn, value: swap.amountIn)),
-                    currencyValue: rates[rateKeyIn].map { CurrencyValue(currency: $0.currency, value: swap.amountIn * $0.value) },
+                    currencyValue: rates[rateKeyIn].map { CurrencyValue(currency: $0.currency, value: swap.amountIn * $0.value) }
                 ),
                 .amount(
                     token: swap.tokenOut,
                     appValueType: .regular(appValue: AppValue(token: swap.tokenOut, value: swap.amountOut)),
-                    currencyValue: rates[rateKeyOut].map { CurrencyValue(currency: $0.currency, value: swap.amountOut * $0.value) },
+                    currencyValue: rates[rateKeyOut].map { CurrencyValue(currency: $0.currency, value: swap.amountOut * $0.value) }
                 ),
             ], isFlow: true),
             .init(fields, isMain: false),

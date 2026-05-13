@@ -5,9 +5,11 @@ import MarketKit
 
 class Qip20AddressValidator {
     private let qvmSyncSourceManager: QvmSyncSourceManager
+    private let networkManager: NetworkManager
 
-    init() {
-        qvmSyncSourceManager = Core.shared.qvmSyncSourceManager
+    init(qvmSyncSourceManager: QvmSyncSourceManager, networkManager: NetworkManager) {
+        self.qvmSyncSourceManager = qvmSyncSourceManager
+        self.networkManager = networkManager
     }
 
     static func method(address: Address, contractAddress: QvmKit.Address) -> ContractMethod? {
@@ -41,21 +43,36 @@ class Qip20AddressValidator {
     }
 }
 
-extension Qip20AddressValidator: IAddressSecurityChecker {
-    func check(address: Address, token: Token) async throws -> Bool {
-        guard case let .eip20(addressString) = token.type,
-              let contractAddress = try? QvmKit.Address(hex: addressString),
-              let syncSource = qvmSyncSourceManager.defaultSyncSources(blockchainType: token.blockchainType).first,
-              let method = Self.method(address: address, contractAddress: contractAddress)
-        else {
-            return false
+extension Qip20AddressValidator: IContractAddressValidator {
+    func canCheck(blockchainType: BlockchainType) -> Bool {
+        QvmBlockchainManager.blockchainTypes.contains(blockchainType)
+    }
+
+    func supports(token: Token) -> Bool {
+        Self.supports(token: token)
+    }
+
+    func isClear(address: Address, coinUid: String, blockchainType: BlockchainType, contractAddress: String) async throws -> Bool {
+        guard let qvmAddress = try? QvmKit.Address(hex: address.raw) else {
+            throw ContractAddressValidatorChain.CheckError.invalidAddress
         }
 
-        let networkManager = NetworkManager(logger: Core.shared.logger)
+        guard let qvmContractAddress = try? QvmKit.Address(hex: contractAddress) else {
+            throw ContractAddressValidatorChain.CheckError.invalidContractAddress
+        }
+
+        guard let syncSource = qvmSyncSourceManager.defaultSyncSources(blockchainType: blockchainType).first else {
+            throw ContractAddressValidatorChain.CheckError.noSyncSource
+        }
+
+        guard let method = Self.method(address: Address(raw: address.raw), contractAddress: qvmContractAddress) else {
+            throw ContractAddressValidatorChain.CheckError.noMethod
+        }
+
         let responseData = try await QvmKit.Kit.call(
             networkManager: networkManager,
             rpcSource: syncSource.rpcSource,
-            contractAddress: contractAddress,
+            contractAddress: qvmContractAddress,
             data: method.encodedABI(),
             defaultBlockParameter: .latest
         )

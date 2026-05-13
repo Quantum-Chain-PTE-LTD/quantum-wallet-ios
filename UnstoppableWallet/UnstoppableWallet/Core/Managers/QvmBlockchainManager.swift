@@ -1,4 +1,5 @@
 import QvmKit
+import Foundation
 import HsToolKit
 import MarketKit
 

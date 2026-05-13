@@ -28,7 +28,7 @@ enum SendField {
                 middle: {
                     MultiText(
                         eyebrow: ComponentText(text: token.coin.code, colorStyle: .primary),
-                        subtitle: token.fullBadge,
+                        subtitle: token.fullBadge
                     )
                 },
                 right: {

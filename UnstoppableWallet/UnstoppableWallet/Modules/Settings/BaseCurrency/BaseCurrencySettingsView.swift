@@ -69,7 +69,7 @@ struct BaseCurrencySettingsView: View {
                         isPresented.wrappedValue = false
                     },
                 ])),
-            ],
+            ]
         )
     }
 }

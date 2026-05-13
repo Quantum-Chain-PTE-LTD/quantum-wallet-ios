@@ -47,7 +47,7 @@ struct QvmDecoration {
             .amount(
                 token: token,
                 appValueType: .regular(appValue: appValue),
-                currencyValue: currencyValue,
+                currencyValue: currencyValue
             ),
             .address(
                 value: to.qip55,
@@ -65,14 +65,14 @@ struct QvmDecoration {
             amountField = .amount(
                 token: token,
                 appValueType: .withoutAmount(code: token.coin.code),
-                currencyValue: nil,
+                currencyValue: nil
             )
         } else {
             amountField = self.amountField(
                 token: token,
                 value: value,
                 currency: currency,
-                rate: rates[token.coin.uid],
+                rate: rates[token.coin.uid]
             )
         }
 
@@ -103,7 +103,7 @@ struct QvmDecoration {
         return .amount(
             token: token,
             appValueType: appValue.isMaxValue ? .infinity(code: appValue.code) : .regular(appValue: appValue),
-            currencyValue: appValue.isMaxValue ? nil : rate.map { CurrencyValue(currency: currency, value: $0 * value) },
+            currencyValue: appValue.isMaxValue ? nil : rate.map { CurrencyValue(currency: currency, value: $0 * value) }
         )
     }
 }

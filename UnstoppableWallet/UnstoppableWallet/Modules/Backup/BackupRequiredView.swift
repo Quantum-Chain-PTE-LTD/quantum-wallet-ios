@@ -29,7 +29,7 @@ struct BackupRequiredView: View {
                         Coordinator.shared.presentWalletBackup(account: account, statPage: statPage)
                     },
                 ])),
-            ],
+            ]
         )
     }
 

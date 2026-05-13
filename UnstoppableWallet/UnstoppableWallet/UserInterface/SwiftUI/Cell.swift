@@ -12,7 +12,7 @@ struct Cell<Left: View, Middle: View, Right: View>: View {
         @ViewBuilder left: () -> Left = { EmptyView() },
         @ViewBuilder middle: () -> Middle,
         @ViewBuilder right: () -> Right = { EmptyView() },
-        action: (() -> Void)? = nil,
+        action: (() -> Void)? = nil
     ) {
         self.style = style
         self.left = left()

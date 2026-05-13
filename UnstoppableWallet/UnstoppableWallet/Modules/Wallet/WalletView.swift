@@ -111,7 +111,7 @@ struct WalletView: View {
                         RightButtonText(text: address.shortened, icon: "copy_filled") {
                             CopyHelper.copyAndNotify(value: address)
                         }
-                    },
+                    }
                 )
             } else if !viewModel.buttonHidden {
                 let buttons = viewModel.buttons

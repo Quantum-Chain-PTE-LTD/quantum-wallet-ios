@@ -315,12 +315,12 @@ extension MultiSwapSendHandler {
                 .amount(
                     token: tokenIn,
                     appValueType: .regular(appValue: AppValue(token: tokenIn, value: amountIn)),
-                    currencyValue: rates[tokenIn.coin.uid].map { CurrencyValue(currency: currency, value: amountIn * $0) },
+                    currencyValue: rates[tokenIn.coin.uid].map { CurrencyValue(currency: currency, value: amountIn * $0) }
                 ),
                 .amount(
                     token: tokenOut,
                     appValueType: .regular(appValue: AppValue(token: tokenOut, value: quote.amountOut)),
-                    currencyValue: rates[tokenOut.coin.uid].map { CurrencyValue(currency: currency, value: quote.amountOut * $0) },
+                    currencyValue: rates[tokenOut.coin.uid].map { CurrencyValue(currency: currency, value: quote.amountOut * $0) }
                 ),
             ], isFlow: true)
         }
@@ -406,10 +406,10 @@ extension MultiSwapSendHandler {
         switch tokenIn.type {
         case .native, .derived, .addressType:
             baseToken = tokenIn
-        case .eip20, .spl, .jetton, .stellar, .zanoAsset:
+        case .eip20, .qrc20, .spl, .jetton, .stellar, .zanoAsset:
             baseToken = try? Core.shared.marketKit.token(query: TokenQuery(blockchainType: tokenIn.blockchainType, tokenType: .native))
         case .unsupported:
-            baseToken = nil
+            baseToken = nil;
         }
 
         guard let baseToken else {

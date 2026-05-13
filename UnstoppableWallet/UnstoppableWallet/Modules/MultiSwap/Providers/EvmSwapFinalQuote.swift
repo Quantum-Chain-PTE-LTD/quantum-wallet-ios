@@ -56,7 +56,7 @@ class EvmSwapFinalQuote: SwapFinalQuote {
 
         if let nonce {
             fields.append(
-                .levelValue(title: "send.confirmation.nonce".localized, value: String(nonce), level: .regular),
+                .levelValue(title: "send.confirmation.nonce".localized, value: String(nonce), level: .regular)
             )
         }
 

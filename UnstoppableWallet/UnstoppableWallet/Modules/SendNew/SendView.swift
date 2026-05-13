@@ -72,7 +72,7 @@ struct SendView: View {
                                 isPresented.wrappedValue = false
                             }),
                         ])),
-                    ],
+                    ]
                 )
             }
 

@@ -72,7 +72,7 @@ class StellarSendHelper {
         try await StellarKit.Kit.send(
             operations: operations,
             memo: memo,
-            keyPair: keyPair,
+            keyPair: keyPair
         )
     }
 
@@ -86,7 +86,7 @@ class StellarSendHelper {
         case let .envelope(envelope):
             _ = try await StellarKit.Kit.send(
                 transactionEnvelope: envelope,
-                keyPair: keyPair,
+                keyPair: keyPair
             )
 
         case let .payment(asset, amount, accountId, memo):

@@ -52,7 +52,7 @@ class EvmSendData: ISendData {
 
         if let nonce {
             fields.append(
-                .simpleValue(title: "send.confirmation.nonce".localized, value: String(nonce)),
+                .simpleValue(title: "send.confirmation.nonce".localized, value: String(nonce))
             )
         }
 

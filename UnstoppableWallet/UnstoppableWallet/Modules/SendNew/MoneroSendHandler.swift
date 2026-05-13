@@ -143,7 +143,7 @@ extension MoneroSendHandler {
                 .amount(
                     token: token,
                     appValueType: .regular(appValue: amountData.appValue),
-                    currencyValue: amountData.currencyValue,
+                    currencyValue: amountData.currencyValue
                 ),
                 .address(
                     value: address,

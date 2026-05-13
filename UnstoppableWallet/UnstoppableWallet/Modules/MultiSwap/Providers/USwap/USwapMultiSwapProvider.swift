@@ -265,7 +265,7 @@ class USwapMultiSwapProvider: IMultiSwapProvider {
                 amountOutMin: amountOutMin,
                 quote: quote,
                 slippage: slippage,
-                recipient: recipient,
+                recipient: recipient
             )
         case .ton:
             return try await buildTonConfirmationQuote(
@@ -754,7 +754,7 @@ class USwapMultiSwapProvider: IMultiSwapProvider {
             let estimatedFee = try adapter.estimateFee(
                 amount: amount,
                 address: quote.inboundAddress,
-                priority: priority,
+                priority: priority
             )
 
             fee = estimatedFee

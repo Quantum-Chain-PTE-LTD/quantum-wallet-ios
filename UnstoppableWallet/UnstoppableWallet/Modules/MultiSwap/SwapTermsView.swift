@@ -60,7 +60,7 @@ struct SwapTermsView: View {
                     ThemeText(item.title, style: .subhead, colorStyle: .primary)
                     ThemeText(item.description, style: .subhead)
                 }
-            },
+            }
         )
         .contentShape(Rectangle())
         .onTapGesture {

@@ -267,7 +267,7 @@ extension WalletConnectStellarTransactionHandler {
             payload: payload,
             baseToken: baseToken,
             keyPair: keyPair,
-            stellarKit: stellarKit,
+            stellarKit: stellarKit
         )
     }
 }

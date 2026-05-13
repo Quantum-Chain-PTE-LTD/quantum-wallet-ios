@@ -74,7 +74,7 @@ struct ZcashWalletTokenView: View {
                                     },
                                 ],
                                 alignment: .horizontal)),
-                        ],
+                        ]
                     )
                 }
             }

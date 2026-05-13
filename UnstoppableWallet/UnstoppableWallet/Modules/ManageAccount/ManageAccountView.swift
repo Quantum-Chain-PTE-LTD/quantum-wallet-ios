@@ -199,7 +199,7 @@ struct ManageAccountView: View {
                         unlink()
                     },
                 ])),
-            ],
+            ]
         )
     }
 
@@ -217,7 +217,7 @@ struct ManageAccountView: View {
                         isPresented.wrappedValue = false
                     },
                 ])),
-            ],
+            ]
         )
     }
 
@@ -238,7 +238,7 @@ struct ManageAccountView: View {
                         isPresented.wrappedValue = false
                     },
                 ])),
-            ],
+            ]
         )
     }
 

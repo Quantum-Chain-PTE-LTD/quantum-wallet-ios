@@ -152,7 +152,7 @@ extension StellarSendHandler {
                     .amount(
                         token: token,
                         appValueType: appValue.isMaxValue ? .infinity(code: appValue.code) : .regular(appValue: appValue),
-                        currencyValue: appValue.isMaxValue ? nil : rates[token.coin.uid].map { CurrencyValue(currency: currency, value: $0 * limit) },
+                        currencyValue: appValue.isMaxValue ? nil : rates[token.coin.uid].map { CurrencyValue(currency: currency, value: $0 * limit) }
                     ),
                     .address(
                         value: asset.issuer ?? "",

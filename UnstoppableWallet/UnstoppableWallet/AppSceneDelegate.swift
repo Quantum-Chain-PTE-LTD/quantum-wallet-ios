@@ -5,14 +5,16 @@ class AppSceneDelegate: NSObject, UIWindowSceneDelegate {
     private var backgroundTask: UIBackgroundTaskIdentifier = .invalid
 
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
+        guard let core = Core.instance else { return }
         let windowScene = scene as? UIWindowScene
 
-        Core.shared.coverManager.windowScene = windowScene
-        Core.shared.lockManager.windowScene = windowScene
+        core.coverManager.windowScene = windowScene
+        core.lockManager.windowScene = windowScene
     }
 
     func sceneDidEnterBackground(_: UIScene) {
-        Core.shared.appManager.didEnterBackground()
+        guard let core = Core.instance else { return }
+        core.appManager.didEnterBackground()
 
         backgroundTask = UIApplication.shared.beginBackgroundTask {
             UIApplication.shared.endBackgroundTask(self.backgroundTask)
@@ -21,7 +23,8 @@ class AppSceneDelegate: NSObject, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_: UIScene) {
-        Core.shared.appManager.willEnterForeground()
+        guard let core = Core.instance else { return }
+        core.appManager.willEnterForeground()
 
         if backgroundTask != UIBackgroundTaskIdentifier.invalid {
             UIApplication.shared.endBackgroundTask(backgroundTask)
@@ -30,10 +33,10 @@ class AppSceneDelegate: NSObject, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_: UIScene) {
-        Core.shared.appManager.didBecomeActive()
+        Core.instance?.appManager.didBecomeActive()
     }
 
     func sceneWillResignActive(_: UIScene) {
-        Core.shared.appManager.willResignActive()
+        Core.instance?.appManager.willResignActive()
     }
 }

@@ -56,7 +56,7 @@ class WalletConnectVerificationModel: ObservableObject {
                             isPresented.wrappedValue = false
                         },
                     ])),
-                ],
+                ]
             )
         }
     }
@@ -79,7 +79,7 @@ class WalletConnectVerificationModel: ObservableObject {
                             isPresented.wrappedValue = false
                         },
                     ])),
-                ],
+                ]
             )
         }
     }

@@ -54,7 +54,7 @@ class TronWalletTokenViewModel: ObservableObject {
                                 self?.showAddressView()
                             }),
                         ])),
-                    ],
+                    ]
                 )
             }
         }

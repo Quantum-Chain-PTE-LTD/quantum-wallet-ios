@@ -16,7 +16,7 @@ struct BlockchainListView: View {
                         },
                         middle: {
                             ThemeText(blockchain.name, style: .headline2, colorStyle: .primary)
-                        },
+                        }
                     )
                 }
             }

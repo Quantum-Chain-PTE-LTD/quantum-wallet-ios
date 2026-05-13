@@ -21,7 +21,7 @@ struct QvmNetworkView: View {
                                 .padding(.horizontal, 16)
 
                             ListSection {
-                                ForEach(viewModel.defaultSources) { source in
+                                ForEach(viewModel.defaultSources, id: \.rpcSource.url) { source in
                                     cell(source: source)
                                 }
                             }
@@ -34,7 +34,7 @@ struct QvmNetworkView: View {
                                         .frame(maxWidth: .infinity, alignment: .leading)
 
                                     ListSection {
-                                        ForEach(viewModel.customSources) { source in
+                                        ForEach(viewModel.customSources, id: \.rpcSource.url) { source in
                                             cell(source: source)
                                                 .contextMenu {
                                                     Button {

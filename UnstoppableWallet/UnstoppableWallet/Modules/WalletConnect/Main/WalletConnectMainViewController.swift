@@ -395,7 +395,7 @@ extension WalletConnectMainViewController: SectionsDataSource {
                 bind: { cell in
                     cell.set(backgroundStyle: .lawrence, isFirst: isFirst, isLast: isLast)
                 },
-                action: action,
+                action: action
             )
         case let .blockchains(blockchains):
             let onlyOne = blockchains.count == 1

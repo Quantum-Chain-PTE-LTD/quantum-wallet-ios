@@ -60,7 +60,7 @@ extension EvmNftAdapter: INftAdapter {
         return record(nftBalance: nftBalance)
     }
 
-    func transferEip721TransactionData(contractAddress: String, to: EvmKit.Address, tokenId: String) -> TransactionData? {
+    func transferEip721TransactionData(contractAddress: String, to: EvmKit.Address, tokenId: String) -> EvmKit.TransactionData? {
         guard let contractAddress = try? EvmKit.Address(hex: contractAddress) else {
             return nil
         }
@@ -72,7 +72,7 @@ extension EvmNftAdapter: INftAdapter {
         return nftKit.transferEip721TransactionData(contractAddress: contractAddress, to: to, tokenId: tokenId)
     }
 
-    func transferEip1155TransactionData(contractAddress: String, to: EvmKit.Address, tokenId: String, value: Decimal) -> TransactionData? {
+    func transferEip1155TransactionData(contractAddress: String, to: EvmKit.Address, tokenId: String, value: Decimal) -> EvmKit.TransactionData? {
         guard let contractAddress = try? EvmKit.Address(hex: contractAddress) else {
             return nil
         }

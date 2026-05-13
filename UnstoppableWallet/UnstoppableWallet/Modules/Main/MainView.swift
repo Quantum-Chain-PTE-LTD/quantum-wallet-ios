@@ -44,95 +44,111 @@ struct MainView: View {
             }
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar { toolbar() }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    primaryToolbarView
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    leadingProgressToolbarView
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    leadingActionToolbarView
+                }
+            }
         }
     }
 
-    @ToolbarContentBuilder func toolbar() -> some ToolbarContent {
+    private var primaryToolbarView: AnyView {
         switch viewModel.selectedTab {
         case .markets:
-            ToolbarItem(placement: .primaryAction) {
-                Button(action: {
-                    Coordinator.shared.present { isPresented in
-                        MarketSearchView(isPresented: isPresented)
-                    }
-                    stat(page: .markets, event: .open(page: .marketSearch))
-                }) {
-                    Image("search")
-                }
-            }
+            return AnyView(Button(action: openMarketSearch) {
+                Image("search")
+            })
         case .wallet:
-            if walletViewModel.account != nil {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(action: {
-                        Coordinator.shared.present { isPresented in
-                            ThemeNavigationStack { ManageAccountsView(isPresented: isPresented) }
-                        }
-                        stat(page: .balance, event: .open(page: .manageWallets))
-                    }) {
-                        Image("wallet_change")
-                    }
-                }
-
-                if walletViewModel.totalItem.state == .syncing {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        ProgressView(value: 0.55)
-                            .progressViewStyle(DeterminiteSpinnerStyle())
-                            .frame(size: 24)
-                            .spinning()
-                    }
-                }
-
-                if walletViewModel.buttonHidden {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button(action: {
-                            Coordinator.shared.present { isPresented in
-                                ScanQrViewNew(reportAfterDismiss: true, isPresented: isPresented) { text in
-                                    walletViewModel.process(scanned: text)
-                                }
-                                .ignoresSafeArea()
-                            }
-                            stat(page: .balance, event: .open(page: .scanQrCode))
-                        }) {
-                            Image("scan")
-                        }
-                    }
-                }
+            guard walletViewModel.account != nil else {
+                return AnyView(EmptyView())
             }
+
+            return AnyView(Button(action: openManageAccounts) {
+                Image("wallet_change")
+            })
         case .swap:
-            ToolbarItem(placement: .primaryAction) {
-                Button(action: {
-                    Coordinator.shared.present { isPresented in
-                        SwapHistoryView(isPresented: isPresented)
-                    }
-                }) {
-                    Image("clock")
-                }
-            }
+            return AnyView(Button(action: openSwapHistory) {
+                Image("clock")
+            })
         case .transactions:
-            ToolbarItem(placement: .primaryAction) {
-                Button(action: {
-                    Coordinator.shared.present { isPresented in
-                        TransactionFilterView(transactionsViewModel: transactionsViewModel, isPresented: isPresented)
-                    }
-                    stat(page: .transactions, event: .open(page: .transactionFilter))
-                }) {
-                    Image("manage_2_24")
-                        .modifier(ToolbarBadgeModifier(visible: transactionsViewModel.transactionFilter.hasChanges))
-                }
-            }
-
-            ToolbarItem(placement: .navigationBarLeading) {
-                if transactionsViewModel.syncing {
-                    ProgressView(value: 0.55)
-                        .progressViewStyle(DeterminiteSpinnerStyle())
-                        .frame(size: 24)
-                        .spinning()
-                }
-            }
+            return AnyView(Button(action: openTransactionFilter) {
+                Image("manage_2_24")
+                    .modifier(ToolbarBadgeModifier(visible: transactionsViewModel.transactionFilter.hasChanges))
+            })
         case .settings:
-            ToolbarItem {}
+            return AnyView(EmptyView())
         }
+    }
+
+    private var leadingProgressToolbarView: AnyView {
+        switch viewModel.selectedTab {
+        case .wallet where walletViewModel.account != nil && walletViewModel.totalItem.state == .syncing:
+            return AnyView(syncingProgressView)
+        case .transactions where transactionsViewModel.syncing:
+            return AnyView(syncingProgressView)
+        default:
+            return AnyView(EmptyView())
+        }
+    }
+
+    private var leadingActionToolbarView: AnyView {
+        if viewModel.selectedTab == .wallet, walletViewModel.account != nil, walletViewModel.buttonHidden {
+            return AnyView(Button(action: openScanQr) {
+                Image("scan")
+            })
+        }
+
+        return AnyView(EmptyView())
+    }
+
+    private var syncingProgressView: some View {
+        ProgressView(value: 0.55)
+            .progressViewStyle(DeterminiteSpinnerStyle())
+            .frame(size: 24)
+            .spinning()
+    }
+
+    private func openMarketSearch() {
+        Coordinator.shared.present { isPresented in
+            MarketSearchView(isPresented: isPresented)
+        }
+        stat(page: .markets, event: .open(page: .marketSearch))
+    }
+
+    private func openManageAccounts() {
+        Coordinator.shared.present { isPresented in
+            ThemeNavigationStack { ManageAccountsView(isPresented: isPresented) }
+        }
+        stat(page: .balance, event: .open(page: .manageWallets))
+    }
+
+    private func openScanQr() {
+        Coordinator.shared.present { isPresented in
+            ScanQrViewNew(reportAfterDismiss: true, isPresented: isPresented) { text in
+                walletViewModel.process(scanned: text)
+            }
+            .ignoresSafeArea()
+        }
+        stat(page: .balance, event: .open(page: .scanQrCode))
+    }
+
+    private func openSwapHistory() {
+        Coordinator.shared.present { isPresented in
+            SwapHistoryView(isPresented: isPresented)
+        }
+    }
+
+    private func openTransactionFilter() {
+        Coordinator.shared.present { isPresented in
+            TransactionFilterView(transactionsViewModel: transactionsViewModel, isPresented: isPresented)
+        }
+        stat(page: .transactions, event: .open(page: .transactionFilter))
     }
 
     var title: String {
@@ -198,7 +214,7 @@ struct AccountsLostView: View {
                         isPresented = false
                     },
                 ])),
-            ],
+            ]
         )
     }
 }

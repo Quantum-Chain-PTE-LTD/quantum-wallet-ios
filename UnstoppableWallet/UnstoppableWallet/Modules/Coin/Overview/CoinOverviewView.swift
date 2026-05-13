@@ -443,6 +443,7 @@ struct CoinOverviewView: View {
         case let .stellar(_, issuer): return issuer.shortened
         case let .zanoAsset(id): return id.shortened
         case let .unsupported(_, reference): return reference?.shortened
+        case let .qrc20(address): return address.shortened
         }
     }
 

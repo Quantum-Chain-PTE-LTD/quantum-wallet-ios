@@ -173,7 +173,7 @@ struct CopyConfirmationWrapperView: View {
                         ),
                     ])
                 ),
-            ],
+            ]
         )
     }
 }

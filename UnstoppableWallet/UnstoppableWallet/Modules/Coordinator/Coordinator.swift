@@ -231,7 +231,7 @@ extension Coordinator {
                             isPresented.wrappedValue = false
                         },
                     ])),
-                ],
+                ]
             )
         }
     }

@@ -208,7 +208,7 @@ struct PreSendView: View {
                                 },
                                 .init(style: .transparent, title: "button.cancel".localized) { isPresented.wrappedValue = false },
                             ])),
-                        ],
+                        ]
                     )
                 }
             }

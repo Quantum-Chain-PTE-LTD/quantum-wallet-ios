@@ -175,7 +175,7 @@ struct ConfirmationButtonStyle: ViewModifier {
         if isActive {
             if #available(iOS 26, *) {
                 content
-                    .buttonStyle(.glassProminent)
+                    .buttonStyle(.borderedProminent)
                     .tint(.themeJacob)
                     .foregroundStyle(Color.themeLawrence)
             } else {

@@ -100,7 +100,7 @@ extension ZcashSendHandler {
             let from = SendField.amount(
                 token: baseToken,
                 appValueType: .regular(appValue: appValue),
-                currencyValue: rate.map { CurrencyValue(currency: currency, value: $0 * amount) },
+                currencyValue: rate.map { CurrencyValue(currency: currency, value: $0 * amount) }
             )
 
             let to = SendField.address(

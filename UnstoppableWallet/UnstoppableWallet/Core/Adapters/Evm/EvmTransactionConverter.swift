@@ -198,7 +198,7 @@ extension EvmTransactionConverter {
                 transaction: transaction,
                 baseToken: baseToken,
                 from: decoration.from.eip55,
-                value: appValue,
+                value: appValue
             )
 
         case let decoration as OutgoingDecoration:

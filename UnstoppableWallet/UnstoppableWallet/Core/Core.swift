@@ -151,9 +151,8 @@ class Core {
         marketKit = try MarketKit.Kit.instance(
             hsApiBaseUrl: AppConfig.marketApiUrl,
             hsProviderApiKey: AppConfig.hsProviderApiKey,
-            qcApiBaseUrl: AppConfig.quantumChainApiBaseUrl,
-            qcApiKey: AppConfig.quantumChainApiKey,
-            minLogLevel: .error
+            minLogLevel: .error, qcApiBaseUrl: AppConfig.quantumChainApiBaseUrl,
+            qcApiKey: AppConfig.quantumChainApiKey
         )
         marketKit.sync()
 
@@ -412,7 +411,7 @@ class Core {
                 networkManager: networkManager
             )
         )
-        contractAddressValidator.append(validator: Qip20AddressValidator())
+        contractAddressValidator.append(validator: Qip20AddressValidator(qvmSyncSourceManager: qvmSyncSourceManager, networkManager: networkManager))
         contractAddressValidator.append(validator: Trc20AddressValidator(networkManager: networkManager))
 
         valueFormatter = CurrencyValueFormatter(amountRoundingManager: amountRoundingManager)

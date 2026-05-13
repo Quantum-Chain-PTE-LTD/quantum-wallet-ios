@@ -19,6 +19,7 @@ extension TokenType {
         case .stellar: return .stellar
         case .zanoAsset: return .zanoAsset
         case .unsupported: return .unsupported
+        case .qrc20: return .qip20
         }
     }
 

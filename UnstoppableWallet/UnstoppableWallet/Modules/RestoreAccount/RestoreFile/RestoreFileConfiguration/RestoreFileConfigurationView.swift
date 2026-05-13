@@ -94,7 +94,7 @@ struct RestoreFileConfigurationView: View {
         Cell(
             middle: {
                 MultiText(title: title, subtitle: subtitle)
-            },
+            }
         )
     }
 }
