@@ -158,6 +158,18 @@ extension TermsManager {
                     Term(id: "user_responsibility", version: 1),
                 ]
             ),
+            // Quantum canonical 5-item list — mirrors Android TermsModule
+            // (Backup, PrivateKeys, DisablingPin, JailBraking, Bugs).
+            TermsConfiguration(
+                version: 5,
+                terms: [
+                    Term(id: "backup", version: 1),
+                    Term(id: "private_keys", version: 1),
+                    Term(id: "disabling_pin", version: 1),
+                    Term(id: "jailbreaking", version: 1),
+                    Term(id: "bugs", version: 1),
+                ]
+            ),
         ]
 
         var all: Set<String> {

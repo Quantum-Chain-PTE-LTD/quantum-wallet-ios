@@ -271,6 +271,15 @@ extension BlockchainType {
         }
     }
 
+    // Mirrors Android MarketKitExtensions.hasMarketData — chains without
+    // upstream HS market data should not expose Coin/Chart navigation.
+    var hasMarketData: Bool {
+        switch self {
+        case .quantumChain: return false
+        default: return true
+        }
+    }
+
     var blockTime: TimeInterval? {
         switch self {
         case .ethereum, .quantumChain: return 12

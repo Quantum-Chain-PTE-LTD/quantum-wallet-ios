@@ -4,13 +4,18 @@ import SwiftUI
 import UIKit
 
 public class ThemeManager {
-    private static let defaultLightMode: ThemeMode = .system
+    // Quantum Wallet is dark-only. Mirrors Android c13a915e which locks ThemeService to dark.
+    private static let defaultLightMode: ThemeMode = .dark
     private static let userDefaultsKey = "theme_mode"
 
     public static var shared = ThemeManager()
 
     @PostPublished public var themeMode: ThemeMode {
         didSet {
+            if themeMode != .dark {
+                themeMode = .dark
+                return
+            }
             UserDefaults.standard.set(themeMode.rawValue, forKey: ThemeManager.userDefaultsKey)
             currentTheme = ThemeManager.theme(mode: themeMode)
             Theme.updateNavigationBarTheme()
@@ -20,20 +25,12 @@ public class ThemeManager {
     private(set) var currentTheme: ITheme
 
     init() {
-        var storedThemeMode: ThemeMode?
+        // Always dark for Quantum Wallet; drop any legacy stored preference.
+        UserDefaults.standard.set(nil, forKey: "light_mode")
+        UserDefaults.standard.set(ThemeMode.dark.rawValue, forKey: ThemeManager.userDefaultsKey)
 
-        // migrate from custom theme to system supported
-        if let oldLightMode = UserDefaults.standard.value(forKey: "light_mode") as? Bool {
-            storedThemeMode = oldLightMode ? .light : .dark
-            UserDefaults.standard.set(nil, forKey: "light_mode")
-        } else if let newLightMode = UserDefaults.standard.value(forKey: ThemeManager.userDefaultsKey) as? String {
-            storedThemeMode = ThemeMode(rawValue: newLightMode)
-        }
-
-        let themeMode = storedThemeMode ?? ThemeManager.defaultLightMode
-        currentTheme = ThemeManager.theme(mode: themeMode)
-
-        self.themeMode = themeMode
+        currentTheme = ThemeManager.theme(mode: .dark)
+        themeMode = .dark
     }
 
     private static func theme(mode: ThemeMode) -> ITheme {

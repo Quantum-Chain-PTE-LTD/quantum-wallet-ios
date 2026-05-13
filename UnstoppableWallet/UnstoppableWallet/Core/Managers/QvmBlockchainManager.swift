@@ -70,16 +70,7 @@ extension QvmBlockchainManager {
     func chain(blockchainType: BlockchainType) throws -> Chain {
         switch blockchainType {
         case .quantumChain:
-            if testNetManager.testNetEnabled {
-                return Chain(
-                    id: 11_155_111,
-                    coinType: 1,
-                    syncInterval: 15,
-                    isQIP1559Supported: true
-                )
-            } else {
-                return .quantumChain
-            }
+            return .quantumChain
         default: throw ChainError.unsupportedBlockchain
         }
     }
