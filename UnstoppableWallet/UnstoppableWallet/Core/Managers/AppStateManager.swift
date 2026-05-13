@@ -12,39 +12,17 @@ class AppStateManager {
     private let localStorage = LocalStorage(userDefaultsStorage: UserDefaultsStorage())
     private let networkManager = NetworkManager()
 
-    @PostPublished private(set) var swapEnabled: Bool
+    // Quantum Wallet: swap is permanently disabled. Mirrors Android b6954986.
+    @PostPublished private(set) var swapEnabled: Bool = false
 
     init() {
-        swapEnabled = localStorage.swapEnabled
-
-        sync()
+        // Persist disabled state so any cached LocalStorage value can't re-enable it.
+        localStorage.swapEnabled = false
     }
 
-    func syncIfRequired() {
-        let lastSyncTimetamp = localStorage.appStateLastSyncTimestamp
+    func syncIfRequired() {}
 
-        if let lastSyncTimetamp, Date().timeIntervalSince1970 - lastSyncTimetamp < syncInterval {
-            return
-        }
-
-        sync()
-    }
-
-    func sync() {
-        if localStorage.forceEnableSwap {
-            swapEnabled = true
-            return
-        }
-
-        Task { [weak self, networkManager] in
-            let parameters: Parameters = ["version": AppConfig.appVersion]
-            let response: Response = try await networkManager.fetch(url: "\(AppConfig.marketApiUrl)/v1/status/app-state", parameters: parameters)
-
-            self?.swapEnabled = response.swapEnabled
-            self?.localStorage.swapEnabled = response.swapEnabled
-            self?.localStorage.appStateLastSyncTimestamp = Date().timeIntervalSince1970
-        }
-    }
+    func sync() {}
 }
 
 extension AppStateManager {
