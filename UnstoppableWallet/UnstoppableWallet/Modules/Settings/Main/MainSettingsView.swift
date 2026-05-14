@@ -46,26 +46,16 @@ struct MainSettingsView: View {
                         backupManager()
                     }
 
-                    Spacer().frame(height: .margin24)
-
-                    VStack(spacing: 0) {
-                        SectionHeader(image: Image.premiumIcon, text: ComponentText(text: "subscription.premium.label".localized, colorStyle: .yellow), horizontalInsets: .margin16)
-
-                        ListSection {
-                            vipSupport()
-                            addressChecker()
-                        }
-                        .modifier(ThemeListStyleModifier(themeListStyle: .borderedPremium, selected: true))
-                    }
+                    // Quantum Wallet parity (Android commit 79dd2877): VipSupport, About App,
+                    // FAQ and Academy entries removed; AddressChecker collapsed into the
+                    // standard list. Subscription / premium gating is being removed (D12).
 
                     Spacer().frame(height: .margin32)
 
                     ListSection {
-                        aboutApp()
+                        addressChecker()
                         rateUs()
                         tellFriend()
-                        faq()
-                        academy()
                     }
 
                     Spacer().frame(height: .margin24)
