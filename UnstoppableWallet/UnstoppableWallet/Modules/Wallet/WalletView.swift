@@ -184,10 +184,12 @@ struct WalletView: View {
                         Label("balance.swap".localized, image: "swap_e")
                     }
                 }
-                Button {
-                    Coordinator.shared.presentCoinPage(coin: item.wallet.coin, page: .tokenPage)
-                } label: {
-                    Label("balance.coin_info".localized, image: "chart")
+                if item.wallet.token.blockchainType.hasMarketData {
+                    Button {
+                        Coordinator.shared.presentCoinPage(coin: item.wallet.coin, page: .tokenPage)
+                    } label: {
+                        Label("balance.coin_info".localized, image: "chart")
+                    }
                 }
                 Button {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

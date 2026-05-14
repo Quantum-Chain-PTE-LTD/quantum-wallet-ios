@@ -139,8 +139,10 @@ extension WalletTokenViewModel {
     var buttons: [WalletButton] {
         if wallet.account.watchAccount {
             return []
-        } else {
+        } else if wallet.token.blockchainType.hasMarketData {
             return [.chart, .receive, .send, .swap]
+        } else {
+            return [.receive, .send, .swap]
         }
     }
 

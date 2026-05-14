@@ -55,7 +55,7 @@ struct WalletTokenToolbarItems: View {
         default: EmptyView()
         }
 
-        if viewModel.wallet.account.watchAccount {
+        if viewModel.wallet.account.watchAccount, viewModel.wallet.token.blockchainType.hasMarketData {
             Button(action: {
                 Coordinator.shared.presentCoinPage(coin: viewModel.wallet.coin, page: .tokenPage)
             }) {

@@ -9,28 +9,8 @@ struct AppearanceView: View {
     var body: some View {
         ScrollableThemeView {
             VStack(spacing: .margin24) {
-                ListSection {
-                    Cell(
-                        middle: {
-                            ThemeText("appearance.theme".localized, style: .headline2)
-                        },
-                        right: {
-                            ThemeText(title(themeMode: viewModel.themeMode), style: .subheadSB).arrow(style: .dropdown)
-                        },
-                        action: {
-                            Coordinator.shared.present(type: .alert) { isPresented in
-                                OptionAlertView(
-                                    title: "appearance.theme".localized,
-                                    viewItems: viewModel.themeModes.map { .init(text: title(themeMode: $0), selected: viewModel.themeMode == $0) },
-                                    onSelect: { index in
-                                        viewModel.themeMode = viewModel.themeModes[index]
-                                    },
-                                    isPresented: isPresented
-                                )
-                            }
-                        }
-                    )
-                }
+                // Quantum Wallet enforces dark-only mode (Android parity, commit c13a915e);
+                // the theme selector is intentionally hidden.
 
                 ListSection {
                     Cell(
@@ -188,29 +168,7 @@ struct AppearanceView: View {
                     }
                 }
 
-                VStack(spacing: 0) {
-                    ListSectionHeader(text: "appearance.app_icon".localized)
-                    ListSection {
-                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: .margin16) {
-                            ForEach(AppIconManager.allAppIcons, id: \.self) { appIcon in
-                                Button(action: {
-                                    viewModel.appIcon = appIcon
-                                }) {
-                                    VStack(spacing: .margin12) {
-                                        Image(appIcon.imageName)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .clipShape(RoundedRectangle(cornerRadius: .cornerRadius12, style: .continuous))
-                                            .frame(width: 60, height: 60)
-                                        ThemeText(appIcon.title, style: .subhead, colorStyle: viewModel.appIcon == appIcon ? .yellow : .primary)
-                                            .frame(maxWidth: .infinity, alignment: .center)
-                                    }
-                                }
-                            }
-                        }
-                        .padding(.margin16)
-                    }
-                }
+                // Quantum Wallet ships a single launcher icon (Android parity, commit f023c793).
             }
             .padding(EdgeInsets(top: .margin12, leading: .margin16, bottom: .margin32, trailing: .margin16))
         }
