@@ -234,8 +234,13 @@ extension PurchaseManager {
         }
     }
 
+    // Quantum Wallet: subscription gating is removed (Android parity, commits
+    // a636a96a + a0664ff7). All formerly premium-gated features (swap
+    // protection, secure send, scam protection, etc.) are unconditionally
+    // available. The StoreKit machinery is left intact so the existing
+    // purchase / restore UI keeps compiling, but every gate reads `true`.
     var hasActivePurchase: Bool {
-        activePurchase != nil
+        true
     }
 
     var introductoryOfferType: IntroductoryOfferType {
@@ -255,8 +260,8 @@ extension PurchaseManager {
         return offers.sorted(by: <).first ?? .none
     }
 
-    func activated(_ premiumFeature: PremiumFeature) -> Bool {
-        activeFeatures.contains(premiumFeature)
+    func activated(_: PremiumFeature) -> Bool {
+        true
     }
 
     private func updateUsedOffers() async {

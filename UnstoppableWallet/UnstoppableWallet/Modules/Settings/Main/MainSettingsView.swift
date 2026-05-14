@@ -28,7 +28,11 @@ struct MainSettingsView: View {
                         blockchainSettings()
                         security()
                         privacy()
-                        dAppConnection()
+                        // WalletConnect entry point hidden — Android removed the
+                        // module entirely in commits 90c385c1 + b67e81e6.
+                        // The underlying WC infrastructure remains in iOS to
+                        // avoid breaking EVM signing flows; only the UI is gated.
+                        // dAppConnection()
                         // tonConnect()
                     }
 
@@ -42,7 +46,6 @@ struct MainSettingsView: View {
 
                     ListSection {
                         appSettings()
-                        subscription()
                         backupManager()
                     }
 
