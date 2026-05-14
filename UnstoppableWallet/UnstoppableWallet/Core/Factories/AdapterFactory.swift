@@ -273,7 +273,7 @@ extension AdapterFactory {
         case (.native, .quantumChain):
             return qvmAdapter(wallet: wallet)
 
-        case let (.eip20(address), .quantumChain):
+        case let (.qrc20(address), .quantumChain):
             return qip20Adapter(address: address, wallet: wallet, coinManager: coinManager)
 
         case (.native, .tron):

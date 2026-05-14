@@ -94,7 +94,7 @@ enum AccountType: Identifiable {
             case (.zano, .native): return true
             case (.zano, .zanoAsset): return true
             case (.ethereum, .native), (.ethereum, .eip20): return true
-            case (.quantumChain, .native), (.quantumChain, .eip20): return true
+            case (.quantumChain, .native), (.quantumChain, .qrc20): return true
             case (.binanceSmartChain, .native), (.binanceSmartChain, .eip20): return true
             case (.polygon, .native), (.polygon, .eip20): return true
             case (.avalanche, .native), (.avalanche, .eip20): return true
@@ -142,7 +142,7 @@ enum AccountType: Identifiable {
             }
         case .qvmAddress:
             switch (token.blockchainType, token.type) {
-            case (.quantumChain, .native), (.quantumChain, .eip20): return true
+            case (.quantumChain, .native), (.quantumChain, .qrc20): return true
             default: return false
             }
         case .stellarSecretKey, .stellarAccount:

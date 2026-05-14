@@ -36,7 +36,7 @@ class QvmTransactionConverter {
     }
 
     private func qip20Value(tokenAddress: QvmKit.Address, value: BigUInt, sign: FloatingPointSign, tokenInfo: Qip20Kit.TokenInfo?) -> AppValue {
-        let query = TokenQuery(blockchainType: blockchainType, tokenType: .eip20(address: tokenAddress.hex))
+        let query = TokenQuery(blockchainType: blockchainType, tokenType: .qrc20(address: tokenAddress.hex))
 
         if let token = try? coinManager.token(query: query) {
             let value = convertAmount(amount: value, decimals: token.decimals, sign: sign)

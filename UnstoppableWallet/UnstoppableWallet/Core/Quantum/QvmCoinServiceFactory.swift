@@ -27,7 +27,7 @@ class QvmCoinServiceFactory {
     }
 
     func coinService(contractAddress: QvmKit.Address) -> CoinService? {
-        let query = TokenQuery(blockchainType: blockchainType, tokenType: .eip20(address: contractAddress.hex))
+        let query = TokenQuery(blockchainType: blockchainType, tokenType: .qrc20(address: contractAddress.hex))
 
         guard let token = try? coinManager.token(query: query) else {
             return nil

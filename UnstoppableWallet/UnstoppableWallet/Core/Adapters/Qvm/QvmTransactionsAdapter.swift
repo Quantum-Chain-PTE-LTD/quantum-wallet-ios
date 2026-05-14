@@ -36,7 +36,7 @@ class QvmTransactionsAdapter: BaseQvmAdapter {
             switch token.type {
             case .native:
                 `protocol` = .native
-            case let .eip20(address):
+            case let .qrc20(address):
                 if let address = try? QvmKit.Address(hex: address) {
                     `protocol` = .qip20
                     contractAddress = address
@@ -79,7 +79,7 @@ extension QvmTransactionsAdapter: ITransactionsAdapter {
                 tokenType = .native
             case .qip20:
                 if let contractAddress = tagToken.contractAddress {
-                    tokenType = .eip20(address: contractAddress.hex)
+                    tokenType = .qrc20(address: contractAddress.hex)
                 }
             default:
                 ()

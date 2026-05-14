@@ -450,6 +450,7 @@ struct CoinOverviewView: View {
     private func reference(token: Token) -> String? {
         switch token.type {
         case let .eip20(address): return address
+        case let .qrc20(address): return address
         case let .spl(address): return address
         case let .jetton(address): return address
         case let .stellar(code, issuer): return [code, issuer].joined(separator: "-")
@@ -461,6 +462,7 @@ struct CoinOverviewView: View {
     private func explorerUrl(token: Token) -> String? {
         switch token.type {
         case let .eip20(address): return token.blockchain.explorerUrl(reference: address)
+        case let .qrc20(address): return token.blockchain.explorerUrl(reference: address)
         case let .spl(address): return token.blockchain.explorerUrl(reference: address)
         case let .jetton(address): return token.blockchain.explorerUrl(reference: address)
         case let .stellar(code, issuer): return token.blockchain.explorerUrl(reference: [code, issuer].joined(separator: "-"))

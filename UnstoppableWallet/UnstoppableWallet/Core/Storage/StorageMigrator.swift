@@ -947,6 +947,26 @@ enum StorageMigrator {
             }
         }
 
+        // Quantum Chain contract tokens used to be stored under the "eip20:" token-type
+        // prefix in EnabledWallet / EnabledWalletCache. MarketKit (Quantum fork) returns
+        // them under "qrc20:", and Android renamed its TokenType.Eip20 → TokenType.Qrc20
+        // for Quantum tokens in commit 86c7860ea. Rewrite any stored ids so existing
+        // wallets keep working after the iOS code switch from .eip20 → .qrc20.
+        migrator.registerMigration("Rewrite Quantum Chain tokenQueryId eip20 → qrc20") { db in
+            let oldPrefix = "quantum-chain|eip20:"
+            let newPrefix = "quantum-chain|qrc20:"
+
+            let tables = ["enabled_wallets", "enabled_wallet_caches"]
+            for table in tables {
+                if try db.tableExists(table) {
+                    try db.execute(
+                        sql: "UPDATE \(table) SET tokenQueryId = ? || substr(tokenQueryId, ?) WHERE tokenQueryId LIKE ?",
+                        arguments: [newPrefix, oldPrefix.count + 1, oldPrefix + "%"]
+                    )
+                }
+            }
+        }
+
         try migrator.migrate(dbPool)
     }
 

@@ -18,7 +18,7 @@ struct QvmDecorator {
             )
 
         case let decoration as OutgoingQip20Decoration:
-            if let token = try? coinManager.token(query: .init(blockchainType: baseToken.blockchainType, tokenType: .eip20(address: decoration.contractAddress.hex))) {
+            if let token = try? coinManager.token(query: .init(blockchainType: baseToken.blockchainType, tokenType: .qrc20(address: decoration.contractAddress.hex))) {
                 type = .outgoingQip20(
                     to: decoration.to,
                     value: token.decimalValue(value: decoration.value),
@@ -27,7 +27,7 @@ struct QvmDecorator {
             }
 
         case let decoration as ApproveQip20Decoration:
-            if let token = try? coinManager.token(query: .init(blockchainType: baseToken.blockchainType, tokenType: .eip20(address: decoration.contractAddress.hex))) {
+            if let token = try? coinManager.token(query: .init(blockchainType: baseToken.blockchainType, tokenType: .qrc20(address: decoration.contractAddress.hex))) {
                 type = .approveQip20(
                     spender: decoration.spender,
                     value: token.decimalValue(value: decoration.value),

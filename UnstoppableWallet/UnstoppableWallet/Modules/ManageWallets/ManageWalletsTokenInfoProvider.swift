@@ -42,6 +42,11 @@ class ManageWalletsTokenInfoProvider {
                 token: token,
                 type: .contractAddress(value: address, explorerUrl: token.blockchain.explorerUrl(reference: address))
             )
+        case let .qrc20(address):
+            return InfoItem(
+                token: token,
+                type: .contractAddress(value: address, explorerUrl: token.blockchain.explorerUrl(reference: address))
+            )
         case let .jetton(address):
             return InfoItem(
                 token: token,
@@ -73,7 +78,7 @@ extension ManageWalletsTokenInfoProvider {
         }
 
         switch token.type {
-        case .eip20, .jetton, .stellar:
+        case .eip20, .qrc20, .jetton, .stellar:
             return true
         default:
             return false

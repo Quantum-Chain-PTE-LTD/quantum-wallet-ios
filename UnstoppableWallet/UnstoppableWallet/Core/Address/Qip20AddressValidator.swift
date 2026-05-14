@@ -33,9 +33,17 @@ class Qip20AddressValidator {
     }
 
     static func supports(token: Token) -> Bool {
-        guard case let .eip20(addressString) = token.type,
-              let contractAddress = try? QvmKit.Address(hex: addressString)
-        else {
+        let addressString: String
+        switch token.type {
+        case let .qrc20(address):
+            addressString = address
+        case let .eip20(address):
+            addressString = address
+        default:
+            return false
+        }
+
+        guard let contractAddress = try? QvmKit.Address(hex: addressString) else {
             return false
         }
 

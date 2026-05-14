@@ -87,7 +87,7 @@ class QvmAccountManager {
                     }
 
                     if transferEventInstance.to == address {
-                        let tokenType: TokenType = .eip20(address: transferEventInstance.contractAddress.hex)
+                        let tokenType: TokenType = .qrc20(address: transferEventInstance.contractAddress.hex)
                         if let fromAddress = decoration.fromAddress, fromAddress == address {
                             foundTokens.insert(FoundToken(tokenType: tokenType, tokenInfo: transferEventInstance.tokenInfo))
                         } else {
@@ -170,7 +170,7 @@ class QvmAccountManager {
         let task = Task(priority: .userInitiated) { [weak self] in
             let tokenInfos: [(tokenInfo: TokenInfo, balance: BigUInt)] = await withTaskGroup(of: (TokenInfo, BigUInt).self) { group in
                 for tokenInfo in tokenInfos {
-                    guard case let .eip20(address) = tokenInfo.type, let contractAddress = try? QvmKit.Address(hex: address) else {
+                    guard case let .qrc20(address) = tokenInfo.type, let contractAddress = try? QvmKit.Address(hex: address) else {
                         continue
                     }
 

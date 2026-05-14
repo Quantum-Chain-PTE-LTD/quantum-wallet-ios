@@ -32,6 +32,18 @@ enum AddTokenModule {
             items.append(item)
         }
 
+        if let blockchain = try? Core.shared.marketKit.blockchain(uid: BlockchainType.quantumChain.uid),
+           blockchain.type.supports(accountType: account.type),
+           let service: IAddTokenBlockchainService = AddQvmTokenBlockchainService(
+               blockchain: blockchain,
+               networkManager: Core.shared.networkManager,
+               qvmSyncSourceManager: Core.shared.qvmSyncSourceManager
+           )
+        {
+            let item = Item(blockchain: blockchain, service: service)
+            items.append(item)
+        }
+
         if let blockchain = try? Core.shared.marketKit.blockchain(uid: BlockchainType.ton.uid), blockchain.type.supports(accountType: account.type) {
             let service: IAddTokenBlockchainService = AddJettonBlockchainService(blockchain: blockchain)
             let item = Item(blockchain: blockchain, service: service)

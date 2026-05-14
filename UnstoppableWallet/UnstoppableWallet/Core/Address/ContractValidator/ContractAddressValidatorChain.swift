@@ -52,7 +52,13 @@ class ContractAddressValidatorChain: IAddressSecurityChecker {
     }
 
     func isClear(address: Address, token: Token) async throws -> Bool {
-        guard case let .eip20(contractAddress) = token.type else {
+        let contractAddress: String
+        switch token.type {
+        case let .eip20(address):
+            contractAddress = address
+        case let .qrc20(address):
+            contractAddress = address
+        default:
             throw ContractAddressValidatorChain.CheckError.invalidTokenType
         }
 
