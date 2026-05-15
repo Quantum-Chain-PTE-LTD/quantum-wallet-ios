@@ -33,6 +33,10 @@ class MultiSwapProviderManager {
     }
 
     func sync() {
+        if AppConfig.swapApiUrl.isEmpty {
+            return
+        }
+
         let lastSyncTimetamp = localStorage.swapProvidersLastSyncTimestamp
 
         if let lastSyncTimetamp, Date().timeIntervalSince1970 - lastSyncTimetamp < expiration {

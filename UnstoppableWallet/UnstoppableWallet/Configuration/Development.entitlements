@@ -27,7 +27,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.quantum.chain.wallet</string>
+		<string>group.com.quantum.chain.wallet.dev</string>
 	</array>
 </dict>
 </plist>
