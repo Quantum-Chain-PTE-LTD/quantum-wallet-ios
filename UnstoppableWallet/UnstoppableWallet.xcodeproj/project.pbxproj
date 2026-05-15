@@ -5502,8 +5502,8 @@
 		D3833AFE2BF335D100ACECFB /* MarketNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketNewsViewModel.swift; sourceTree = "<group>"; };
 		D3833B012BF38A8000ACECFB /* MarketTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTabViewModel.swift; sourceTree = "<group>"; };
 		D3833B042BF4AFB800ACECFB /* MarqueeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
-		D38405CE218317DF007D50AD /* Quantum Wallet D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quantum Wallet D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D38406BE21831B3D007D50AD /* Quantum Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quantum Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38405CE218317DF007D50AD /* QuantumWalletD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantumWalletD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38406BE21831B3D007D50AD /* QuantumWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuantumWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38406C3218327B1007D50AD /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		D38406C821832968007D50AD /* AppIconDev.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIconDev.xcassets; sourceTree = "<group>"; };
 		D38955942DE5B3E70012114F /* CheckAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAddressViewModel.swift; sourceTree = "<group>"; };
@@ -10101,8 +10101,8 @@
 		D3285F4320BD158E00644076 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D38405CE218317DF007D50AD /* Quantum Wallet D.app */,
-				D38406BE21831B3D007D50AD /* Quantum Wallet.app */,
+				D38405CE218317DF007D50AD /* QuantumWalletD.app */,
+				D38406BE21831B3D007D50AD /* QuantumWallet.app */,
 				D3948EF02ADA846400FAE566 /* WidgetExtension Dev.appex */,
 				D3948F192ADA88D800FAE566 /* IntentExtension Dev.appex */,
 				D3BA25912ADFAD7C002B13EA /* WidgetExtension Prod.appex */,
@@ -10533,7 +10533,7 @@
 				D3ABE2732F73F29B00B72F23 /* CryptoSwift */,
 			);
 			productName = Wallet;
-			productReference = D38405CE218317DF007D50AD /* Quantum Wallet D.app */;
+			productReference = D38405CE218317DF007D50AD /* QuantumWalletD.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D38405D021831B3D007D50AD /* Production */ = {
@@ -10597,7 +10597,7 @@
 				D3ABE2752F73F2D500B72F23 /* CryptoSwift */,
 			);
 			productName = Wallet;
-			productReference = D38406BE21831B3D007D50AD /* Quantum Wallet.app */;
+			productReference = D38406BE21831B3D007D50AD /* QuantumWallet.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D3948EEF2ADA846400FAE566 /* WidgetExtension Dev */ = {
@@ -14770,7 +14770,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.dev;
 				PRODUCT_MODULE_NAME = Quantum_Wallet_Dev;
-				PRODUCT_NAME = "Quantum Wallet D";
+				PRODUCT_NAME = QuantumWalletD;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -14795,7 +14795,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet.dev;
 				PRODUCT_MODULE_NAME = Quantum_Wallet_Dev;
-				PRODUCT_NAME = "Quantum Wallet D";
+				PRODUCT_NAME = QuantumWalletD;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -14820,7 +14820,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet;
 				PRODUCT_MODULE_NAME = Quantum_Wallet;
-				PRODUCT_NAME = "Quantum Wallet";
+				PRODUCT_NAME = QuantumWallet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -14843,7 +14843,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.quantum.chain.wallet;
 				PRODUCT_MODULE_NAME = Quantum_Wallet;
-				PRODUCT_NAME = "Quantum Wallet";
+				PRODUCT_NAME = QuantumWallet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
