@@ -16,7 +16,6 @@ enum SendField {
     case price(title: String, tokenA: Token, tokenB: Token, amountA: Decimal, amountB: Decimal)
     case fee(title: CustomStringConvertible, amountData: AmountData?)
     case hex(title: String, value: String)
-    case mevProtection(isOn: Binding<Bool>)
 
     @ViewBuilder var listRow: some View {
         switch self {
@@ -122,23 +121,6 @@ enum SendField {
                     Image("copy_20").renderingMode(.template)
                 }
                 .buttonStyle(SecondaryCircleButtonStyle(style: .default))
-            }
-        case let .mevProtection(isOn):
-            VStack(spacing: 0) {
-                SectionHeader(image: Image.defenseIcon, text: "purchases.swap_protection".localized, horizontalInsets: .margin16)
-                ListSection {
-                    Cell(
-                        middle: {
-                            MiddleTextIcon(text: "mev_protection.title".localized)
-                        },
-                        right: {
-                            ThemeToggle(isOn: isOn)
-                        }
-                    )
-                }
-                .themeListStyle(.bordered)
-
-                ListSectionFooter(text: "mev_protection.description".localized)
             }
         case let .doubleValue(title, infoDescription, value1, value2):
             ListRow(padding: EdgeInsets(top: .margin12, leading: infoDescription == nil ? .margin16 : 0, bottom: .margin12, trailing: .margin16)) {

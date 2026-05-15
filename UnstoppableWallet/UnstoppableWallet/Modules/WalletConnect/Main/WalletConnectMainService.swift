@@ -1,4 +1,3 @@
-import Combine
 import EvmKit
 import Foundation
 import HsToolKit
@@ -9,14 +8,10 @@ import WalletConnectUtils
 
 class WalletConnectMainService {
     private let disposeBag = DisposeBag()
-    private var cancellables = Set<AnyCancellable>()
 
     private let service: WalletConnectService
     private let reachabilityManager: IReachabilityManager
-    private let purchaseManager = Core.shared.purchaseManager
-    private let dappProvider = WhitelistDappProvider(networkManager: Core.shared.networkManager)
     private let accountManager: AccountManager
-    private let securityManager: SecurityManager
     private let proposalHandler: IProposalHandler
 
     private var proposal: WalletConnectSign.Session.Proposal?
@@ -26,25 +21,11 @@ class WalletConnectMainService {
         }
     }
 
-    private(set) var premiumEnabled: Bool {
-        didSet {
-            syncWhitelist(url: proposal?.proposer.url ?? session?.peer.url)
-        }
-    }
-
     private let connectionStateRelay = PublishRelay<WalletConnectMainModule.ConnectionState>()
     private let requestRelay = PublishRelay<WalletConnectSign.Request>()
     private let errorRelay = PublishRelay<Error>()
     private let connectedRelay = PublishRelay<Void>()
     private let sessionUpdatedRelay = PublishRelay<WalletConnectSign.Session?>()
-
-    private var whitelistDappState: WhitelistDappState = .loading
-    private let whitelistStateRelay = PublishRelay<WalletConnectMainModule.WhitelistState>()
-    private(set) var whitelistState: WalletConnectMainModule.WhitelistState = .loading {
-        didSet {
-            whitelistStateRelay.accept(whitelistState)
-        }
-    }
 
     private let allowedBlockchainsRelay = PublishRelay<[WalletConnectMainModule.BlockchainProposal]>()
 
@@ -57,17 +38,13 @@ class WalletConnectMainService {
         }
     }
 
-    init(session: WalletConnectSign.Session? = nil, proposal: WalletConnectSign.Session.Proposal? = nil, service: WalletConnectService, reachabilityManager: IReachabilityManager, accountManager: AccountManager, securityManager: SecurityManager, proposalHandler: IProposalHandler) {
+    init(session: WalletConnectSign.Session? = nil, proposal: WalletConnectSign.Session.Proposal? = nil, service: WalletConnectService, reachabilityManager: IReachabilityManager, accountManager: AccountManager, proposalHandler: IProposalHandler) {
         self.session = session
         self.proposal = proposal
         self.service = service
         self.reachabilityManager = reachabilityManager
         self.accountManager = accountManager
-        self.securityManager = securityManager
         self.proposalHandler = proposalHandler
-
-        premiumEnabled = purchaseManager.activated(.scamProtection)
-        loadWhitelist()
 
         subscribe(disposeBag, service.receiveProposalObservable) { [weak self] in
             self?.proposal = $0
@@ -86,12 +63,6 @@ class WalletConnectMainService {
 
         connectionStateRelay.accept(service.socketConnectionStatus == .connected ? .connected : .disconnected)
 
-        purchaseManager.$activeFeatures
-            .sink { [weak self] features in
-                self?.premiumEnabled = features.contains(.scamProtection)
-            }
-            .store(in: &cancellables)
-
         if let session {
             didReceive(session: session)
         }
@@ -101,34 +72,7 @@ class WalletConnectMainService {
         }
     }
 
-    private func loadWhitelist() {
-        dappProvider.whitelistDapps()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
-            .subscribe(
-                onSuccess: { [weak self] dApps in
-                    self?.updateWhitelistDapps(dApps: dApps)
-                },
-                onError: { [weak self] _ in
-                    self?.updateWhitelistDapps(dApps: nil)
-                }
-            )
-
-            .disposed(by: disposeBag)
-    }
-
-    private func updateWhitelistDapps(dApps: [WhitelistDapp]?) {
-        if let dApps {
-            whitelistDappState = .loaded(dApps)
-        } else {
-            whitelistDappState = .error
-        }
-
-        syncWhitelist(url: proposal?.proposer.url ?? session?.peer.url)
-    }
-
     private func sync(proposal: WalletConnectSign.Session.Proposal) {
-        syncWhitelist(url: proposal.proposer.url)
         do {
             let blockchains = proposalHandler.handle(provider: proposal)
             try ProposalValidator.validate(namespaces: proposal.requiredNamespaces, blockchains: blockchains)
@@ -149,8 +93,6 @@ class WalletConnectMainService {
     }
 
     private func didReceive(session: WalletConnectSign.Session) {
-        syncWhitelist(url: session.peer.url)
-
         do {
             let blockchains = proposalHandler.handle(provider: session)
             try ProposalValidator.validate(namespaces: session.proposalNamespaces, blockchains: blockchains)
@@ -162,34 +104,6 @@ class WalletConnectMainService {
         } catch {
             state = .invalid(error: WalletConnectMainModule.SessionError.noAnySupportedChainId)
             return
-        }
-    }
-
-    private func syncWhitelist(url: String?) {
-        guard securityManager.scamProtectionEnabled else {
-            whitelistState = .disabled
-            return
-        }
-
-        guard let url else {
-            whitelistState = .notAvailable
-            return
-        }
-
-        switch whitelistDappState {
-        case .loading: whitelistState = .loading
-        case .error: whitelistState = .notAvailable
-        case let .loaded(dApps):
-            guard let urlComponents = URLComponents(string: url), let host = urlComponents.host else {
-                whitelistState = .risky
-                return
-            }
-
-            let contains = dApps.first { dApp in
-                host.lowercased().hasSuffix(dApp.url.lowercased())
-            }
-
-            whitelistState = contains != nil ? .secure : .risky
         }
     }
 
@@ -256,10 +170,6 @@ extension WalletConnectMainService {
 
     var stateObservable: Observable<WalletConnectMainModule.State> {
         stateRelay.asObservable()
-    }
-
-    var whitelistStateObservable: Observable<WalletConnectMainModule.WhitelistState> {
-        whitelistStateRelay.asObservable()
     }
 
     var sessionUpdatedObservable: Observable<WalletConnectSign.Session?> {
@@ -370,20 +280,5 @@ extension WalletConnectMainService {
     struct SessionData {
         let proposal: WalletConnectSign.Session.Proposal
         let appMeta: WalletConnectMainModule.AppMetaItem
-    }
-
-    enum WhitelistDappState: Equatable {
-        case loading
-        case error
-        case loaded([WhitelistDapp])
-
-        static func == (lhs: Self, rhs: Self) -> Bool {
-            switch (lhs, rhs) {
-            case (.loading, .loading): return true
-            case (.error, .error): return true
-            case let (.loaded(lhsApps), .loaded(rhsApps)): return Set(lhsApps) == Set(rhsApps)
-            default: return false
-            }
-        }
     }
 }

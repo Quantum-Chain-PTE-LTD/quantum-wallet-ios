@@ -5,7 +5,6 @@ private let fishingBlockchainSupports = EvmBlockchainManager.blockchainTypes + [
 enum AddressSecurityIssueType: CaseIterable, Identifiable {
     case phishing
     case blacklisted
-    case sanctioned
 
     var id: Self {
         self
@@ -15,7 +14,6 @@ enum AddressSecurityIssueType: CaseIterable, Identifiable {
         switch self {
         case .phishing: return true
         case .blacklisted: return false
-        case .sanctioned: return false
         }
     }
 
@@ -23,7 +21,6 @@ enum AddressSecurityIssueType: CaseIterable, Identifiable {
         switch self {
         case .phishing: return "phishing-check"
         case .blacklisted: return "blacklist-check"
-        case .sanctioned: return "sanction-check"
         }
     }
 
@@ -31,7 +28,6 @@ enum AddressSecurityIssueType: CaseIterable, Identifiable {
         switch self {
         case .phishing: return "send.address.phishing_check".localized
         case .blacklisted: return "send.address.blacklist_check".localized
-        case .sanctioned: return "send.address.sanction_check".localized
         }
     }
 
@@ -39,7 +35,6 @@ enum AddressSecurityIssueType: CaseIterable, Identifiable {
         switch self {
         case .phishing: return "send.address.phishing_check.subtitle".localized
         case .blacklisted: return "send.address.blacklist_check.subtitle".localized
-        case .sanctioned: return "send.address.sanction_check.subtitle".localized
         }
     }
 
@@ -47,7 +42,6 @@ enum AddressSecurityIssueType: CaseIterable, Identifiable {
         switch self {
         case .phishing: return .init(title: "send.address.phishing_check".localized, description: "send.address.phishing.description".localized)
         case .blacklisted: return .init(title: "send.address.blacklist_check".localized, description: "send.address.blacklist.description".localized)
-        case .sanctioned: return .init(title: "send.address.sanction_check".localized, description: "send.address.sanction.description".localized)
         }
     }
 
@@ -55,15 +49,13 @@ enum AddressSecurityIssueType: CaseIterable, Identifiable {
         switch self {
         case .phishing: return CautionNew(title: "send.address.phishing.caution.title".localized, text: "send.address.phishing.caution.description".localized, type: .error)
         case .blacklisted: return CautionNew(title: "send.address.blacklist.caution.title".localized, text: "send.address.blacklist.caution.description".localized, type: .error)
-        case .sanctioned: return CautionNew(title: "send.address.sanction.caution.title".localized, text: "send.address.sanction.caution.description".localized, type: .error)
         }
     }
 
     func supports(token: Token) -> Bool {
         switch self {
         case .phishing: return fishingBlockchainSupports.contains(token.blockchainType)
-        case .blacklisted: return HashDitAddressValidator.supportedBlockchainTypes.contains(token.blockchainType) || Core.shared.contractAddressValidator.supports(token: token)
-        case .sanctioned: return true
+        case .blacklisted: return Core.shared.contractAddressValidator.supports(token: token)
         }
     }
 

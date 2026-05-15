@@ -17,14 +17,9 @@ class LocalStorage {
     private let keyUserChartIndicatorsSync = "user-chart-indicators"
     private let keyIndicatorsShown = "indicators-shown"
     private let keyTelegramSupportRequested = "telegram-support-requested"
-    private let keyEmulatePurchase = "emulate-purchase"
-    private let keyPurchaseData = "emulate-purchase-data"
-    private let keyPurchaseCancelled = "emulate-purchase-cancelled"
     private let keyHasBep2Token = "has-bep2-token"
     private let keyAmountRounding = "amount-rounding"
     private let keyRecentlySent = "recently-sent"
-    private let keyUseMevProtection = "use-mev-protection"
-    private let keyScamProtection = "scam-protection"
     private let keySpamFilterEnabled = "spam-filter"
     private let keySwapTermsAccepted = "swap-terms-accepted"
     private let keySwapProvidersLastSyncTimestamp = "swap-providers-last-sync-timestamp"
@@ -111,36 +106,6 @@ extension LocalStorage {
         set { userDefaultsStorage.set(value: newValue, for: keyTelegramSupportRequested) }
     }
 
-    var emulatePurchase: Bool {
-        get { userDefaultsStorage.value(for: keyEmulatePurchase) ?? false }
-        set { userDefaultsStorage.set(value: newValue, for: keyEmulatePurchase) }
-    }
-
-    var purchase: PurchaseManager.PurchaseData? {
-        get {
-            if let data: Data = userDefaultsStorage.value(for: keyPurchaseData) {
-                return try? JSONDecoder().decode(PurchaseManager.PurchaseData.self, from: data)
-            }
-            return nil
-        }
-        set {
-            guard let newValue else {
-                userDefaultsStorage.set(value: newValue, for: keyPurchaseData)
-                return
-            }
-            if let encodedData = try? JSONEncoder().encode(newValue) {
-                userDefaultsStorage.set(value: encodedData, for: keyPurchaseData)
-            } else {
-                print("Can't encode test data for Purchase!!!")
-            }
-        }
-    }
-
-    var purchaseCancelled: Bool {
-        get { userDefaultsStorage.value(for: keyPurchaseCancelled) ?? false }
-        set { userDefaultsStorage.set(value: newValue, for: keyPurchaseCancelled) }
-    }
-
     var hasBep2Token: Bool {
         get { userDefaultsStorage.value(for: keyHasBep2Token) ?? false }
         set { userDefaultsStorage.set(value: newValue, for: keyHasBep2Token) }
@@ -154,16 +119,6 @@ extension LocalStorage {
     var recentlySent: Bool {
         get { userDefaultsStorage.value(for: keyRecentlySent) ?? false }
         set { userDefaultsStorage.set(value: newValue, for: keyRecentlySent) }
-    }
-
-    var useMevProtection: Bool {
-        get { userDefaultsStorage.value(for: keyUseMevProtection) ?? false }
-        set { userDefaultsStorage.set(value: newValue, for: keyUseMevProtection) }
-    }
-
-    var scamProtection: Bool {
-        get { userDefaultsStorage.value(for: keyScamProtection) ?? true }
-        set { userDefaultsStorage.set(value: newValue, for: keyScamProtection) }
     }
 
     var spamFilterEnabled: Bool {

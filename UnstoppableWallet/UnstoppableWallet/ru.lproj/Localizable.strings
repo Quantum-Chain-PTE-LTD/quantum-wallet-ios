@@ -556,11 +556,6 @@
 "send.address.phishing.description" = "Анализирует указанный адрес назначения на предмет потенциальных рисков фишинга.\n\nЧисто: Подозрительная активность не обнаружена.\n\nОбнаружено: Похоже, кто-то пытается обманом заставить вас отправить средства на неверный адрес. Не продолжайте, если вы не полностью уверены в правильности адреса. Рассмотрите возможность сначала отправить небольшую тестовую транзакцию.";
 "send.address.phishing.caution.title" = "Обнаружен фишинговый адрес!";
 "send.address.phishing.caution.description" = "Введенный вами адрес может быть мошенническим. Мошенники часто изменяют первые и последние символы. Внимательно проверьте полный адрес перед отправкой во избежание потерь.";
-"send.address.sanction_check" = "Sanction Check";
-"send.address.sanction_check.subtitle" = "Проверяет, подпадает ли адрес под санкционные ограничения.";
-"send.address.sanction.description" = "Проверяет, подпадает ли адрес получателя под международные санкции, используя данные Chainalysis.com.\n\nЧисто: Санкции не обнаружены.\n\nОбнаружено: Потенциальный юридический риск. Транзакции с этим адресом могут быть ограничены или незаконны в определенных юрисдикциях.";
-"send.address.sanction.caution.title" = "Санкционный адрес!";
-"send.address.sanction.caution.description" = "Введенный вами адрес помечен как санкционный. Транзакции на этот адрес могут привести к потерям или другим рискам. Пожалуйста, проверьте данные получателя перед продолжением.";
 "send.address.blacklist_check" = "Blacklist Check";
 "send.address.blacklist_check.subtitle" = "Проверяет адрес по базам данных мошенничества и высокого риска.";
 "send.address.blacklist.description" = "Проверяет, числится ли адрес назначения в официальных или неофициальных черных списках.\n\nЧисто: Отметок в черных списках нет.\n\nОбнаружено: Адрес внесен в черный список и может быть связан с юридическими рисками или угрозами безопасности. Продолжайте с осторожностью. Многие криптовалютные биржи ограничивают пользователей, которые вносят или выводят средства с кошельков, взаимодействовавших с адресами из черных списков. Имейте это в виду.";
@@ -785,7 +780,6 @@
 "market.tab.news" = "Новости";
 "market.tab.coins" = "Монеты";
 "market.tab.watchlist" = "Избранное";
-"market.tab.vaults" = "Доход (APY)";
 "market.tab.platforms" = "Платформы";
 "market.tab.pairs" = "Пары";
 "market.tab.sectors" = "Секторы";
@@ -883,103 +877,18 @@
 "market_discovery.not_found" = "Ничего не найдено";
 
 "market_watchlist.empty.caption" = "Ваш список избранного пуст.";
-"market.watchlist.signals" = "Сигналы";
 "market.watchlist.empty" = "Ваш список избранного пуст";
-"market.watchlist.signals.description" = "Нижеследующие сигналы основаны на технических индикаторах ценового диапазона Боллинджера и RSI за последние приблизительно 30 дней. Эти сигналы алгоритмические и могут часто изменяться.";
-"market.watchlist.signals.strong_buy.description" = "Высокая уверенность в повышении цен";
-"market.watchlist.signals.buy.description" = "Вероятное увеличение цены в ближайшем будущем";
-"market.watchlist.signals.neutral.description" = "Нет чёткого тренда, рынок находится в равновесии";
-"market.watchlist.signals.sell.description" = "Вероятное снижение цен в ближайшем будущем";
-"market.watchlist.signals.strong_sell.description" = "Высокая вероятность снижения цены";
-"market.watchlist.signals.risky.description" = "Повышенный уровень риска, требует осторожности";
-"market.watchlist.signals.warning" = "Всегда помните о применении управления рисками, и обратите внимание, что это не финансовый совет.";
-"market.watchlist.signals.turn_on" = "Включить";
 
-"market.advanced_search.title" = "Фильтры";
-"market.advanced_search.show_results" = "Показать результаты";
-"market.advanced_search.empty_results" = "Сбросить результаты";
-"market.advanced_search.retry" = "Повторить";
-"market.advanced_search.dex_description" = "Эта настройка применяется к токенам, торгуемым на Ethereum (Uniswap DEX) и Binance Smart Chain (Pancake DEX).";
-"market.advanced_search.24h" = "24ч";
 
-"market.advanced_search.market_parameters" = "Параметры рынка";
-"market.advanced_search.network_parameters" = "Параметры сети";
-"market.advanced_search.indicators" = "Индикаторы";
-"market.advanced_search.price_parameters" = "Параметры цены";
-"market.advanced_search.choose_set" = "Выбор набора";
-"market.advanced_search.market_cap" = "Рын. капитализация";
-"market.advanced_search.volume" = "Объем торговли";
-"market.advanced_search.categories" = "Секторы";
 
-"market.advanced_search.listed_on_top_exchanges" = "Размещены на ведущих биржах";
-"market.advanced_search.good_cex_volume" = "Хороший объем CEX";
-"market.advanced_search.good_dex_volume" = "Хороший объем DEX";
-"market.advanced_search.good_distribution" = "Хорошее распределение";
-"market.advanced_search.overall_score_is_good_or_excellent" = "Общая оценка хорошая или отличная";
 
-"market.advanced_search.liquidity" = "Ликвидность DEX";
-"market.advanced_search.blockchains" = "Блокчейны";
-"market.advanced_search.signal" = "Торговый сигнал";
-"market.advanced_search.price_period" = "Ценовой период";
-"market.advanced_search.price_change" = "по изменению цены (%)";
 
-"market.advanced_search.outperformed_btc" = "Обошел BTC";
-"market.advanced_search.outperformed_eth" = "Обошел ETH";
-"market.advanced_search.outperformed_bnb" = "Обошел BNB";
-"market.advanced_search.outperformed_sp500" = "Обошел S&P500";
-"market.advanced_search.outperformed_gold" = "Обошел Золото";
-"market.advanced_search.price_close_to" = "Цена близка к";
-"market.advanced_search.price_close_to_ath" = "Цена близка к ATH";
-"market.advanced_search.price_close_to_atl" = "Цена близка к ATL";
 
-"market.advanced_search.top" = "Топ %d";
 
-"market.advanced_search.less_5_m" = "< 5млн";
-"market.advanced_search.less_10_m" = "< 10млн";
-"market.advanced_search.less_50_m" = "< 50млн";
-"market.advanced_search.less_500_m" = "< 500млн";
-"market.advanced_search.m_5_m_20" = "5млн - 20млн";
-"market.advanced_search.m_10_m_40" = "10млн - 40млн";
-"market.advanced_search.m_20_m_100" = "20млн - 100млн";
-"market.advanced_search.m_40_m_200" = "40млн - 200млн";
-"market.advanced_search.m_50_m_200" = "50млн - 200млн";
-"market.advanced_search.m_100_b_1" = "100млн - 1млрд";
-"market.advanced_search.m_200_b_1" = "200млн - 1млрд";
-"market.advanced_search.m_200_b_2" = "200млн - 2млрд";
-"market.advanced_search.m_500_b_2" = "500млн - 2млрд";
-"market.advanced_search.b_1_b_5" = "1млрд - 5млрд";
-"market.advanced_search.b_1_b_10" = "1млрд - 10млрд";
-"market.advanced_search.b_2_b_10" = "2млрд - 10млрд";
-"market.advanced_search.b_10_b_50" = "10млрд - 50млрд";
-"market.advanced_search.b_10_b_100" = "10млрд - 100млрд";
-"market.advanced_search.b_100_b_500" = "100млрд - 500млрд";
-"market.advanced_search.more_5_b" = "> 5млрд";
-"market.advanced_search.more_10_b" = "> 10млрд";
-"market.advanced_search.more_50_b" = "> 50млрд";
-"market.advanced_search.more_500_b" = "> 500млрд";
 
-"market.advanced_search.top.m_cap" = "Рын.кап.";
-"market.advanced_search.top.more_1_b" = "> $1млрд";
-"market.advanced_search.top.more_500_m" = "> $500млн";
-"market.advanced_search.top.more_250_m" = "> $250 млн";
-"market.advanced_search.top.more_100_m" = "> $100 млн";
-"market.advanced_search.top.more_25_m" = "> $25 млн";
-"market.advanced_search.top.more_10_m" = "> $10млн";
-"market.advanced_search.top.more_5_m" = "> $5млн";
-"market.advanced_search.top.more_1_m" = "> $1млн";
 
-"market.advanced_search.day" = "1 День";
-"market.advanced_search.week" = "1 Неделя";
-"market.advanced_search.week2" = "2 Недели";
-"market.advanced_search.month" = "1 Месяц";
-"market.advanced_search.month6" = "6 Месяцев";
-"market.advanced_search.year" = "1 Год";
 
-"market.advanced_search.day.short" = "24ч";
-"market.advanced_search.week.short" = "7Д";
-"market.advanced_search.month.short" = "1M";
 
-"market.advanced_search_results.title" = "Результаты";
 
 "market.global.total_market_cap.title" = "Общая капитализация";
 "market.global.total_market_cap.description" = "Общая рыночная стоимость всех криптовалют";
@@ -1021,37 +930,12 @@
 "market.signal.sell" = "Продавать";
 "market.signal.strong_sell" = "Активно продавать";
 
-// Market Vaults
 
-"market.vaults.apy" = "APY %@";
-"market.vaults.tvl" = "TVL:%@";
-"market.vaults.premium.description" = "Исследуйте лучшие доходности от DeFi-стейкинга - всё в одном месте.";
-"market.vaults.premium.unlock" = "Подпишитесь";
 
-"market.vaults.filter" = "Фильтр";
-"market.vaults.filter.all_assets" = "Все активы";
-"market.vaults.filter.eth_yield" = "Доходность в ETH";
-"market.vaults.filter.usd_yield" = "Доходность в USD";
 
-"market.vaults.sort.highest_apy" = "Максимальная доходность (APY)";
-"market.vaults.sort.highest_tvl" = "Наибольший TVL";
-"market.vaults.sort.highest_apy.short" = "APY";
-"market.vaults.sort.highest_tvl.short" = "TVL";
 
-"market.vaults.chains.title" = "Блокчейны";
-"market.vaults.chains.any" = "Любое";
-"market.vaults.chains.all_chains" = "Все сети";
-"market.vaults.chains.n_chains" = "%@ Сети";
 
-// Market Vault
 
-"market.vault.apy" = "APY";
-"market.vault.tvl" = "TVL";
-"market.vault.network" = "Сеть";
-"market.vault.protocol" = "Протокол";
-"market.vault.underlying_token" = "Базовый токен";
-"market.vault.hoders" = "Держатели";
-"market.vault.open_dapp" = "Открыть DApp";
 
 // Coin Page
 
@@ -1136,162 +1020,27 @@
 "technical_advice.macd.negative" = "ниже";
 "technical_advice.macd.advice" = "MACD. Оценивает силу тренда, учитывая среднее изменение цены. Ежедневное значение гистограммы составляет %@ (%@). Цена актива в глобальном масштабе может измениться на %@.";
 
-"coin_analytics.indicators.title" = "Технические индикаторы";
-"coin_analytics.indicators.disclaimer" = "Всегда помните о применении управления рисками, и обратите внимание, что это не финансовый совет.";
-"coin_analytics.indicators.info.title" = "Технические индикаторы";
-"coin_analytics.indicators.info.description" = "Мы используем стратегию Bollinger Bands + RSI для определения сигналов торговли. Все расчеты основаны на ежедневных свечах и предоставляют рекомендации на среднесрочный период. Суть стратегии заключается в том, что цена актива должна достичь экстремума, выбиваясь из канала Bollinger Bands, а RSI должен находиться в зоне перекупленности/перепроданности. После того как цена возвращается в канал, существует высокая вероятность того, что цена вернется к средним значениям или попытается пробить канал с другой стороны. Обратите внимание, что стратегия может давать несколько ложных сигналов во время сильных рыночных движений, прежде чем появится правильный сигнал.\n\nПожалуйста, помните, что очень важно применять управление рисками при торговле и помнить о сокращении убытков, если ситуация на рынке изменится!";
-"coin_analytics.indicators.details" = "Подробности";
-"coin_analytics.indicators.hide_details" = "Скрыть детали";
-"coin_analytics.indicators.show_details" = "Показать детали";
-"coin_analytics.indicators.summary" = "Общая оценка";
-"coin_analytics.indicators.no_data" = "Нет данных";
-"coin_analytics.indicators.oversold" = "Рискованно";
-"coin_analytics.indicators.strong_buy" = "Активно покупать";
-"coin_analytics.indicators.buy" = "Покупать";
-"coin_analytics.indicators.neutral" = "Нейтрально";
-"coin_analytics.indicators.sell" = "Продавать";
-"coin_analytics.indicators.strong_sell" = "Активно продавать";
-"coin_analytics.indicators.overbought" = "Рискованно";
-"coin_analytics.period" = "Период";
-"coin_analytics.period.select_title" = "Выберите период";
 
-"coin_analytics.details" = "Подробности";
 
-"coin_analytics.not_available" = "В этом проекте нет аналитических данных";
 
-"coin_analytics.technical_indicators" = "Технические индикаторы";
-"coin_analytics.technical_indicators.info1" = "Сводка: Это общий обзор технических характеристик актива, учитывающий различные технические индикаторы и временные рамки. Она предоставляет консенсусное мнение (Покупать, Продавать или Нейтрально) на основе этих индикаторов.";
-"coin_analytics.technical_indicators.info2" = "Скользящие средние (MA): Это обычно используемые технические индикаторы, позволяющие сгладить данные о ценах для создания индикатора следующего тренда. Они показывают среднюю цену за определенный период времени. Существует несколько типов MAs:\n\nSimple Moving среднее значение (SMA): Это вычисляет среднее значение выбранного диапазона цен, обычно закрывают цены, по количеству периодов в этом диапазоне.\n\nЭкспоненциальное скользящее среднее (EMA): Это даёт больше веса для последних цен, тем самым реагируя быстрее на последние изменения цен.";
-"coin_analytics.technical_indicators.info3" = "Осцилляторы: Это технические индикаторы, которые колеблются со временем в диапазоне (выше и ниже центральной линии или между заданными уровнями). Они предназначены для идентификации перекупленных и перепродаваемых условий на рынке. Вот несколько распространенных осцилляторов:\n\nИндекс относительной силы (RSI): Это измеряет скорость и изменение движений цен. Обычно он используется для идентификации перекупленных или перепроданных условий.\n\nДвижение среднего сближения (MACD): Используется для выявления потенциальных сигналов на покупку и продажу. Она запускает технические сигналы, когда она пересекает линии сигнала выше (покупать) или ниже (продавать).";
 
-"coin_analytics.cex_volume" = "Объем CEX";
-"coin_analytics.cex_volume_rank" = "Рейтинг объема CEX";
-"coin_analytics.cex_volume_rank.description" = "Торговый объем токена на централизованных биржах.";
-"coin_analytics.cex_volume_rank.sorting_field" = "Объем";
-"coin_analytics.cex_volume.info1" = "Общий объем торгов по токену на ведущих централизованных биржах за 30-дневный период.";
-"coin_analytics.cex_volume.info2" = "График, показывающий колебания дневного объема торговли токеном на ведущих централизованных биржах за 1 год.";
-"coin_analytics.cex_volume.info3" = "Рейтинг токена основан на объеме торговли на ведущих централизованных биржах за 30-дневный период.";
-"coin_analytics.cex_volume.info4" = "Список всех токенов, ранжированных по объему торговли на централизованных биржах за последние 24ч/7Д / 1М.";
 
-"coin_analytics.dex_volume" = "Объем DEX";
-"coin_analytics.dex_volume_rank" = "Рейтинг объема DEX";
-"coin_analytics.dex_volume_rank.description" = "Торговый объем токена на децентрализованных биржах.";
-"coin_analytics.dex_volume_rank.sorting_field" = "Объем";
-"coin_analytics.dex_volume.info1" = "Общий объем торгов по токену на ведущих децентрализованных биржах за 30-дневный период.";
-"coin_analytics.dex_volume.info2" = "График, показывающий колебания дневного объема торговли токеном на ведущих децентрализованных биржах за 1 год.";
-"coin_analytics.dex_volume.info3" = "Рейтинг токена основан на объеме торговли на ведущих децентрализованных биржах за 30-дневный период.";
-"coin_analytics.dex_volume.info4" = "Список всех токенов, ранжированных по объему торговли на децентрализованных биржах за 24ч/7дн/1мес.";
-"coin_analytics.dex_volume.tracked_dexes" = "Отслеживаемые DEX биржи:";
-"coin_analytics.dex_volume.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Sushiswap";
-"coin_analytics.dex_volume.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap";
 
-"coin_analytics.dex_liquidity" = "Ликвидность DEX";
-"coin_analytics.dex_liquidity_rank" = "Рейтинг ликвидности DEX";
-"coin_analytics.dex_liquidity_rank.description" = "Рейтинг токенов основан по доступной ликвидности на децентрализованных биржах.";
-"coin_analytics.dex_liquidity_rank.sorting_field" = "Ликвидность";
-"coin_analytics.dex_liquidity.info1" = "Общая ликвидность, доступная в настоящий момент для токена на ведущих децентрализованных биржах.";
-"coin_analytics.dex_liquidity.info2" = "График, отражающий колебания доступной ликвидности для токена на ведущих децентрализованных биржах за 1 год.";
-"coin_analytics.dex_liquidity.info3" = "Список всех токенов, ранжированных по доступной ликвидности на ведущих децентрализованных биржах.";
-"coin_analytics.dex_liquidity.tracked_dexes" = "Отслеживаемые DEX биржи:";
-"coin_analytics.dex_liquidity.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Balancer V1/2, Bancor V2, Curve, Sushiswap";
-"coin_analytics.dex_liquidity.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap, DODO V1/2";
 
-"coin_analytics.active_addresses" = "Ежедневные активные адреса";
-"coin_analytics.active_addresses.30_day_unique_addresses" = "Уникальные адреса за 30 дней";
-"coin_analytics.active_addresses_rank" = "Рейтинг активных адресов";
-"coin_analytics.active_addresses_rank.description" = "Список токенов, ранжированных по количеству уникальных адресов транзакций с токеном.";
-"coin_analytics.active_addresses_rank.sorting_field" = "Активно";
-"coin_analytics.active_addresses.info1" = "Общее количество уникальных ежедневных активных адресов за 24 часа.";
-"coin_analytics.active_addresses.info2" = "График, показывающий вариацию количества ежедневных активных адресов в течение 1 года.";
-"coin_analytics.active_addresses.info3" = "Общее количество уникальных адресов блокчейна, с которых проводились транзакции с токеном за 30 дней.";
-"coin_analytics.active_addresses.info4" = "Рейтинг токена основан на количестве активных кошельков, используемых для транзакций с токеном за 30-дневный период.";
-"coin_analytics.active_addresses.info5" = "Список всех токенов, ранжированных по ежедневному количеству активных адресов транзакций с токеном с интервалом 24ч. / 7 дн. / 1 мес.";
 
-"coin_analytics.transaction_count" = "Количество транзакций";
-"coin_analytics.transaction_count_rank" = "Рейтинг кол-ва транзакций";
-"coin_analytics.transaction_count_rank.description" = "Токены ранжируются по количеству транзакций в блокчейне.";
-"coin_analytics.transaction_count_rank.sorting_field" = "Кол-во";
-"coin_analytics.transaction_count.info1" = "Общее количество уникальных транзакций блокчейна с токеном более 30 дней.";
-"coin_analytics.transaction_count.info2" = "График, отражающий колебания количества транзакций за 1 год.";
-"coin_analytics.transaction_count.info3" = "Рейтинг токена основан на количестве транзакций с токеном за 30-дневный период.";
-"coin_analytics.transaction_count.info4" = "Список всех токенов, ранжированных на основе количества транзакций с интервалом 24ч / 7Д / 1М.";
-"coin_analytics.transaction_count.info5" = "Общее количество токенов, отправленных через блокчейн за 30-дневный период.";
 
-"coin_analytics.holders" = "Держатели";
-"coin_analytics.holders_rank" = "Рейтинг держателей";
-"coin_analytics.holders_rank.description" = "Рейтинг токенов по уникальным адресам, содержащим их в нескольких блокчейнах.";
-"coin_analytics.holders_rank.sorting_field" = "Держатели";
-"coin_analytics.holders.info1" = "Общее количество уникальных адресов с токенами в различных блокчейнах.";
-"coin_analytics.holders.info2" = "Топ-10 кошельков с токенами в каждом блокчейне.";
-"coin_analytics.holders.tracked_blockchains" = "Отслеживаемые блокчейны: Ethereum, Binance Smart Chain, Optimism, Arbitrum, Celo, Cronos, Avalanche, Fantom, Polygon";
-"coin_analytics.holders.in_top_10_addresses" = "в топ-10 держателей";
-"coin_analytics.holders.count" = "Всего держателей: %@";
-"coin_analytics.holders.see_all" = "Посмотреть всё";
 
-"coin_analytics.project_tvl" = "Проект TVL";
-"coin_analytics.tvl_ratio" = "Рын.кап / Соотношение TVL ";
-"coin_analytics.project_tvl.info_title" = "Проект TVL (совокупная сумма средств заблокирована)";
-"coin_analytics.project_tvl.info1" = "TVL (или активы под управлением) в проектных смарт-контрактах.";
-"coin_analytics.project_tvl.info2" = "График, отражающий колебания TVL в проектных смарт-контрактах за период, превышающий 1 год.";
-"coin_analytics.project_tvl.info3" = "Рейтинг токена по текущему TVL.";
-"coin_analytics.project_tvl.info4" = "Список всех токенов, ранжированных по текущему TVL.";
-"coin_analytics.project_tvl.info5" = "Соотношение рыночной капитализации/TVL в рамках проекта.";
 
-"coin_analytics.project_fee" = "Комиссия проекта";
-"coin_analytics.project_fee_rank" = "Рейтинг оплаты за проект";
-"coin_analytics.project_fee_rank.description" = "Токены ранжируются в соответствии с платами, полученными в рамках соответствующих проектов.";
-"coin_analytics.project_fee_rank.sorting_field" = "Объем";
 
-"coin_analytics.project_revenue" = "Доход от проекта";
-"coin_analytics.project_revenue_rank" = "Рейтинг доходов";
-"coin_analytics.project_revenue_rank.description" = "Токены ранжируются по пассивному доходу владельцев, получаемому через стекинг или сжигание токенов.";
-"coin_analytics.project_revenue_rank.sorting_field" = "Доход";
 
-"coin_analytics.other_data" = "Другие данные";
 
-"coin_analytics.reports" = "Отчёты";
 
-"coin_analytics.funding" = "Финансирование";
-"coin_analytics.funding.lead" = "Лид";
 
-"coin_analytics.treasuries" = "Treasuries";
-"coin_analytics.treasuries.filters" = "Фильтры";
-"coin_analytics.treasuries.filter.all" = "Все";
-"coin_analytics.treasuries.filter.public" = "Публичный";
-"coin_analytics.treasuries.filter.private" = "Приватный";
-"coin_analytics.treasuries.filter.etf" = "ETF";
 
-"coin_analytics.audits" = "Аудиты";
-"coin_analytics.audits.issues" = "Запросы";
-"coin_analytics.audits.no_reports" = "Нет аудиторских отчетов";
 
-"coin_analytics.last_30d" = "Последние 30 дн.";
-"coin_analytics.current" = "текущий";
 
-"coin_analytics.overall_score" = "Общий балл";
-"coin_analytics.overall_score.excellent" = "Отлично";
-"coin_analytics.overall_score.good" = "Хорошо";
-"coin_analytics.overall_score.fair" = "Приемлемо";
-"coin_analytics.overall_score.poor" = "Плохо";
-"coin_analytics.overall_score.cex_volume" = "Общий балл основан на средневзвешенном объеме торговли за последние 7 дней на централизованных биржах.";
-"coin_analytics.overall_score.dex_volume" = "Общий балл основан на среднем ежедневном объеме торговли на децентрализованных биржах за последние 7 дней.";
-"coin_analytics.overall_score.dex_liquidity" = "Общий балл основан на общей доступной ликвидности на децентрализованных биржах.";
-"coin_analytics.overall_score.active_addresses" = "Общий балл основан на среднедневных активных адресах за последние 7 дней.";
-"coin_analytics.overall_score.project_tvl" = "Общая балл основан на общей закрытой стоимости (активы, находящиеся в ведении управления) на проекте, представленном данным токеном.";
-"coin_analytics.overall_score.transaction_count" = "Общий счет основан на среднем подсчете ежедневных транзакций за последние 7 дней.";
-"coin_analytics.overall_score.holders" = "Общий балл основан на общем количестве адресов, содержащих соответствующий токен.";
 
-"coin_analytics.rank" = "Рейтинг";
-"coin_analytics.30_day_rank" = "Рейтинг на 30д";
-"coin_analytics.30_day_volume" = "Объем за 30д";
 
-"coin_analytics.analysis.title" = "Анализ смарт-контрактов";
-"coin_analytics.analysis.high_risk_items" = "Элементы высокого риска";
-"coin_analytics.analysis.medium_risk_items" = "Элементы среднего риска";
-"coin_analytics.analysis.attention_required" = "Требуется внимание";
-"coin_analytics.analysis.token_detectors" = "Детекторы токенов";
-"coin_analytics.analysis.general_detectors" = "Общие детекторы";
-"coin_analytics.analysis.issues" = "Запросы: %@";
 
 // Coin Page -> Markets
 
@@ -1715,22 +1464,9 @@
 
 // Settings -> Subsription
 
-"subscription.premium.label" = "Премиум";
-"subscription.title" = "Подписка";
-"subscription.get" = "Получить Премиум";
-"subscription.restore" = "Восстановить покупку";
-"subscription.type" = "Тип подписки";
-"subscription.one-time" = "Разовая";
-"subscription.price" = "Цена";
-"subscription.next_payment" = "Дата следующего платежа";
-"subscription.purchase_time" = "Дата начала";
-"subscription.status" = "Статус";
-"subscription.manage" = "Управление подпиской";
 
 // Settings -> Support
 
-"settings.vip_support.description" = "Получите эксклюзивный доступ к нашей VIP-группе, где премиальные пользователи и команда Quantum Wallet работают сообща. Получайте прямую поддержку, обсуждайте будущие обновления и помогайте формировать развитие кошелька.";
-"settings.vip_support.start_chat" = "Присоединиться к VIP-группе";
 
 // Settings -> Contacts
 
@@ -1896,16 +1632,6 @@
 "wallet_connect.list.pending_requests" = "Ожидающие запросы";
 "wallet_connect.main.connect" = "Подключиться к %@";
 "wallet_connect.main.connected" = "Подключено к %@";
-"wallet_connect.main.premium_alert.title.risky" = "Опасность!";
-"wallet_connect.main.premium_alert.subtitle.deactivated" = "Защита от скамов отключена. Подключите Premium, чтобы защитить средства от непроверенных и фишинговых сайтов.";
-"wallet_connect.main.premium_alert.subtitle.risky" = "Сайт не проверен. Подключение может привести к фишингу и потере средств.";
-"wallet_connect.main.premium_alert.subtitle.not_available" = "Проверка защиты от скамов не удалась. Подключение разрешено, но домен может быть небезопасен.";
-"wallet_connect.scam_protection" = "Scam-защита";
-"wallet_connect.scam_protection.deactivated" = "Отключено";
-"wallet_connect.scam_protection.risky" = "Рискованно";
-"wallet_connect.scam_protection.secure" = "Безопасно";
-"wallet_connect.scam_protection.not_available" = "Нет данных";
-"wallet_connect.scam_protection.disabled" = "Отключено";
 "wallet_connect.networks" = "Сети";
 
 "wallet_connect.main.no_any_supported_chains" = "Нет поддерживаемых блокчейнов!";
@@ -2236,29 +1962,9 @@
 "nft.activity.event_types" = "Типы событий";
 "nft.activity.event_type.all" = "Все события";
 
-// Subscription Info
 
-"subscription_info.title" = "Премиум-функции";
-"subscription_info.info1.title" = "Анализ криптовалют";
-"subscription_info.info1.text" = "Найдите перспективные возможности, избегайте мошенничества и максимизируйте свою прибыль в динамичном мире криптовалют.";
-"subscription_info.info2.title" = "Индикаторы";
-"subscription_info.info2.text" = "Найдите перспективные возможности, избегайте мошенничества и максимизируйте свою прибыль в динамичном мире криптовалют.";
-"subscription_info.info3.title" = "Персональная поддержка";
-"subscription_info.info3.text" = "Найдите перспективные возможности, избегайте мошенничества и максимизируйте свою прибыль в динамичном мире криптовалют.";
-"subscription_info.get_premium" = "Получить Премиум";
-"subscription_info.already_have" = "У меня уже есть премиум";
 
-// Activate Subscription
 
-"activate_subscription.title" = "Активировать";
-"activate_subscription.wallet" = "Кошелек";
-"activate_subscription.address" = "Адрес";
-"activate_subscription.message" = "Сообщение для подписи";
-"activate_subscription.sign" = "Подписать";
-"activate_subscription.activating" = "Активация...";
-"activate_subscription.failed_to_activate" = "Не удалось активировать подписку";
-"activate_subscription.activated" = "Активировано";
-"activate_subscription.no_subscriptions" = "Ваш адрес кошелька не имеет подписки на премиум-функции. Вам необходимо ее приобрести, чтобы активировать подписку.";
 
 // Launch
 
@@ -2295,96 +2001,24 @@
 "transaction_filter.hide_suspicious_txs" = "Скрыть подозрительные транзакции";
 "transaction_filter.hide_suspicious_txs.description" = "Скрывает подозрительные мелкие переводы, часто используемые в фишинговых атаках.";
 
-// Purchases
 
-"premium.cell.title" = "Премиум";
-"premium.cell.description" = "Улучшите свой опыт с %@ функциями!";
-"premium.cell.description.key" = "Премиум";
-"premium.cell.try" = "Попробовать БЕСПЛАТНО";
 
 "mini_app.cell.title" = "Мини Апп";
 "mini_app.cell.description" = "Проходите тесты, выполняйте задания и зарабатывайте токены!";
 
-"purchases.title" = "Премиум";
-"purchases.description" = "Выберите план";
-"purchases.type.pro" = "Pro";
-"purchases.type.vip" = "VIP";
 
 // Defense System
-"purchases.defense_system" = "Система защиты";
-"purchases.secure_send" = "Безопасная отправка";
-"purchases.secure_send.description" = "Предупреждает и защищает от отправки средств на опасные адреса.";
-"purchases.secure_send.info" = "Проверяет адрес получателя и предупреждает о риске перед отправкой средств.";
-"purchases.scam_protection" = "Скам-защита";
-"purchases.scam_protection.description" = "Обнаруживает поддельные и вредоносные dApps перед подключением.";
-"purchases.scam_protection.info" = "Обнаруживает поддельные dApp до подключения. Предотвращает фишинг и защищает активы.";
-"purchases.swap_protection" = "Защита обмена";
-"purchases.swap_protection.description" = "Предотвращает атаки ботов и MEV во время swap-операций.";
-"purchases.swap_protection.info" = "Защищает от ботов и front-running атак при обмене.";
-"purchases.robbery_protection" = "Защита при ограблении";
-"purchases.robbery_protection.description" = "Защищает ваши средства, если вас вынуждают разблокировать приложение.";
-"purchases.robbery_protection.info" = "Позволяет создать ложный кошелёк с отдельным PIN-кодом. Скрывает реальные активы в рискованных ситуациях.";
 
 // Advanced Controls
-"purchases.advanced_controls" = "Расширенные настройки";
-"purchases.swap_control" = "Управление обменом";
-"purchases.swap_control.description" = "Расширенные настройки для управления тем, как и где выполняются swap-операции.";
-"purchases.swap_control.info" = "По умолчанию мы выбираем лучшее доступное предложение. С Premium вы можете выбрать другого провайдера.";
-"purchases.priority_support" = "Поддержка Premium";
-"purchases.priority_support.description" = "Прямой доступ к нашей службе поддержки.";
-"purchases.priority_support.info" = "Прямой доступ к приоритетной поддержке от команды Quantum Wallet.";
 
 // Market Insights
-"purchases.market_insights" = "Аналитика рынка";
-"purchases.token_insights" = "Аналитика";
-"purchases.token_insights.description" = "Расширенная аналитика и данные по токенам.";
-"purchases.token_insights.info" = "Показывает подробные данные о токене - объём, ликвидность и тренды. Помогает принимать более разумные инвестиционные решения.";
-"purchases.advanced_search" = "Расширенный поиск";
-"purchases.advanced_search.description" = "Расширенные фильтры для удобного поиска токенов.";
-"purchases.advanced_search.info" = "Находите токены с помощью фильтров по объёму, сети или сектору. Включает метрики активности на CEX/DEX и листинги.";
-"purchases.trade_signals" = "Сигналы и тренды";
-"purchases.trade_signals.description" = "Практические сигналы для более уверенной торговли.";
-"purchases.trade_signals.info" = "Уведомления в реальном времени о торговых возможностях и рисках.";
 
-"purchase.bottom_sheet.description" = "Одна покупка открывает все функции Premium.";
 
-"purchases.wallet_description.title" = "Надёжная безопасность, высокий уровень конфиденциальности и полностью некастодиальный кошелёк.";
-"purchases.wallet_description.approved" = "Одобрено и проверено:";
 
-"purchases.button.try" = "Попробовать БЕСПЛАТНО";
-"purchases.button.activated" = "Активировано";
-"purchases.button.upgrade" = "Обновить";
 
-"purchase.period.title" = "Выбрать подписку";
-"purchase.period.annually" = "Ежегодно";
-"purchase.period.monthly" = "Ежемесячно";
-"purchase.period.onetime" = "Разовая";
-"purchase.period.onetime.description" = "для пожизненного доступа";
-"purchase.period.save" = "экономия";
-"purchase.period.year" = "год";
-"purchase.period.month" = "месяц";
-"purchase.period.description1" = "Пользуйтесь первые 7 дней БЕСПЛАТНО";
-"purchase.period.description1.1" = "Скидка на первый месяц.";
-"purchase.period.description2" = "Вы можете отменить подписку App Store в любое время.";
-"purchase.lifetime.description" = "-";
-"purchase.agree" = "Оформляя подписку, вы соглашаетесь с %@ и %@.";
-"purchase.agree.terms_of_service" = "Условия использования";
-"purchase.agree.privacy_policy" = "Политика конфиденциальности";
 
-"purchases.period.button.try" = "Получите 7 дней БЕСПЛАТНО";
-"purchases.period.button.subscribe" = "Подписаться";
-"purchases.period.button.buy" = "Купить";
-"purchases.period.button.promo" = "Ввести промокод";
 
-"purchases.promocode.title" = "Введите промокод";
-"purchases.promocode.placeholder" = "";
-"purchases.promocode.button.invalid" = "Неверный промокод";
-"purchases.promocode.button.already_used" = "Промокод уже использован";
 
-"purchases.successful_subscription.title" = "Премиум";
-"purchases.successful_subscription.description" = "Спасибо за подписку!";
-"purchases.successful_subscription.subscribed" = "Наслаждайтесь полным функционалом приложения.";
-"purchases.successful_subscription.button.go_app" = "Перейти в приложение";
 
 // Address Checker
 
@@ -2399,8 +2033,6 @@
 "check_address.sanctions_check" = "Sanction Check";
 "check_address.coin_blacklist_check" = "%@ Blacklist Check";
 "check_address.on_blockchain" = "на %@";
-"check_address.chainalysis.description" = "Chainalysis — это аналитическая платформа для блокчейна, предоставляющая инструменты для отслеживания, расследования и оценки рисков криптовалютных адресов. Помогает выявлять адреса, связанные с санкциями, мошенничеством и другими противоправными действиями.";
-"check_address.hashdit.description" = "HashDit - это платформа безопасности, позволяющая проверять криптовалютные адреса на предмет рисков, включая санкции и наличие в черных списках. Помогает пользователям избегать взаимодействия с потенциально вредоносными или заблокированными адресами.";
 "check_address.coin_blacklist.description" = "Позволяет проверить, занесён ли криптовалютный адрес в чёрный список %@ (%@). Если адрес находится в списке, все связанные с ним токены %@ могут быть заморожены, сделав их недоступными и непереводимыми. Эта проверка помогает избежать взаимодействия с адресами с высоким уровнем риска или ограничениями.";
 
 // Monero
@@ -2411,10 +2043,7 @@
 "monero.priority.medium" = "Средняя";
 "monero.priority.high" = "Быстро";
 
-// MEV Protection
 
-"mev_protection.title" = "MEV";
-"mev_protection.description" = "Включите защиту, чтобы обезопасить свой свап и избежать потери средств из-за ботов.";
 
 // Secure Send Bottom Sheet
 "secure_send.bottom_sheet.title" = "Безопасная отправка";
@@ -2441,4 +2070,19 @@
 "qvm_send_settings.nonce.info" = "Nonce - это уникальное целочисленное значение для транзакции в кошельке пользователя. Обычно оно увеличивается с каждой транзакцией и не нуждается в изменении. Продвинутые пользователи могут установить его равным nonce отложенной транзакции, чтобы отменить и заменить эту транзакцию, при условии, что новая транзакция имеет достаточно большую плату, чтобы старая не была подтверждена вместо нее (например, они могут захотеть ускорить ее подтверждение или полностью изменить параметры транзакции). Когда несколько ожидающих транзакций имеют одинаковый nonce, подтверждается только одна, обычно с наибольшей комиссией.";
 "qvm_send_settings.nonce.errors.already_in_use" = "Использованый Nonce";
 "qvm_send_settings.nonce.errors.already_in_use.info" = "Выполненная транзакция с таким nonce уже существует.";
-"purchases.address_phishing.info" = "Один неверный адрес, и ваша крипта потеряна навсегда. Quantum Wallet автоматически проверяет адреса получателей на подозрительные шаблоны и защищает от новейших фишинговых угроз, предотвращая отправку средств хакерам. Блокируйте мошеннические переводы до того, как они произойдут.";
+
+// Security Tools
+"settings_security.robbery_protection" = "Защита при ограблении";
+"market.top.description.more_250_m" = "> $250 млн";
+"market.top.description.more_10_m" = "> $10млн";
+"settings_security.secure_send" = "Безопасная отправка";
+"market.top.description.more_500_m" = "> $500млн";
+"market.top.description.more_25_m" = "> $25 млн";
+"market.top.description.more_5_m" = "> $5млн";
+"settings_security.robbery_protection.description" = "Защищает ваши средства, если вас вынуждают разблокировать приложение.";
+"settings_security.secure_send.description" = "Предупреждает и защищает от отправки средств на опасные адреса.";
+"market.top.description.more_1_m" = "> $1млн";
+"market.top.description.more_100_m" = "> $100 млн";
+"market.top.description.more_1_b" = "> $1млрд";
+"market.top.description.m_cap" = "Рын.кап.";
+"settings_security.defense_system" = "Система защиты";

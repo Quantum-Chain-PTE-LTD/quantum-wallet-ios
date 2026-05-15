@@ -9,7 +9,6 @@ class MarketWatchlistViewModel: ObservableObject {
     private let watchlistManager = Core.shared.watchlistManager
     private let userDefaultsStorage = Core.shared.userDefaultsStorage
     private let appManager = Core.shared.appManager
-    private let purchaseManager = Core.shared.purchaseManager
     private var cancellables = Set<AnyCancellable>()
     private var tasks = Set<AnyTask>()
 
@@ -21,7 +20,6 @@ class MarketWatchlistViewModel: ObservableObject {
         }
     }
 
-    @Published private(set) var tradeSignalsEnabled: Bool = false
     @Published var state: State = .loading
 
     @Published var sortBy: WatchlistSortBy {
@@ -43,15 +41,9 @@ class MarketWatchlistViewModel: ObservableObject {
         }
     }
 
-    @Published var showSignals: Bool
-
     init() {
-        let tradeSignalsEnabled = purchaseManager.activated(.tradeSignals)
-
         sortBy = watchlistManager.sortBy
         timePeriod = watchlistManager.timePeriod
-        showSignals = tradeSignalsEnabled && watchlistManager.showSignals
-        self.tradeSignalsEnabled = tradeSignalsEnabled
 
         watchlistManager.$timePeriod
             .sink { [weak self] timePeriod in
@@ -59,23 +51,6 @@ class MarketWatchlistViewModel: ObservableObject {
             }
             .store(in: &cancellables)
 
-        watchlistManager.showSignalsUpdatedPublisher
-            .sink { [weak self] in
-                self?.syncShowSignals()
-            }
-            .store(in: &cancellables)
-
-        purchaseManager.$activeFeatures
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] activeFeatures in
-                self?.tradeSignalsEnabled = activeFeatures.contains(.tradeSignals)
-                self?.syncShowSignals()
-            }
-            .store(in: &cancellables)
-    }
-
-    private func syncShowSignals() {
-        showSignals = tradeSignalsEnabled && watchlistManager.showSignals
     }
 
     private func syncCoinUids() {
@@ -87,13 +62,13 @@ class MarketWatchlistViewModel: ObservableObject {
 
         self.coinUids = coinUids
 
-        if case let .loaded(marketInfos, signals) = internalState {
+        if case let .loaded(marketInfos) = internalState {
             let newMarketInfos = marketInfos.filter { marketInfo in
                 coinUids.contains(marketInfo.fullCoin.coin.uid)
             }
 
             if newMarketInfos.count == coinUids.count {
-                internalState = .loaded(marketInfos: newMarketInfos, signals: signals)
+                internalState = .loaded(marketInfos: newMarketInfos)
                 return
             }
         }
@@ -112,7 +87,7 @@ class MarketWatchlistViewModel: ObservableObject {
     private func _syncMarketInfos() async {
         if coinUids.isEmpty {
             await MainActor.run { [weak self] in
-                self?.internalState = .loaded(marketInfos: [], signals: [:])
+                self?.internalState = .loaded(marketInfos: [])
             }
             return
         }
@@ -124,16 +99,13 @@ class MarketWatchlistViewModel: ObservableObject {
         }
 
         do {
-            async let _marketInfos = try marketKit.marketInfos(coinUids: coinUids, currencyCode: currency.code)
-            async let _signals = try marketKit.signals(coinUids: coinUids)
-
-            let (marketInfos, signals) = try await (_marketInfos, _signals)
+            let marketInfos = try await marketKit.marketInfos(coinUids: coinUids, currencyCode: currency.code)
 
             let marketInfoMap = marketInfos.reduce(into: [String: MarketInfo]()) { $0[$1.fullCoin.coin.uid] = $1 }
             let orderedMarketInfos = coinUids.compactMap { marketInfoMap[$0] }
 
             await MainActor.run { [weak self] in
-                self?.internalState = .loaded(marketInfos: orderedMarketInfos, signals: signals)
+                self?.internalState = .loaded(marketInfos: orderedMarketInfos)
             }
         } catch {
             await MainActor.run { [weak self] in
@@ -146,8 +118,8 @@ class MarketWatchlistViewModel: ObservableObject {
         switch internalState {
         case .loading:
             state = .loading
-        case let .loaded(marketInfos, signals):
-            state = .loaded(marketInfos: marketInfos.sorted(sortBy: sortBy, timePeriod: timePeriod), signals: signals)
+        case let .loaded(marketInfos):
+            state = .loaded(marketInfos: marketInfos.sorted(sortBy: sortBy, timePeriod: timePeriod))
         case let .failed(error):
             state = .failed(error: error)
         }
@@ -185,21 +157,13 @@ extension MarketWatchlistViewModel {
         await _syncMarketInfos()
     }
 
-    func set(showSignals: Bool) {
-        stat(page: .markets, section: .watchlist, event: .showSignals(shown: showSignals))
-        syncState()
-        watchlistManager.showSignals = showSignals
-
-        syncShowSignals()
-    }
-
     func remove(coinUid: String) {
         watchlistManager.remove(coinUid: coinUid)
         stat(page: .markets, section: .watchlist, event: .removeFromWatchlist(coinUid: coinUid))
     }
 
     func move(source: IndexSet, destination: Int) {
-        guard case let .loaded(marketInfos, signals) = internalState else {
+        guard case let .loaded(marketInfos) = internalState else {
             return
         }
 
@@ -210,7 +174,7 @@ extension MarketWatchlistViewModel {
         newMarketInfos.move(fromOffsets: source, toOffset: destination)
 
         coinUids = newCoinUids
-        internalState = .loaded(marketInfos: newMarketInfos, signals: signals)
+        internalState = .loaded(marketInfos: newMarketInfos)
 
         watchlistManager.set(coinUids: coinUids)
     }
@@ -219,7 +183,7 @@ extension MarketWatchlistViewModel {
 extension MarketWatchlistViewModel {
     enum State {
         case loading
-        case loaded(marketInfos: [MarketInfo], signals: [String: TechnicalAdvice.Advice])
+        case loaded(marketInfos: [MarketInfo])
         case failed(error: Error)
     }
 }

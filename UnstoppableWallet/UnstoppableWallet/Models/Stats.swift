@@ -4,10 +4,7 @@ enum StatPage: String {
     case aboutApp = "about_app"
     case accountExtendedPrivateKey = "account_extended_private_key"
     case accountExtendedPublicKey = "account_extended_public_key"
-    case addressChecker = "address_checker"
     case addToken = "add_token"
-    case advancedSearch = "advanced_search"
-    case advancedSearchResults = "advanced_search_results"
     case appStatus = "app_status"
     case appearance
     case backupManager = "backup_manager"
@@ -27,28 +24,12 @@ enum StatPage: String {
     case blockchainSettingsZanoAdd = "blockchain_settings_zano_add"
     case blockchainSettingsTron = "blockchain_settings_tron"
     case blockchainSettingsTronAdd = "blockchain_settings_tron_add"
-    case checkAddress = "check_address"
     case cloudBackup = "cloud_backup"
-    case coinAnalytics = "coin_analytics"
-    case coinAnalyticsActiveAddresses = "coin_analytics_active_addresses"
-    case coinAnalyticsCexVolume = "coin_analytics_cex_volume"
-    case coinAnalyticsDexLiquidity = "coin_analytics_dex_liquidity"
-    case coinAnalyticsDexVolume = "coin_analytics_dex_volume"
-    case coinAnalyticsTvl = "coin_analytics_tvl"
-    case coinAnalyticsTxCount = "coin_analytics_tx_count"
     case coinCategory = "coin_category"
     case coinManager = "coin_manager"
     case coinMarkets = "coin_markets"
     case coinOverview = "coin_overview"
     case coinPage = "coin_page"
-    case coinRankAddress = "coin_rank_address"
-    case coinRankCexVolume = "coin_rank_cex_volume"
-    case coinRankDexLiquidity = "coin_rank_dex_liquidity"
-    case coinRankDexVolume = "coin_rank_dex_volume"
-    case coinRankFee = "coin_rank_fee"
-    case coinRankHolders = "coin_rank_holders"
-    case coinRankRevenue = "coin_rank_revenue"
-    case coinRankTxCount = "coin_rank_tx_count"
     case contactAddToExisting = "contact_add_to_existing"
     case contactNew = "contact_new"
     case contacts
@@ -114,8 +95,6 @@ enum StatPage: String {
     case privacy
     case privateKeys = "private_keys"
     case publicKeys = "public_keys"
-    case purchaseList = "purchase_list"
-    case purchaseSelector = "purchase_selector"
     case rateUs = "rate_us"
     case receive
     case receiveTokenList = "receive_token_list"
@@ -130,7 +109,6 @@ enum StatPage: String {
     case sendTokenList = "send_token_list"
     case settings
     case stellarSecretKey = "stellar_secret_key"
-    case subscription
     case swap
     case switchWallet = "switch_wallet"
     case tellFriends = "tell_friends"
@@ -145,9 +123,6 @@ enum StatPage: String {
     case transactionInfo = "transaction_info"
     case transactions
     case unlinkWallet = "unlink_wallet"
-    case vault
-    case vaults
-    case vipSupport = "vip_support"
     case walletConnect = "wallet_connect"
     case walletConnectRequest = "wallet_connect_request"
     case walletConnectSession = "wallet_connect_session"
@@ -178,7 +153,6 @@ enum StatSection: String {
     case topLosers = "top_losers"
     case topPlatforms = "top_platforms"
     case qrScan = "qr_scan"
-    case vaults
     case watchlist
 }
 
@@ -226,7 +200,6 @@ enum StatEvent {
     case openCategory(categoryUid: String)
     case openCoin(coinUid: String)
     case openPlatform(chainUid: String)
-    case openPremium(from: StatPremiumTrigger)
     case openReceive(token: Token)
     case openResend(chainUid: String, type: String)
     case openSector(sectorUid: String)
@@ -251,9 +224,7 @@ enum StatEvent {
     case setAmount
     case share(entity: StatEntity)
     case showMarketsTab(shown: Bool)
-    case showSignals(shown: Bool)
     case subscribe
-    case subscribePremium(from: StatPremiumTrigger)
     case switchBaseCurrency(code: String)
     case switchBlockchains(uids: [String])
     case switchBtcSource(chainUid: String, type: BtcRestoreMode)
@@ -315,7 +286,6 @@ enum StatEvent {
         case .open, .openCategory, .openCoin, .openPlatform, .openReceive, .openResend, .openSector, .openSend, .openSendTokenList, .openTokenPage,
              .openBlockchainSettingsBtc, .openBlockchainSettingsEvm, .openBlockchainSettingsMonero, .openBlockchainSettingsZano, .openBlockchainSettingsTron,
              .openBlockchainSettingsEvmAdd, .openBlockchainSettingsMoneroAdd, .openBlockchainSettingsZanoAdd, .openBlockchainSettingsTronAdd: return "open_page"
-        case .openPremium: return "open_premium_from"
         case .openTokenInfo: return "open_token_info"
         case .paste: return "paste"
         case .recipientCheck: return "recipient_check"
@@ -337,9 +307,7 @@ enum StatEvent {
         case .setAmount: return "set_amount"
         case .share: return "share"
         case .showMarketsTab: return "show_markets_tab"
-        case .showSignals: return "show_signals"
         case .subscribe: return "subscribe"
-        case .subscribePremium: return "subscribe_premium_from"
         case .switchBaseCurrency: return "switch_base_currency"
         case .switchBlockchains: return "switch_blockchains"
         case .switchBtcSource: return "switch_btc_source"
@@ -399,7 +367,6 @@ enum StatEvent {
         case let .openBlockchainSettingsEvmAdd(chainUid: chainUid): return [.page: StatPage.blockchainSettingsEvmAdd.rawValue, .chainUid: chainUid]
         case let .openCategory(categoryUid): return [.page: StatPage.coinCategory.rawValue, .categoryUid: categoryUid]
         case let .openCoin(coinUid): return [.page: StatPage.coinPage.rawValue, .coinUid: coinUid]
-        case let .openPremium(trigger): return [.trigger: trigger.rawValue].merging(trialExpired) { $1 }
         case let .openSendTokenList(coinUid, chainUid):
             var params: [StatParam: Any] = [.page: StatPage.sendTokenList.rawValue]
             params[.coinUid] = coinUid
@@ -429,8 +396,6 @@ enum StatEvent {
         case let .select(entity): return [.entity: entity.rawValue]
         case let .share(entity): return [.entity: entity.rawValue]
         case let .showMarketsTab(shown): return [.shown: shown]
-        case let .showSignals(shown): return [.shown: shown]
-        case let .subscribePremium(trigger): return [.trigger: trigger.rawValue].merging(trialExpired) { $1 }
         case let .switchBaseCurrency(code): return [.currencyCode: code]
         case let .switchBlockchains(uids): return [.uids: uids]
         case let .switchBtcSource(chainUid, type): return [.chainUid: chainUid, .type: type.rawValue]
@@ -460,13 +425,6 @@ enum StatEvent {
         return params
     }
 
-    private var trialExpired: [StatParam: Any] {
-        var params: [StatParam: Any] = [:]
-        if Core.shared.purchaseManager.introductoryOfferType == .none {
-            params[.status] = "trial_expired"
-        }
-        return params
-    }
 }
 
 enum StatParam: String {
@@ -500,52 +458,9 @@ enum StatParam: String {
     case walletType = "wallet_type"
 }
 
-enum StatPremiumTrigger: String {
-    case activeAddresses = "active_addresses"
-    case addressChecker = "address_checker"
-    case banner
-    case blockchains
-    case dexLiquidity = "dex_liquidity"
-    case dexVolume = "dex_volume"
-    case disableAddressChecker = "disable_address_checker"
-    case robberyProtection = "robbery_protection"
-    case filter
-    case getPremium = "get_premium"
-    case goodCexVolume = "good_cex_volume"
-    case goodDexVolume = "good_dex_volume"
-    case goodDistribution = "good_distribution"
-    case holders
-    case issueBlockchains = "issue_blockchains"
-    case listedOnTopExchanges = "listed_on_top_exchanges"
-    case mevProtection = "mev_protection"
-    case other
-    case outperformedBnb = "outperformed_bnb"
-    case outperformedBtc = "outperformed_btc"
-    case outperformedEth = "outperformed_eth"
-    case outperformedGold = "outperformed_gold"
-    case outperformedSp500 = "outperformed_sp500"
-    case periodChange = "period_change"
-    case priceChange = "price_change"
-    case priceCloseTo = "price_close_to"
-    case pricePeriod = "price_period"
-    case projectFee = "project_fee"
-    case projectRevenue = "project_revenue"
-    case sectors
-    case sortBy = "sort_by"
-    case swapQuoteSelect = "swap_quote_select"
-    case timePeriod = "time_period"
-    case tokenChange = "token_change"
-    case tradingAssistant = "trading_assistant"
-    case tradingSignal = "trading_signal"
-    case transactionCount = "transaction_count"
-    case unlock
-    case vault
-    case vipSupport = "vip_support"
-}
-
 enum StatTab: String {
     case markets, balance, transactions, settings
-    case coins, overview, news, pairs, platforms, watchlist, sectors, vaults
+    case coins, overview, news, pairs, platforms, watchlist, sectors
     case analytics
     case all, incoming, outgoing, swap, approve
 }

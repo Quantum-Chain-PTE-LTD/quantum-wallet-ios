@@ -137,7 +137,6 @@ extension CoinChartViewModel: IChartViewModel {
     }
 
     func onTapChartSettings() {
-        // check subscriptions
         openSettingsRelay.accept(())
     }
 
@@ -170,8 +169,7 @@ extension CoinChartViewModel: IChartViewTouchDelegate {
 extension CoinChartViewModel {
     static func instance(coinUid: String) -> CoinChartViewModel {
         let repository = ChartIndicatorsRepository(
-            localStorage: Core.shared.localStorage,
-            subscriptionManager: Core.shared.subscriptionManager
+            localStorage: Core.shared.localStorage
         )
         let chartService = CoinChartService(
             marketKit: Core.shared.marketKit,

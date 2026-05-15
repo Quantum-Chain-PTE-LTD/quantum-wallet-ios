@@ -26,8 +26,6 @@ class WalletConnectMainViewModel {
     private let viewItemRelay = BehaviorRelay<ViewItem?>(value: nil)
     private let finishRelay = PublishRelay<Void>()
 
-    private let whitelistStateRelay = BehaviorRelay<WalletConnectMainModule.WhitelistState>(value: .loading)
-
     init(service: WalletConnectMainService) {
         self.service = service
 
@@ -44,8 +42,6 @@ class WalletConnectMainViewModel {
             self?.sync(allowedBlockchains: allowedBlockchains)
         }
         subscribe(scheduler, disposeBag, service.proposalTimeOutAttentionObservable) { [weak self] in self?.showTimeOutAttentionRelay.accept(()) }
-
-        subscribe(scheduler, disposeBag, service.whitelistStateObservable) { [weak self] state in self?.syncWhitelist(state: state) }
 
         subscribe(MainScheduler.instance, disposeBag, service.connectedObservable) { [weak self] in
             HudHelper.instance.show(banner: .connectedWalletConnect)
@@ -79,8 +75,6 @@ class WalletConnectMainViewModel {
             return
         }
 
-        syncWhitelist(state: service.whitelistState)
-
         connectingRelay.accept(service.state == .idle)
         cancelVisibleRelay.accept(state != .ready)
         connectButtonRelay.accept(state == .waitingForApproveSession ? (connectionState == .connected ? .enabled : .hidden) : .hidden)
@@ -108,15 +102,6 @@ class WalletConnectMainViewModel {
         )
 
         viewItemRelay.accept(viewItem)
-    }
-
-    private func syncWhitelist(state: WalletConnectMainModule.WhitelistState) {
-        guard service.premiumEnabled else {
-            whitelistStateRelay.accept(.deactivated)
-            return
-        }
-
-        whitelistStateRelay.accept(state)
     }
 
     private func status(connectionState: WalletConnectMainModule.ConnectionState) -> Status? {
@@ -176,10 +161,6 @@ extension WalletConnectMainViewModel {
         headerTitleStateRelay.asDriver()
     }
 
-    var whitelistStateDriver: Driver<WalletConnectMainModule.WhitelistState> {
-        whitelistStateRelay.asDriver()
-    }
-
     var closeVisibleDriver: Driver<Bool> {
         closeVisibleRelay.asDriver()
     }
@@ -190,10 +171,6 @@ extension WalletConnectMainViewModel {
 
     var finishSignal: Signal<Void> {
         finishRelay.asSignal()
-    }
-
-    var premiumEnabled: Bool {
-        service.premiumEnabled
     }
 
     func cancel() {

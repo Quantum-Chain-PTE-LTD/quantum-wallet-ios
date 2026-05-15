@@ -556,11 +556,6 @@
 "send.address.phishing.description" = "Girilen hedef adresi olası phishing (oltalama) riskleri açısından analiz eder.\n\nTemiz: Şüpheli bir etkinlik tespit edilmedi.\n\nTespit edildi: Görünüşe göre biri sizi yanlış adrese fon göndermeye ikna etmeye çalışıyor olabilir. Adresin doğruluğundan kesin olarak emin olmadıkça devam etmeyin. Öncelikle küçük bir test işlemi göndermeyi düşünün.";
 "send.address.phishing.caution.title" = "Oltalama Adresi Tespit Edildi!";
 "send.address.phishing.caution.description" = "Girdiğiniz adres sahte olabilir. Dolandırıcılar genellikle ilk ve son karakterleri değiştirirler. Kayıpları önlemek için devam etmeden önce tam adresi dikkatlice doğrulayın.";
-"send.address.sanction_check" = "Sanction Check";
-"send.address.sanction_check.subtitle" = "Adresin yaptırım kısıtlamalarına tabi olup olmadığını doğrular.";
-"send.address.sanction.description" = "Alıcının adresinin uluslararası yaptırımlara tabi olup olmadığını Chainalysis.com verileriyle doğrular.\n\nTemiz: Herhangi bir yaptırım tespit edilmedi.\n\nTespit edildi: Olası yasal risk. Bu adrese yapılan işlemler bazı yargı bölgelerinde kısıtlanabilir veya yasa dışı olabilir.";
-"send.address.sanction.caution.title" = "Yaptırım Uygulanan Adres!";
-"send.address.sanction.caution.description" = "Girdiğiniz adres yaptırım listesine alınmış. Bu adrese yapılacak işlemler kayıp ya da başka risklere yol açabilir. Devam etmeden önce alıcı bilgilerini mutlaka doğrulayın.";
 "send.address.blacklist_check" = "Kara Liste Kontrolü";
 "send.address.blacklist_check.subtitle" = "Adresi dolandırıcılık ve yüksek riskli veri tabanlarında kontrol eder.";
 "send.address.blacklist.description" = "Hedef adresin resmi veya gayriresmî kara listelerde yer alıp almadığını kontrol eder.\n\nTemiz: Kara liste işareti yok.\n\nTespit edildi: Adres kara listede ve yasal veya güvenlik riskleriyle ilişkili olabilir. Dikkatli ilerleyin. Birçok kripto borsası, kara listedeki adreslerle etkileşimde bulunan cüzdanlardan para yatıran veya çeken kullanıcıları kısıtlamaktadır. Bunu aklınızda bulundurun.";
@@ -785,7 +780,6 @@
 "market.tab.news" = "Haberler";
 "market.tab.coins" = "Coin'ler";
 "market.tab.watchlist" = "İzleme Listesi";
-"market.tab.vaults" = "Kazanç";
 "market.tab.platforms" = "Platformlar";
 "market.tab.pairs" = "Çiftler";
 "market.tab.sectors" = "Sektörler";
@@ -883,103 +877,18 @@
 "market_discovery.not_found" = "Sonuç bulunamadı";
 
 "market_watchlist.empty.caption" = "İzleme listeniz boş.";
-"market.watchlist.signals" = "Sinyaller";
 "market.watchlist.empty" = "İzleme listeniz boş";
-"market.watchlist.signals.description" = "Aşağıdaki sinyaller yaklaşık olarak son 30 gün boyunca Bollinger Bantları ve RSI teknik fiyat göstergelerine dayanmaktadır. Bu sinyaller algoritmiktir ve sık sık değişebilir.";
-"market.watchlist.signals.strong_buy.description" = "Fiyat artışında yüksek güven";
-"market.watchlist.signals.buy.description" = "Yakın gelecekte muhtemel fiyat artışı";
-"market.watchlist.signals.neutral.description" = "Net bir trend yok, piyasa denge durumunda";
-"market.watchlist.signals.sell.description" = "Yakın gelecekte muhtemel fiyat düşüşü";
-"market.watchlist.signals.strong_sell.description" = "Fiyatın yüksek olasılıkla düşeceği";
-"market.watchlist.signals.risky.description" = "Yüksek risk seviyesi, dikkat gerektirir";
-"market.watchlist.signals.warning" = "Her zaman risk yönetimini uygulamayı unutmayın ve bu finansal tavsiye değildir.";
-"market.watchlist.signals.turn_on" = "Açık Konum";
 
-"market.advanced_search.title" = "Filtreler";
-"market.advanced_search.show_results" = "Sonuçları Göster";
-"market.advanced_search.empty_results" = "Boş Sonuçlar";
-"market.advanced_search.retry" = "Yeniden Dene";
-"market.advanced_search.dex_description" = "Bu ayar, Ethereum (Uniswap DEX) ve Binance Smart Chain (Pancake DEX) üzerinde işlem gören tokenlar için geçerlidir.";
-"market.advanced_search.24h" = "24 sa";
 
-"market.advanced_search.market_parameters" = "Piyasa Parametreleri";
-"market.advanced_search.network_parameters" = "Ağ Parametreleri";
-"market.advanced_search.indicators" = "Göstergeler";
-"market.advanced_search.price_parameters" = "Fiyat Parametreleri";
-"market.advanced_search.choose_set" = "Set Seç";
-"market.advanced_search.market_cap" = "Piyasa Değeri";
-"market.advanced_search.volume" = "İşlem Hacmi";
-"market.advanced_search.categories" = "Sektörler";
 
-"market.advanced_search.listed_on_top_exchanges" = "En İyi Borsalarda Listelenmiş";
-"market.advanced_search.good_cex_volume" = "İyi CEX Hacmi";
-"market.advanced_search.good_dex_volume" = "İyi DEX Hacmi";
-"market.advanced_search.good_distribution" = "İyi Dağılım";
-"market.advanced_search.overall_score_is_good_or_excellent" = "Genel Puan iyi veya mükemmel";
 
-"market.advanced_search.liquidity" = "DEX Likiditesi";
-"market.advanced_search.blockchains" = "Blockchain'ler";
-"market.advanced_search.signal" = "Alım Satım Sinyali";
-"market.advanced_search.price_period" = "Fiyat Periyodu";
-"market.advanced_search.price_change" = "Fiyat Değişimi";
 
-"market.advanced_search.outperformed_btc" = "BTC'yi Geride Bıraktı";
-"market.advanced_search.outperformed_eth" = "ETH'yi Geride Bıraktı";
-"market.advanced_search.outperformed_bnb" = "BNB'yi Geride Bıraktı";
-"market.advanced_search.outperformed_sp500" = "S&P500’ü geride bıraktı";
-"market.advanced_search.outperformed_gold" = "Altını geride bıraktı";
-"market.advanced_search.price_close_to" = "Kapanış fiyatı";
-"market.advanced_search.price_close_to_ath" = "ATH'ye Yakın Fiyat";
-"market.advanced_search.price_close_to_atl" = "ATL'ye Yakın Fiyat";
 
-"market.advanced_search.top" = "En İyiler %d";
 
-"market.advanced_search.less_5_m" = "< 5M";
-"market.advanced_search.less_10_m" = "< 10M";
-"market.advanced_search.less_50_m" = "< 50M";
-"market.advanced_search.less_500_m" = "< 500M";
-"market.advanced_search.m_5_m_20" = "5M - 20M";
-"market.advanced_search.m_10_m_40" = "10M - 40M";
-"market.advanced_search.m_20_m_100" = "20M - 100M";
-"market.advanced_search.m_40_m_200" = "40M - 200M";
-"market.advanced_search.m_50_m_200" = "50M - 200M";
-"market.advanced_search.m_100_b_1" = "100M - 1B";
-"market.advanced_search.m_200_b_1" = "200M - 1B";
-"market.advanced_search.m_200_b_2" = "200M - 2B";
-"market.advanced_search.m_500_b_2" = "500M - 2B";
-"market.advanced_search.b_1_b_5" = "1B - 5B";
-"market.advanced_search.b_1_b_10" = "1B - 10B";
-"market.advanced_search.b_2_b_10" = "2B - 10B";
-"market.advanced_search.b_10_b_50" = "10B - 50B";
-"market.advanced_search.b_10_b_100" = "10B - 100B";
-"market.advanced_search.b_100_b_500" = "100B - 500B";
-"market.advanced_search.more_5_b" = "> 5B";
-"market.advanced_search.more_10_b" = "> 10B";
-"market.advanced_search.more_50_b" = "> 50B";
-"market.advanced_search.more_500_b" = "> 500B";
 
-"market.advanced_search.top.m_cap" = "M.Cap";
-"market.advanced_search.top.more_1_b" = "> $1B";
-"market.advanced_search.top.more_500_m" = "> $500M";
-"market.advanced_search.top.more_250_m" = "> $250M";
-"market.advanced_search.top.more_100_m" = "> $100M";
-"market.advanced_search.top.more_25_m" = "> $25M";
-"market.advanced_search.top.more_10_m" = "> $10M";
-"market.advanced_search.top.more_5_m" = "> $5M";
-"market.advanced_search.top.more_1_m" = "> $1M";
 
-"market.advanced_search.day" = "1 Gün";
-"market.advanced_search.week" = "1 Hafta";
-"market.advanced_search.week2" = "2 Hafta";
-"market.advanced_search.month" = "1 Ay";
-"market.advanced_search.month6" = "6 Ay";
-"market.advanced_search.year" = "1 Yıl";
 
-"market.advanced_search.day.short" = "24S";
-"market.advanced_search.week.short" = "7G";
-"market.advanced_search.month.short" = "1A";
 
-"market.advanced_search_results.title" = "Sonuçlar";
 
 "market.global.total_market_cap.title" = "Toplam Piyasa Değeri";
 "market.global.total_market_cap.description" = "Tüm kripto paraların toplam piyasa değeri";
@@ -1021,37 +930,12 @@
 "market.signal.sell" = "Sat";
 "market.signal.strong_sell" = "Kuvvetli Satış";
 
-// Market Vaults
 
-"market.vaults.apy" = "APY %@";
-"market.vaults.tvl" = "TVL: %@";
-"market.vaults.premium.description" = "Tüm en iyi DeFi staking getirilerini tek bir yerde keşfedin.";
-"market.vaults.premium.unlock" = "Premium’un kilidini aç";
 
-"market.vaults.filter" = "Filtre";
-"market.vaults.filter.all_assets" = "Tüm Varlıklar";
-"market.vaults.filter.eth_yield" = "ETH Getirisi";
-"market.vaults.filter.usd_yield" = "USD Getirisi";
 
-"market.vaults.sort.highest_apy" = "En Yüksek APY";
-"market.vaults.sort.highest_tvl" = "En Yüksek TVL";
-"market.vaults.sort.highest_apy.short" = "APY";
-"market.vaults.sort.highest_tvl.short" = "TVL";
 
-"market.vaults.chains.title" = "Blockchain'ler";
-"market.vaults.chains.any" = "Herhangi";
-"market.vaults.chains.all_chains" = "Tüm Ağlar";
-"market.vaults.chains.n_chains" = "%@ Ağları";
 
-// Market Vault
 
-"market.vault.apy" = "APY";
-"market.vault.tvl" = "TVL";
-"market.vault.network" = "Ağ";
-"market.vault.protocol" = "Protokol";
-"market.vault.underlying_token" = "Temel Token";
-"market.vault.hoders" = "Sahipler";
-"market.vault.open_dapp" = "DApp Aç";
 
 // Coin Page
 
@@ -1136,162 +1020,27 @@
 "technical_advice.macd.negative" = "aşağıda";
 "technical_advice.macd.advice" = "MACD. Ortalama fiyat değişimini dikkate alarak trendin gücünü değerlendirir. Histogramın günlük değeri %@ (%@). Varlığın fiyatı genel olarak %@ hareket edebilir.";
 
-"coin_analytics.indicators.title" = "Teknik Göstergeleri";
-"coin_analytics.indicators.disclaimer" = "Her zaman risk yönetimini uygulamayı unutmayın ve bu finansal tavsiye değildir.";
-"coin_analytics.indicators.info.title" = "Teknik Göstergeleri";
-"coin_analytics.indicators.info.description" = "Bollinger Bantları + RSI stratejisini kullanarak işlem sinyallerini belirliyoruz. Tüm hesaplamalar günlük mum grafiklerine dayanmakta ve ortalama uzun vadeli bir strateji için tavsiyeler sunmaktadır. Stratejinin özü, varlık fiyatının Bollinger Bantları kanalından çıkarak aşırı seviyelere ulaşması ve RSI'nin aşırı alım/aşırı satım bölgesinde olması gerektiğidir. Fiyat kanala geri döndükten sonra, fiyatın ortalama değerlere geri dönme veya kanalı diğer taraftan kırmaya yönelik yüksek bir olasılığı vardır. Stratejinin güçlü piyasa hareketleri sırasında birkaç yanlış sinyal verebileceğini unutmayın, doğru bir sinyal ortaya çıkmadan önce.\n\nLütfen ticarette risk yönetimini uygulamanın çok önemli olduğunu ve piyasa durumu değişirse kayıpları kesmeyi unutmayın! ";
-"coin_analytics.indicators.details" = "Ayrıntılar";
-"coin_analytics.indicators.hide_details" = "Detayları Gizle";
-"coin_analytics.indicators.show_details" = "Detayları Göster";
-"coin_analytics.indicators.summary" = "Kısa özet";
-"coin_analytics.indicators.no_data" = "Veri Yok";
-"coin_analytics.indicators.oversold" = "Riskli";
-"coin_analytics.indicators.strong_buy" = "Kuvvetli Al";
-"coin_analytics.indicators.buy" = "Al";
-"coin_analytics.indicators.neutral" = "Tarafsız";
-"coin_analytics.indicators.sell" = "Sat";
-"coin_analytics.indicators.strong_sell" = "Kuvvetli Satış";
-"coin_analytics.indicators.overbought" = "Riskli";
-"coin_analytics.period" = "Periyot";
-"coin_analytics.period.select_title" = "Periyot Seç";
 
-"coin_analytics.details" = "Ayrıntılar";
 
-"coin_analytics.not_available" = "This project has no analytical data";
 
-"coin_analytics.technical_indicators" = "Teknik Göstergeleri";
-"coin_analytics.technical_indicators.info1" = "Özet: Bu, bir varlığın teknikleri ile ilgili çeşitli teknik göstergeleri ve zaman dilimlerini göz önünde bulunduran genel bir bakıştır. Bu göstergelere dayalı olarak bir uzlaşı görüşü sunar (Al, Sat veya Tarafsız).";
-"coin_analytics.technical_indicators.info2" = "Hareketli Ortalamalar (MA): Bunlar, eğilimi takip eden bir gösterge oluşturmak için fiyat verilerini düzleştiren yaygın olarak kullanılan teknik göstergelerdir. Belirli bir zaman dilimi içinde ortalama fiyatı gösterirler. Birden fazla MA türü bulunur:\n\nBasit Hareketli Ortalama (SMA): Bu, genellikle kapanış fiyatları gibi belirli bir fiyat aralığının ortalamasını, o aralıktaki dönem sayısına göre hesaplar.\n\nÜstel Hareketli Ortalama (EMA): Bu, daha yeni fiyatlara daha fazla ağırlık verir ve bu nedenle daha yeni fiyat değişikliklerine daha hızlı tepki verir.";
-"coin_analytics.technical_indicators.info3" = "Osilatörler: Bunlar, zaman içinde bir bant içinde (bir merkez çizginin üstünde ve altında veya belirlenen seviyeler arasında) dalgalanan teknik göstergelerdir. Piyasada aşırı alım ve aşırı satım koşullarını belirlemeye yardımcı olmak için tasarlanmışlardır. İşte bazı yaygın osilatörler:\n\nGüç Endeksi (RSI - Relative Strength Index): Bu, fiyat hareketlerinin hızını ve değişimini ölçer. Genellikle aşırı alım veya aşırı satım koşullarını belirlemek için kullanılır.\n\nHareketli Ortalama Yakınsama Sapma (MACD - Moving Average Convergence Divergence): Bu, potansiyel alım ve satış sinyallerini belirlemek için kullanılır. Teknik sinyalleri tetiklerken sinyal çizgisinin üzerinden (alış) veya altından (satış) geçtiğinde çalışır.";
 
-"coin_analytics.cex_volume" = "CEX Hacmi";
-"coin_analytics.cex_volume_rank" = "CEX Hacim Sıralaması";
-"coin_analytics.cex_volume_rank.description" = "Merkezi borsalarda token için işlem hacmine göre sıralanan tokenlar.";
-"coin_analytics.cex_volume_rank.sorting_field" = "Hacim";
-"coin_analytics.cex_volume.info1" = "Total trading volume for the token on leading centralized exchanges over 30-day period.";
-"coin_analytics.cex_volume.info2" = "Önde gelen merkezi borsalarda token için günlük işlem hacmindeki değişimi gösteren 1 yıllık döneme ait grafik.";
-"coin_analytics.cex_volume.info3" = "Token's rank based on trading volume on leading centralized exchanges over 30-day period.";
-"coin_analytics.cex_volume.info4" = "24 Saat / 7 Gün / 1 Ay aralıklarında merkezi borsalarda işlem hacmine göre sıralanan tüm tokenların listesi.";
 
-"coin_analytics.dex_volume" = "DEX Hacmi";
-"coin_analytics.dex_volume_rank" = "DEX Hacim Sıralaması";
-"coin_analytics.dex_volume_rank.description" = "Merkezi olmayan borsalarda token için işlem hacmine göre sıralanan tokenlar.";
-"coin_analytics.dex_volume_rank.sorting_field" = "Hacim";
-"coin_analytics.dex_volume.info1" = "Total trading volume for the token on leading centralized exchanges over 30-day period.";
-"coin_analytics.dex_volume.info2" = "Bir yıllık süre zarfında önde gelen merkezi olmayan borsalarda token için günlük işlem hacmindeki değişikliği gösteren grafik.";
-"coin_analytics.dex_volume.info3" = "30 günlük süre içinde önde gelen merkezi olmayan borsalarda işlem hacmine göre token sıralaması.";
-"coin_analytics.dex_volume.info4" = "24 saat / 7 gün / 1 ay aralıklarında, merkezi olmayan borsalardaki işlem hacmine göre sıralanan tüm tokenlerin listesi.";
-"coin_analytics.dex_volume.tracked_dexes" = "Takip edilen DEX'ler:";
-"coin_analytics.dex_volume.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Sushiswap";
-"coin_analytics.dex_volume.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap";
 
-"coin_analytics.dex_liquidity" = "DEX Likiditesi";
-"coin_analytics.dex_liquidity_rank" = "DEX Likidite Sıralaması";
-"coin_analytics.dex_liquidity_rank.description" = "Merkezi olmayan borsalarda mevcut likiditeye göre sıralanan tokenlar.";
-"coin_analytics.dex_liquidity_rank.sorting_field" = "Likidite";
-"coin_analytics.dex_liquidity.info1" = "Önde gelen merkezi olmayan borsalarda token için şu anda mevcut olan toplam likidite.";
-"coin_analytics.dex_liquidity.info2" = "Bir yıllık süre zarfında önde gelen merkezi olmayan borsalarda token için mevcut likiditedeki değişikliği gösteren grafik.";
-"coin_analytics.dex_liquidity.info3" = "Önde gelen merkezi olmayan borsalarda token için mevcut likiditeye göre sıralanan tüm tokenlerin listesi.";
-"coin_analytics.dex_liquidity.tracked_dexes" = "Takip edilen DEX'ler:";
-"coin_analytics.dex_liquidity.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Balancer V1/2, Bancor V2, Curve, Sushiswap";
-"coin_analytics.dex_liquidity.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap, DODO V1/2";
 
-"coin_analytics.active_addresses" = "Günlük Aktif Adresler";
-"coin_analytics.active_addresses.30_day_unique_addresses" = "30 Günlük Benzersiz Adresler";
-"coin_analytics.active_addresses_rank" = "Aktif Adresler Sıralaması";
-"coin_analytics.active_addresses_rank.description" = "Token ile işlem yapan benzersiz adreslerin sayısına göre sıralanan tokenlar.";
-"coin_analytics.active_addresses_rank.sorting_field" = "Aktif";
-"coin_analytics.active_addresses.info1" = "Total number of unique daily active addresses over 24-hour period.";
-"coin_analytics.active_addresses.info2" = "Bir yıllık süre zarfında günlük aktif adres sayısındaki değişimi gösteren grafik.";
-"coin_analytics.active_addresses.info3" = "Total number of unique blockchain addresses transacting with token over 30-day period.";
-"coin_analytics.active_addresses.info4" = "Token's rank based on the number of active wallets transacting with the token 30-day period.";
-"coin_analytics.active_addresses.info5" = "24 saat / 7 gün / 1 ay aralıklarında, token ile işlem yapan günlük aktif adreslerin sayısına göre sıralanan tüm tokenlerin listesi.";
 
-"coin_analytics.transaction_count" = "İşlem Sayısı";
-"coin_analytics.transaction_count_rank" = "İşlem Sayısı Sıralaması";
-"coin_analytics.transaction_count_rank.description" = "Tokens ranked by number of transactions on a blockchain.";
-"coin_analytics.transaction_count_rank.sorting_field" = "Sayı";
-"coin_analytics.transaction_count.info1" = "Total number of unique blockchain transactions with token over 30-day period.";
-"coin_analytics.transaction_count.info2" = "Bir yıllık süre zarfında işlem sayısındaki değişimi gösteren grafik.";
-"coin_analytics.transaction_count.info3" = "Token's rank based on the number of transactions with the token 30-day period.";
-"coin_analytics.transaction_count.info4" = "24 saat / 7 gün / 1 ay aralıklarında, token ile yapılan işlem sayısına göre sıralanan tüm tokenlerin listesi.";
-"coin_analytics.transaction_count.info5" = "30 günlük süre boyunca blockchain üzerinden transfer edilen toplam token sayısı.";
 
-"coin_analytics.holders" = "Sahipler";
-"coin_analytics.holders_rank" = "Sahipler Sıralaması";
-"coin_analytics.holders_rank.description" = "Çoklu blockchain'lerde onları tutan benzersiz adreslere göre tokenleri sıralama.";
-"coin_analytics.holders_rank.sorting_field" = "Sahipler";
-"coin_analytics.holders.info1" = "Çeşitli blockchain'lerde tokeni tutan benzersiz adreslerin toplam sayısı.";
-"coin_analytics.holders.info2" = "Her blok zincirinde tokenı tutan en iyi 10 cüzdan.";
-"coin_analytics.holders.tracked_blockchains" = "İzlenen blok zincirleri: Ethereum, Binance Smart Chain, İyimserlik, Arbitrum, Celo, Cronos, Avalanche, Fantom, Polygon";
-"coin_analytics.holders.in_top_10_addresses" = "ilk 10 sahibinde";
-"coin_analytics.holders.count" = "Toplam Sahip: %@";
-"coin_analytics.holders.see_all" = "Hepsini Gör";
 
-"coin_analytics.project_tvl" = "Proje TVL";
-"coin_analytics.tvl_ratio" = "Piyasa Değeri / TVL Oranı";
-"coin_analytics.project_tvl.info_title" = "Proje TVL (Toplam Değer)";
-"coin_analytics.project_tvl.info1" = "Total-Value-Locked (or Assets Under Management) in the project's smart contracts.";
-"coin_analytics.project_tvl.info2" = "Projenin akıllı sözleşmelerindeki Toplam Kilit Değerdeki değişimi gösteren 1 yıllık döneme ait grafik.";
-"coin_analytics.project_tvl.info3" = "Token's rank based on current Total-Value-Locked.";
-"coin_analytics.project_tvl.info4" = "Mevcut Toplam Kilit Değere göre sıralanan tüm tokenların listesi.";
-"coin_analytics.project_tvl.info5" = "Projenin Piyasa Değeri / TVL oranı.";
 
-"coin_analytics.project_fee" = "Proje Ücreti";
-"coin_analytics.project_fee_rank" = "Proje Ücret Sıralaması";
-"coin_analytics.project_fee_rank.description" = "Tokens ranked according to fees generated by respective projects. The way fees are collected varies from project to project.";
-"coin_analytics.project_fee_rank.sorting_field" = "Hacim";
 
-"coin_analytics.project_revenue" = "Proje Geliri";
-"coin_analytics.project_revenue_rank" = "Proje Gelir Sıralaması";
-"coin_analytics.project_revenue_rank.description" = "Tokens ranked by revenue generated for holders via mechanisms i.e. staking or token burns.";
-"coin_analytics.project_revenue_rank.sorting_field" = "Gelir";
 
-"coin_analytics.other_data" = "Diğer Veriler";
 
-"coin_analytics.reports" = "Raporlar";
 
-"coin_analytics.funding" = "Finansman";
-"coin_analytics.funding.lead" = "Önderlik";
 
-"coin_analytics.treasuries" = "Treasuries";
-"coin_analytics.treasuries.filters" = "Filtreler";
-"coin_analytics.treasuries.filter.all" = "Hepsi";
-"coin_analytics.treasuries.filter.public" = "Kamu";
-"coin_analytics.treasuries.filter.private" = "Özel";
-"coin_analytics.treasuries.filter.etf" = "ETF";
 
-"coin_analytics.audits" = "Denetimler";
-"coin_analytics.audits.issues" = "Sorunlar";
-"coin_analytics.audits.no_reports" = "Denetim raporu yok";
 
-"coin_analytics.last_30d" = "Son 30 gün";
-"coin_analytics.current" = "mevcut";
 
-"coin_analytics.overall_score" = "Genel Puan";
-"coin_analytics.overall_score.excellent" = "Mükemmel";
-"coin_analytics.overall_score.good" = "İyi";
-"coin_analytics.overall_score.fair" = "Orta";
-"coin_analytics.overall_score.poor" = "Zayıf";
-"coin_analytics.overall_score.cex_volume" = "Genel puan, son 7 gündeki merkezi borsalarda ortalama günlük işlem hacmine dayanmaktadır.";
-"coin_analytics.overall_score.dex_volume" = "Genel puan, son 7 gündeki merkezi olmayan borsalarda ortalama günlük işlem hacmine dayanmaktadır.";
-"coin_analytics.overall_score.dex_liquidity" = "Genel puan, merkezi olmayan borsalardaki toplam mevcut likiditeye dayanmaktadır.";
-"coin_analytics.overall_score.active_addresses" = "Genel puan, son 7 gündeki ortalama günlük aktif adres sayısına dayanmaktadır.";
-"coin_analytics.overall_score.project_tvl" = "Genel puan, verilen token tarafından temsil edilen projenin toplam değer kilitlenmesine (varlık yönetimi) dayanmaktadır.";
-"coin_analytics.overall_score.transaction_count" = "The overall score is based on the total value locked (assets under management) on the project represented by the given token.";
-"coin_analytics.overall_score.holders" = "Genel puan, ilgili tokenı tutan adreslerin toplam sayısına dayanmaktadır.";
 
-"coin_analytics.rank" = "Sıralama";
-"coin_analytics.30_day_rank" = "Son 30 Gün Sıralaması";
-"coin_analytics.30_day_volume" = "Son 30 Gün Hacmi";
 
-"coin_analytics.analysis.title" = "Akıllı Kontrat Analizi";
-"coin_analytics.analysis.high_risk_items" = "Yüksek Riskli Ögeler";
-"coin_analytics.analysis.medium_risk_items" = "Orta Riskli Ögeler";
-"coin_analytics.analysis.attention_required" = "İlgilenmeniz Gerekiyor";
-"coin_analytics.analysis.token_detectors" = "Token Tespit Ediciler";
-"coin_analytics.analysis.general_detectors" = "Genel Tespit Ediciler";
-"coin_analytics.analysis.issues" = "Sorunlar: %@";
 
 // Coin Page -> Markets
 
@@ -1715,22 +1464,9 @@
 
 // Settings -> Subsription
 
-"subscription.premium.label" = "Premium";
-"subscription.title" = "Abonelik";
-"subscription.get" = "Premium’a Geç";
-"subscription.restore" = "Satın Almayı Geri Yükle";
-"subscription.type" = "Abonelik Türü";
-"subscription.one-time" = "Tek Seferlik";
-"subscription.price" = "Fiyat";
-"subscription.next_payment" = "Sonraki Ödeme Tarihi";
-"subscription.purchase_time" = "Başlangıç Tarihi";
-"subscription.status" = "Durum";
-"subscription.manage" = "Aboneliği Yönet";
 
 // Settings -> Support
 
-"settings.vip_support.description" = "Get exclusive access to our VIP Group, where premium users and the Quantum Wallet team collaborate. Receive direct assistance, discuss future updates, and help shape the wallet’s evolution.";
-"settings.vip_support.start_chat" = "VIP Gruba Katılın";
 
 // Settings -> Contacts
 
@@ -1896,16 +1632,6 @@
 "wallet_connect.list.pending_requests" = "Bekleyen Talepler";
 "wallet_connect.main.connect" = "%@’ya bağlan";
 "wallet_connect.main.connected" = "%@’ya bağlandı";
-"wallet_connect.main.premium_alert.title.risky" = "Tehlike!";
-"wallet_connect.main.premium_alert.subtitle.deactivated" = "Dolandırıcılık Koruması devre dışı. Fonlarınızı doğrulanmamış ve oltalama sitelerinden korumak için Premium’a geçin.";
-"wallet_connect.main.premium_alert.subtitle.risky" = "Bu site doğrulanmamış. Bağlanmak, oltalama saldırılarına ve fon kaybına yol açabilir.";
-"wallet_connect.main.premium_alert.subtitle.not_available" = "Dolandırıcılık Koruması kontrolü başarısız. Bağlantıya izin verildi, ancak alan adı güvenli olmayabilir.";
-"wallet_connect.scam_protection" = "Dolandırıcılık Koruması";
-"wallet_connect.scam_protection.deactivated" = "Devre Dışı";
-"wallet_connect.scam_protection.risky" = "Riskli";
-"wallet_connect.scam_protection.secure" = "Güvenli";
-"wallet_connect.scam_protection.not_available" = "N/A";
-"wallet_connect.scam_protection.disabled" = "Devre dışı";
 "wallet_connect.networks" = "Ağlar";
 
 "wallet_connect.main.no_any_supported_chains" = "Desteklenen zincir yok!";
@@ -2236,29 +1962,9 @@
 "nft.activity.event_types" = "Etkinlik Türleri";
 "nft.activity.event_type.all" = "Tüm Etkinlikler";
 
-// Subscription Info
 
-"subscription_info.title" = "Premium Ayrıcalıkları";
-"subscription_info.info1.title" = "Kripto Para Analitiği";
-"subscription_info.info1.text" = "Kripto Para Dünyasının Dinamik Ortamında Karlı Fırsatları Keşfedin, Dolandırıcılıklardan Kaçının ve Karlarınızı Maksimize Edin.";
-"subscription_info.info2.title" = "Grafik Göstergeleri";
-"subscription_info.info2.text" = "Kripto Para Dünyasının Dinamik Ortamında Karlı Fırsatları Keşfedin, Dolandırıcılıklardan Kaçının ve Karlarınızı Maksimize Edin.";
-"subscription_info.info3.title" = "Kişisel Destek";
-"subscription_info.info3.text" = "Kripto Para Dünyasının Dinamik Ortamında Karlı Fırsatları Keşfedin, Dolandırıcılıklardan Kaçının ve Karlarınızı Maksimize Edin.";
-"subscription_info.get_premium" = "Premium’a Geç";
-"subscription_info.already_have" = "I already have Premium";
 
-// Activate Subscription
 
-"activate_subscription.title" = "Aktiveet";
-"activate_subscription.wallet" = "Cüzdanı";
-"activate_subscription.address" = "Adres";
-"activate_subscription.message" = "İmza için mesaj";
-"activate_subscription.sign" = "kaydol";
-"activate_subscription.activating" = "Etkinleştiriliyor...";
-"activate_subscription.failed_to_activate" = "Abonelik etkinleştirilemedi";
-"activate_subscription.activated" = "Etkinleştirildi";
-"activate_subscription.no_subscriptions" = "Cüzdan adresinizin premium özelliklere aboneliği yok, aboneliği etkinleştirmek için satın almanız gerekiyor.";
 
 // Launch
 
@@ -2295,96 +2001,24 @@
 "transaction_filter.hide_suspicious_txs" = "Şüpheli İşlemleri Gizle";
 "transaction_filter.hide_suspicious_txs.description" = "Kimlik avı saldırılarında sıkça kullanılan şüpheli küçük transferleri gizler.";
 
-// Purchases
 
-"premium.cell.title" = "Premium";
-"premium.cell.description" = "Deneyiminizi %@ özellikleriyle geliştirin!";
-"premium.cell.description.key" = "Premium";
-"premium.cell.try" = "ÜCRETSİZ Deneyin";
 
 "mini_app.cell.title" = "MiniApp";
 "mini_app.cell.description" = "Testleri geçin, görevleri tamamlayın ve token kazanın!";
 
-"purchases.title" = "Premium";
-"purchases.description" = "Planı seçin";
-"purchases.type.pro" = "Pro";
-"purchases.type.vip" = "Vip";
 
 // Defense System
-"purchases.defense_system" = "Savunma Sistemi";
-"purchases.secure_send" = "Güvenli Gönderim";
-"purchases.secure_send.description" = "Riskli veya phishing amaçlı adreslere fon gönderilmesini engeller.";
-"purchases.secure_send.info" = "Alıcı cüzdanları oltalama veya dolandırıcılık açısından kontrol eder. Riskli adreslere göndermeden önce sizi uyarır.";
-"purchases.scam_protection" = "Dolandırıcılık Koruması";
-"purchases.scam_protection.description" = "Sahte veya kötü amaçlı dApp’lere bağlanırken sizi uyarır.";
-"purchases.scam_protection.info" = "Bağlanmadan önce sahte veya kötü amaçlı dApp’leri tespit eder. Oltalama saldırılarını önler ve varlıklarınızı korur.";
-"purchases.swap_protection" = "Swap Protection";
-"purchases.swap_protection.description" = "Swap işlemleri sırasında botları ve MEV saldırılarını engeller.";
-"purchases.swap_protection.info" = "Swap işlemleri sırasında botları ve front-running saldırılarını durdurur. İşlemlerinizin adil ve güvenli kalmasını sağlar.";
-"purchases.robbery_protection" = "Zorla Açtırma Koruması";
-"purchases.robbery_protection.description" = "Uygulamayı zorla kilidini açmanız durumunda fonlarınızı korur.";
-"purchases.robbery_protection.info" = "Ayrı bir PIN ile sahte (yem) cüzdan oluşturmanıza olanak tanır. Yüksek riskli durumlarda gerçek varlıklarınızı gizli tutar.";
 
 // Advanced Controls
-"purchases.advanced_controls" = "Gelişmiş Kontroller";
-"purchases.swap_control" = "Swap Kontrolü";
-"purchases.swap_control.description" = "Swap işlemlerinin nasıl ve nerede gerçekleştirileceğini kontrol etmenizi sağlayan gelişmiş ayarlar.";
-"purchases.swap_control.info" = "Varsayılan olarak mevcut en iyi teklifi seçeriz. Premium ile farklı bir sağlayıcı seçebilirsiniz.";
-"purchases.priority_support" = "Öncelikli destek";
-"purchases.priority_support.description" = "Destek ekibimize doğrudan erişim.";
-"purchases.priority_support.info" = "Öncelikli destek ekibimize doğrudan erişim sağlar. Quantum Wallet ekibinden hızlı ve kişisel destek alırsınız.";
 
 // Market Insights
-"purchases.market_insights" = "Piyasa İçgörüleri";
-"purchases.token_insights" = "Analitik";
-"purchases.token_insights.description" = "Detaylı analizler ve token verileri.";
-"purchases.token_insights.info" = "Token için ayrıntılı veriler gösterir - hacim, likidite ve trendler. Daha akıllı yatırım kararları almanıza yardımcı olur.";
-"purchases.advanced_search" = "Gelişmiş Arama";
-"purchases.advanced_search.description" = "Daha akıllı token keşfi için güçlü filtreler.";
-"purchases.advanced_search.info" = "Hacim, zincir veya sektör filtrelerini kullanarak token bulun. CEX/DEX aktivitesi ve listeleme metrikleri içerir.";
-"purchases.trade_signals" = "Sinyaller ve Trendler";
-"purchases.trade_signals.description" = "Daha güvenli ve bilinçli işlem yapmanıza yardımcı olan aksiyon alınabilir sinyaller.";
-"purchases.trade_signals.info" = "Alım-satım fırsatları için gerçek zamanlı bildirimler gönderir. Kâr fırsatlarını veya piyasa risklerini anında vurgular.";
 
-"purchase.bottom_sheet.description" = "Tek bir satın alım tüm Premium özelliklerin kilidini açar.";
 
-"purchases.wallet_description.title" = "Yüksek güvenlik derecesi, olağanüstü gizlilik ve gerçek anlamda emanet edilmeyen bir cüzdan.";
-"purchases.wallet_description.approved" = "Tarafından Onaylanmış ve Denetlenmiş:";
 
-"purchases.button.try" = "ÜCRETSİZ Deneyin";
-"purchases.button.activated" = "Etkinleştirildi";
-"purchases.button.upgrade" = "Yükselt";
 
-"purchase.period.title" = "Abonelik Seçin";
-"purchase.period.annually" = "Yıllık";
-"purchase.period.monthly" = "Aylık";
-"purchase.period.onetime" = "Tek Seferlik";
-"purchase.period.onetime.description" = "ömür boyu erişim için";
-"purchase.period.save" = "tasarruf et";
-"purchase.period.year" = "yıl";
-"purchase.period.month" = "ay";
-"purchase.period.description1" = "İlk 7 günü ÜCRETSİZ deneyin.";
-"purchase.period.description1.1" = "İlk ay indiriminden yararlanın.";
-"purchase.period.description2" = "App Store aboneliğinizi dilediğiniz zaman iptal edebilirsiniz.";
-"purchase.lifetime.description" = "Kısıtlama olmadan tek seferlik abonelik satın alabilirsiniz";
-"purchase.agree" = "Hesabınızı yükselterek %@ ve %@ nı kabul etmiş olursunuz.";
-"purchase.agree.terms_of_service" = "Kullanım Şartları";
-"purchase.agree.privacy_policy" = "Gizlilik Politikası";
 
-"purchases.period.button.try" = "7 gün ÜCRETSİZ alın";
-"purchases.period.button.subscribe" = "Abone Ol";
-"purchases.period.button.buy" = "Hemen satın al";
-"purchases.period.button.promo" = "Promosyon Kodu Ekle";
 
-"purchases.promocode.title" = "Promosyon Kodunu Girin";
-"purchases.promocode.placeholder" = "";
-"purchases.promocode.button.invalid" = "Geçersiz Promosyon Kodu";
-"purchases.promocode.button.already_used" = "Promosyon Kodu Zaten Kullanılmış";
 
-"purchases.successful_subscription.title" = "Premium";
-"purchases.successful_subscription.description" = "Aboneliğiniz için teşekkürler!";
-"purchases.successful_subscription.subscribed" = "Uygulamanın tüm gücünün keyfini çıkarın.";
-"purchases.successful_subscription.button.go_app" = "Uygulamaya Git";
 
 // Address Checker
 
@@ -2399,8 +2033,6 @@
 "check_address.sanctions_check" = "Yaptırım Kontrolü";
 "check_address.coin_blacklist_check" = "%@ Kara Liste Kontrolü";
 "check_address.on_blockchain" = "%@ üzerinde";
-"check_address.chainalysis.description" = "Chainalysis, kripto para adreslerini izleme, araştırma ve risk değerlendirmesi için araçlar sağlayan bir blockchain analiz platformudur. Yaptırımlar, dolandırıcılık ve diğer yasa dışı faaliyetlerle ilişkili adresleri belirlemeye yardımcı olur.";
-"check_address.hashdit.description" = "HashDit, kullanıcıların cüzdan adreslerini yaptırımlar ve kara liste durumu gibi riskler açısından kontrol etmesini sağlayan bir güvenlik platformudur. Kullanıcıların kötü niyetli veya engellenmiş adreslerle etkileşimini önlemeye yardımcı olur.";
 "check_address.coin_blacklist.description" = "Bir cüzdan adresinin %@ (%@) tarafından kara listeye alınıp alınmadığını doğrulamanıza olanak tanır. Eğer bir adres kara listedeyse, ilgili %@ tokenleri dondurulabilir; bu durumda bunlara erişilemez ve transfer edilemez. Bu kontrol, kullanıcıların yüksek riskli veya kısıtlanmış adreslerle etkileşime girmesini önlemeye yardımcı olur.";
 
 // Monero
@@ -2411,10 +2043,7 @@
 "monero.priority.medium" = "Orta";
 "monero.priority.high" = "Yüksek";
 
-// MEV Protection
 
-"mev_protection.title" = "MEV";
-"mev_protection.description" = "Swap işleminizi güvence altına almak ve botlara karşı değer kaybını önlemek için korumayı açın.";
 
 // Secure Send Bottom Sheet
 "secure_send.bottom_sheet.title" = "Güvenli Gönderim";
@@ -2441,4 +2070,19 @@
 "qvm_send_settings.nonce.info" = "Nonce, kullanıcının cüzdanındaki bir işlem için benzersiz bir tamsayı değeridir. Normalde gönderilen her işlemle birlikte artar ve değiştirilmesi gerekmez. İleri düzey kullanıcılar, yeni işlemin eskisinin onaylanmasını önlemek için yeterince yüksek bir ücrete sahip olduğu sürece, bu işlemi iptal etmek ve değiştirmek için bekleyen bir işlemin bir nonsine eşit olarak ayarlayabilirler (örneğin, onayını hızlandırmak veya işlem parametrelerini tamamen değiştirmek isteyebilirler). Birden fazla bekleyen işlem aynı nonce'a sahip olduğunda, genellikle en yüksek ücrete sahip olan biri onaylanır.";
 "qvm_send_settings.nonce.errors.already_in_use" = "Kullanılmış Nonce";
 "qvm_send_settings.nonce.errors.already_in_use.info" = "Bu nonce ile gerçekleştirilen bir işlem zaten var.";
-"purchases.address_phishing.info" = "Yanlış bir adres ve kripto paranız sonsuza dek kaybolur. Quantum Wallet, alıcı adreslerini şüpheli kalıplar açısından otomatik olarak tarar ve en son oltalama tehditlerine karşı savunur, fonları bir hackera göndermenizi önler. Dolandırıcılık transferlerini gerçekleşmeden önce engelleyin.";
+
+// Security Tools
+"settings_security.robbery_protection" = "Zorla Açtırma Koruması";
+"market.top.description.more_250_m" = "> $250M";
+"market.top.description.more_10_m" = "> $10M";
+"settings_security.secure_send" = "Güvenli Gönderim";
+"market.top.description.more_500_m" = "> $500M";
+"market.top.description.more_25_m" = "> $25M";
+"market.top.description.more_5_m" = "> $5M";
+"settings_security.robbery_protection.description" = "Uygulamayı zorla kilidini açmanız durumunda fonlarınızı korur.";
+"settings_security.secure_send.description" = "Riskli veya phishing amaçlı adreslere fon gönderilmesini engeller.";
+"market.top.description.more_1_m" = "> $1M";
+"market.top.description.more_100_m" = "> $100M";
+"market.top.description.more_1_b" = "> $1B";
+"market.top.description.m_cap" = "M.Cap";
+"settings_security.defense_system" = "Savunma Sistemi";

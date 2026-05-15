@@ -106,7 +106,7 @@ struct SecuritySettingsView: View {
                     toggledRow(title: "transaction_filter.hide_suspicious_txs".localized, subtitle: "transaction_filter.hide_suspicious_txs.description".localized, isOn: $viewModel.spamFilterEnabled)
                 }
 
-                premiumSection()
+                securityToolsSection()
             }
             .padding(EdgeInsets(top: .margin12, leading: .margin16, bottom: .margin32, trailing: .margin16))
         }
@@ -147,37 +147,29 @@ struct SecuritySettingsView: View {
     }
 
     @ViewBuilder
-    private func premiumSection() -> some View {
+    private func securityToolsSection() -> some View {
         VStack(spacing: 0) {
-            SectionHeader(image: Image.defenseIcon, text: "purchases.defense_system".localized, horizontalInsets: .margin16)
+            SectionHeader(image: Image.defenseIcon, text: "settings.security".localized, horizontalInsets: .margin16)
 
             ListSection {
-                toggledRow(title: "purchases.secure_send".localized, subtitle: "purchases.secure_send.description".localized, isOn: viewModel.isEnabled(.secureSend))
-                    .tapIntercept(active: true) {
-                        Coordinator.shared.performAfterPurchase(premiumFeature: .secureSend, page: .security, trigger: .getPremium) {
-                            presentSecureSendSheet()
+                Cell(
+                    middle: {
+                        MultiText(title: "settings_security.secure_send".localized, subtitle: "settings_security.secure_send.description".localized)
+                    },
+                    right: {
+                        HStack(spacing: .margin12) {
+                            ThemeToggle(isOn: .constant(viewModel.secureSendEnabled))
+                            Image.disclosureIcon
                         }
+                    },
+                    action: {
+                        presentSecureSendSheet()
                     }
-
-                toggledRow(title: "purchases.scam_protection".localized, subtitle: "purchases.scam_protection.description".localized, isOn: binding(feature: .scamProtection))
-                    .tapIntercept(active: !viewModel.premiumEnabled) {
-                        Coordinator.shared.performAfterPurchase(premiumFeature: .scamProtection, page: .security, trigger: .getPremium) {
-                            viewModel.set(.scamProtection, enabled: !viewModel.isEnabled(.scamProtection))
-                        }
-                    }
-
-                if viewModel.swapEnabled {
-                    toggledRow(title: "purchases.swap_protection".localized, subtitle: "purchases.swap_protection.description".localized, isOn: binding(feature: .swapProtection))
-                        .tapIntercept(active: !viewModel.premiumEnabled) {
-                            Coordinator.shared.performAfterPurchase(premiumFeature: .swapProtection, page: .security, trigger: .getPremium) {
-                                viewModel.set(.swapProtection, enabled: !viewModel.isEnabled(.swapProtection))
-                            }
-                        }
-                }
+                )
 
                 robberyRow()
             }
-            .themeListStyle(.borderedPremium)
+            .themeListStyle(.bordered)
         }
     }
 
@@ -185,13 +177,6 @@ struct SecuritySettingsView: View {
         Coordinator.shared.present(type: .bottomSheet) { isPresented in
             SecureSendBottomSheetView(isPresented: isPresented)
         }
-    }
-
-    private func binding(feature: PremiumFeature) -> Binding<Bool> {
-        Binding(
-            get: { viewModel.isEnabled(feature) },
-            set: { viewModel.set(feature, enabled: $0) }
-        )
     }
 
     @ViewBuilder
@@ -222,16 +207,14 @@ struct SecuritySettingsView: View {
     private func robberyRow() -> some View {
         Cell(
             middle: {
-                MultiText(title: "purchases.robbery_protection".localized, subtitle: "purchases.robbery_protection.description".localized)
+                MultiText(title: "settings_security.robbery_protection".localized, subtitle: "settings_security.robbery_protection.description".localized)
             },
             right: {
                 if viewModel.isDuressPasscodeSet {
                     HStack(spacing: .margin12) {
                         Button {
-                            Coordinator.shared.performAfterPurchase(premiumFeature: .robberyProtection, page: .security, trigger: .robberyProtection) {
-                                Coordinator.shared.presentAfterUnlock { isPresented in
-                                    ThemeNavigationStack { EditPasscodeModule.editDuressPasscodeView(showParentSheet: isPresented) }
-                                }
+                            Coordinator.shared.presentAfterUnlock { isPresented in
+                                ThemeNavigationStack { EditPasscodeModule.editDuressPasscodeView(showParentSheet: isPresented) }
                             }
                         } label: {
                             Image("pen")
@@ -249,14 +232,12 @@ struct SecuritySettingsView: View {
                     }
                 } else {
                     Button {
-                        Coordinator.shared.performAfterPurchase(premiumFeature: .robberyProtection, page: .security, trigger: .robberyProtection) {
-                            if viewModel.isPasscodeSet {
-                                Coordinator.shared.performAfterUnlock {
-                                    presentCreateDuressPasscode()
-                                }
-                            } else {
-                                presentCreatePasscode(reason: .duress)
+                        if viewModel.isPasscodeSet {
+                            Coordinator.shared.performAfterUnlock {
+                                presentCreateDuressPasscode()
                             }
+                        } else {
+                            presentCreatePasscode(reason: .duress)
                         }
                     } label: {
                         Text("button.add".localized)

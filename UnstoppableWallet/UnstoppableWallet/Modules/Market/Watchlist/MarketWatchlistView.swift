@@ -15,13 +15,13 @@ struct MarketWatchlistView: View {
                     header(disabled: true)
                     loadingList()
                 }
-            case let .loaded(marketInfos, signals):
+            case let .loaded(marketInfos):
                 if marketInfos.isEmpty {
                     PlaceholderViewNew(icon: "heart_48", subtitle: "market.watchlist.empty".localized)
                 } else {
                     VStack(spacing: 0) {
                         header()
-                        list(marketInfos: marketInfos, signals: signals)
+                        list(marketInfos: marketInfos)
                     }
                 }
             case .failed:
@@ -74,25 +74,10 @@ struct MarketWatchlistView: View {
                 }
             }
             .disabled(disabled)
-
-            ThemeButton(text: "market.watchlist.signals".localized, style: viewModel.showSignals ? .primary : .secondary, size: .small) {
-                Coordinator.shared.performAfterPurchase(premiumFeature: .tradeSignals, page: .watchlist, trigger: .tradingSignal) {
-                    if viewModel.showSignals {
-                        viewModel.set(showSignals: false)
-                    } else {
-                        Coordinator.shared.present { isPresented in
-                            MarketWatchlistSignalsView(setShowSignals: { [weak viewModel] in
-                                viewModel?.set(showSignals: $0)
-                            }, isPresented: isPresented)
-                        }
-                    }
-                }
-            }
-            .disabled(disabled)
         }
     }
 
-    @ViewBuilder private func list(marketInfos: [MarketInfo], signals: [String: TechnicalAdvice.Advice]) -> some View {
+    @ViewBuilder private func list(marketInfos: [MarketInfo]) -> some View {
         ScrollViewReader { proxy in
             ThemeList(
                 marketInfos,
@@ -109,7 +94,7 @@ struct MarketWatchlistView: View {
                     price: marketInfo.price.flatMap { ValueFormatter.instance.formatFull(currency: viewModel.currency, value: $0) } ?? "n/a".localized,
                     rank: marketInfo.marketCapRank,
                     diff: marketInfo.priceChangeValue(timePeriod: viewModel.timePeriod),
-                    signal: viewModel.showSignals ? signals[coin.uid] : nil,
+                    signal: nil,
                     action: {
                         Coordinator.shared.presentCoinPage(coin: coin, page: .markets, section: .watchlist)
                     }

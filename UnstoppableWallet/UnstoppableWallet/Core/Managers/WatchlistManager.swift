@@ -6,14 +6,12 @@ class WatchlistManager {
     private let keyCoinUids = "watchlist-coin-uids"
     private let keySortBy = "watchlist-sort-by"
     private let keyTimePeriod = "watchlist-time-period"
-    private let keyShowSignals = "watchlist-show-signals"
 
     private let storage: SharedLocalStorage
     private let priceChangeModeManager: PriceChangeModeManager
     private var cancellables = Set<AnyCancellable>()
 
     private let coinUidsSubject = PassthroughSubject<[String], Never>()
-    private let showSignalsUpdatedSubject = PassthroughSubject<Void, Never>()
 
     var coinUids: [String] {
         didSet {
@@ -46,14 +44,6 @@ class WatchlistManager {
         }
     }
 
-    var showSignals: Bool {
-        didSet {
-            storage.set(value: showSignals, for: keyShowSignals)
-            showSignalsUpdatedSubject.send()
-            // WidgetCenter.shared.reloadTimelines(ofKind: AppWidgetConstants.watchlistWidgetKind)
-        }
-    }
-
     init(storage: SharedLocalStorage, priceChangeModeManager: PriceChangeModeManager) {
         self.storage = storage
         self.priceChangeModeManager = priceChangeModeManager
@@ -66,8 +56,6 @@ class WatchlistManager {
 
         let timePeriodRaw: String? = storage.value(for: keyTimePeriod)
         timePeriod = timePeriodRaw.flatMap { WatchlistTimePeriod(rawValue: $0) } ?? priceChangeModeManager.day1WatchlistPeriod
-
-        showSignals = storage.value(for: keyShowSignals) ?? true
 
         WidgetCenter.shared.reloadTimelines(ofKind: AppWidgetConstants.watchlistWidgetKind)
 
@@ -86,10 +74,6 @@ class WatchlistManager {
 extension WatchlistManager {
     var coinUidsPublisher: AnyPublisher<[String], Never> {
         coinUidsSubject.eraseToAnyPublisher()
-    }
-
-    var showSignalsUpdatedPublisher: AnyPublisher<Void, Never> {
-        showSignalsUpdatedSubject.eraseToAnyPublisher()
     }
 
     var timePeriods: [WatchlistTimePeriod] {

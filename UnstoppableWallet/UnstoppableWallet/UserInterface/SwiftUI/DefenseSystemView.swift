@@ -113,7 +113,7 @@ struct DefenseSystemHeader: View {
     var body: some View {
         HStack(spacing: 8) {
             ThemeImage(Image.defenseIcon, size: 20)
-            ThemeText("purchases.defense_system".localized, style: .subhead, colorStyle: .primary)
+            ThemeText("settings_security.defense_system".localized, style: .subhead, colorStyle: .primary)
             Spacer()
         }
     }

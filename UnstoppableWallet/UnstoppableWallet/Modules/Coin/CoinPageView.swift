@@ -6,7 +6,6 @@ struct CoinPageView: View {
 
     @StateObject private var overviewViewModel: CoinOverviewViewModel
     @StateObject private var chartViewModel: CoinChartViewModel
-    @StateObject private var analyticsViewModel: CoinAnalyticsViewModel
     @StateObject private var marketsViewModel: CoinMarketsViewModel
 
     @Environment(\.dismiss) private var dismiss
@@ -18,7 +17,6 @@ struct CoinPageView: View {
         _viewModel = StateObject(wrappedValue: CoinPageViewModel(coin: coin))
         _overviewViewModel = StateObject(wrappedValue: CoinOverviewViewModel(coinUid: coin.uid))
         _chartViewModel = StateObject(wrappedValue: CoinChartViewModel.instance(coinUid: coin.uid))
-        _analyticsViewModel = StateObject(wrappedValue: CoinAnalyticsViewModel(coin: coin))
         _marketsViewModel = StateObject(wrappedValue: CoinMarketsViewModel(coinUid: coin.uid))
     }
 
@@ -41,7 +39,6 @@ struct CoinPageView: View {
                     VStack {
                         switch currentTab {
                         case .overview: CoinOverviewView(viewModel: overviewViewModel, chartViewModel: chartViewModel)
-                        case .analytics: CoinAnalyticsView(viewModel: analyticsViewModel)
                         case .markets: CoinMarketsView(viewModel: marketsViewModel)
                         }
                     }
@@ -85,7 +82,6 @@ struct CoinPageView: View {
 
         switch tab {
         case .overview: overviewViewModel.load()
-        case .analytics: analyticsViewModel.load()
         case .markets: marketsViewModel.load()
         }
     }
@@ -94,13 +90,11 @@ struct CoinPageView: View {
 extension CoinPageView {
     enum Tab: Int, CaseIterable {
         case overview
-        case analytics
         case markets
 
         var title: String {
             switch self {
             case .overview: return "coin_page.overview".localized
-            case .analytics: return "coin_page.analytics".localized
             case .markets: return "coin_page.markets".localized
             }
         }

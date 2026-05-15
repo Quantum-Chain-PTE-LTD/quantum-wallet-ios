@@ -7,12 +7,6 @@ struct MainSettingsView: View {
     @Environment(\.openURL) var openURL
 
     @State private var manageWalletsPresented = false
-    @State private var walletConnectPresented = false
-
-    @StateObject var walletConnectVerificationModel = WalletConnectVerificationModel(
-        accountManager: Core.shared.accountManager,
-        cloudBackupManager: Core.shared.cloudBackupManager
-    )
 
     var body: some View {
         ScrollableThemeView {
@@ -23,12 +17,6 @@ struct MainSettingsView: View {
                         blockchainSettings()
                         security()
                         privacy()
-                        // WalletConnect entry point hidden — Android removed the
-                        // module entirely in commits 90c385c1 + b67e81e6.
-                        // The underlying WC infrastructure remains in iOS to
-                        // avoid breaking EVM signing flows; only the UI is gated.
-                        // dAppConnection()
-                        // tonConnect()
                     }
 
                     Spacer().frame(height: .margin32)
@@ -44,14 +32,9 @@ struct MainSettingsView: View {
                         backupManager()
                     }
 
-                    // Quantum Wallet parity (Android commit 79dd2877): VipSupport, About App,
-                    // FAQ and Academy entries removed; AddressChecker collapsed into the
-                    // standard list. Subscription / premium gating is being removed (D12).
-
                     Spacer().frame(height: .margin32)
 
                     ListSection {
-                        addressChecker()
                         rateUs()
                         tellFriend()
                     }
@@ -85,14 +68,6 @@ struct MainSettingsView: View {
                 .padding(.padding16)
             }
             .padding(EdgeInsets(top: .margin12, leading: 0, bottom: .margin32, trailing: 0))
-        }
-        .navigationDestination(isPresented: $walletConnectPresented) {
-            WalletConnectListView()
-                .navigationTitle("wallet_connect_list.title".localized)
-                .ignoresSafeArea()
-                .onFirstAppear {
-                    stat(page: .settings, event: .open(page: .walletConnect))
-                }
         }
     }
 
@@ -163,29 +138,6 @@ struct MainSettingsView: View {
         }
     }
 
-    @ViewBuilder private func dAppConnection() -> some View {
-        ClickableRow(spacing: .margin8) {
-            walletConnectVerificationModel.handle {
-                walletConnectPresented = true
-            }
-        } content: {
-            HStack(spacing: .margin16) {
-                ThemeImage("link", size: .iconSize24)
-                Text("settings.dapp_connection".localized).textBody()
-            }
-
-            Spacer()
-
-            if viewModel.walletConnectPendingRequestCount > 0 {
-                BadgeViewNew("\(viewModel.walletConnectPendingRequestCount)") // TODO: use different badge
-            } else if viewModel.walletConnectSessionCount > 0 {
-                Text("\(viewModel.walletConnectSessionCount)").textSubhead1()
-            }
-
-            Image.disclosureIcon
-        }
-    }
-
     @ViewBuilder private func tonConnect() -> some View {
         NavigationRow(destination: {
             TonConnectListView()
@@ -208,19 +160,6 @@ struct MainSettingsView: View {
         }) {
             ThemeImage("manage", size: .iconSize24)
             Text("settings.appearance".localized).themeBody()
-            Image.disclosureIcon
-        }
-    }
-
-    @ViewBuilder private func subscription() -> some View {
-        NavigationRow(destination: {
-            PurchaseListView()
-                .onFirstAppear {
-                    stat(page: .settings, event: .open(page: .subscription))
-                }
-        }) {
-            ThemeImage("premium", size: .iconSize24)
-            Text("subscription.title".localized).themeBody()
             Image.disclosureIcon
         }
     }
@@ -259,53 +198,6 @@ struct MainSettingsView: View {
         }) {
             ThemeImage("cloud", size: .iconSize24)
             Text("settings.backup_manager".localized).themeBody()
-            Image.disclosureIcon
-        }
-    }
-
-    @ViewBuilder private func premiumHeader() -> some View {
-        HStack(spacing: 6) {
-            Image("star_filled_16").themeIcon(color: .themeJacob)
-            Text("subscription.premium.label".localized).themeSubhead1(color: .themeJacob)
-        }
-        .padding(.horizontal, .margin16)
-        .frame(height: .margin32)
-    }
-
-    @ViewBuilder private func vipSupport() -> some View {
-        ClickableRow(action: {
-            Coordinator.shared.performAfterPurchase(premiumFeature: .prioritySupport, page: .settings, trigger: .vipSupport) {
-                let appUrl = URL(string: "tg://message?slug=\(AppConfig.appTelegramSupportSlug)")!
-                let webUrl = URL(string: "https://t.me/m/\(AppConfig.appTelegramSupportSlug)")!
-
-                if UIApplication.shared.canOpenURL(appUrl) {
-                    openURL(appUrl)
-                } else {
-                    Coordinator.shared.present(url: webUrl)
-                }
-
-                stat(page: .settings, event: .open(page: .vipSupport))
-            }
-        }) {
-            ThemeImage("support", size: .iconSize24, colorStyle: .yellow)
-            Text("purchases.priority_support".localized).themeBody()
-            Image.disclosureIcon
-        }
-    }
-
-    @ViewBuilder private func addressChecker() -> some View {
-        ClickableRow(action: {
-            Coordinator.shared.performAfterPurchase(premiumFeature: .scamProtection, page: .settings, trigger: .vipSupport) {
-                Coordinator.shared.present { isPresented in
-                    CheckAddressView(isPresented: isPresented)
-                        .onFirstAppear {
-                            stat(page: .settings, event: .open(page: .addressChecker))
-                        }
-                }
-            }
-        }) {
-            ThemeImage("radar", size: .iconSize24, colorStyle: .yellow)
-            Text("address_checker.title".localized).themeBody()
             Image.disclosureIcon
         }
     }
@@ -461,13 +353,6 @@ struct MainSettingsView: View {
             ListRow {
                 Toggle(isOn: $viewModel.forceEnableSwap) {
                     Text("Force Enable Swap").themeBody()
-                }
-                .toggleStyle(SwitchToggleStyle(tint: .themeYellow))
-            }
-
-            ListRow {
-                Toggle(isOn: $viewModel.emulatePurchase) {
-                    Text("Emulate Purchase").themeBody()
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .themeYellow))
             }

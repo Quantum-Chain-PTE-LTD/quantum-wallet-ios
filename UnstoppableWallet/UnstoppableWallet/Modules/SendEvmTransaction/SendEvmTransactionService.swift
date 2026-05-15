@@ -28,7 +28,6 @@ class SendEvmTransactionService {
     private var cancellables = Set<AnyCancellable>()
 
     private let sendData: SendEvmData
-    private let privateSendMode: PrivateSendMode
     private let evmKitWrapper: EvmKitWrapper
     private let settingsService: EvmSendSettingsService
     private let evmLabelManager: EvmLabelManager
@@ -49,9 +48,8 @@ class SendEvmTransactionService {
         }
     }
 
-    init(sendData: SendEvmData, privateSendMode: SendEvmTransactionService.PrivateSendMode, evmKitWrapper: EvmKitWrapper, settingsService: EvmSendSettingsService, evmLabelManager: EvmLabelManager) {
+    init(sendData: SendEvmData, evmKitWrapper: EvmKitWrapper, settingsService: EvmSendSettingsService, evmLabelManager: EvmLabelManager) {
         self.sendData = sendData
-        self.privateSendMode = privateSendMode
         self.evmKitWrapper = evmKitWrapper
         self.settingsService = settingsService
         self.evmLabelManager = evmLabelManager
@@ -135,53 +133,24 @@ extension SendEvmTransactionService: ISendEvmTransactionService {
 
         sendState = .sending
 
-        switch privateSendMode {
-        case .none, .protected:
-            evmKitWrapper.sendSingle(
-                transactionData: transaction.transactionData,
-                gasPrice: transaction.gasData.price,
-                gasLimit: transaction.gasData.limit,
-                privateSend: privateSendMode.privateSend,
-                nonce: transaction.nonce
-            )
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
-            .subscribe(onSuccess: { [weak self] fullTransaction in
-                self?.sendState = .sent(transactionHash: fullTransaction.transaction.hash)
-            }, onError: { error in
-                self.sendState = .failed(error: error)
-            })
-            .disposed(by: disposeBag)
-        case let .cancelPrevious(hash):
-            Task { [weak self] in
-                do {
-                    let successful = try await self?.evmKitWrapper.sendCancel(hash: hash)
-                    if successful ?? false {
-                        self?.sendState = .sent(transactionHash: hash)
-                    } else {
-                        self?.sendState = .failed(error: SendEvmTransactionService.TransactionError.unexpectedError)
-                    }
-                } catch {
-                    self?.sendState = .failed(error: error)
-                }
-            }
-        }
+        evmKitWrapper.sendSingle(
+            transactionData: transaction.transactionData,
+            gasPrice: transaction.gasData.price,
+            gasLimit: transaction.gasData.limit,
+            privateSend: false,
+            nonce: transaction.nonce
+        )
+        .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
+        .subscribe(onSuccess: { [weak self] fullTransaction in
+            self?.sendState = .sent(transactionHash: fullTransaction.transaction.hash)
+        }, onError: { error in
+            self.sendState = .failed(error: error)
+        })
+        .disposed(by: disposeBag)
     }
 }
 
 extension SendEvmTransactionService {
-    enum PrivateSendMode {
-        case none
-        case protected
-        case cancelPrevious(Data)
-
-        var privateSend: Bool {
-            switch self {
-            case .none: return false
-            default: return true
-            }
-        }
-    }
-
     enum State {
         case ready(warnings: [Warning])
         case notReady(errors: [Error], warnings: [Warning])

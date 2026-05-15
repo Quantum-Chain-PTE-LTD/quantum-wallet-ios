@@ -70,34 +70,6 @@ extension MarketGlobalModule.MetricsType {
     }
 }
 
-extension CoinProChartModule.ProChartType {
-    var statPage: StatPage {
-        switch self {
-        case .cexVolume: return .coinAnalyticsCexVolume
-        case .dexVolume: return .coinAnalyticsDexVolume
-        case .dexLiquidity: return .coinAnalyticsDexLiquidity
-        case .activeAddresses: return .coinAnalyticsActiveAddresses
-        case .txCount: return .coinAnalyticsTxCount
-        case .tvl: return .coinAnalyticsTvl
-        }
-    }
-}
-
-extension RankViewModel.RankType {
-    var statRankType: StatPage {
-        switch self {
-        case .cexVolume: return .coinRankCexVolume
-        case .dexVolume: return .coinRankDexVolume
-        case .dexLiquidity: return .coinRankDexLiquidity
-        case .address: return .coinRankAddress
-        case .txCount: return .coinRankTxCount
-        case .holders: return .coinRankHolders
-        case .fee: return .coinRankFee
-        case .revenue: return .coinRankRevenue
-        }
-    }
-}
-
 extension MarketModule.Top {
     var statMarketTop: StatMarketTop {
         switch self {
@@ -205,15 +177,6 @@ extension LinkType {
         case .telegram: return .externalTelegram
         case .reddit: return .externalReddit
         case .github: return .externalGithub
-        }
-    }
-}
-
-extension MarketVaultsViewModel.SortBy {
-    var statSortType: StatSortType {
-        switch self {
-        case .highestApy: return .highestApy
-        case .highestTvl: return .highestTvl
         }
     }
 }

@@ -179,7 +179,7 @@ class EvmTransactionConverter {
 extension EvmTransactionConverter {
     func transactionRecord(fromTransaction fullTransaction: FullTransaction) -> TransactionRecord {
         let transaction = fullTransaction.transaction
-        let protected = MerkleTransactionAdapter.isProtected(transaction: fullTransaction)
+        let protected = false
 
         switch fullTransaction.decoration {
         case is ContractCreationDecoration:

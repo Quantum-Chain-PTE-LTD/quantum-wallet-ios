@@ -15,7 +15,6 @@ class MultiSwapSendHandler {
     private let adapterManager = Core.shared.adapterManager
     private let tronKitManager = Core.shared.tronAccountManager.tronKitManager
     private let swapHistoryManager = Core.shared.swapHistoryManager
-    private let mevProtectionHelper = MevProtectionHelper()
 
     let baseToken: Token
     let tokenIn: Token
@@ -98,9 +97,7 @@ extension MultiSwapSendHandler: ISendHandler {
             transactionSettings: transactionSettings
         )
 
-        let otherSections: [SendDataSection] = [mevProtectionHelper.section(tokenIn: tokenIn)].compactMap { $0 }
-
-        return SendData(tokenIn: tokenIn, tokenOut: tokenOut, amountIn: amountIn, quote: quote, otherSections: otherSections)
+        return SendData(tokenIn: tokenIn, tokenOut: tokenOut, amountIn: amountIn, quote: quote, otherSections: [])
     }
 
     func send(data: ISendData) async throws {
@@ -131,7 +128,7 @@ extension MultiSwapSendHandler: ISendHandler {
                 transactionData: transactionData,
                 gasPrice: gasPrice,
                 gasLimit: gasLimit,
-                privateSend: mevProtectionHelper.isActive,
+                privateSend: false,
                 nonce: quote.nonce
             )
 

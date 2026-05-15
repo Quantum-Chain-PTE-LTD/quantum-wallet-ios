@@ -15,16 +15,12 @@ class MainSettingsViewModel: ObservableObject {
     private let passcodeManager = Core.shared.passcodeManager
     private let termsManager = Core.shared.termsManager
     private let systemInfoManager = Core.shared.systemInfoManager
-    private let walletConnectSessionManager = Core.shared.walletConnectSessionManager
     private let rateAppManager = Core.shared.rateAppManager
     private let localStorage = Core.shared.localStorage
     private let testNetManager = Core.shared.testNetManager
-    private let purchaseManager = Core.shared.purchaseManager
     private let appStateManager = AppStateManager.instance
 
     @Published var manageWalletsAlert: Bool = false
-    @Published var walletConnectSessionCount: Int = 0
-    @Published var walletConnectPendingRequestCount: Int = 0
     @Published var securityAlert: Bool = false
     @Published var aboutAlert: Bool = false
     @Published var iCloudUnavailable: Bool = false
@@ -37,14 +33,6 @@ class MainSettingsViewModel: ObservableObject {
         didSet {
             localStorage.forceEnableSwap = forceEnableSwap
             appStateManager.sync()
-        }
-    }
-
-    @Published var emulatePurchase: Bool {
-        didSet {
-            localStorage.emulatePurchase = emulatePurchase
-            purchaseManager.loadProducts()
-            purchaseManager.loadPurchases()
         }
     }
 
@@ -69,14 +57,11 @@ class MainSettingsViewModel: ObservableObject {
     init() {
         showTestSwitchers = Bundle.main.object(forInfoDictionaryKey: "ShowTestNetSwitcher") as? String == "true"
         forceEnableSwap = localStorage.forceEnableSwap
-        emulatePurchase = localStorage.emulatePurchase
         testNetEnabled = testNetManager.testNetEnabled
         mayaStagenetEnabled = testNetManager.mayaStagenetEnabled
         debuggingAmlResult = localStorage.debuggingAmlCheckResult
 
         subscribe(MainScheduler.instance, disposeBag, backupManager.allBackedUpObservable) { [weak self] _ in self?.syncManageWalletsAlert() }
-        subscribe(MainScheduler.instance, disposeBag, walletConnectSessionManager.sessionsObservable) { [weak self] _ in self?.syncWalletConnectSessionCount() }
-        subscribe(MainScheduler.instance, disposeBag, walletConnectSessionManager.activePendingRequestsObservable) { [weak self] _ in self?.syncWalletConnectPendingRequestCount() }
         subscribe(MainScheduler.instance, disposeBag, contactManager.iCloudErrorObservable) { [weak self] error in
             if error != nil, self?.contactManager.remoteSync ?? false {
                 self?.iCloudUnavailable = true
@@ -90,22 +75,12 @@ class MainSettingsViewModel: ObservableObject {
         subscribe(&cancellables, termsManager.$state) { [weak self] _ in self?.syncAboutAlert() }
 
         syncManageWalletsAlert()
-        syncWalletConnectSessionCount()
-        syncWalletConnectPendingRequestCount()
         syncSecurityAlert()
         syncAboutAlert()
     }
 
     private func syncManageWalletsAlert() {
         manageWalletsAlert = !backupManager.allBackedUp || accountRestoreWarningManager.hasNonStandard
-    }
-
-    private func syncWalletConnectSessionCount() {
-        walletConnectSessionCount = walletConnectSessionManager.sessions.count
-    }
-
-    private func syncWalletConnectPendingRequestCount() {
-        walletConnectPendingRequestCount = walletConnectSessionManager.activePendingRequests.count
     }
 
     private func syncSecurityAlert() {

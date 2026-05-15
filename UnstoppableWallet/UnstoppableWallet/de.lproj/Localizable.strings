@@ -556,11 +556,6 @@
 "send.address.phishing.description" = "Analysiert die angegebene Zieladresse auf potenzielle Phishing-Risiken.\n\nSauber: Keine verdächtigen Aktivitäten erkannt.\n\nErkannt: Es scheint, dass jemand versuchen könnte, dich dazu zu bringen, Gelder an eine falsche Adresse zu senden. Fahre nur fort, wenn du absolut sicher bist, dass die Adresse korrekt ist. Erwäge, zuerst eine kleine Testtransaktion zu senden.";
 "send.address.phishing.caution.title" = "Phishing-Adresse erkannt!";
 "send.address.phishing.caution.description" = "Die eingegebene Adresse könnte betrügerisch sein. Betrüger ändern oft die ersten und letzten Zeichen. Überprüfe die vollständige Adresse sorgfältig, bevor du fortfährst, um Verluste zu vermeiden.";
-"send.address.sanction_check" = "Sanktionsprüfung";
-"send.address.sanction_check.subtitle" = "Überprüft, ob die Adresse Sanktionsbeschränkungen unterliegt.";
-"send.address.sanction.description" = "Überprüft, ob die Empfängeradresse internationalen Sanktionen unterliegt, unter Verwendung von Daten von Chainalysis.com.\n\nSauber: Keine Sanktionen erkannt.\n\nErkannt: Potenzielles rechtliches Risiko. Transaktionen mit dieser Adresse könnten in bestimmten Rechtsordnungen eingeschränkt oder illegal sein.";
-"send.address.sanction.caution.title" = "Sanktionierte Adresse!";
-"send.address.sanction.caution.description" = "Die eingegebene Adresse ist als sanktioniert gekennzeichnet. Transaktionen an diese Adresse könnten zu Verlusten oder anderen Risiken führen. Bitte überprüfe die Details des Empfängers, bevor du fortfährst.";
 "send.address.blacklist_check" = "Blacklist-Prüfung";
 "send.address.blacklist_check.subtitle" = "Überprüft die Adresse anhand von Betrugs- und Hochrisiko-Datenbanken.";
 "send.address.blacklist.description" = "Überprüft, ob die Zieladresse auf offiziellen oder inoffiziellen schwarzen Listen steht.\n\nSauber: Keine Blacklist-Kennzeichnungen.\n\nErkannt: Die Adresse steht auf der schwarzen Liste und könnte mit rechtlichen oder Sicherheitsrisiken verbunden sein. Fahre mit Vorsicht fort. Viele Kryptobörsen beschränken Nutzer, die Gelder von Wallets einzahlen oder abheben, die mit Adressen auf schwarzen Listen interagiert haben. Behalte das im Hinterkopf.";
@@ -785,7 +780,6 @@
 "market.tab.news" = "Nachrichten";
 "market.tab.coins" = "Münzen";
 "market.tab.watchlist" = "Merkliste";
-"market.tab.vaults" = "Verdienen";
 "market.tab.platforms" = "Plattformen";
 "market.tab.pairs" = "Paare";
 "market.tab.sectors" = "Sektoren";
@@ -883,103 +877,18 @@
 "market_discovery.not_found" = "Keine Ergebnisse gefunden";
 
 "market_watchlist.empty.caption" = "Ihre Beobachtungsliste ist leer.";
-"market.watchlist.signals" = "Signale";
 "market.watchlist.empty" = "Ihre Beobachtungsliste ist leer";
-"market.watchlist.signals.description" = "Die folgenden Signale basieren auf den Bollinger-Bändern und dem RSI-technischen Preisindikator über etwa die letzten 30 Tage. Diese Signale sind algorithmisch und können sich häufig ändern.";
-"market.watchlist.signals.strong_buy.description" = "Hohe Zuversicht in Preisanstieg";
-"market.watchlist.signals.buy.description" = "Voraussichtlicher Preisanstieg in naher Zukunft";
-"market.watchlist.signals.neutral.description" = "Kein klarer Trend, der Markt befindet sich im Gleichgewicht";
-"market.watchlist.signals.sell.description" = "Voraussichtlicher Preisanstieg in naher Zukunft";
-"market.watchlist.signals.strong_sell.description" = "Hohe Wahrscheinlichkeit für Preissenkungen";
-"market.watchlist.signals.risky.description" = "Erhöhtes Risikoniveau, erfordert Vorsicht";
-"market.watchlist.signals.warning" = "Denken Sie immer daran, das Risikomanagement anzuwenden und beachten Sie, dass dies keine finanzielle Beratung ist.";
-"market.watchlist.signals.turn_on" = "Einschalten";
 
-"market.advanced_search.title" = "Filter";
-"market.advanced_search.show_results" = "Ergebnisse anzeigen";
-"market.advanced_search.empty_results" = "Leere Ergebnisse";
-"market.advanced_search.retry" = "Wiederholen";
-"market.advanced_search.dex_description" = "Diese Einstellung gilt für Token, die auf Ethereum (Uniswap DEX) und Binance Smart Chain (Pancake DEX) gehandelt werden.";
-"market.advanced_search.24h" = "24 Std";
 
-"market.advanced_search.market_parameters" = "Marktparameter";
-"market.advanced_search.network_parameters" = "Netzwerkparameter";
-"market.advanced_search.indicators" = "Indikatoren";
-"market.advanced_search.price_parameters" = "Preisparameter";
-"market.advanced_search.choose_set" = "Satz auswählen";
-"market.advanced_search.market_cap" = "Marktkappe";
-"market.advanced_search.volume" = "Handelsvolumen";
-"market.advanced_search.categories" = "Sektoren";
 
-"market.advanced_search.listed_on_top_exchanges" = "Listé sur les principales bourses";
-"market.advanced_search.good_cex_volume" = "Bon volume CEX";
-"market.advanced_search.good_dex_volume" = "Bon volume DEX";
-"market.advanced_search.good_distribution" = "Bonne distribution";
-"market.advanced_search.overall_score_is_good_or_excellent" = "Gesamtbewertung ist Gut oder Ausgezeichnet";
 
-"market.advanced_search.liquidity" = "DEX-Liquidität";
-"market.advanced_search.blockchains" = "Blockchains";
-"market.advanced_search.signal" = "Handelssignal";
-"market.advanced_search.price_period" = "Preiszeitraum";
-"market.advanced_search.price_change" = "Preisänderung";
 
-"market.advanced_search.outperformed_btc" = "Übertraf BTC";
-"market.advanced_search.outperformed_eth" = "Übertraf ETH";
-"market.advanced_search.outperformed_bnb" = "Übertraf BNB";
-"market.advanced_search.outperformed_sp500" = "Besser als S&P500 abgeschnitten";
-"market.advanced_search.outperformed_gold" = "Besser als Gold abgeschnitten";
-"market.advanced_search.price_close_to" = "Preis nahe bei";
-"market.advanced_search.price_close_to_ath" = "Preis nahe an ATH";
-"market.advanced_search.price_close_to_atl" = "Preis nahe zum ATL";
 
-"market.advanced_search.top" = "Top %d";
 
-"market.advanced_search.less_5_m" = "< 5 Mio";
-"market.advanced_search.less_10_m" = "< 10 Mio";
-"market.advanced_search.less_50_m" = "< 50 Mio";
-"market.advanced_search.less_500_m" = "< 500 Mio";
-"market.advanced_search.m_5_m_20" = "5 Mio - 20 Mio";
-"market.advanced_search.m_10_m_40" = "10 Mio - 40 Mio";
-"market.advanced_search.m_20_m_100" = "20 Mio - 100 Mio";
-"market.advanced_search.m_40_m_200" = "40 Mio - 200 Mio";
-"market.advanced_search.m_50_m_200" = "50 Mio - 200 Mio";
-"market.advanced_search.m_100_b_1" = "100 Mio - 1 Mrd";
-"market.advanced_search.m_200_b_1" = "200 Mio - 1Mrd";
-"market.advanced_search.m_200_b_2" = "200 Mio - 2 Mrd";
-"market.advanced_search.m_500_b_2" = "500 Mio - 2 Mrd";
-"market.advanced_search.b_1_b_5" = "1 Mrd - 5 Mrd";
-"market.advanced_search.b_1_b_10" = "1 Mrd - 10 Mrd";
-"market.advanced_search.b_2_b_10" = "2 Mrd - 10 Mrd";
-"market.advanced_search.b_10_b_50" = "10 Mrd - 50 Mrd";
-"market.advanced_search.b_10_b_100" = "10 Mrd - 100 Mrd";
-"market.advanced_search.b_100_b_500" = "100 Mrd - 500 Mrd";
-"market.advanced_search.more_5_b" = "> 5 Mrd";
-"market.advanced_search.more_10_b" = "> 10 Mrd";
-"market.advanced_search.more_50_b" = "> 50 Mrd";
-"market.advanced_search.more_500_b" = "> 500 Mrd";
 
-"market.advanced_search.top.m_cap" = "M.Cap";
-"market.advanced_search.top.more_1_b" = "> $1B";
-"market.advanced_search.top.more_500_m" = "> $500M";
-"market.advanced_search.top.more_250_m" = "> $250M";
-"market.advanced_search.top.more_100_m" = "> $100M";
-"market.advanced_search.top.more_25_m" = "> $25M";
-"market.advanced_search.top.more_10_m" = "> $10M";
-"market.advanced_search.top.more_5_m" = "> $5M";
-"market.advanced_search.top.more_1_m" = "> $1M";
 
-"market.advanced_search.day" = "1 Tag";
-"market.advanced_search.week" = "1 Woche";
-"market.advanced_search.week2" = "2 Wochen";
-"market.advanced_search.month" = "1 Monate";
-"market.advanced_search.month6" = "6 Monate";
-"market.advanced_search.year" = "1 Jahr";
 
-"market.advanced_search.day.short" = "24Std";
-"market.advanced_search.week.short" = "7T";
-"market.advanced_search.month.short" = "1M";
 
-"market.advanced_search_results.title" = "Ergebnisse";
 
 "market.global.total_market_cap.title" = "Gesamtmarktzahl";
 "market.global.total_market_cap.description" = "Gesamtmarktwert aller Kryptowährungen";
@@ -1021,37 +930,12 @@
 "market.signal.sell" = "Verkaufen";
 "market.signal.strong_sell" = "Starker Verkauf";
 
-// Market Vaults
 
-"market.vaults.apy" = "APY %@";
-"market.vaults.tvl" = "TVL: %@";
-"market.vaults.premium.description" = "Entdecken Sie die besten DeFi-Staking-Erträge – alles an einem Ort.";
-"market.vaults.premium.unlock" = "Premium freischalten";
 
-"market.vaults.filter" = "Filtern";
-"market.vaults.filter.all_assets" = "Alle Assets";
-"market.vaults.filter.eth_yield" = "ETH-Rendite";
-"market.vaults.filter.usd_yield" = "USD-Rendite";
 
-"market.vaults.sort.highest_apy" = "Höchster APY";
-"market.vaults.sort.highest_tvl" = "Höchstes TVL";
-"market.vaults.sort.highest_apy.short" = "APY";
-"market.vaults.sort.highest_tvl.short" = "TVL";
 
-"market.vaults.chains.title" = "Blockchains";
-"market.vaults.chains.any" = "Beliebig";
-"market.vaults.chains.all_chains" = "Alle Chains";
-"market.vaults.chains.n_chains" = "%@ Chains";
 
-// Market Vault
 
-"market.vault.apy" = "APY";
-"market.vault.tvl" = "TVL";
-"market.vault.network" = "Netzwerk";
-"market.vault.protocol" = "Protokoll";
-"market.vault.underlying_token" = "Zugrunde liegender Token";
-"market.vault.hoders" = "Halter";
-"market.vault.open_dapp" = "DApp öffnen";
 
 // Coin Page
 
@@ -1136,162 +1020,27 @@
 "technical_advice.macd.negative" = "unten";
 "technical_advice.macd.advice" = "MACD. Bewertet die Stärke des Trends unter Berücksichtigung der durchschnittlichen Preisänderung. Der tägliche Wert des Histogramms beträgt %@ (%@). Der Preis des Vermögenswerts könnte sich global %@ bewegen.";
 
-"coin_analytics.indicators.title" = "Technische Indikatoren";
-"coin_analytics.indicators.disclaimer" = "Denken Sie immer daran, das Risikomanagement anzuwenden und beachten Sie, dass dies keine finanzielle Beratung ist.";
-"coin_analytics.indicators.info.title" = "Technische Indikatoren";
-"coin_analytics.indicators.info.description" = "Wir verwenden die Bollinger-Bänder + RSI-Strategie, um Handelssignale zu bestimmen. Alle Berechnungen basieren auf täglichen Kerzenleuchtern und geben Ratschläge für eine moderat langfristige Strategie. Die Essenz der Strategie besteht darin, dass der Asset-Preis ein Extrem erreichen sollte, indem er aus dem Bollinger-Bänder-Kanal ausbricht, und der RSI sollte sich in der überkauften/überverkauften Zone befinden. Nachdem der Preis zum Kanal zurückkehrt, besteht eine hohe Wahrscheinlichkeit, dass der Preis zu den Mittelwerten zurückkehrt oder versucht, den Kanal von der anderen Seite zu durchbrechen. Beachten Sie, dass die Strategie während starker Marktbewegungen mehrere falsche Signale geben kann, bevor ein korrektes Signal erscheint.\n\nBitte denken Sie daran, dass es sehr wichtig ist, Risikomanagement beim Handel anzuwenden und daran zu denken, Verluste zu begrenzen, wenn sich die Marktsituation ändert! ";
-"coin_analytics.indicators.details" = "Info";
-"coin_analytics.indicators.hide_details" = "Details ausblenden";
-"coin_analytics.indicators.show_details" = "Details anzeigen";
-"coin_analytics.indicators.summary" = "Zusammenfassung";
-"coin_analytics.indicators.no_data" = "Keine Daten";
-"coin_analytics.indicators.oversold" = "Riskant";
-"coin_analytics.indicators.strong_buy" = "Starker Kauf";
-"coin_analytics.indicators.buy" = "Kaufen";
-"coin_analytics.indicators.neutral" = "Neutral";
-"coin_analytics.indicators.sell" = "Verkaufen";
-"coin_analytics.indicators.strong_sell" = "Starker Verkauf";
-"coin_analytics.indicators.overbought" = "Riskant";
-"coin_analytics.period" = "Zeitraum";
-"coin_analytics.period.select_title" = "Zeitraum auswählen";
 
-"coin_analytics.details" = "Info";
 
-"coin_analytics.not_available" = "Dieses Projekt hat keine Analysedaten";
 
-"coin_analytics.technical_indicators" = "Technische Indikatoren";
-"coin_analytics.technical_indicators.info1" = "Zusammenfassung: Dies ist eine allgemeine Übersicht über die technischen Daten eines Vermögenswerts, unter Berücksichtigung einer Vielzahl von technischen Indikatoren und Zeitrahmen. Sie bietet einen Konsensansatz (Kaufen, Verkaufen oder Neutral) basierend auf diesen Indikatoren.";
-"coin_analytics.technical_indicators.info2" = "Gleitende Durchschnitte (MA): Dies sind häufig verwendete technische Indikatoren, die Preisdaten glätten, um einen trendfolgenden Indikator zu erstellen. Sie zeigen den Durchschnittspreis über einen bestimmten Zeitraum. Es gibt verschiedene Arten von MAs:\n\nEinfacher gleitender Durchschnitt (SMA): Dieser berechnet den Durchschnitt eines ausgewählten Preisspektrums, in der Regel Schlusskurse, durch die Anzahl der Perioden in diesem Bereich.\n\nExponentieller gleitender Durchschnitt (EMA): Dieser gibt neueren Preisen mehr Gewicht und reagiert daher schneller auf aktuelle Preisänderungen.";
-"coin_analytics.technical_indicators.info3" = "Oszillatoren: Dies sind technische Indikatoren, die im Laufe der Zeit innerhalb eines Bandes (über und unter einer Mittellinie oder zwischen festgelegten Niveaus) schwanken. Sie sind dazu gedacht, überkaufte und überverkaufte Bedingungen auf einem Markt zu identifizieren. Hier sind einige gängige Oszillatoren:\n\nRelative Strength Index (RSI): Dieser misst die Geschwindigkeit und Veränderung von Preisbewegungen. Er wird üblicherweise verwendet, um überkaufte oder überverkaufte Zustände zu identifizieren.\n\nMoving Average Convergence Divergence (MACD): Dieser wird verwendet, um potenzielle Kauf- und Verkaufssignale zu identifizieren. Er löst technische Signale aus, wenn er über (zum Kaufen) oder unter (zum Verkaufen) seiner Signallinie kreuzt.";
 
-"coin_analytics.cex_volume" = "CEX-Volume";
-"coin_analytics.cex_volume_rank" = "CEX Volumenrang";
-"coin_analytics.cex_volume_rank.description" = "Token, sortiert nach Handelsvolumen für den Token auf zentralisierten Börsen.";
-"coin_analytics.cex_volume_rank.sorting_field" = "Lautstärke";
-"coin_analytics.cex_volume.info1" = "Total trading volume for the token on leading centralized exchanges over 30-day period.";
-"coin_analytics.cex_volume.info2" = "Diagramm, das die Schwankungen im täglichen Handelsvolumen des Tokens an führenden zentralisierten Börsen über einen Zeitraum von 1 Jahr zeigt.";
-"coin_analytics.cex_volume.info3" = "Die Rangfolge des Tokens basiert auf dem Handelsvolumen an führenden zentralisierten Börsen über einen Zeitraum von 30 Tagen.";
-"coin_analytics.cex_volume.info4" = "Liste aller Token, sortiert nach Handelsvolumen auf zentralisierten Börsen über Intervalle von 24 Stunden / 7 Tagen / 1 Monat.";
 
-"coin_analytics.dex_volume" = "DEX-Volume";
-"coin_analytics.dex_volume_rank" = "DEX-Volumenrang";
-"coin_analytics.dex_volume_rank.description" = "Token, sortiert nach Handelsvolumen für den Token auf dezentralen Börsen.";
-"coin_analytics.dex_volume_rank.sorting_field" = "Lautstärke";
-"coin_analytics.dex_volume.info1" = "Total trading volume for the token on leading centralized exchanges over 30-day period.";
-"coin_analytics.dex_volume.info2" = "Diagramm, das die Schwankungen im täglichen Handelsvolumen des Tokens an führenden dezentralen Börsen über einen Zeitraum von 1 Jahr zeigt.";
-"coin_analytics.dex_volume.info3" = "Rang des Tokens basierend auf dem Handelsvolumen an führenden dezentralen Börsen über einen Zeitraum von 30 Tagen.";
-"coin_analytics.dex_volume.info4" = "Liste aller Token, sortiert nach Handelsvolumen auf dezentralen Börsen über Intervalle von 24 Stunden / 7 Tagen / 1 Monat.";
-"coin_analytics.dex_volume.tracked_dexes" = "Verfolgte DEXes (Dezentrale Börsen):";
-"coin_analytics.dex_volume.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Sushiswap";
-"coin_analytics.dex_volume.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap";
 
-"coin_analytics.dex_liquidity" = "DEX-Liquidität";
-"coin_analytics.dex_liquidity_rank" = "DEX Liquiditätsrang";
-"coin_analytics.dex_liquidity_rank.description" = "Token, sortiert nach verfügbarer Liquidität auf dezentralen Börsen.";
-"coin_analytics.dex_liquidity_rank.sorting_field" = "Liquidität";
-"coin_analytics.dex_liquidity.info1" = "Gesamte derzeit verfügbare Liquidität für den Token an führenden dezentralen Börsen.";
-"coin_analytics.dex_liquidity.info2" = "Diagramm, das die Schwankungen in der verfügbaren Liquidität für den Token an führenden dezentralen Börsen über einen Zeitraum von 1 Jahr zeigt.";
-"coin_analytics.dex_liquidity.info3" = "Liste aller Tokens basierend auf der verfügbaren Liquidität für das Token an führenden dezentralen Börsen.";
-"coin_analytics.dex_liquidity.tracked_dexes" = "Verfolgte DEXes (Dezentrale Börsen):";
-"coin_analytics.dex_liquidity.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Balancer V1/2, Bancor V2, Curve, Sushiswap";
-"coin_analytics.dex_liquidity.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap, DODO V1/2";
 
-"coin_analytics.active_addresses" = "Täglich aktive Adressen";
-"coin_analytics.active_addresses.30_day_unique_addresses" = "30-Tage Einzigartige Adressen";
-"coin_analytics.active_addresses_rank" = "Aktive Adressen Rang";
-"coin_analytics.active_addresses_rank.description" = "Token, die nach der Anzahl der eindeutigen Adressen eingestuft werden, die mit dem Token Transaktionen tätigen.";
-"coin_analytics.active_addresses_rank.sorting_field" = "Aktiv";
-"coin_analytics.active_addresses.info1" = "Total number of unique daily active addresses over 24-hour period.";
-"coin_analytics.active_addresses.info2" = "Diagramm, das die Schwankungen in der Anzahl der täglich aktiven Adressen über einen Zeitraum von einem Jahr zeigt.";
-"coin_analytics.active_addresses.info3" = "Gesamtzahl der eindeutigen Blockchain-Adressen, die über einen Zeitraum von 30 Tagen mit einem Token handeln.";
-"coin_analytics.active_addresses.info4" = "Die Rangfolge des Tokens basiert auf der Anzahl der aktiven Wallets, die in einem Zeitraum von 30 Tagen mit dem Token handeln.";
-"coin_analytics.active_addresses.info5" = "Liste aller Tokens basierend auf der Anzahl täglicher aktiver Adressen, die mit dem Token über 24h / 7D / 1M Intervalle handeln.";
 
-"coin_analytics.transaction_count" = "Transaktionsanzahl";
-"coin_analytics.transaction_count_rank" = "Rang nach Transaktionsanzahl";
-"coin_analytics.transaction_count_rank.description" = "Token werden nach der Anzahl von Transaktionen auf einer Blockchain eingestuft.";
-"coin_analytics.transaction_count_rank.sorting_field" = "Anzahl";
-"coin_analytics.transaction_count.info1" = "Gesamtzahl der einzigartigen Blockchain-Transaktionen mit Token über einen Zeitraum von 30 Tagen.";
-"coin_analytics.transaction_count.info2" = "Diagramm, das die Schwankungen in der Anzahl der Transaktionen über einen Zeitraum von einem Jahr zeigt.";
-"coin_analytics.transaction_count.info3" = "Der Rang des Tokens basiert auf der Anzahl der Transaktionen innerhalb des 30-Tage-Zeitraums des Tokens.";
-"coin_analytics.transaction_count.info4" = "Liste aller Token, sortiert nach der Anzahl der Transaktionen mit dem Token über Intervalle von 24 Stunden, 7 Tagen und einem Monat.";
-"coin_analytics.transaction_count.info5" = "Die Gesamtzahl der Token, die über die Blockchain über den Zeitraum von 30 Tagen übertragen wurden.";
 
-"coin_analytics.holders" = "Halter";
-"coin_analytics.holders_rank" = "Halter Rang";
-"coin_analytics.holders_rank.description" = "Ranking von Token nach einzigartigen Adressen, die diese auf mehreren Blockchains halten.";
-"coin_analytics.holders_rank.sorting_field" = "Halter";
-"coin_analytics.holders.info1" = "Gesamtzahl der einzigartigen Adressen, die den Token auf verschiedenen Blockchains halten.";
-"coin_analytics.holders.info2" = "Die Top 10 Wallets, die den Token auf jeder Blockchain halten.";
-"coin_analytics.holders.tracked_blockchains" = "Verfolgte Blockchains: Ethereum, Binance Smart Chain, Optimism, Arbitrum, Celo, Cronos, Avalanche, Fantom, Polygon";
-"coin_analytics.holders.in_top_10_addresses" = "in den Top 10 Haltern";
-"coin_analytics.holders.count" = "Gesamteinhaber: %@";
-"coin_analytics.holders.see_all" = "Alle anzeigen";
 
-"coin_analytics.project_tvl" = "Projekt TVL";
-"coin_analytics.tvl_ratio" = "M.Kap / TVL-Verhältnis";
-"coin_analytics.project_tvl.info_title" = "Projekt TVL (Gesamtwert gesperrt)";
-"coin_analytics.project_tvl.info1" = "Überwachte Blockchains: Ethereum, Binance Smart Chain, Optimism, Arbitrum, Celo, Cronos, Avalanche, Fantom, Polygon.";
-"coin_analytics.project_tvl.info2" = "Diagramm mit Variation Total-Value-gesperrt in intelligenten Verträgen über 1 Jahr.";
-"coin_analytics.project_tvl.info3" = "Tokens Rang basiert auf dem aktuellen Total-Wert-gesperrt.";
-"coin_analytics.project_tvl.info4" = "Liste aller Token basierend auf dem aktuellen Total-Wert gesperrt.";
-"coin_analytics.project_tvl.info5" = "Market Cap / TVL Verhältnis für das Projekt.";
 
-"coin_analytics.project_fee" = "Projektgebühr";
-"coin_analytics.project_fee_rank" = "Projektgebührenrang";
-"coin_analytics.project_fee_rank.description" = "Token werden nach den von den jeweiligen Projekten generierten Gebühren eingestuft. Die Art und Weise, wie Gebühren gesammelt werden, variiert von Projekt zu Projekt.";
-"coin_analytics.project_fee_rank.sorting_field" = "Lautstärke";
 
-"coin_analytics.project_revenue" = "Projekteinnahmen";
-"coin_analytics.project_revenue_rank" = "Projekt-Umsatzrang";
-"coin_analytics.project_revenue_rank.description" = "Token werden nach Einnahmen klassifiziert, die über Mechanismen wie Stapel- oder Tokenbrennen für Inhaber generiert werden.";
-"coin_analytics.project_revenue_rank.sorting_field" = "Umsatz";
 
-"coin_analytics.other_data" = "Andere Daten";
 
-"coin_analytics.reports" = "Berichte";
 
-"coin_analytics.funding" = "Finanzierung";
-"coin_analytics.funding.lead" = "Blei";
 
-"coin_analytics.treasuries" = "Treasuries";
-"coin_analytics.treasuries.filters" = "Filter";
-"coin_analytics.treasuries.filter.all" = "Alle";
-"coin_analytics.treasuries.filter.public" = "Öffentlich";
-"coin_analytics.treasuries.filter.private" = "Privat";
-"coin_analytics.treasuries.filter.etf" = "ETF";
 
-"coin_analytics.audits" = "Prüfungen";
-"coin_analytics.audits.issues" = "Probleme";
-"coin_analytics.audits.no_reports" = "Keine Audit-Berichte";
 
-"coin_analytics.last_30d" = "letzte 30d";
-"coin_analytics.current" = "aktuell";
 
-"coin_analytics.overall_score" = "Gesamtpunktzahl";
-"coin_analytics.overall_score.excellent" = "Ausgezeichnet";
-"coin_analytics.overall_score.good" = "Gut";
-"coin_analytics.overall_score.fair" = "Faire";
-"coin_analytics.overall_score.poor" = "Arm";
-"coin_analytics.overall_score.cex_volume" = "Die Gesamtbewertung basiert auf dem durchschnittlichen täglichen Handelsvolumen an zentralisierten Börsen in den letzten 7 Tagen.";
-"coin_analytics.overall_score.dex_volume" = "Die Gesamtpunktzahl basiert auf dem durchschnittlichen täglichen Handelsvolumen an dezentralen Börsen in den letzten 7 Tagen.";
-"coin_analytics.overall_score.dex_liquidity" = "Die Gesamtzahl basiert auf der verfügbaren Liquidität bei dezentralen Börsen.";
-"coin_analytics.overall_score.active_addresses" = "Die Gesamtpunktzahl basiert auf den durchschnittlichen täglichen aktiven Adressen der letzten 7 Tage.";
-"coin_analytics.overall_score.project_tvl" = "Die Gesamtpunktzahl basiert auf dem gesperrten Gesamtwert (verwaltete Assets) auf dem Projekt, das durch den angegebenen Token repräsentiert wird.";
-"coin_analytics.overall_score.transaction_count" = "Die Gesamtpunktzahl basiert auf der durchschnittlichen täglichen Transaktionsanzahl der letzten 7 Tage.";
-"coin_analytics.overall_score.holders" = "Die Gesamtpunktzahl richtet sich nach der Gesamtzahl der Adressen mit dem jeweiligen Token.";
 
-"coin_analytics.rank" = "Rang";
-"coin_analytics.30_day_rank" = "30-Tage Rang";
-"coin_analytics.30_day_volume" = "30-Tage Lautstärke";
 
-"coin_analytics.analysis.title" = "Analyse von Smart Contracts";
-"coin_analytics.analysis.high_risk_items" = "Hochrisiko-Positionen";
-"coin_analytics.analysis.medium_risk_items" = "Mittlere Risiko-Positionen";
-"coin_analytics.analysis.attention_required" = "Aufmerksamkeit erforderlich";
-"coin_analytics.analysis.token_detectors" = "Token-Detektoren";
-"coin_analytics.analysis.general_detectors" = "Allgemeine Detektoren";
-"coin_analytics.analysis.issues" = "Schwierigkeiten: %@";
 
 // Coin Page -> Markets
 
@@ -1715,22 +1464,9 @@
 
 // Settings -> Subsription
 
-"subscription.premium.label" = "Prämie";
-"subscription.title" = "Abonnement";
-"subscription.get" = "Premium erhalten";
-"subscription.restore" = "Kauf wiederherstellen";
-"subscription.type" = "Abonnementtyp";
-"subscription.one-time" = "Einmalig";
-"subscription.price" = "Preis";
-"subscription.next_payment" = "Nächstes Zahlungsdatum";
-"subscription.purchase_time" = "Startdatum";
-"subscription.status" = "Status";
-"subscription.manage" = "Abonnement verwalten";
 
 // Settings -> Support
 
-"settings.vip_support.description" = "Erhalte exklusiven Zugang zu unserer VIP-Gruppe, in der Premium-Nutzer und das Quantum Wallet-Team zusammenarbeiten. Erhalte direkte Unterstützung, diskutiere zukünftige Updates und hilf dabei, die Entwicklung der Wallet mitzugestalten.";
-"settings.vip_support.start_chat" = "VIP-Gruppe beitreten";
 
 // Settings -> Contacts
 
@@ -1896,16 +1632,6 @@
 "wallet_connect.list.pending_requests" = "Ausstehende Anfragen";
 "wallet_connect.main.connect" = "Conectar a %@";
 "wallet_connect.main.connected" = "Conectado a %@";
-"wallet_connect.main.premium_alert.title.risky" = "¡Peligro!";
-"wallet_connect.main.premium_alert.subtitle.deactivated" = "La Protección contra estafas está desactivada. Obtén Premium para mantener tus fondos protegidos frente a sitios no verificados y de phishing.";
-"wallet_connect.main.premium_alert.subtitle.risky" = "Este sitio no está verificado. Conectarse podría exponerte a phishing y a la pérdida de fondos.";
-"wallet_connect.main.premium_alert.subtitle.not_available" = "Betrugsschutz-Überprüfung fehlgeschlagen. Verbindung erlaubt, aber die Domain könnte unsicher sein.";
-"wallet_connect.scam_protection" = "Betrugsschutz";
-"wallet_connect.scam_protection.deactivated" = "Deaktiviert";
-"wallet_connect.scam_protection.risky" = "Riskant";
-"wallet_connect.scam_protection.secure" = "Sicher";
-"wallet_connect.scam_protection.not_available" = "N/A";
-"wallet_connect.scam_protection.disabled" = "Deaktiviert";
 "wallet_connect.networks" = "Netzwerke";
 
 "wallet_connect.main.no_any_supported_chains" = "Keine unterstützten Ketten!";
@@ -2236,29 +1962,9 @@
 "nft.activity.event_types" = "Ereignistypen";
 "nft.activity.event_type.all" = "Alle Ereignisse";
 
-// Subscription Info
 
-"subscription_info.title" = "Premium-Funktionen";
-"subscription_info.info1.title" = "Analyse der Kryptowährung";
-"subscription_info.info1.text" = "Erkennen Sie lukrative Chancen, vermeiden Sie Betrügereien und maximieren Sie Ihre Gewinne in der dynamischen Welt der Kryptowährung.";
-"subscription_info.info2.title" = "Diagrammindikatoren";
-"subscription_info.info2.text" = "Erkennen Sie lukrative Chancen, vermeiden Sie Betrügereien und maximieren Sie Ihre Gewinne in der dynamischen Welt der Kryptowährung.";
-"subscription_info.info3.title" = "Persönlicher Support";
-"subscription_info.info3.text" = "Erkennen Sie lukrative Chancen, vermeiden Sie Betrügereien und maximieren Sie Ihre Gewinne in der dynamischen Welt der Kryptowährung.";
-"subscription_info.get_premium" = "Premium erhalten";
-"subscription_info.already_have" = "Ich habe bereits Premium";
 
-// Activate Subscription
 
-"activate_subscription.title" = "Aktivieren";
-"activate_subscription.wallet" = "Wallet";
-"activate_subscription.address" = "Adresse";
-"activate_subscription.message" = "zu signierende Nachricht";
-"activate_subscription.sign" = "Signieren";
-"activate_subscription.activating" = "Aktivieren...";
-"activate_subscription.failed_to_activate" = "Fehler beim Aktivieren des Abonnements";
-"activate_subscription.activated" = "Aktiviert";
-"activate_subscription.no_subscriptions" = "Ihre Wallet-Adresse hat kein Abonnement für Premium-Funktionen, Sie müssen sie kaufen, um das Abonnement zu aktivieren.";
 
 // Launch
 
@@ -2295,96 +2001,24 @@
 "transaction_filter.hide_suspicious_txs" = "Verdächtige Txs ausblenden";
 "transaction_filter.hide_suspicious_txs.description" = "Blendet verdächtige kleine Überweisungen aus, die häufig bei Phishing-Angriffen verwendet werden.";
 
-// Purchases
 
-"premium.cell.title" = "Prämie";
-"premium.cell.description" = "Erweitern Sie Ihr Erlebnis mit %@ Funktionen!";
-"premium.cell.description.key" = "Prämie";
-"premium.cell.try" = "Kostenlos ausprobieren";
 
 "mini_app.cell.title" = "MiniApp";
 "mini_app.cell.description" = "Führe Tests durch, erledige Aufgaben und verdiene Token!";
 
-"purchases.title" = "Prämie";
-"purchases.description" = "Plan auswählen";
-"purchases.type.pro" = "Pro";
-"purchases.type.vip" = "VIP";
 
 // Defense System
-"purchases.defense_system" = "Verteidigungssystem";
-"purchases.secure_send" = "Sicheres Senden";
-"purchases.secure_send.description" = "Verhindert das Senden von Geldern an riskante oder Phishing-Adressen.";
-"purchases.secure_send.info" = "Prüft Empfänger-Wallets auf Phishing oder Betrug und warnt Sie, bevor Sie an riskante Adressen senden.";
-"purchases.scam_protection" = "Betrugsschutz";
-"purchases.scam_protection.description" = "Warnt dich beim Verbinden mit gefälschten oder bösartigen dApps.";
-"purchases.scam_protection.info" = "Erkennt gefälschte oder bösartige dApps, bevor eine Verbindung hergestellt wird. Verhindert Phishing und schützt Ihre Vermögenswerte.";
-"purchases.swap_protection" = "Swap Protection";
-"purchases.swap_protection.description" = "Verhindert Bots und MEV-Angriffe während Swaps.";
-"purchases.swap_protection.info" = "Stoppt Bots und Front-Running-Angriffe während Swaps. Hält deine Transaktionen fair und sicher.";
-"purchases.robbery_protection" = "Raubschutz";
-"purchases.robbery_protection.description" = "Schützt deine Gelder, falls du gezwungen bist, die App zu entsperren.";
-"purchases.robbery_protection.info" = "Ermöglicht das Erstellen einer Tarn-Wallet mit separater PIN und hält Ihre echten Vermögenswerte in risikoreichen Situationen verborgen.";
 
 // Advanced Controls
-"purchases.advanced_controls" = "Erweiterte Steuerungen";
-"purchases.swap_control" = "Swap Control";
-"purchases.swap_control.description" = "Erweiterte Einstellungen zur Steuerung, wie und wo Swaps ausgeführt werden.";
-"purchases.swap_control.info" = "Standardmäßig wählen wir das bestverfügbare Angebot aus. Mit Premium kannst du einen anderen Provider auswählen.";
-"purchases.priority_support" = "Prioritäts-Support";
-"purchases.priority_support.description" = "Direkter Zugang zu unserem Support-Team.";
-"purchases.priority_support.info" = "Ermöglicht dir direkten Zugang zum Priority Support. Erhalte schnelle, persönliche Unterstützung vom Quantum Chain-Team.";
 
 // Market Insights
-"purchases.market_insights" = "Markteinblicke";
-"purchases.token_insights" = "Analytik";
-"purchases.token_insights.description" = "Detaillierte Analysen und Token-Daten.";
-"purchases.token_insights.info" = "Zeigt detaillierte Token-Daten wie Volumen, Liquidität und Trends an. Hilft Ihnen, fundiertere Anlageentscheidungen zu treffen.";
-"purchases.advanced_search" = "Erweiterte Suche";
-"purchases.advanced_search.description" = "Leistungsstarke Filter für eine intelligentere Token-Entdeckung.";
-"purchases.advanced_search.info" = "Finden Sie Token mit Filtern nach Volumen, Chain oder Sektor. Enthält Metriken für CEX/DEX-Aktivität und Listings.";
-"purchases.trade_signals" = "Signale und Trends";
-"purchases.trade_signals.description" = "Handlungsrelevante Signale für sichereres Trading.";
-"purchases.trade_signals.info" = "Sendet Echtzeitbenachrichtigungen über Handelsmöglichkeiten und weist sofort auf Gewinnchancen oder Marktrisiken hin.";
 
-"purchase.bottom_sheet.description" = "Ein einziger Kauf schaltet alle Premium-Funktionen frei.";
 
-"purchases.wallet_description.title" = "Hochbewertete Sicherheit, außergewöhnliche Privatsphäre und eine wirklich nicht-verwaltete Wallet.";
-"purchases.wallet_description.approved" = "Genehmigt und geprüft von:";
 
-"purchases.button.try" = "Kostenlos ausprobieren";
-"purchases.button.activated" = "Aktiviert";
-"purchases.button.upgrade" = "Upgrade";
 
-"purchase.period.title" = "Abonnement auswählen";
-"purchase.period.annually" = "Jährlich";
-"purchase.period.monthly" = "Monatlich";
-"purchase.period.onetime" = "Einmalig";
-"purchase.period.onetime.description" = "für lebenslangen Zugang";
-"purchase.period.save" = "sparen";
-"purchase.period.year" = "jahr";
-"purchase.period.month" = "monate";
-"purchase.period.description1" = "Genießen Sie die ersten 7 Tage kostenlos.";
-"purchase.period.description1.1" = "Rabatt im ersten Monat genießen.";
-"purchase.period.description2" = "Sie können Ihr App-Store-Abonnement jederzeit kündigen.";
-"purchase.lifetime.description" = "Du kannst ein einmaliges Abonnement ohne Einschränkungen erwerben";
-"purchase.agree" = "Mit dem Upgrade Ihres Kontos stimmen Sie den %@ und der %@ zu.";
-"purchase.agree.terms_of_service" = "Nutzungsbedingungen";
-"purchase.agree.privacy_policy" = "Datenschutzrichtlinie";
 
-"purchases.period.button.try" = "7 Tage kostenlos erhalten";
-"purchases.period.button.subscribe" = "Abonnieren";
-"purchases.period.button.buy" = "Jetzt kaufen";
-"purchases.period.button.promo" = "Promo-Code hinzufügen";
 
-"purchases.promocode.title" = "Promo-Code eingeben";
-"purchases.promocode.placeholder" = "";
-"purchases.promocode.button.invalid" = "Ungültiger Promo-Code";
-"purchases.promocode.button.already_used" = "Promo-Code bereits verwendet";
 
-"purchases.successful_subscription.title" = "Prämie";
-"purchases.successful_subscription.description" = "Vielen Dank für Ihr Abonnement!";
-"purchases.successful_subscription.subscribed" = "Genießen Sie die volle Leistung der App.";
-"purchases.successful_subscription.button.go_app" = "Zur App";
 
 // Address Checker
 
@@ -2399,8 +2033,6 @@
 "check_address.sanctions_check" = "Sanktionsprüfung";
 "check_address.coin_blacklist_check" = "%@ Blacklist-Prüfung";
 "check_address.on_blockchain" = "am %@";
-"check_address.chainalysis.description" = "Chainalysis ist eine Blockchain-Analyseplattform, die Werkzeuge zum Nachverfolgen, Untersuchen und Bewerten von Risiken bei Krypto-Adressen bereitstellt. Sie hilft dabei, Adressen zu identifizieren, die mit Sanktionen, Betrug oder anderen illegalen Aktivitäten in Verbindung stehen.";
-"check_address.hashdit.description" = "HashDit ist eine Sicherheitsplattform, die es Nutzern ermöglicht, Wallet-Adressen auf Risiken wie Sanktionen und Blacklist-Status zu überprüfen. Sie hilft, Interaktionen mit potenziell böswilligen oder gesperrten Adressen zu vermeiden.";
 "check_address.coin_blacklist.description" = "Ermöglicht die Überprüfung, ob eine Wallet-Adresse von %@ (%@) auf eine Blacklist gesetzt wurde. Falls eine Adresse gelistet ist, können alle damit verbundenen %@-Token eingefroren werden, wodurch sie weder zugänglich noch übertragbar sind. Diese Prüfung hilft Nutzern, den Kontakt mit risikobehafteten oder eingeschränkten Adressen zu vermeiden.";
 
 // Monero
@@ -2411,10 +2043,7 @@
 "monero.priority.medium" = "Mittel";
 "monero.priority.high" = "Hoch";
 
-// MEV Protection
 
-"mev_protection.title" = "MEV";
-"mev_protection.description" = "Aktiviere den Schutz, um deinen Swap abzusichern und Wertverluste durch Bots zu vermeiden.";
 
 // Secure Send Bottom Sheet
 "secure_send.bottom_sheet.title" = "Sicheres Senden";
@@ -2441,4 +2070,19 @@
 "qvm_send_settings.nonce.info" = "Das nonce ist ein eindeutiger Integer-Wert für eine Transaktion innerhalb der Wallet des Benutzers. Sie erhöht sich normalerweise mit jeder abgeschlossenen Transaktion und muss sich nicht ändern. Fortgeschrittene Benutzer können es einem Nonce einer ausstehenden Transaktion gleichen, um diese Transaktion zu stornieren und zu ersetzen solange die neue Transaktion eine ausreichend höhere Gebühr hat, um zu verhindern, dass die alte statt dessen bestätigt wird (zum Beispiel Sie möchten möglicherweise die Bestätigung beschleunigen oder die Transaktionsparameter vollständig ändern). Wenn mehrere ausstehende Transaktionen die gleiche Nonce haben, wird nur eine bestätigt, typischerweise die mit der höchsten Gebühr.";
 "qvm_send_settings.nonce.errors.already_in_use" = "Nonce verwendet";
 "qvm_send_settings.nonce.errors.already_in_use.info" = "Eine ausgeführte Transaktion mit diesem nonce existiert bereits.";
-"purchases.address_phishing.info" = "Eine falsche Adresse, und deine Krypto ist für immer verloren. Quantum Wallet scannt automatisch Empfängeradressen auf verdächtige Muster und schützt dich vor den neuesten Phishing-Bedrohungen, sodass du keine Gelder an Hacker sendest. Blockiere betrügerische Überweisungen, bevor sie passieren.";
+
+// Security Tools
+"settings_security.robbery_protection" = "Raubschutz";
+"market.top.description.more_250_m" = "> $250M";
+"market.top.description.more_10_m" = "> $10M";
+"settings_security.secure_send" = "Sicheres Senden";
+"market.top.description.more_500_m" = "> $500M";
+"market.top.description.more_25_m" = "> $25M";
+"market.top.description.more_5_m" = "> $5M";
+"settings_security.robbery_protection.description" = "Schützt deine Gelder, falls du gezwungen bist, die App zu entsperren.";
+"settings_security.secure_send.description" = "Verhindert das Senden von Geldern an riskante oder Phishing-Adressen.";
+"market.top.description.more_1_m" = "> $1M";
+"market.top.description.more_100_m" = "> $100M";
+"market.top.description.more_1_b" = "> $1B";
+"market.top.description.m_cap" = "M.Cap";
+"settings_security.defense_system" = "Verteidigungssystem";

@@ -556,11 +556,6 @@
 "send.address.phishing.description" = "分析所提供的收款地址是否存在潜在的钓鱼风险。\n\n安全：未发现可疑活动。\n\n已检测到：该地址可能有人试图诱骗您将资金发送到错误地址。除非完全确认地址无误，否则请勿继续。建议您先尝试发送一笔小额测试交易。";
 "send.address.phishing.caution.title" = "已检测到钓鱼地址！";
 "send.address.phishing.caution.description" = "您输入的地址可能存在欺诈风险。骗子常常篡改地址的首尾字符。请在继续之前仔细核对完整地址，以避免资金损失。";
-"send.address.sanction_check" = "制裁检查";
-"send.address.sanction_check.subtitle" = "验证该地址是否受到制裁限制。";
-"send.address.sanction.description" = "核实收款地址是否受到国际制裁，数据来源：Chainalysis.com。\n\n安全：未检测到制裁。\n\n已检测到：存在潜在法律风险。在某些司法管辖区，与该地址的交易可能受限或违法。";
-"send.address.sanction.caution.title" = "受制裁地址！";
-"send.address.sanction.caution.description" = "您输入的地址已被标记为受制裁。向该地址转账可能导致资金损失或其他风险。请在继续之前核实收款人信息。";
 "send.address.blacklist_check" = "黑名单检查";
 "send.address.blacklist_check.subtitle" = "在欺诈和高风险数据库中检查该地址。";
 "send.address.blacklist.description" = "检查目标地址是否被列入官方或非官方黑名单。\n\n安全：未发现黑名单标记。\n\n已检测到：该地址已被列入黑名单，可能涉及法律或安全风险。请谨慎操作。许多交易所会限制与黑名单地址有过往来记录的钱包用户的充值和提现，请注意。";
@@ -785,7 +780,6 @@
 "market.tab.news" = "发现";
 "market.tab.coins" = "币";
 "market.tab.watchlist" = "关注";
-"market.tab.vaults" = "赚取";
 "market.tab.platforms" = "平台";
 "market.tab.pairs" = "配对标点";
 "market.tab.sectors" = "行业";
@@ -883,103 +877,18 @@
 "market_discovery.not_found" = "未发现结果";
 
 "market_watchlist.empty.caption" = "您的观察列表为空。";
-"market.watchlist.signals" = "信号";
 "market.watchlist.empty" = "您的观察列表为空";
-"market.watchlist.signals.description" = "下面的信号是基于Bollinger Bands 和 RSI 技术价格指标的近似值。 最近30天。这些信号是算法，可以经常改变。";
-"market.watchlist.signals.strong_buy.description" = "对价格上涨信心高";
-"market.watchlist.signals.buy.description" = "在不久的将来可能的价格提高";
-"market.watchlist.signals.neutral.description" = "没有明确的趋势，市场处于平衡状态";
-"market.watchlist.signals.sell.description" = "未来近期可能价格下跌";
-"market.watchlist.signals.strong_sell.description" = "价格下跌的高概率";
-"market.watchlist.signals.risky.description" = "风险水平升高，需要谨慎";
-"market.watchlist.signals.warning" = "请记住始终要进行风险管理，并注意这不是财务建议";
-"market.watchlist.signals.turn_on" = "打开";
 
-"market.advanced_search.title" = "过滤器";
-"market.advanced_search.show_results" = "显示结果";
-"market.advanced_search.empty_results" = "空结果";
-"market.advanced_search.retry" = "重试";
-"market.advanced_search.dex_description" = "此设置将应用于在以太坊（Uniswap DEX）和币安智能链（Pancake DEX）上交易的代币。";
-"market.advanced_search.24h" = "24小时";
 
-"market.advanced_search.market_parameters" = "市场参数";
-"market.advanced_search.network_parameters" = "网络参数";
-"market.advanced_search.indicators" = "指示器";
-"market.advanced_search.price_parameters" = "价格参数";
-"market.advanced_search.choose_set" = "可选集合";
-"market.advanced_search.market_cap" = "市场价值";
-"market.advanced_search.volume" = "成交量";
-"market.advanced_search.categories" = "行业";
 
-"market.advanced_search.listed_on_top_exchanges" = "列在顶级交易所上";
-"market.advanced_search.good_cex_volume" = "良好的中心化交易所（CEX）交易量";
-"market.advanced_search.good_dex_volume" = "良好的去中心化交易所（DEX）交易量";
-"market.advanced_search.good_distribution" = "良好的分布";
-"market.advanced_search.overall_score_is_good_or_excellent" = "总体得分是良好或优秀";
 
-"market.advanced_search.liquidity" = "DEX流动性";
-"market.advanced_search.blockchains" = "区块链";
-"market.advanced_search.signal" = "交易信号";
-"market.advanced_search.price_period" = "价格区间";
-"market.advanced_search.price_change" = "价格变动";
 
-"market.advanced_search.outperformed_btc" = "跑赢BTC";
-"market.advanced_search.outperformed_eth" = "跑赢ETH";
-"market.advanced_search.outperformed_bnb" = "跑赢BNB";
-"market.advanced_search.outperformed_sp500" = "表现优于标普500";
-"market.advanced_search.outperformed_gold" = "表现优于黄金";
-"market.advanced_search.price_close_to" = "關閉價格";
-"market.advanced_search.price_close_to_ath" = "接近历史最高价";
-"market.advanced_search.price_close_to_atl" = "接近历史最低价";
 
-"market.advanced_search.top" = "前 %d";
 
-"market.advanced_search.less_5_m" = "<5M";
-"market.advanced_search.less_10_m" = "<10百万";
-"market.advanced_search.less_50_m" = "<50百万";
-"market.advanced_search.less_500_m" = "< 500百万";
-"market.advanced_search.m_5_m_20" = "5百万 - 20百万";
-"market.advanced_search.m_10_m_40" = "10百万 - 40百万";
-"market.advanced_search.m_20_m_100" = "20百万 - 100百万";
-"market.advanced_search.m_40_m_200" = "40百万 - 200百万";
-"market.advanced_search.m_50_m_200" = "50百万 - 200百万";
-"market.advanced_search.m_100_b_1" = "100百万 - 1十亿";
-"market.advanced_search.m_200_b_1" = "200百万  - 1十亿";
-"market.advanced_search.m_200_b_2" = "200百万 - 2十亿";
-"market.advanced_search.m_500_b_2" = "500百万 - 2十亿";
-"market.advanced_search.b_1_b_5" = "1十亿 - 5十亿";
-"market.advanced_search.b_1_b_10" = "1十亿 - 10十亿";
-"market.advanced_search.b_2_b_10" = "2十亿 - 10十亿";
-"market.advanced_search.b_10_b_50" = "10十亿 - 50十亿";
-"market.advanced_search.b_10_b_100" = "10十亿 - 100十亿";
-"market.advanced_search.b_100_b_500" = "100十亿 - 500十亿";
-"market.advanced_search.more_5_b" = "> 5十亿";
-"market.advanced_search.more_10_b" = "> 10十亿";
-"market.advanced_search.more_50_b" = "> 50十亿";
-"market.advanced_search.more_500_b" = "> 500十亿";
 
-"market.advanced_search.top.m_cap" = "市值";
-"market.advanced_search.top.more_1_b" = "> 1B";
-"market.advanced_search.top.more_500_m" = "> $500M";
-"market.advanced_search.top.more_250_m" = "> $250M";
-"market.advanced_search.top.more_100_m" = "> $100M";
-"market.advanced_search.top.more_25_m" = "> $25M";
-"market.advanced_search.top.more_10_m" = "> $10M";
-"market.advanced_search.top.more_5_m" = "> $5M";
-"market.advanced_search.top.more_1_m" = "> $1M";
 
-"market.advanced_search.day" = "1天";
-"market.advanced_search.week" = "1周";
-"market.advanced_search.week2" = "2周";
-"market.advanced_search.month" = "1月";
-"market.advanced_search.month6" = "6月";
-"market.advanced_search.year" = "1年";
 
-"market.advanced_search.day.short" = "24时";
-"market.advanced_search.week.short" = "7天";
-"market.advanced_search.month.short" = "1个月";
 
-"market.advanced_search_results.title" = "搜索结果";
 
 "market.global.total_market_cap.title" = "总市场价值";
 "market.global.total_market_cap.description" = "所有加密货币的总市场价值";
@@ -1021,37 +930,12 @@
 "market.signal.sell" = "出售";
 "market.signal.strong_sell" = "强烈建议卖出";
 
-// Market Vaults
 
-"market.vaults.apy" = "APY %@";
-"market.vaults.tvl" = "TVL: %@";
-"market.vaults.premium.description" = "在这里探索最优质的 DeFi 质押回报，一站尽览。";
-"market.vaults.premium.unlock" = "解锁高级版";
 
-"market.vaults.filter" = "筛选器";
-"market.vaults.filter.all_assets" = "全部资产";
-"market.vaults.filter.eth_yield" = "ETH 收益";
-"market.vaults.filter.usd_yield" = "USD 收益";
 
-"market.vaults.sort.highest_apy" = "最高年化收益率 (APY)";
-"market.vaults.sort.highest_tvl" = "最高总锁仓量 (TVL)";
-"market.vaults.sort.highest_apy.short" = "APY";
-"market.vaults.sort.highest_tvl.short" = "TVL";
 
-"market.vaults.chains.title" = "区块链";
-"market.vaults.chains.any" = "任何";
-"market.vaults.chains.all_chains" = "全部链";
-"market.vaults.chains.n_chains" = "%@ 条链";
 
-// Market Vault
 
-"market.vault.apy" = "APY";
-"market.vault.tvl" = "TVL";
-"market.vault.network" = "網絡";
-"market.vault.protocol" = "协议";
-"market.vault.underlying_token" = "底层代币";
-"market.vault.hoders" = "持有者";
-"market.vault.open_dapp" = "打开 DApp";
 
 // Coin Page
 
@@ -1136,162 +1020,27 @@
 "technical_advice.macd.negative" = "下面";
 "technical_advice.macd.advice" = "MACD。考虑平均价格变动来评估趋势的强度。直方图的每日值为%@(%@）。该资产的价格全球可能会移动%@。";
 
-"coin_analytics.indicators.title" = "技术指标";
-"coin_analytics.indicators.disclaimer" = "请记住始终要进行风险管理，并注意这不是财务建议";
-"coin_analytics.indicators.info.title" = "技术指标";
-"coin_analytics.indicators.info.description" = "我们使用布林带 + RSI 策略来确定交易信号。所有计算都基于日线图，并为中长期提供建议。该策略的本质是资产价格应该达到一个极端点，突破布林带通道，并且 RSI 应该处于超买/超卖区域。在价格回到通道后，有很高的概率价格回归到平均值或尝试从另一侧突破通道。请注意，在正确信号出现之前，该策略在市场强劲波动期间可能会出现多个虚假信号。\n\n请记住，在交易中应用风险管理非常重要，如果市场情况发生变化，请记得及时止损！ ";
-"coin_analytics.indicators.details" = "详细信息";
-"coin_analytics.indicators.hide_details" = "隐藏细节";
-"coin_analytics.indicators.show_details" = "显示详细信息";
-"coin_analytics.indicators.summary" = "总结";
-"coin_analytics.indicators.no_data" = "无数据";
-"coin_analytics.indicators.oversold" = "有风险";
-"coin_analytics.indicators.strong_buy" = "强烈建议买入";
-"coin_analytics.indicators.buy" = "购买";
-"coin_analytics.indicators.neutral" = "中性";
-"coin_analytics.indicators.sell" = "出售";
-"coin_analytics.indicators.strong_sell" = "强烈建议卖出";
-"coin_analytics.indicators.overbought" = "有风险";
-"coin_analytics.period" = "句号";
-"coin_analytics.period.select_title" = "选择时间段";
 
-"coin_analytics.details" = "详细信息";
 
-"coin_analytics.not_available" = "此项目没有分析数据";
 
-"coin_analytics.technical_indicators" = "技术指标";
-"coin_analytics.technical_indicators.info1" = "概述：这是对资产技术手段的一般概述，考虑到各种技术指标和时间框架。 它根据这些指标提供了一个协商一致的观点(购买、出售或中立)。";
-"coin_analytics.technical_indicators.info2" = "移动平均值：这些是通用的技术指标，可使价格数据平滑使用，从而产生一个趋势跟踪指标。 它们显示了特定时期内的平均价格。 多个类型的MA：\n\n简单移动平均值(SMA)：这个计算了选定的价格范围的平均值。 通常按该范围内的周期数结算价格。\n\n指数移动平均值(EMA)：这使得对最近的价格更加权重，从而对最近的价格变化作出更快的反应。";
-"coin_analytics.technical_indicators.info3" = "Oscillators：这些是技术指标，随着时间的推移在波段内(在中心线以下或在设定的层次之间)波动。 它们的目的是帮助查明市场上买卖过多和销售过剩的条件。 这里有一些常见的顾问：\n\n相对力量指数(RSI)：这将衡量价格变动的速度和变化。 它通常被用来查明买入或卖出过多的情况。\n\n移动平均汇合差(MACD)：用于识别潜在的买卖信号。 它在其信号线上方(购买)或下方(出售)时，会触发技术信号。";
 
-"coin_analytics.cex_volume" = "CEX交易量";
-"coin_analytics.cex_volume_rank" = "CEX交易量排名";
-"coin_analytics.cex_volume_rank.description" = "对中心化交易所的代币按交易量排名的代币。";
-"coin_analytics.cex_volume_rank.sorting_field" = "量";
-"coin_analytics.cex_volume.info1" = "Total trading volume for the token on leading centralized exchanges over 30-day period.";
-"coin_analytics.cex_volume.info2" = "图表显示了过去一年内该代币在主要中心化交易所的日交易量变化。";
-"coin_analytics.cex_volume.info3" = "代币的排名基于过去30天内在主要中心化交易所的交易量。";
-"coin_analytics.cex_volume.info4" = "根据中心化交易所24小时/7天/1个月间隔的交易量排名的所有代币列表。";
 
-"coin_analytics.dex_volume" = "DEX交易量";
-"coin_analytics.dex_volume_rank" = "DEX交易量排名";
-"coin_analytics.dex_volume_rank.description" = "对去中心化交易所的代币按交易量排名的代币。";
-"coin_analytics.dex_volume_rank.sorting_field" = "量";
-"coin_analytics.dex_volume.info1" = "Total trading volume for the token on leading centralized exchanges over 30-day period.";
-"coin_analytics.dex_volume.info2" = "图表显示了过去一年内该代币在主要去中心化交易所的日交易量变化。";
-"coin_analytics.dex_volume.info3" = "代币的排名基于在主要去中心化交易所过去30天的交易量。";
-"coin_analytics.dex_volume.info4" = "根据去中心化交易所24小时/7天/1个月间隔的交易量排名的所有代币列表。";
-"coin_analytics.dex_volume.tracked_dexes" = "正在追踪的DEX：";
-"coin_analytics.dex_volume.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Sushiswap";
-"coin_analytics.dex_volume.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap";
 
-"coin_analytics.dex_liquidity" = "DEX流动性";
-"coin_analytics.dex_liquidity_rank" = "DEX流通性排名";
-"coin_analytics.dex_liquidity_rank.description" = "对去中心化交易所上按可用流通性排名的代币。";
-"coin_analytics.dex_liquidity_rank.sorting_field" = "流动性";
-"coin_analytics.dex_liquidity.info1" = "该代币在主要去中心化交易所当前可用的总流动性。";
-"coin_analytics.dex_liquidity.info2" = "图表显示了过去一年内该代币在主要去中心化交易所可用流动性的变化。";
-"coin_analytics.dex_liquidity.info3" = "根据在主要去中心化交易所的代币可用流动性排名的所有代币列表。";
-"coin_analytics.dex_liquidity.tracked_dexes" = "正在追踪的DEX：";
-"coin_analytics.dex_liquidity.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Balancer V1/2, Bancor V2, Curve, Sushiswap";
-"coin_analytics.dex_liquidity.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap, DODO V1/2";
 
-"coin_analytics.active_addresses" = "每日活动地址";
-"coin_analytics.active_addresses.30_day_unique_addresses" = "30天唯一地址";
-"coin_analytics.active_addresses_rank" = "活跃地址排名";
-"coin_analytics.active_addresses_rank.description" = "按与代币交易的唯一地址的数量排名的代币。";
-"coin_analytics.active_addresses_rank.sorting_field" = "已启用";
-"coin_analytics.active_addresses.info1" = "Total number of unique daily active addresses over 24-hour period.";
-"coin_analytics.active_addresses.info2" = "图表显示了过去一年内每日活跃地址数量的变化。";
-"coin_analytics.active_addresses.info3" = "过去30天内与代币进行交易的独特区块链地址的总数。";
-"coin_analytics.active_addresses.info4" = "Token's rank is based on the number of active wallets transacting with the token during a 30-day period.";
-"coin_analytics.active_addresses.info5" = "根据24小时/7天/1个月时间段内与代币进行交易的每日活跃地址数量排名的所有代币列表。";
 
-"coin_analytics.transaction_count" = "交易数";
-"coin_analytics.transaction_count_rank" = "Tx计数排名";
-"coin_analytics.transaction_count_rank.description" = "代币按区块链上的交易数量排名。";
-"coin_analytics.transaction_count_rank.sorting_field" = "计数";
-"coin_analytics.transaction_count.info1" = "30天内代币独特区块链交易的总数。";
-"coin_analytics.transaction_count.info2" = "显示1年周期的交易计数变化的图表。";
-"coin_analytics.transaction_count.info3" = "代币的排名基于30天内代币交易的数量。";
-"coin_analytics.transaction_count.info4" = "基于24时 / 7天 / 1月间隔的交易数量排名的所有代币的列表。";
-"coin_analytics.transaction_count.info5" = "30天周期内在区块链上传输的代币总数。";
 
-"coin_analytics.holders" = "持有者";
-"coin_analytics.holders_rank" = "Classement des titulaires";
-"coin_analytics.holders_rank.description" = "通过在多个区块链上持有它们的独特地址来排名令牌。";
-"coin_analytics.holders_rank.sorting_field" = "持有者";
-"coin_analytics.holders.info1" = "在各种区块链上持有代币的唯一地址的总数。";
-"coin_analytics.holders.info2" = "在每一个区块链上持有代币的前10大钱包。";
-"coin_analytics.holders.tracked_blockchains" = "已追踪区块链：以太坊、币安智能链、Optimism、Arbitrum、Celo、Cronos、Avalanche、Fantom、Polygon";
-"coin_analytics.holders.in_top_10_addresses" = "在前10名持有者中";
-"coin_analytics.holders.count" = "持有者总数：%@";
-"coin_analytics.holders.see_all" = "查看全部";
 
-"coin_analytics.project_tvl" = "项目TVL";
-"coin_analytics.tvl_ratio" = "市值 / TVL比率";
-"coin_analytics.project_tvl.info_title" = "项目TVL（锁定总价值）";
-"coin_analytics.project_tvl.info1" = "项目智能合约中的锁定总价值（或管理下的资产）。";
-"coin_analytics.project_tvl.info2" = "图表显示了过去一年内项目智能合约中锁定总价值的变化。";
-"coin_analytics.project_tvl.info3" = "代币的排名基于当前的锁定总价值。";
-"coin_analytics.project_tvl.info4" = "基于当前锁定总价值排名的所有代币的列表。";
-"coin_analytics.project_tvl.info5" = "项目的市值/锁定总价值（TVL）比率。";
 
-"coin_analytics.project_fee" = "项目费用";
-"coin_analytics.project_fee_rank" = "项目收费等级";
-"coin_analytics.project_fee_rank.description" = "代币根据各自项目产生的费用进行排名。收取费用的方式因项目而异。";
-"coin_analytics.project_fee_rank.sorting_field" = "量";
 
-"coin_analytics.project_revenue" = "项目收入";
-"coin_analytics.project_revenue_rank" = "项目收入排名";
-"coin_analytics.project_revenue_rank.description" = "代币按照通过机制（如质押或代币销毁）为持有者产生的收入进行排名。";
-"coin_analytics.project_revenue_rank.sorting_field" = "收入";
 
-"coin_analytics.other_data" = "其它数据";
 
-"coin_analytics.reports" = "报告";
 
-"coin_analytics.funding" = "资金支持";
-"coin_analytics.funding.lead" = "领投";
 
-"coin_analytics.treasuries" = "国库券";
-"coin_analytics.treasuries.filters" = "过滤器";
-"coin_analytics.treasuries.filter.all" = "所有";
-"coin_analytics.treasuries.filter.public" = "公用";
-"coin_analytics.treasuries.filter.private" = "一对多";
-"coin_analytics.treasuries.filter.etf" = "ETF";
 
-"coin_analytics.audits" = "审计";
-"coin_analytics.audits.issues" = "问题";
-"coin_analytics.audits.no_reports" = "没有审计报告";
 
-"coin_analytics.last_30d" = "最近30天";
-"coin_analytics.current" = "当前";
 
-"coin_analytics.overall_score" = "总体得分";
-"coin_analytics.overall_score.excellent" = "极好的";
-"coin_analytics.overall_score.good" = "好";
-"coin_analytics.overall_score.fair" = "公平的";
-"coin_analytics.overall_score.poor" = "差的";
-"coin_analytics.overall_score.cex_volume" = "总的分数是根据过去7天中央交易所的平均每日交易量计算的。";
-"coin_analytics.overall_score.dex_volume" = "总的分数是根据过去7天分散交易所的平均每日交易量计算的。";
-"coin_analytics.overall_score.dex_liquidity" = "总分数是根据分散交易所的可用流动资金总额计算的。";
-"coin_analytics.overall_score.active_addresses" = "总得分是根据过去7天中每日平均活动地址计算的。";
-"coin_analytics.overall_score.project_tvl" = "总体分数是根据给定令牌所代表的项目的总值锁定(管理中的资产)计算的。";
-"coin_analytics.overall_score.transaction_count" = "总的分数是根据过去7天的平均每日交易数计算的。";
-"coin_analytics.overall_score.holders" = "总的分数是根据持有相应代币的地址总数计算的。";
 
-"coin_analytics.rank" = "排名";
-"coin_analytics.30_day_rank" = "30天排名";
-"coin_analytics.30_day_volume" = "30天交易量";
 
-"coin_analytics.analysis.title" = "智能合约分析";
-"coin_analytics.analysis.high_risk_items" = "高风险项目";
-"coin_analytics.analysis.medium_risk_items" = "中等风险项目";
-"coin_analytics.analysis.attention_required" = "需要注意";
-"coin_analytics.analysis.token_detectors" = "代币检测器";
-"coin_analytics.analysis.general_detectors" = "通用检测器";
-"coin_analytics.analysis.issues" = "发布: %@";
 
 // Coin Page -> Markets
 
@@ -1715,22 +1464,9 @@
 
 // Settings -> Subsription
 
-"subscription.premium.label" = "高級版";
-"subscription.title" = "訂閱";
-"subscription.get" = "成为付费会员";
-"subscription.restore" = "恢復購買";
-"subscription.type" = "订阅类型";
-"subscription.one-time" = "一次性";
-"subscription.price" = "价格";
-"subscription.next_payment" = "下次付款日期";
-"subscription.purchase_time" = "开始日期";
-"subscription.status" = "状态";
-"subscription.manage" = "管理訂閱";
 
 // Settings -> Support
 
-"settings.vip_support.description" = "獲得專屬訪問我們的貴賓群組的權限，高級用戶和Quantum Wallet錢包團隊在此協作。接收直接協助、討論未來更新，並幫助塑造錢包的發展。";
-"settings.vip_support.start_chat" = "加入貴賓群組";
 
 // Settings -> Contacts
 
@@ -1896,16 +1632,6 @@
 "wallet_connect.list.pending_requests" = "待处理请求";
 "wallet_connect.main.connect" = "连接到 %@";
 "wallet_connect.main.connected" = "已连接到 %@";
-"wallet_connect.main.premium_alert.title.risky" = "危险!";
-"wallet_connect.main.premium_alert.subtitle.deactivated" = "防骗保护已停用。升级至高级版以防止资金因未验证或钓鱼网站而受损。";
-"wallet_connect.main.premium_alert.subtitle.risky" = "此网站未经验证。连接可能导致钓鱼攻击和资金损失。";
-"wallet_connect.main.premium_alert.subtitle.not_available" = "防骗检查失败。允许连接，但该域名可能不安全。";
-"wallet_connect.scam_protection" = "防骗保护";
-"wallet_connect.scam_protection.deactivated" = "已停用";
-"wallet_connect.scam_protection.risky" = "有风险";
-"wallet_connect.scam_protection.secure" = "安全";
-"wallet_connect.scam_protection.not_available" = "不可用";
-"wallet_connect.scam_protection.disabled" = "已禁用";
 "wallet_connect.networks" = "网络";
 
 "wallet_connect.main.no_any_supported_chains" = "没有任何支持的链！";
@@ -2236,29 +1962,9 @@
 "nft.activity.event_types" = "事件类型";
 "nft.activity.event_type.all" = "全部事件";
 
-// Subscription Info
 
-"subscription_info.title" = "高级功能";
-"subscription_info.info1.title" = "加密货币分析";
-"subscription_info.info1.text" = "精彩的机会，避开Scams，最大限度地实现您在Cryptocurren动态世界中的利润。";
-"subscription_info.info2.title" = "图表指示器";
-"subscription_info.info2.text" = "精彩的机会，避开Scams，最大限度地实现您在Cryptocurren动态世界中的利润。";
-"subscription_info.info3.title" = "个人支持";
-"subscription_info.info3.text" = "精彩的机会，避开Scams，最大限度地实现您在Cryptocurren动态世界中的利润。";
-"subscription_info.get_premium" = "成为付费会员";
-"subscription_info.already_have" = "我已经有高级版";
 
-// Activate Subscription
 
-"activate_subscription.title" = "激活";
-"activate_subscription.wallet" = "钱包";
-"activate_subscription.address" = "地址";
-"activate_subscription.message" = "待签名消息";
-"activate_subscription.sign" = "签名";
-"activate_subscription.activating" = "激活";
-"activate_subscription.failed_to_activate" = "订阅激活失败";
-"activate_subscription.activated" = "已激活";
-"activate_subscription.no_subscriptions" = "您的钱包地址没有高级功能的订阅，您需要购买它才能激活订阅。";
 
 // Launch
 
@@ -2295,96 +2001,24 @@
 "transaction_filter.hide_suspicious_txs" = "隐藏可疑Txs";
 "transaction_filter.hide_suspicious_txs.description" = "隐藏常用于钓鱼攻击的可疑小额转账。";
 
-// Purchases
 
-"premium.cell.title" = "高級版";
-"premium.cell.description" = "使用 %@ 功能升级您的体验！";
-"premium.cell.description.key" = "高級版";
-"premium.cell.try" = "免費試用";
 
 "mini_app.cell.title" = "小程序";
 "mini_app.cell.description" = "通過測驗、完成任務並獲取代幣！";
 
-"purchases.title" = "高級版";
-"purchases.description" = "選擇方案";
-"purchases.type.pro" = "专业版";
-"purchases.type.vip" = "尊享版 / VIP";
 
 // Defense System
-"purchases.defense_system" = "防御系统";
-"purchases.secure_send" = "安全发送";
-"purchases.secure_send.description" = "防止将资金发送至高风险或钓鱼地址。";
-"purchases.secure_send.info" = "检查收款钱包是否存在钓鱼或欺诈风险，并在您向高风险地址转账前发出提醒。";
-"purchases.scam_protection" = "防骗保护";
-"purchases.scam_protection.description" = "在连接到虚假或恶意 dApps 时向您发出警告。";
-"purchases.scam_protection.info" = "在连接前检测伪造或恶意的 dApp，防止钓鱼攻击，保障您的资产安全。";
-"purchases.swap_protection" = "兑换保护";
-"purchases.swap_protection.description" = "在兑换过程中防止 bots 和 MEV 攻击。";
-"purchases.swap_protection.info" = "在兑换过程中阻止 bots 和抢跑（front-running）攻击，确保您的交易公平且安全。";
-"purchases.robbery_protection" = "抢劫保护";
-"purchases.robbery_protection.description" = "在您被迫解锁应用的情况下保护您的资金安全。";
-"purchases.robbery_protection.info" = "允许您创建一个带独立 PIN 的诱饵钱包，在高风险情况下隐藏真实资产。";
 
 // Advanced Controls
-"purchases.advanced_controls" = "高级控制";
-"purchases.swap_control" = "兑换控制";
-"purchases.swap_control.description" = "用于控制兑换如何以及通过何处执行的高级设置。";
-"purchases.swap_control.info" = "默认情况下，我们会选择当前可用的最佳报价。使用 Premium 后，您可以选择其他提供方。";
-"purchases.priority_support" = "优先支持";
-"purchases.priority_support.description" = "直接联系支持团队。";
-"purchases.priority_support.info" = "为您提供优先级支持的直接通道，获得来自 Quantum Wallet 团队快速且个性化的帮助。";
 
 // Market Insights
-"purchases.market_insights" = "市场洞察";
-"purchases.token_insights" = "分析";
-"purchases.token_insights.description" = "深入的分析和代币数据。";
-"purchases.token_insights.info" = "显示代币的详细数据—包括交易量、流动性和趋势，帮助您做出更明智的投资决策。";
-"purchases.advanced_search" = "進階搜尋";
-"purchases.advanced_search.description" = "强大的筛选功能，助您更智能地发现代币。";
-"purchases.advanced_search.info" = "通过交易量、链或板块筛选器查找代币。包含 CEX/DEX 活动和上市指标。";
-"purchases.trade_signals" = "信號與趨勢";
-"purchases.trade_signals.description" = "可执行的信号，帮助您更自信地进行交易。";
-"purchases.trade_signals.info" = "实时推送交易机会提醒，及时提示潜在盈利机会或市场风险。";
 
-"purchase.bottom_sheet.description" = "购买即可解锁所有高级功能。";
 
-"purchases.wallet_description.title" = "高評價的安全性、卓越的隱私性和真正的非託管錢包。";
-"purchases.wallet_description.approved" = "經以下機構批准和審核：";
 
-"purchases.button.try" = "免費試用";
-"purchases.button.activated" = "已激活";
-"purchases.button.upgrade" = "升級";
 
-"purchase.period.title" = "選擇訂閱";
-"purchase.period.annually" = "年度";
-"purchase.period.monthly" = "月度";
-"purchase.period.onetime" = "一次性";
-"purchase.period.onetime.description" = "终身访问";
-"purchase.period.save" = "省下";
-"purchase.period.year" = "年";
-"purchase.period.month" = "月";
-"purchase.period.description1" = "畅享前 7 天免费体验";
-"purchase.period.description1.1" = "首月享有優惠折扣。";
-"purchase.period.description2" = "您可随时在 App Store 取消订阅";
-"purchase.lifetime.description" = "您可以購買無任何限制的一次性訂閱";
-"purchase.agree" = "通过升级账户，您同意 %@ 和 %@。";
-"purchase.agree.terms_of_service" = "使用条款";
-"purchase.agree.privacy_policy" = "隐私政策";
 
-"purchases.period.button.try" = "获取 7 天免费试用";
-"purchases.period.button.subscribe" = "訂閱";
-"purchases.period.button.buy" = "立即购买";
-"purchases.period.button.promo" = "添加優惠碼";
 
-"purchases.promocode.title" = "输入优惠码";
-"purchases.promocode.placeholder" = "";
-"purchases.promocode.button.invalid" = "无效的优惠码";
-"purchases.promocode.button.already_used" = "优惠码已被使用";
 
-"purchases.successful_subscription.title" = "高級版";
-"purchases.successful_subscription.description" = "感謝您的訂閱！";
-"purchases.successful_subscription.subscribed" = "盡享應用程式的全部功能。";
-"purchases.successful_subscription.button.go_app" = "前往應用程式";
 
 // Address Checker
 
@@ -2399,8 +2033,6 @@
 "check_address.sanctions_check" = "制裁检查";
 "check_address.coin_blacklist_check" = "%@ 黑名单检查";
 "check_address.on_blockchain" = "基于 %@";
-"check_address.chainalysis.description" = "Chainalysis 是一家区块链分析平台，提供追踪、调查和评估加密地址风险的工具，可识别与制裁、欺诈及其他非法活动相关的地址。";
-"check_address.hashdit.description" = "HashDit 是一款安全平台，帮助用户检查钱包地址是否存在制裁或黑名单等风险，避免与潜在恶意或受限地址交互。";
 "check_address.coin_blacklist.description" = "该功能可用于验证某个钱包地址是否被 %@（%@）列入黑名单。如果地址被列入黑名单，相关联的 %@ 代币可能会被冻结，无法访问或转账。此检查可帮助用户避免与高风险或受限地址进行交互。";
 
 // Monero
@@ -2411,10 +2043,7 @@
 "monero.priority.medium" = "中";
 "monero.priority.high" = "高";
 
-// MEV Protection
 
-"mev_protection.title" = "MEV";
-"mev_protection.description" = "开启保护以确保您的兑换安全，避免被机器人套利造成损失。";
 
 // Secure Send Bottom Sheet
 "secure_send.bottom_sheet.title" = "安全发送";
@@ -2441,4 +2070,19 @@
 "qvm_send_settings.nonce.info" = "Nonce是用于用户钱包内的交易的一个唯一的整数值。它通常随着每一个提交的交易而增加且不需要更改。高级用户可以将其设置为等于一个待定交易的nonce，以便取消和取代该交易，只要新的交易具备足够高的费用来防止旧的交易得到确认即可（例如，他们可能需要加快其确认，或者完全更改交易参数）。当多个待定交易具有相同的nonce时，只有一个会得到确认，通常是具有最高费用的那一个。";
 "qvm_send_settings.nonce.errors.already_in_use" = "已用nonce";
 "qvm_send_settings.nonce.errors.already_in_use.info" = "使用此nonce执行的交易已存在。";
-"purchases.address_phishing.info" = "一個錯誤的地址，您的加密貨幣將永遠消失。Quantum Wallet自動掃描接收地址的可疑模式，防禦最新的網絡釣魚威脅，防止您向駭客發送資金。在詐騙交易發生前阻止它們。";
+
+// Security Tools
+"settings_security.robbery_protection" = "抢劫保护";
+"market.top.description.more_250_m" = "> $250M";
+"market.top.description.more_10_m" = "> $10M";
+"settings_security.secure_send" = "安全发送";
+"market.top.description.more_500_m" = "> $500M";
+"market.top.description.more_25_m" = "> $25M";
+"market.top.description.more_5_m" = "> $5M";
+"settings_security.robbery_protection.description" = "在您被迫解锁应用的情况下保护您的资金安全。";
+"settings_security.secure_send.description" = "防止将资金发送至高风险或钓鱼地址。";
+"market.top.description.more_1_m" = "> $1M";
+"market.top.description.more_100_m" = "> $100M";
+"market.top.description.more_1_b" = "> 1B";
+"market.top.description.m_cap" = "市值";
+"settings_security.defense_system" = "防御系统";

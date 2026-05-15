@@ -8,12 +8,6 @@ class SecurityManager {
     @PostPublished private(set) var securityChecks: [AddressSecurityIssueType: Bool]
     @PostPublished private(set) var secureSendEnabled: Bool
 
-    // swap settings
-    @PostPublished private(set) var swapProtectionEnabled: Bool
-
-    // scam protection
-    @PostPublished private(set) var scamProtectionEnabled: Bool
-
     // tx filter
     @PostPublished private(set) var spamFilterEnabled: Bool
 
@@ -29,8 +23,6 @@ class SecurityManager {
         let checks = Self.loadSecurityChecks(storage: localStorage)
         securityChecks = checks
         secureSendEnabled = checks.values.contains(true)
-        swapProtectionEnabled = localStorage.useMevProtection
-        scamProtectionEnabled = localStorage.scamProtection
         spamFilterEnabled = localStorage.spamFilterEnabled
     }
 
@@ -62,16 +54,6 @@ extension SecurityManager {
         securityChecks[type] = enabled
         secureSendEnabled = securityChecks.values.contains(true)
         localStorage.setAddressSecurityIssue(enabled, type: type)
-    }
-
-    func setSwapProtection(enabled: Bool) {
-        swapProtectionEnabled = enabled
-        localStorage.useMevProtection = enabled
-    }
-
-    func setScamProtection(enabled: Bool) {
-        scamProtectionEnabled = enabled
-        localStorage.scamProtection = enabled
     }
 
     func setSpamFilter(enabled: Bool) {

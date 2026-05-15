@@ -556,11 +556,6 @@
 "send.address.phishing.description" = "제공된 수신 주소를 분석하여 피싱 위험을 확인합니다.\n\n안전: 의심스러운 활동이 감지되지 않았습니다.\n\n위험: 누군가가 잘못된 주소로 자금을 전송하도록 속이려는 정황이 보입니다. 주소가 확실히 올바른 경우가 아니면 진행하지 마세요. 먼저 소액 테스트 전송을 고려하세요.";
 "send.address.phishing.caution.title" = "피싱 주소 감지됨!";
 "send.address.phishing.caution.description" = "입력한 주소가 사기성일 수 있습니다. 사기꾼들은 종종 처음과 마지막 문자를 변경합니다. 손실을 방지하기 위해 진행하기 전에 전체 주소를 주의 깊게 확인하세요.";
-"send.address.sanction_check" = "제재 검사";
-"send.address.sanction_check.subtitle" = "해당 주소가 제재 제한 대상인지 확인합니다.";
-"send.address.sanction.description" = "제공된 수신 주소가 국제 제재 대상인지 Chainalysis.com 데이터를 통해 확인합니다.\n\n안전: 제재 기록이 감지되지 않았습니다.\n\n위험: 법적 위험 가능성이 있습니다. 일부 관할 지역에서는 해당 주소로의 거래가 제한되거나 불법일 수 있습니다.";
-"send.address.sanction.caution.title" = "제재 대상 주소!";
-"send.address.sanction.caution.description" = "입력한 주소는 제재 대상으로 표시되었습니다. 이 주소로 거래 시 손실 또는 기타 위험이 발생할 수 있습니다. 진행 전 반드시 수신자 정보를 확인하세요.";
 "send.address.blacklist_check" = "블랙리스트 확인";
 "send.address.blacklist_check.subtitle" = "사기 및 고위험 데이터베이스에서 주소를 확인합니다.";
 "send.address.blacklist.description" = "수신 주소가 공식 또는 비공식 블랙리스트에 포함되어 있는지 확인합니다.\n\n안전: 블랙리스트 기록 없음.\n\n위험: 해당 주소는 블랙리스트에 포함되어 있으며 법적·보안상의 위험과 연관될 수 있습니다. 주의해서 진행하세요. 많은 거래소가 블랙리스트와 연관된 지갑의 입출금을 제한합니다. 이를 유의하세요.";
@@ -785,7 +780,6 @@
 "market.tab.news" = "뉴스";
 "market.tab.coins" = "코인";
 "market.tab.watchlist" = "관심 목록";
-"market.tab.vaults" = "수익";
 "market.tab.platforms" = "플랫폼";
 "market.tab.pairs" = "쌍";
 "market.tab.sectors" = "부문";
@@ -883,103 +877,18 @@
 "market_discovery.not_found" = "검색 결과가 없습니다";
 
 "market_watchlist.empty.caption" = "관심 목록이 비어 있습니다.";
-"market.watchlist.signals" = "신호";
 "market.watchlist.empty" = "관심 목록이 비어 있습니다";
-"market.watchlist.signals.description" = "아래 신호는 대략 최근 30일 동안의 볼린저 밴드와 RSI 기술적 가격 지표를 기반으로 합니다. 이러한 신호는 알고리즘에 기반하며 자주 변경될 수 있습니다.";
-"market.watchlist.signals.strong_buy.description" = "가격 상승에 대한 높은 신뢰도";
-"market.watchlist.signals.buy.description" = "가까운 미래에 가능성 있는 가격 상승";
-"market.watchlist.signals.neutral.description" = "명확한 트렌드가 없으며, 시장은 균형 상태에 있습니다";
-"market.watchlist.signals.sell.description" = "가까운 미래에 가능성 있는 가격 하락";
-"market.watchlist.signals.strong_sell.description" = "가격 하락의 높은 확률";
-"market.watchlist.signals.risky.description" = "고위험 수준, 주의가 필요합니다";
-"market.watchlist.signals.warning" = "언제나 위험 관리를 적용하는 것을 기억하세요. 이것은 금융 조언이 아님을 유의하세요.";
-"market.watchlist.signals.turn_on" = "켜기";
 
-"market.advanced_search.title" = "필터";
-"market.advanced_search.show_results" = "결과 보기";
-"market.advanced_search.empty_results" = "결과 없음";
-"market.advanced_search.retry" = "재시도";
-"market.advanced_search.dex_description" = "이 설정은 이더리움(Uniswap DEX) 과 바이낸스 스마트체인(Pancake DEX) 에서 거래되는 토큰에 적용됩니다.";
-"market.advanced_search.24h" = "24시간";
 
-"market.advanced_search.market_parameters" = "시장 매개변수";
-"market.advanced_search.network_parameters" = "네트워크 매개변수";
-"market.advanced_search.indicators" = "지표";
-"market.advanced_search.price_parameters" = "가격 매개변수";
-"market.advanced_search.choose_set" = "설정 선택";
-"market.advanced_search.market_cap" = "총 시가 총액";
-"market.advanced_search.volume" = "거래량";
-"market.advanced_search.categories" = "부문";
 
-"market.advanced_search.listed_on_top_exchanges" = "주요 거래소에 상장됨";
-"market.advanced_search.good_cex_volume" = "좋은 중앙화된 거래소 (CEX) 거래량";
-"market.advanced_search.good_dex_volume" = "좋은 분산화된 거래소 (DEX) 거래량";
-"market.advanced_search.good_distribution" = "좋은 분배";
-"market.advanced_search.overall_score_is_good_or_excellent" = "좋은 분배";
 
-"market.advanced_search.liquidity" = "DEX 유동성";
-"market.advanced_search.blockchains" = "블록체인";
-"market.advanced_search.signal" = "거래 신호";
-"market.advanced_search.price_period" = "가격 기간";
-"market.advanced_search.price_change" = "가격 변경";
 
-"market.advanced_search.outperformed_btc" = "BTC를 능가했습니다";
-"market.advanced_search.outperformed_eth" = "ETH를 능가했습니다";
-"market.advanced_search.outperformed_bnb" = "BNB를 능가했습니다";
-"market.advanced_search.outperformed_sp500" = "S&P500 대비 초과 성과";
-"market.advanced_search.outperformed_gold" = "금 대비 초과 성과";
-"market.advanced_search.price_close_to" = "가격 임박";
-"market.advanced_search.price_close_to_ath" = "최고가에 가까운 가격";
-"market.advanced_search.price_close_to_atl" = "Price Close to ATL";
 
-"market.advanced_search.top" = "상위 %d";
 
-"market.advanced_search.less_5_m" = "< 5백만";
-"market.advanced_search.less_10_m" = "< 10백만";
-"market.advanced_search.less_50_m" = "< 50백만";
-"market.advanced_search.less_500_m" = "< 500백만";
-"market.advanced_search.m_5_m_20" = "5백만 - 20백만";
-"market.advanced_search.m_10_m_40" = "천만 - 4천만";
-"market.advanced_search.m_20_m_100" = "2000만 - 1억";
-"market.advanced_search.m_40_m_200" = "4000만 - 2억";
-"market.advanced_search.m_50_m_200" = "5000만 - 2억";
-"market.advanced_search.m_100_b_1" = "1억 - 10억";
-"market.advanced_search.m_200_b_1" = "2억 - 10억";
-"market.advanced_search.m_200_b_2" = "2억 - 20억";
-"market.advanced_search.m_500_b_2" = "5억 - 20억";
-"market.advanced_search.b_1_b_5" = "10억 - 50억";
-"market.advanced_search.b_1_b_10" = "10억 - 100억";
-"market.advanced_search.b_2_b_10" = "20억 - 100억";
-"market.advanced_search.b_10_b_50" = "100억 - 500억";
-"market.advanced_search.b_10_b_100" = "100억 - 1,000억";
-"market.advanced_search.b_100_b_500" = "1,000억 - 5,000억";
-"market.advanced_search.more_5_b" = "> 50억";
-"market.advanced_search.more_10_b" = ">100억";
-"market.advanced_search.more_50_b" = "> 500억";
-"market.advanced_search.more_500_b" = "> 5000억";
 
-"market.advanced_search.top.m_cap" = "시가총액";
-"market.advanced_search.top.more_1_b" = "> $1B";
-"market.advanced_search.top.more_500_m" = "> $500M";
-"market.advanced_search.top.more_250_m" = "> $250M";
-"market.advanced_search.top.more_100_m" = "> $100M";
-"market.advanced_search.top.more_25_m" = "> $25M";
-"market.advanced_search.top.more_10_m" = "> $10M";
-"market.advanced_search.top.more_5_m" = "> $5M";
-"market.advanced_search.top.more_1_m" = "> $1M";
 
-"market.advanced_search.day" = "1 일";
-"market.advanced_search.week" = "1일주";
-"market.advanced_search.week2" = "2이주";
-"market.advanced_search.month" = "1개월";
-"market.advanced_search.month6" = "6 개월";
-"market.advanced_search.year" = "일년";
 
-"market.advanced_search.day.short" = "24시";
-"market.advanced_search.week.short" = "7일";
-"market.advanced_search.month.short" = "1개월";
 
-"market.advanced_search_results.title" = "결과";
 
 "market.global.total_market_cap.title" = "총 시장 자본금";
 "market.global.total_market_cap.description" = "모든 암호화폐의 총 시장 가치\" or \"모든 가상 화폐의 총 시장 가치";
@@ -1021,37 +930,12 @@
 "market.signal.sell" = "매도";
 "market.signal.strong_sell" = "강력한 매도";
 
-// Market Vaults
 
-"market.vaults.apy" = "APY %@";
-"market.vaults.tvl" = "TVL: %@";
-"market.vaults.premium.description" = "최고의 DeFi 스테이킹 수익률을 한곳에서 확인하세요.";
-"market.vaults.premium.unlock" = "프리미엄 잠금 해제";
 
-"market.vaults.filter" = "필터";
-"market.vaults.filter.all_assets" = "모든 자산";
-"market.vaults.filter.eth_yield" = "ETH 수익률";
-"market.vaults.filter.usd_yield" = "USD 수익률";
 
-"market.vaults.sort.highest_apy" = "최고 APY";
-"market.vaults.sort.highest_tvl" = "최고 TVL";
-"market.vaults.sort.highest_apy.short" = "APY";
-"market.vaults.sort.highest_tvl.short" = "TVL";
 
-"market.vaults.chains.title" = "블록체인";
-"market.vaults.chains.any" = "어떤";
-"market.vaults.chains.all_chains" = "모든 체인";
-"market.vaults.chains.n_chains" = "%@ 체인";
 
-// Market Vault
 
-"market.vault.apy" = "APY";
-"market.vault.tvl" = "TVL";
-"market.vault.network" = "회로망";
-"market.vault.protocol" = "프로토콜";
-"market.vault.underlying_token" = "기반 토큰";
-"market.vault.hoders" = "소유주";
-"market.vault.open_dapp" = "DApp 열기";
 
 // Coin Page
 
@@ -1136,162 +1020,27 @@
 "technical_advice.macd.negative" = "아래";
 "technical_advice.macd.advice" = "MACD. 평균 가격 변화를 고려하여 추세의 강도를 평가합니다. 히스토그램의 일일 값은 %@입니다 (%@). 전반적으로 자산의 가격이 %@ 움직일 수 있습니다.";
 
-"coin_analytics.indicators.title" = "기술적 지표";
-"coin_analytics.indicators.disclaimer" = "언제나 위험 관리를 적용하는 것을 기억하세요. 이것은 금융 조언이 아님을 유의하세요.";
-"coin_analytics.indicators.info.title" = "기술적 지표";
-"coin_analytics.indicators.info.description" = "우리는 볼린저 밴드 + RSI 전략을 사용하여 거래 신호를 결정합니다. 모든 계산은 일일 양봉을 기반으로 하며, 중장기적인 조언을 제공합니다. 이 전략의 본질은 자산 가격이 극단에 도달하여 볼린저 밴드 채널을 벗어나야 하며, RSI가 과매수/과매도 구간에 있어야 한다는 것입니다. 가격이 채널로 복귀한 후, 가격이 평균값으로 복귀하거나 다른 측면에서 채널을 뚫으려는 높은 확률이 있습니다. 강한 시장 움직임 중에는 올바른 신호가 나타나기 전에 여러 가질 수도 있음을 유의하십시오.\n\n거래에 위험 관리를 적용하는 것이 매우 중요하며, 시장 상황이 변할 경우 손실을 줄이는 것을 기억하세요! ";
-"coin_analytics.indicators.details" = "상세 정보";
-"coin_analytics.indicators.hide_details" = "세부 사항 숨기기";
-"coin_analytics.indicators.show_details" = "세부 정보 보기";
-"coin_analytics.indicators.summary" = "요약";
-"coin_analytics.indicators.no_data" = "데이터 없음";
-"coin_analytics.indicators.oversold" = "위험";
-"coin_analytics.indicators.strong_buy" = "강력한 매수";
-"coin_analytics.indicators.buy" = "매수";
-"coin_analytics.indicators.neutral" = "중립적";
-"coin_analytics.indicators.sell" = "매도";
-"coin_analytics.indicators.strong_sell" = "강력한 매도";
-"coin_analytics.indicators.overbought" = "위험";
-"coin_analytics.period" = "기간";
-"coin_analytics.period.select_title" = "기간 선택";
 
-"coin_analytics.details" = "상세 정보";
 
-"coin_analytics.not_available" = "이 프로젝트에는 분석 데이터가 없습니다.";
 
-"coin_analytics.technical_indicators" = "기술적 지표";
-"coin_analytics.technical_indicators.info1" = "요약: 이것은 다양한 기술적 지표와 시간대를 고려하여 자산의 기술적 특성을 일반적으로 개요합니다. 이러한 지표를 기반으로 한 공통된 견해 (매수, 매도 또는 중립)를 제공합니다.";
-"coin_analytics.technical_indicators.info2" = "이동평균 (MA): 이것들은 추세를 따르는 지표를 만들기 위해 가격 데이터를 평활하게 하는 데 사용되는 일반적인 기술 지표입니다. 이것들은 특정 시간 기간 동안의 평균 가격을 보여줍니다. 다양한 종류의 이동평균이 있습니다:\n\n단순 이동평균 (SMA): 이것은 선택한 가격 범위, 보통 종가, 내의 기간 수로 평균을 계산합니다.\n\n지수 이동평균 (EMA): 이것은 최근 가격에 더 많은 가중치를 부여하여 최근 가격 변동에 더 빨리 반응합니다.";
-"coin_analytics.technical_indicators.info3" = "오실레이터(Oscillators): 이것들은 일정한 범위 내에서 시간에 따라 변동하는 기술 지표로 (중심선 위 및 아래 또는 설정된 수준 사이에서), 시장에서 과매수 및 과매도 상태를 식별하는 데 도움을 주도록 설계되었습니다. 여기 일반적인 오실레이터 중 일부가 있습니다:\n\n상대강도지수 (RSI): 이것은 가격 움직임의 속도와 변화를 측정합니다. 주로 과매수 또는 과매도 상태를 식별하는 데 사용됩니다.\n\n이동평균수렴확산 (MACD): 이것은 잠재적인 매수 및 매도 신호를 식별하는 데 사용됩니다. MACD는 신호선을 크로스할 때 (매수) 또는 (매도) 아래로 크로스할 때 기술적 신호를 생성합니다.";
 
-"coin_analytics.cex_volume" = "CEX 거래량";
-"coin_analytics.cex_volume_rank" = "CEX 거래량 순위";
-"coin_analytics.cex_volume_rank.description" = "중앙화 거래소에서의 토큰 거래량을 기준으로 순위가 매겨진 토큰들.";
-"coin_analytics.cex_volume_rank.sorting_field" = "거래량";
-"coin_analytics.cex_volume.info1" = "주요 중앙화 거래소에서의 토큰의 30일 동안의 총 거래량.";
-"coin_analytics.cex_volume.info2" = "주요 중앙화 거래소에서의 토큰의 1년 동안 일일 거래량 변동을 보여주는 차트.";
-"coin_analytics.cex_volume.info3" = "Token's rank is based on trading volume on leading centralized exchanges over 30-day period.";
-"coin_analytics.cex_volume.info4" = "24시간 / 7일 / 1개월 간격으로 중앙화 거래소에서의 거래량을 기반으로 순위가 매겨진 모든 토큰의 목록.";
 
-"coin_analytics.dex_volume" = "DEX 거래량";
-"coin_analytics.dex_volume_rank" = "DEX 거래량 순위";
-"coin_analytics.dex_volume_rank.description" = "탈중앙화 거래소에서의 토큰 거래량을 기준으로 순위가 매겨진 토큰들.";
-"coin_analytics.dex_volume_rank.sorting_field" = "거래량";
-"coin_analytics.dex_volume.info1" = "주요 탈중앙화 거래소에서의 토큰의 30일 동안의 총 거래량.";
-"coin_analytics.dex_volume.info2" = "1년 동안 주요 탈중앙화 거래소에서의 토큰의 일일 거래량 변동을 보여주는 차트.";
-"coin_analytics.dex_volume.info3" = "주요 탈중앙화 거래소에서 30일 동안의 거래량을 기반으로 한 토큰의 순위.";
-"coin_analytics.dex_volume.info4" = "24시간 / 7일 / 1개월 간격으로 탈중앙화 거래소에서 거래량을 기반으로 한 모든 토큰의 순위 목록.";
-"coin_analytics.dex_volume.tracked_dexes" = "추적 중인 DEX:";
-"coin_analytics.dex_volume.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Sushiswap";
-"coin_analytics.dex_volume.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap";
 
-"coin_analytics.dex_liquidity" = "DEX 유동성";
-"coin_analytics.dex_liquidity_rank" = "DEX 유동성 순위";
-"coin_analytics.dex_liquidity_rank.description" = "탈중앙화 거래소에서 사용 가능한 유동성을 기준으로 한 토큰들의 순위.";
-"coin_analytics.dex_liquidity_rank.sorting_field" = "유동성";
-"coin_analytics.dex_liquidity.info1" = "주요 탈중앙화 거래소에서 해당 토큰의 현재 사용 가능한 유동성 총액.";
-"coin_analytics.dex_liquidity.info2" = "주요 탈중앙화 거래소에서의 해당 토큰의 1년 동안 사용 가능한 유동성 변동을 보여주는 차트.";
-"coin_analytics.dex_liquidity.info3" = "주요 탈중앙화 거래소에서의 해당 토큰의 사용 가능한 유동성을 기준으로 순위 매겨진 모든 토큰의 목록.";
-"coin_analytics.dex_liquidity.tracked_dexes" = "추적 중인 DEX:";
-"coin_analytics.dex_liquidity.tracked_dexes.info1" = "Ethereum : Uniswap V2/3, Balancer V1/2, Bancor V2, Curve, Sushiswap";
-"coin_analytics.dex_liquidity.tracked_dexes.info2" = "Binance-Smart-Chain : PancakeSwap, DODO V1/2";
 
-"coin_analytics.active_addresses" = "일일 활성 주소";
-"coin_analytics.active_addresses.30_day_unique_addresses" = "30일 동안의 고유 주소";
-"coin_analytics.active_addresses_rank" = "활성 주소 순위";
-"coin_analytics.active_addresses_rank.description" = "토큰과 거래하는 고유 주소의 수에 따라 순위가 매겨진 토큰들.";
-"coin_analytics.active_addresses_rank.sorting_field" = "활성";
-"coin_analytics.active_addresses.info1" = "24시간 동안의 고유 일일 활성 주소 총 수.";
-"coin_analytics.active_addresses.info2" = "1년 동안 일일 활성 주소 수의 변동을 보여주는 차트.";
-"coin_analytics.active_addresses.info3" = "Total number of unique blockchain addresses transacting with token over 30-day period.";
-"coin_analytics.active_addresses.info4" = "Token's rank based on the number of active wallets transacting with the token 30-day period.";
-"coin_analytics.active_addresses.info5" = "24시간 / 7일 / 1개월 간격으로 토큰과 거래하는 일일 활성 주소 수를 기반으로 순위가 매겨진 모든 토큰의 목록.";
 
-"coin_analytics.transaction_count" = "트랜잭션 수";
-"coin_analytics.transaction_count_rank" = "거래 수 순위";
-"coin_analytics.transaction_count_rank.description" = "토큰은 블록체인에서의 거래 수에 따라 순위가 매겨집니다.";
-"coin_analytics.transaction_count_rank.sorting_field" = "수량";
-"coin_analytics.transaction_count.info1" = "Total number of unique blockchain transactions with token over 30-day period.";
-"coin_analytics.transaction_count.info2" = "1년 동안의 거래 수 변동을 보여주는 차트.";
-"coin_analytics.transaction_count.info3" = "토큰의 순위는 30일 동안의 토큰 거래 수를 기준으로 합니다.";
-"coin_analytics.transaction_count.info4" = "24시간 / 7일 / 1개월 간격으로 토큰과의 거래 수를 기반으로 순위가 매겨진 모든 토큰의 목록.";
-"coin_analytics.transaction_count.info5" = "The total number of tokens transferred over the blockchain over the 30-day period.";
 
-"coin_analytics.holders" = "소유주";
-"coin_analytics.holders_rank" = "소유주 순위";
-"coin_analytics.holders_rank.description" = "여러 블록체인에서 그들을 보유한 고유 주소에 의해 토큰을 순위 매김.";
-"coin_analytics.holders_rank.sorting_field" = "소유주";
-"coin_analytics.holders.info1" = "다양한 블록체인에서 토큰을 보유한 고유 주소의 총 수.";
-"coin_analytics.holders.info2" = "각 블록체인에서 토큰을 보유한 상위 10개 지갑.";
-"coin_analytics.holders.tracked_blockchains" = "추적되는 블록체인: 이더리움, 바이낸스 스마트 체인, 옵티미즘, 아비트럼, 셀로, 크로노스, 아발란체, 팬텀, 폴리곤";
-"coin_analytics.holders.in_top_10_addresses" = "상위 10 소유주 중";
-"coin_analytics.holders.count" = "총 소유주: %@";
-"coin_analytics.holders.see_all" = "모두 보기";
 
-"coin_analytics.project_tvl" = "프로젝트 TVL";
-"coin_analytics.tvl_ratio" = "시가총액 / TVL 비율";
-"coin_analytics.project_tvl.info_title" = "프로젝트 TVL (총 예치 가치)";
-"coin_analytics.project_tvl.info1" = "Total-Value-Locked (or Assets Under Management) in the project's smart contracts.";
-"coin_analytics.project_tvl.info2" = "1년 동안 프로젝트의 스마트 계약에서의 총 예치 가치(Total-Value-Locked) 변동을 보여주는 차트.";
-"coin_analytics.project_tvl.info3" = "Token's rank based on current Total-Value-Locked.";
-"coin_analytics.project_tvl.info4" = "현재 총 예치 가치(Total-Value-Locked)를 기반으로 순위가 매겨진 모든 토큰의 목록.";
-"coin_analytics.project_tvl.info5" = "프로젝트의 시가총액 / TVL 비율.";
 
-"coin_analytics.project_fee" = "프로젝트 수수료";
-"coin_analytics.project_fee_rank" = "프로젝트 수수료 순위";
-"coin_analytics.project_fee_rank.description" = "Tokens ranked according to fees generated by respective projects. The way fees are collected varies from project to project.";
-"coin_analytics.project_fee_rank.sorting_field" = "거래량";
 
-"coin_analytics.project_revenue" = "프로젝트 수익";
-"coin_analytics.project_revenue_rank" = "프로젝트 수익 순위";
-"coin_analytics.project_revenue_rank.description" = "Tokens ranked by revenue generated for holders via mechanisms i.e. staking or token burns.";
-"coin_analytics.project_revenue_rank.sorting_field" = "매출";
 
-"coin_analytics.other_data" = "기타 데이터";
 
-"coin_analytics.reports" = "보고서";
 
-"coin_analytics.funding" = "자금 조달";
-"coin_analytics.funding.lead" = "리드";
 
-"coin_analytics.treasuries" = "자금 보관";
-"coin_analytics.treasuries.filters" = "필터";
-"coin_analytics.treasuries.filter.all" = "전체";
-"coin_analytics.treasuries.filter.public" = "공개";
-"coin_analytics.treasuries.filter.private" = "비공개";
-"coin_analytics.treasuries.filter.etf" = "ETF";
 
-"coin_analytics.audits" = "감사";
-"coin_analytics.audits.issues" = "문제점";
-"coin_analytics.audits.no_reports" = "감사 보고서 없음";
 
-"coin_analytics.last_30d" = "지난 30일";
-"coin_analytics.current" = "현재";
 
-"coin_analytics.overall_score" = "전체 점수";
-"coin_analytics.overall_score.excellent" = "우수";
-"coin_analytics.overall_score.good" = "양호";
-"coin_analytics.overall_score.fair" = "적정";
-"coin_analytics.overall_score.poor" = "불량";
-"coin_analytics.overall_score.cex_volume" = "종합 점수는 지난 7일 동안 중앙화 거래소에서의 평균 일일 거래량을 기반으로 합니다.";
-"coin_analytics.overall_score.dex_volume" = "종합 점수는 지난 7일 동안 탈중앙화 거래소에서의 평균 일일 거래량을 기반으로 합니다.";
-"coin_analytics.overall_score.dex_liquidity" = "The overall score is based on the total avilable liquidity on decentralized exchanges.";
-"coin_analytics.overall_score.active_addresses" = "종합 점수는 지난 7일 동안의 평균 일일 활성 주소를 기반으로 합니다.";
-"coin_analytics.overall_score.project_tvl" = "종합 점수는 주어진 토큰을 통해 표현된 프로젝트의 총 예치 가치 (자산 관리 대상)를 기반으로 합니다.";
-"coin_analytics.overall_score.transaction_count" = "종합 점수는 지난 7일 동안의 평균 일일 거래 횟수를 기반으로 합니다.";
-"coin_analytics.overall_score.holders" = "The overall score is based on the total number of addresses holding respective token.";
 
-"coin_analytics.rank" = "순위";
-"coin_analytics.30_day_rank" = "30일 순위";
-"coin_analytics.30_day_volume" = "30일 거래량";
 
-"coin_analytics.analysis.title" = "스마트 계약 분석";
-"coin_analytics.analysis.high_risk_items" = "고위험 품목";
-"coin_analytics.analysis.medium_risk_items" = "중위험 품목";
-"coin_analytics.analysis.attention_required" = "주의 필요";
-"coin_analytics.analysis.token_detectors" = "토큰 탐지기";
-"coin_analytics.analysis.general_detectors" = "일반 탐지기";
-"coin_analytics.analysis.issues" = "문제점: %@";
 
 // Coin Page -> Markets
 
@@ -1715,22 +1464,9 @@
 
 // Settings -> Subsription
 
-"subscription.premium.label" = "프리미엄";
-"subscription.title" = "구독";
-"subscription.get" = "프리미엄 가입";
-"subscription.restore" = "구매 복원";
-"subscription.type" = "구독 유형";
-"subscription.one-time" = "일회성 결제";
-"subscription.price" = "금액";
-"subscription.next_payment" = "다음 결제일";
-"subscription.purchase_time" = "시작일";
-"subscription.status" = "상태";
-"subscription.manage" = "구독 관리";
 
 // Settings -> Support
 
-"settings.vip_support.description" = "프리미엄 사용자와 Quantum Wallet 팀이 협력하는 VIP 그룹에 독점 액세스하세요. 직접적인 지원을 받고, 향후 업데이트에 대해 논의하며, 지갑의 발전 방향을 함께 만들어 나가세요.";
-"settings.vip_support.start_chat" = "VIP 그룹 참여";
 
 // Settings -> Contacts
 
@@ -1896,16 +1632,6 @@
 "wallet_connect.list.pending_requests" = "보류 중인 요청";
 "wallet_connect.main.connect" = "%@에 연결";
 "wallet_connect.main.connected" = "%@에 연결됨";
-"wallet_connect.main.premium_alert.title.risky" = "위험!";
-"wallet_connect.main.premium_alert.subtitle.deactivated" = "스캠 보호가 비활성화되었습니다. 프리미엄으로 업그레이드하여 검증되지 않은 사이트와 피싱으로부터 자산을 안전하게 지키세요.";
-"wallet_connect.main.premium_alert.subtitle.risky" = "이 사이트는 검증되지 않았습니다. 연결 시 피싱이나 자산 손실 위험에 노출될 수 있습니다.";
-"wallet_connect.main.premium_alert.subtitle.not_available" = "스캠 보호 검사 실패. 연결은 가능하지만, 도메인이 안전하지 않을 수 있습니다.";
-"wallet_connect.scam_protection" = "스캠 보호";
-"wallet_connect.scam_protection.deactivated" = "비활성화됨";
-"wallet_connect.scam_protection.risky" = "위험";
-"wallet_connect.scam_protection.secure" = "보안됨";
-"wallet_connect.scam_protection.not_available" = "해당 없음 ";
-"wallet_connect.scam_protection.disabled" = "비활성화됨";
 "wallet_connect.networks" = "네트워크";
 
 "wallet_connect.main.no_any_supported_chains" = "지원되는 체인이 없습니다!";
@@ -2236,29 +1962,9 @@
 "nft.activity.event_types" = "이벤트 유형";
 "nft.activity.event_type.all" = "모든 이벤트";
 
-// Subscription Info
 
-"subscription_info.title" = "프리미엄 기능";
-"subscription_info.info1.title" = "암호화폐 분석";
-"subscription_info.info1.text" = "빠르게 변하는 암호화폐 시장에서 유망한 기회를 포착하고, 사기를 피하며, 수익을 극대화하세요.";
-"subscription_info.info2.title" = "차트 지표";
-"subscription_info.info2.text" = "빠르게 변하는 암호화폐 시장에서 유망한 기회를 포착하고, 사기를 피하며, 수익을 극대화하세요.";
-"subscription_info.info3.title" = "개인 지원";
-"subscription_info.info3.text" = "빠르게 변하는 암호화폐 시장에서 유망한 기회를 포착하고, 사기를 피하며, 수익을 극대화하세요.";
-"subscription_info.get_premium" = "프리미엄 가입";
-"subscription_info.already_have" = "이미 프리미엄을 보유하고 있습니다";
 
-// Activate Subscription
 
-"activate_subscription.title" = "활성화";
-"activate_subscription.wallet" = "지갑";
-"activate_subscription.address" = "주소";
-"activate_subscription.message" = "서명할 메시지";
-"activate_subscription.sign" = "가입";
-"activate_subscription.activating" = "활성화 중...";
-"activate_subscription.failed_to_activate" = "구독 활성화 실패";
-"activate_subscription.activated" = "활성화됨";
-"activate_subscription.no_subscriptions" = "귀하의 월렛 주소는 프리미엄 기능을 구독하지 않았습니다. 구독을 활성화하려면 구매해야 합니다.";
 
 // Launch
 
@@ -2295,96 +2001,24 @@
 "transaction_filter.hide_suspicious_txs" = "의심스러운 거래 숨기기";
 "transaction_filter.hide_suspicious_txs.description" = "피싱 공격에 자주 사용되는 의심스러운 소액 전송을 숨깁니다.";
 
-// Purchases
 
-"premium.cell.title" = "프리미엄";
-"premium.cell.description" = "%@ 기능으로 경험을 업그레이드하세요!";
-"premium.cell.description.key" = "프리미엄";
-"premium.cell.try" = "무료 체험하기";
 
 "mini_app.cell.title" = "미니앱";
 "mini_app.cell.description" = "테스트를 통과하고 과제를 완료하여 토큰을 획득하세요!";
 
-"purchases.title" = "프리미엄";
-"purchases.description" = "플랜 선택";
-"purchases.type.pro" = "프로";
-"purchases.type.vip" = "VIP";
 
 // Defense System
-"purchases.defense_system" = "방어 시스템";
-"purchases.secure_send" = "안전 전송";
-"purchases.secure_send.description" = "위험하거나 피싱으로 의심되는 주소로의 자금 전송을 방지합니다.";
-"purchases.secure_send.info" = "수신 지갑을 피싱 또는 사기 위험이 있는지 검사하고, 위험한 주소로 전송하기 전에 경고합니다.";
-"purchases.scam_protection" = "스캠 보호";
-"purchases.scam_protection.description" = "가짜 또는 악성 dApps에 연결하려 할 때 경고합니다.";
-"purchases.scam_protection.info" = "연결 전에 위조되거나 악성 dApp을 감지하여 피싱을 방지하고 자산을 보호합니다.";
-"purchases.swap_protection" = "스왑 보호";
-"purchases.swap_protection.description" = "스왑 중 봇 및 MEV 공격을 방지합니다.";
-"purchases.swap_protection.info" = "스왑 중 봇 및 프런트 러닝 공격을 차단하여 트랜잭션을 공정하고 안전하게 유지합니다.";
-"purchases.robbery_protection" = "강제 상황 보호";
-"purchases.robbery_protection.description" = "강제로 앱을 잠금 해제해야 하는 상황에서도 자금을 보호합니다.";
-"purchases.robbery_protection.info" = "별도의 PIN으로 미끼용 지갑을 생성할 수 있습니다. 위험한 상황에서도 실제 자산을 숨겨 보호합니다.";
 
 // Advanced Controls
-"purchases.advanced_controls" = "고급 제어";
-"purchases.swap_control" = "스왑 제어";
-"purchases.swap_control.description" = "스왑이 실행되는 방식과 위치를 제어하기 위한 고급 설정입니다.";
-"purchases.swap_control.info" = "기본적으로 가장 유리한 제안을 자동으로 선택합니다. Premium을 사용하면 다른 제공업체를 선택할 수 있습니다.";
-"purchases.priority_support" = "우선 지원";
-"purchases.priority_support.description" = "지원팀에 직접 접근할 수 있습니다.";
-"purchases.priority_support.info" = "우선 지원에 직접 접근할 수 있습니다. Quantum Wallet 팀으로부터 빠르고 개인화된 도움을 받으세요.";
 
 // Market Insights
-"purchases.market_insights" = "시장 인사이트";
-"purchases.token_insights" = "분석";
-"purchases.token_insights.description" = "심층적인 분석 및 토큰 데이터.";
-"purchases.token_insights.info" = "거래량, 유동성, 트렌드 등 토큰의 세부 데이터를 보여주어 더 현명한 투자 결정을 내릴 수 있도록 돕습니다.";
-"purchases.advanced_search" = "고급 검색";
-"purchases.advanced_search.description" = "더 스마트한 토큰 탐색을 위한 강력한 필터.";
-"purchases.advanced_search.info" = "거래량, 체인 또는 섹터별 필터로 토큰을 찾으세요. CEX/DEX 활동 및 상장 메트릭이 포함됩니다.";
-"purchases.trade_signals" = "신호 및 트렌드";
-"purchases.trade_signals.description" = "보다 자신감 있는 거래를 위한 실행 가능한 신호.";
-"purchases.trade_signals.info" = "실시간으로 거래 기회를 알림으로 제공합니다. 수익 가능성이나 시장 위험을 즉시 파악할 수 있습니다.";
 
-"purchase.bottom_sheet.description" = "한 번의 결제로 모든 프리미엄 기능을 이용할 수 있습니다.";
 
-"purchases.wallet_description.title" = "높은 평가를 받는 보안, 탁월한 개인 정보 보호, 그리고 진정한 비수탁형 지갑.";
-"purchases.wallet_description.approved" = "다음 기관에서 승인 및 감사:";
 
-"purchases.button.try" = "무료 체험하기";
-"purchases.button.activated" = "활성화됨";
-"purchases.button.upgrade" = "업그레이드";
 
-"purchase.period.title" = "구독 선택";
-"purchase.period.annually" = "연간";
-"purchase.period.monthly" = "월간";
-"purchase.period.onetime" = "일회성 결제";
-"purchase.period.onetime.description" = "평생 이용 가능";
-"purchase.period.save" = "절약";
-"purchase.period.year" = "년";
-"purchase.period.month" = "월";
-"purchase.period.description1" = "처음 7일 무료 체험 제공.";
-"purchase.period.description1.1" = "첫 달 할인 혜택을 누려보세요.";
-"purchase.period.description2" = "언제든 App Store에서 구독을 취소할 수 있습니다.";
-"purchase.lifetime.description" = "제한 없이 일회성 구독을 구매할 수";
-"purchase.agree" = "계정을 업그레이드하면 %@ 및 %@ 에 동의하게 됩니다.";
-"purchase.agree.terms_of_service" = "이용 약관";
-"purchase.agree.privacy_policy" = "개인정보 보호정책";
 
-"purchases.period.button.try" = "7일 무료 이용하기";
-"purchases.period.button.subscribe" = "구독하기";
-"purchases.period.button.buy" = "지금 구매하기";
-"purchases.period.button.promo" = "프로모션 코드 추가";
 
-"purchases.promocode.title" = "프로모션 코드 입력";
-"purchases.promocode.placeholder" = "";
-"purchases.promocode.button.invalid" = "잘못된 코드입니다";
-"purchases.promocode.button.already_used" = "이미 사용된 코드입니다";
 
-"purchases.successful_subscription.title" = "프리미엄";
-"purchases.successful_subscription.description" = "구독해 주셔서 감사합니다!";
-"purchases.successful_subscription.subscribed" = "앱의 모든 기능을 마음껏 즐기세요.";
-"purchases.successful_subscription.button.go_app" = "앱으로 이동";
 
 // Address Checker
 
@@ -2399,8 +2033,6 @@
 "check_address.sanctions_check" = "제재 목록 확인";
 "check_address.coin_blacklist_check" = "%@ 블랙리스트 확인";
 "check_address.on_blockchain" = "%@ 기준";
-"check_address.chainalysis.description" = "Chainalysis는 암호화폐 주소를 추적, 조사하고 위험을 평가할 수 있는 도구를 제공하는 블록체인 분석 플랫폼입니다. 이 플랫폼은 제재, 사기, 기타 불법 활동과 관련된 주소를 식별하는 데 도움을 줍니다.";
-"check_address.hashdit.description" = "HashDit는 사용자들이 지갑 주소에 대한 제재나 블랙리스트 위험을 확인할 수 있도록 해주는 보안 플랫폼입니다. 사용자가 악의적이거나 차단된 주소와의 상호작용을 피하도록 도와줍니다.";
 "check_address.coin_blacklist.description" = "이 기능을 통해 지갑 주소가 %@에 의해 블랙리스트에 등록되어 있는지 확인할 수 있습니다 (%@ 기준). 주소가 블랙리스트에 포함된 경우, 해당 주소와 연결된 %@ 토큰은 동결되어 사용할 수 없고, 전송도 불가능할 수 있습니다. 이 검사는 사용자가 위험하거나 제한된 주소와 상호작용하지 않도록 도와줍니다.";
 
 // Monero
@@ -2411,10 +2043,7 @@
 "monero.priority.medium" = "보통";
 "monero.priority.high" = "높음";
 
-// MEV Protection
 
-"mev_protection.title" = "MEV";
-"mev_protection.description" = "보호 기능을 켜서 스왑을 안전하게 보호하고 봇으로 인한 가치 손실을 방지하세요.";
 
 // Secure Send Bottom Sheet
 "secure_send.bottom_sheet.title" = "보안 전송";
@@ -2441,4 +2070,19 @@
 "qvm_send_settings.nonce.info" = "Nonce(논스)는 사용자 지갑 내에서 거래마다 고유한 정수값입니다. 보통 각 제출된 거래마다 증가하며 변경할 필요가 없습니다. 고급 사용자는 새 거래가 충분히 높은 수수료로 설정되어 이전 거래가 대신 확인되지 않도록 하기 위해 보류 중인 거래의 논스 값을 설정할 수 있습니다. (예를 들어, 거래 확인을 가속화하거나 거래 매개변수를 완전히 변경하려는 경우). 여러 보류 중인 거래가 동일한 논스를 가지면 일반적으로 가장 높은 수수료를 가진 거래만 확인됩니다.";
 "qvm_send_settings.nonce.errors.already_in_use" = "중고 Nonce";
 "qvm_send_settings.nonce.errors.already_in_use.info" = "이 nonce를 사용하여 실행된 트랜잭션이 이미 존재합니다.";
-"purchases.address_phishing.info" = "주소 하나만 잘못 입력하면 암호화폐가 영원히 사라질 수 있습니다. Quantum Wallet은 수신자 주소의 의심스러운 패턴을 자동으로 스캔하고 최신 피싱 위협으로부터 방어하여 해커에게 자금을 보내는 것을 방지합니다. 사기성 거래가 발생하기 전에 차단하세요.";
+
+// Security Tools
+"settings_security.robbery_protection" = "강제 상황 보호";
+"market.top.description.more_250_m" = "> $250M";
+"market.top.description.more_10_m" = "> $10M";
+"settings_security.secure_send" = "안전 전송";
+"market.top.description.more_500_m" = "> $500M";
+"market.top.description.more_25_m" = "> $25M";
+"market.top.description.more_5_m" = "> $5M";
+"settings_security.robbery_protection.description" = "강제로 앱을 잠금 해제해야 하는 상황에서도 자금을 보호합니다.";
+"settings_security.secure_send.description" = "위험하거나 피싱으로 의심되는 주소로의 자금 전송을 방지합니다.";
+"market.top.description.more_1_m" = "> $1M";
+"market.top.description.more_100_m" = "> $100M";
+"market.top.description.more_1_b" = "> $1B";
+"market.top.description.m_cap" = "시가총액";
+"settings_security.defense_system" = "방어 시스템";

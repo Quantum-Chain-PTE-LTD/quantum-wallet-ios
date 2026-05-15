@@ -54,7 +54,6 @@ class Core {
     let termsManager: TermsManager
     let watchlistManager: WatchlistManager
     let contactManager: ContactBookManager
-    let subscriptionManager: SubscriptionManager
 
     let accountManager: AccountManager
     let accountRestoreWarningManager: AccountRestoreWarningManager
@@ -107,8 +106,6 @@ class Core {
 
     let tonConnectManager: TonConnectManager
     let spamWrapper: SpamWrapper
-
-    let purchaseManager: PurchaseManager
 
     let recentAddressStorage: RecentAddressStorage
 
@@ -189,8 +186,6 @@ class Core {
         watchlistManager = WatchlistManager(storage: sharedLocalStorage, priceChangeModeManager: priceChangeModeManager)
 
         contactManager = ContactBookManager(localStorage: localStorage, ubiquityContainerIdentifier: AppConfig.privateCloudContainer, helper: ContactBookHelper(), logger: logger)
-        subscriptionManager = SubscriptionManager(userDefaultsStorage: userDefaultsStorage, marketKit: marketKit)
-
         let accountRecordStorage = AccountRecordStorage(dbPool: dbPool)
         let accountStorage = AccountStorage(keychainStorage: keychainStorage, storage: accountRecordStorage)
         let activeAccountStorage = ActiveAccountStorage(dbPool: dbPool)
@@ -340,7 +335,7 @@ class Core {
 
         rateAppManager = RateAppManager(walletManager: walletManager, adapterManager: adapterManager, localStorage: localStorage)
 
-        let chartRepository = ChartIndicatorsRepository(localStorage: localStorage, subscriptionManager: subscriptionManager)
+        let chartRepository = ChartIndicatorsRepository(localStorage: localStorage)
         appBackupProvider = AppBackupProvider(
             accountManager: accountManager,
             accountFactory: accountFactory,
@@ -371,8 +366,6 @@ class Core {
             appBackupProvider: appBackupProvider,
             logger: logger
         )
-
-        purchaseManager = PurchaseManager(localStorage: localStorage)
 
         recentAddressStorage = try RecentAddressStorage(dbPool: dbPool)
 

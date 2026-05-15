@@ -21,9 +21,7 @@ struct PerformanceDataSelectView: View {
                             Text("coin_overview.performance.period".localized(1)).textBody()
                             Spacer()
                             Button(action: {
-                                Coordinator.shared.performAfterPurchase(premiumFeature: .tokenInsights, page: .performance, trigger: .periodChange) {
-                                    presentTimePeriodSelector(period: 1)
-                                }
+                                presentTimePeriodSelector(period: 1)
                             }) {
                                 Text(viewModel.firstPeriod.shortTitle)
                             }
@@ -34,9 +32,7 @@ struct PerformanceDataSelectView: View {
                             Text("coin_overview.performance.period".localized(2)).textBody()
                             Spacer()
                             Button(action: {
-                                Coordinator.shared.performAfterPurchase(premiumFeature: .tokenInsights, page: .performance, trigger: .periodChange) {
-                                    presentTimePeriodSelector(period: 2)
-                                }
+                                presentTimePeriodSelector(period: 2)
                             }) {
                                 Text(viewModel.secondPeriod.shortTitle)
                             }
@@ -57,9 +53,7 @@ struct PerformanceDataSelectView: View {
 
                     ThemeList(viewModel.items, bottomSpacing: .margin16) { item in
                         ClickableRow(action: {
-                            Coordinator.shared.performAfterPurchase(premiumFeature: .tokenInsights, page: .performance, trigger: .tokenChange) {
-                                viewModel.switchItem(uid: item.uid, code: item.code)
-                            }
+                            viewModel.switchItem(uid: item.uid, code: item.code)
                         }) {
                             switch item.image {
                             case let .url(imageUrl): IconView(url: imageUrl, type: .circle)

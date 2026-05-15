@@ -108,13 +108,6 @@ extension AddressViewModel {
     enum Destination {
         case swap
         case send(fromAddress: String?)
-
-        var sourceStatPage: StatPage {
-            switch self {
-            case .swap: return .send
-            default: return .swap
-            }
-        }
     }
 
     struct Contact: Identifiable {

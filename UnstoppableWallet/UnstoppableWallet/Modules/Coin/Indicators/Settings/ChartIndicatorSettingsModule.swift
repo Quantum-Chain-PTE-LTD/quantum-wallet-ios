@@ -5,7 +5,7 @@ enum ChartIndicatorSettingsModule {
     static func viewController(indicator: ChartIndicator, onComplete: @escaping (ChartIndicator) -> Void) -> UIViewController? {
         let dataSource: IIndicatorDataSource
         let defaultIndicator = ChartIndicatorFactory
-            .defaultIndicators(subscribed: true)
+            .defaultIndicators()
             .first { $0.id == indicator.id && $0.index == indicator.index }
         switch indicator {
         case let indicator as MaIndicator:
@@ -26,7 +26,7 @@ enum ChartIndicatorSettingsModule {
         default: return nil
         }
 
-        let viewModel = ChartIndicatorSettingsViewModel(dataSource: dataSource, subscriptionManager: Core.shared.subscriptionManager)
+        let viewModel = ChartIndicatorSettingsViewModel(dataSource: dataSource)
         let viewController = ChartIndicatorSettingsViewController(viewModel: viewModel, onComplete: onComplete)
 
         return viewController

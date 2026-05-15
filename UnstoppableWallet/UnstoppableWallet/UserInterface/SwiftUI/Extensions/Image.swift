@@ -63,7 +63,4 @@ extension Image {
         ComponentImage(image: "defense_filled", size: .size20)
     }
 
-    static var premiumIcon: CustomStringConvertible {
-        ComponentImage(image: "premium_filled", size: .size20)
-    }
 }

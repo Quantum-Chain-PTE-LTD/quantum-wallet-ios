@@ -43,7 +43,6 @@ class WalletConnectMainViewController: ThemeViewController {
 
     private var viewItem: WalletConnectMainViewModel.ViewItem?
     private var headerState: WalletConnectMainViewModel.TitleState = .connect
-    private var whitelistState: WalletConnectMainModule.WhitelistState = .loading
 
     init(viewModel: WalletConnectMainViewModel, requestViewFactory: IWalletConnectRequestViewFactory, sourceViewController: UIViewController?, viaPushing: Bool = false) {
         self.viewModel = viewModel
@@ -75,8 +74,6 @@ class WalletConnectMainViewController: ThemeViewController {
         tableView.backgroundColor = .clear
 
         tableView.registerCell(forClass: LogoHeaderCell.self)
-        tableView.registerCell(forClass: PremiumAlertCell.self)
-
         view.addSubview(spinner)
         spinner.snp.makeConstraints { maker in
             maker.center.equalToSuperview()
@@ -145,10 +142,6 @@ class WalletConnectMainViewController: ThemeViewController {
         }
         subscribe(disposeBag, viewModel.headerTitleStateDriver) { [weak self] state in
             self?.headerState = state
-            self?.tableView.reload()
-        }
-        subscribe(disposeBag, viewModel.whitelistStateDriver) { [weak self] state in
-            self?.whitelistState = state
             self?.tableView.reload()
         }
         subscribe(disposeBag, viewModel.viewItemDriver) { [weak self] in
@@ -324,28 +317,6 @@ extension WalletConnectMainViewController: SectionsDataSource {
         )
     }
 
-    private func premiumAlertRow() -> RowProtocol? {
-        guard whitelistState.showAlert else {
-            return nil
-        }
-
-        let state = whitelistState
-
-        return Row<PremiumAlertCell>(
-            id: "premium-alert",
-            hash: "premium-alert-\(whitelistState.rawValue)",
-            dynamicHeight: { width in
-                PremiumAlertCell.height(title: state.alertTitle, subtitle: state.alertSubtitle, width: width)
-            },
-            bind: { cell, _ in
-                cell.setTitle(title: state.alertTitle, color: state.alertTitleColor)
-                cell.subtitle = state.alertSubtitle
-                cell.setIcon(name: state.alertIcon, color: state.alertTitleColor)
-                cell.setBorder(color: state.alertTitleColor)
-            }
-        )
-    }
-
     private func row(info: RowInfo, index: Int, isFirst: Bool, isLast: Bool) -> RowProtocol {
         switch info {
         case let .value(title, value, valueColor):
@@ -356,46 +327,6 @@ extension WalletConnectMainViewController: SectionsDataSource {
                 hash: value,
                 isFirst: isFirst,
                 isLast: isLast
-            )
-        case let .scam(state):
-            var elements = [CellBuilderNew.CellElement]()
-            elements.append(.textElement(text: .subhead2("wallet_connect.scam_protection".localized)))
-            if let value = state.protectionValue {
-                elements.append(.textElement(text: .subhead1(value, color: state.protectionValueColor), parameters: .allCompression))
-            }
-            if let icon = state.protectionIcon {
-                elements.append(.margin12)
-                elements.append(
-                    .image20 { (component: ImageComponent) in
-                        component.imageView.image = UIImage(named: icon)
-                        component.imageView.tintColor = state.protectionValueColor
-                    }
-                )
-            }
-            if state == .loading {
-                elements.append(.spinner20 { _ in
-                    ()
-                })
-            }
-
-            var action: (() -> Void)?
-            if !viewModel.premiumEnabled {
-                action = {
-                    Coordinator.shared.presentPurchase(premiumFeature: .scamProtection, page: .aboutApp, trigger: .priceCloseTo)
-                }
-            }
-
-            return CellBuilderNew.row(
-                rootElement: .hStack(elements),
-                tableView: tableView,
-                id: "value-\(index)",
-                hash: state.rawValue,
-                height: .heightCell48,
-                autoDeselect: true,
-                bind: { cell in
-                    cell.set(backgroundStyle: .lawrence, isFirst: isFirst, isLast: isLast)
-                },
-                action: action
             )
         case let .blockchains(blockchains):
             let onlyOne = blockchains.count == 1
@@ -435,18 +366,11 @@ extension WalletConnectMainViewController: SectionsDataSource {
                                         rows: [headerRow(imageUrl: dAppMeta.icon, title: headerState.title(name: dAppMeta.name), url: dAppMeta.url)]))
             }
 
-            let premiumRow = premiumAlertRow()
-            if let pendingRequestSection = pendingRequestSection(hasBottomMargin: premiumRow == nil) {
+            if let pendingRequestSection = pendingRequestSection(hasBottomMargin: true) {
                 sections.append(pendingRequestSection)
             }
 
-            if let row = premiumRow {
-                sections.append(Section(id: "premium-alert", rows: [row]))
-            }
-
             var rowInfos = [RowInfo]()
-
-            rowInfos.append(.scam(whitelistState))
 
             if let accountName = viewItem.activeAccountName {
                 rowInfos.append(.value(title: "wallet_connect.active_account".localized, value: accountName, valueColor: nil))
@@ -477,7 +401,6 @@ extension WalletConnectMainViewController: SectionsDataSource {
 extension WalletConnectMainViewController {
     enum RowInfo {
         case value(title: String, value: String, valueColor: UIColor?)
-        case scam(WalletConnectMainModule.WhitelistState)
         case blockchains([WalletConnectMainViewModel.BlockchainViewItem])
     }
 }
