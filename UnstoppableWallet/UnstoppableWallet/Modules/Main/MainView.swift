@@ -11,100 +11,79 @@ struct MainView: View {
     @State private var backupAccount: Account?
 
     var body: some View {
-        ThemeNavigationStack(path: $path) {
-            TabView(selection: $viewModel.selectedTab) {
-                if viewModel.showMarket {
+        TabView(selection: $viewModel.selectedTab) {
+            if viewModel.showMarket {
+                ThemeNavigationStack {
                     MarketView()
-                        .tabItem { Label("", image: "market_filled") }
-                        .tag(MainViewModel.Tab.markets)
-                        .tint(.themeLeah)
+                        .navigationTitle("market.title".localized)
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .primaryAction) {
+                                Button(action: openMarketSearch) { Image("search") }
+                            }
+                        }
                 }
+                .tabItem { Label("", image: "market_filled") }
+                .tag(MainViewModel.Tab.markets)
+                .tint(.themeLeah)
+            }
 
+            ThemeNavigationStack(path: $path) {
                 WalletView(viewModel: walletViewModel, path: $path)
-                    .tabItem { Label("", image: "wallet_filled") }
-                    .tag(MainViewModel.Tab.wallet)
-                    .tint(.themeLeah)
+                    .navigationDestination(for: Wallet.self) { wallet in
+                        WalletTokenModule.view(wallet: wallet)
+                    }
+                    .navigationTitle(walletViewModel.account?.name ?? "balance.title".localized)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .primaryAction) {
+                            if walletViewModel.account != nil {
+                                Button(action: openManageAccounts) { Image("wallet_change") }
+                            }
+                        }
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            if walletViewModel.account != nil, walletViewModel.totalItem.state == .syncing {
+                                syncingProgressView
+                            }
+                        }
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            if walletViewModel.account != nil, walletViewModel.buttonHidden {
+                                Button(action: openScanQr) { Image("scan") }
+                            }
+                        }
+                    }
+            }
+            .tabItem { Label("", image: "wallet_filled") }
+            .tag(MainViewModel.Tab.wallet)
+            .tint(.themeLeah)
 
-                if viewModel.showSwap {
+            if viewModel.showSwap {
+                ThemeNavigationStack {
                     MultiSwapView()
-                        .tabItem { Label("", image: "swap_filled") }
-                        .tag(MainViewModel.Tab.swap)
-                        .tint(.themeLeah)
+                        .navigationTitle("swap.title".localized)
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .primaryAction) {
+                                Button(action: openSwapHistory) { Image("clock") }
+                            }
+                        }
                 }
+                .tabItem { Label("", image: "swap_filled") }
+                .tag(MainViewModel.Tab.swap)
+                .tint(.themeLeah)
+            }
 
+            ThemeNavigationStack {
                 MainSettingsView()
-                    .tabItem { Label("", image: "settings_filled") }
-                    .tag(MainViewModel.Tab.settings)
-                    .badge(badgeViewModel.badge.map { _ in "1" })
-                    .tint(.themeLeah)
+                    .navigationTitle("settings.title".localized)
+                    .navigationBarTitleDisplayMode(.inline)
             }
-            .tint(.themeJacob)
-            .navigationDestination(for: Wallet.self) { wallet in
-                WalletTokenModule.view(wallet: wallet)
-            }
-            .navigationTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    primaryToolbarView
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    leadingProgressToolbarView
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    leadingActionToolbarView
-                }
-            }
+            .tabItem { Label("", image: "settings_filled") }
+            .tag(MainViewModel.Tab.settings)
+            .badge(badgeViewModel.badge.map { _ in "1" })
+            .tint(.themeLeah)
         }
-    }
-
-    private var primaryToolbarView: AnyView {
-        switch viewModel.selectedTab {
-        case .markets:
-            return AnyView(Button(action: openMarketSearch) {
-                Image("search")
-            })
-        case .wallet:
-            guard walletViewModel.account != nil else {
-                return AnyView(EmptyView())
-            }
-
-            return AnyView(Button(action: openManageAccounts) {
-                Image("wallet_change")
-            })
-        case .swap:
-            return AnyView(Button(action: openSwapHistory) {
-                Image("clock")
-            })
-        case .transactions:
-            return AnyView(Button(action: openTransactionFilter) {
-                Image("manage_2_24")
-                    .modifier(ToolbarBadgeModifier(visible: transactionsViewModel.transactionFilter.hasChanges))
-            })
-        case .settings:
-            return AnyView(EmptyView())
-        }
-    }
-
-    private var leadingProgressToolbarView: AnyView {
-        switch viewModel.selectedTab {
-        case .wallet where walletViewModel.account != nil && walletViewModel.totalItem.state == .syncing:
-            return AnyView(syncingProgressView)
-        case .transactions where transactionsViewModel.syncing:
-            return AnyView(syncingProgressView)
-        default:
-            return AnyView(EmptyView())
-        }
-    }
-
-    private var leadingActionToolbarView: AnyView {
-        if viewModel.selectedTab == .wallet, walletViewModel.account != nil, walletViewModel.buttonHidden {
-            return AnyView(Button(action: openScanQr) {
-                Image("scan")
-            })
-        }
-
-        return AnyView(EmptyView())
+        .tint(.themeJacob)
     }
 
     private var syncingProgressView: some View {
@@ -141,28 +120,6 @@ struct MainView: View {
     private func openSwapHistory() {
         Coordinator.shared.present { isPresented in
             SwapHistoryView(isPresented: isPresented)
-        }
-    }
-
-    private func openTransactionFilter() {
-        Coordinator.shared.present { isPresented in
-            TransactionFilterView(transactionsViewModel: transactionsViewModel, isPresented: isPresented)
-        }
-        stat(page: .transactions, event: .open(page: .transactionFilter))
-    }
-
-    var title: String {
-        switch viewModel.selectedTab {
-        case .markets:
-            return "market.title".localized
-        case .wallet:
-            return walletViewModel.account?.name ?? "balance.title".localized
-        case .swap:
-            return "swap.title".localized
-        case .transactions:
-            return "transactions.title".localized
-        case .settings:
-            return "settings.title".localized
         }
     }
 }
