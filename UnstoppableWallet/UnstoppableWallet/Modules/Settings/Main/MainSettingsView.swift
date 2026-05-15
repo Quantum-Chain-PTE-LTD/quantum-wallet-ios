@@ -14,14 +14,9 @@ struct MainSettingsView: View {
         cloudBackupManager: Core.shared.cloudBackupManager
     )
 
-    @State private var currentSlideIndex: Int = 0
-    @State private var isFirstAppear = true
-
     var body: some View {
         ScrollableThemeView {
             VStack(spacing: .margin12) {
-                slider()
-
                 VStack(spacing: 0) {
                     ListSection {
                         manageWallets()
@@ -99,82 +94,6 @@ struct MainSettingsView: View {
                     stat(page: .settings, event: .open(page: .walletConnect))
                 }
         }
-    }
-
-    @ViewBuilder private func slider() -> some View {
-        VStack(spacing: 0) {
-            TabView(selection: $currentSlideIndex) {
-                ForEach(0 ..< viewModel.slides.count, id: \.self) { index in
-                    ZStack {
-                        slide(slide: viewModel.slides[index])
-                            .frame(height: 130)
-                            .clipShape(RoundedRectangle(cornerRadius: .cornerRadius16, style: .continuous))
-                    }
-                    .padding(.horizontal, .margin16)
-                    .tag(index)
-                }
-            }
-            .frame(height: 130)
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-
-            HStack(spacing: .margin4) {
-                ForEach(0 ..< viewModel.slides.count, id: \.self) { index in
-                    Capsule()
-                        .fill(currentSlideIndex == index ? Color.themeJacob : Color.themeBlade)
-                        .frame(width: 20, height: 4)
-                }
-            }
-            .frame(height: .margin32)
-        }
-        .onAppear {
-            guard !isFirstAppear else {
-                isFirstAppear = false
-                return
-            }
-
-            currentSlideIndex = PremiumFactory.forceShowingPremium ? 0 : (currentSlideIndex + 1) % viewModel.slides.count
-        }
-    }
-
-    @ViewBuilder private func slide(slide: MainSettingsViewModel.Slide) -> some View {
-        switch slide {
-        case .premium:
-            PremiumFactory.slide(offer: viewModel.introductoryOffer)
-                .onTapGesture {
-                    Coordinator.shared.presentPurchase(page: .settings, trigger: .banner)
-                }
-        case .miniApp:
-            miniAppSlide()
-                .onTapGesture {
-                    let appUrl = URL(string: "tg://resolve?domain=\(AppConfig.appTokenTelegramAccount)&startapp")!
-                    let webUrl = URL(string: "https://t.me/\(AppConfig.appTokenTelegramAccount)?startapp")!
-
-                    if UIApplication.shared.canOpenURL(appUrl) {
-                        openURL(appUrl)
-                    } else {
-                        Coordinator.shared.present(url: webUrl)
-                    }
-                }
-        }
-    }
-
-    @ViewBuilder private func miniAppSlide() -> some View {
-        ZStack(alignment: .trailing) {
-            GeometryReader { geometry in
-                Image("banner_mini_app")
-                    .clipped()
-                    .frame(width: geometry.size.width, alignment: .trailing)
-            }
-
-            VStack(alignment: .leading, spacing: .margin4) {
-                Text("mini_app.cell.title".localized).textHeadline1(color: .themeYellow)
-                Spacer(minLength: 0)
-                Text("mini_app.cell.description".localized).textSubhead1(color: .themeLight)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(EdgeInsets(top: .margin16, leading: .margin16, bottom: .margin16, trailing: 185))
-        }
-        .background(Color.themeDarker)
     }
 
     @ViewBuilder private func manageWallets() -> some View {

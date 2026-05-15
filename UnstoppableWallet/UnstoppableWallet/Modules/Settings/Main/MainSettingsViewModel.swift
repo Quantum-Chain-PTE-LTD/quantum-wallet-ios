@@ -28,8 +28,6 @@ class MainSettingsViewModel: ObservableObject {
     @Published var securityAlert: Bool = false
     @Published var aboutAlert: Bool = false
     @Published var iCloudUnavailable: Bool = false
-    @Published var slides: [Slide] = [.premium, .miniApp]
-    @Published var introductoryOffer: String?
 
     @Published var debu: String?
 
@@ -91,39 +89,11 @@ class MainSettingsViewModel: ObservableObject {
         subscribe(&cancellables, passcodeManager.$isPasscodeSet) { [weak self] _ in self?.syncSecurityAlert() }
         subscribe(&cancellables, termsManager.$state) { [weak self] _ in self?.syncAboutAlert() }
 
-        Publishers.Merge3(
-            purchaseManager.$purchaseData.map { _ in () },
-            purchaseManager.$productData.map { _ in () },
-            purchaseManager.$usedOfferProductIds.map { _ in () }
-        )
-        .receive(on: DispatchQueue.main)
-        .sink { [weak self] in
-            self?.syncIntroductoryOffer()
-            self?.syncSlides()
-        }
-        .store(in: &cancellables)
-
-        syncSlides()
-        syncIntroductoryOffer()
         syncManageWalletsAlert()
         syncWalletConnectSessionCount()
         syncWalletConnectPendingRequestCount()
         syncSecurityAlert()
         syncAboutAlert()
-    }
-
-    private func syncSlides() {
-        var slides: [Slide] = [.miniApp]
-
-        if !purchaseManager.hasActivePurchase {
-            slides.insert(.premium, at: 0)
-        }
-
-        self.slides = slides
-    }
-
-    private func syncIntroductoryOffer() {
-        introductoryOffer = purchaseManager.introductoryOfferType.title
     }
 
     private func syncManageWalletsAlert() {
@@ -163,10 +133,5 @@ extension MainSettingsViewModel {
         case backedUp
         case nonSupportedAccountType(accountType: AccountType)
         case unBackedUpAccount(account: Account)
-    }
-
-    enum Slide {
-        case premium
-        case miniApp
     }
 }

@@ -2,8 +2,9 @@ import SwiftUI
 
 struct CoverView: View {
     var body: some View {
-        ThemeRadialView {
-            Image("Intro - Stay Private")
+        ZStack {
+            Color.themeTyler.ignoresSafeArea()
+            Image("Q Logo Image")
         }
     }
 }
