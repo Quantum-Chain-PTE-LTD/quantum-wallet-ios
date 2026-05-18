@@ -4,7 +4,6 @@ import SwiftUI
 
 struct MainSettingsView: View {
     @StateObject var viewModel = MainSettingsViewModel()
-    @Environment(\.openURL) var openURL
 
     @State private var manageWalletsPresented = false
 
@@ -301,7 +300,7 @@ struct MainSettingsView: View {
             let webUrl = URL(string: "https://t.me/\(AppConfig.appTelegramAccount)")!
 
             if UIApplication.shared.canOpenURL(appUrl) {
-                openURL(appUrl)
+                UIApplication.shared.open(appUrl)
             } else {
                 Coordinator.shared.present(url: webUrl)
             }
