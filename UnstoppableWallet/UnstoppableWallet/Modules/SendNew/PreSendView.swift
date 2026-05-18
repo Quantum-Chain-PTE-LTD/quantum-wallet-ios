@@ -72,13 +72,6 @@ struct PreSendView: View {
         .onFirstAppear {
             focusField = .amount
         }
-        .navigationDestination(for: ConfirmationData.self) { data in
-            RegularSendView(sendData: data.sendData, address: data.address) {
-                HudHelper.instance.show(banner: .sent)
-                onDismiss()
-            }
-            .toolbarRole(.editor)
-        }
         // TODO: .navigationTitle(viewModel.title) and .toolbar { ... gear button ... }
         // were removed because they triggered a NavigationStack render loop in iOS:
         // "Update NavigationRequestObserver tried to update multiple times per frame."
