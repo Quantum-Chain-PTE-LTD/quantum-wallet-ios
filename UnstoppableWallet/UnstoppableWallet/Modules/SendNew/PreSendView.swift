@@ -24,6 +24,13 @@ struct PreSendView: View {
             BottomGradientWrapper {
                 ScrollView {
                     VStack(spacing: .margin16) {
+                        if let handler = viewModel.handler, handler.hasSettings {
+                            HStack {
+                                Spacer()
+                                settingsButton(handler: handler)
+                            }
+                        }
+
                         if addressVisible {
                             if viewModel.resolvedAddress.issueTypes.isEmpty {
                                 addressView()
@@ -79,14 +86,24 @@ struct PreSendView: View {
             }
             .toolbarRole(.editor)
         }
-        // TODO: .navigationTitle(viewModel.title) and .toolbar { ... gear button ... }
-        // were removed because they triggered a NavigationStack render loop in iOS:
-        // "Update NavigationRequestObserver tried to update multiple times per frame."
-        // The inner navigationDestination, .onFirstAppear, AmountAccessoryView, and
-        // .animation(value: focusField) were each individually verified NOT to cause it.
-        // Restoring either of the two below brings the loop back. A different approach
-        // is needed (e.g. set the title from the parent navigation stack and replace
-        // the toolbar gear with an inline settings button).
+        .navigationTitle(viewModel.title)
+        // NOTE: settings handler entry-point is inline (top of the form), not a .toolbar
+        // gear button. Re-registering .toolbar on every body re-eval inside a
+        // navigationDestination triggers "Update NavigationRequestObserver tried to update
+        // multiple times per frame." and locks the navigation system into a render loop.
+    }
+
+    @ViewBuilder private func settingsButton(handler: IPreSendHandler) -> some View {
+        Button(action: {
+            Coordinator.shared.present { _ in
+                handler.settingsView {
+                    viewModel.syncSendData()
+                }
+            }
+        }) {
+            Image("gear")
+                .modifier(ToolbarBadgeModifier(visible: handler.settingsModified))
+        }
     }
 
     @ViewBuilder private func availableBalanceView(value: String?) -> some View {

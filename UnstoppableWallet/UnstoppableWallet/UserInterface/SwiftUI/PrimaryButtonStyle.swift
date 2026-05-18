@@ -61,7 +61,7 @@ private extension View {
             if isEnabled {
                 background(
                     LinearGradient(
-                        gradient: Gradient(colors: [Color(hex: 0xFFD000), Color(hex: 0xFFA800)]),
+                        gradient: Gradient(colors: [Color(hex: 0x0084FF), Color(hex: 0x1249FF)]),
                         startPoint: UnitPoint(x: -0.5181, y: 0.5),
                         endPoint: .trailing
                     )
