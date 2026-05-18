@@ -1210,6 +1210,11 @@
 "terms.title" = "Bedingungen";
 "terms.i_agree" = "Ich stimme zu";
 
+"terms.item.backup" = "Sicheres Backup der Wiederherstellungsausdrücke für jede Wallet. Dies ist die einzige Möglichkeit, den Zugriff auf Gelder zurückzugewinnen, wenn die App nicht funktioniert.";
+"terms.item.private_keys" = "The wallet recovery phrases are randomly generated on the device during setup and are not stored elsewhere.";
+"terms.item.disabling_pin" = "Das Deaktivieren der PIN (Code) auf dem Smartphone löscht alle Brieftaschen aus der App. Wiederherstellungs-Phrasen werden benötigt, um den Zugriff auf Gelder wiederherzustellen.";
+"terms.item.jailbreaking" = "Jailbreaking (rooting), using outdated OS, and installing apps from unknown sources may endanger the safety of funds.";
+"terms.item.bugs" = "There may be undiscovered software issues in the code powering this app which may cause the app to malfunction.";
 "terms.item.backup_recovery" = "Sichere die recovery phrase für jede wallet sorgfältig. Sie ist die einzige Möglichkeit, wieder Zugriff auf deine Gelder zu erhalten, falls die App gelöscht wird oder nicht richtig funktioniert. Niemand kann sie für dich wiederherstellen.";
 "terms.item.device_pin" = "Das Deaktivieren der PIN (Code) auf dem Smartphone löscht alle Brieftaschen aus der App. Wiederherstellungs-Phrasen werden benötigt, um den Zugriff auf Gelder wiederherzustellen.";
 "terms.item.privacy_notice" = "Die App spioniert oder sammelt keine Daten über Ihr Guthaben oder Ihre Transaktionen - wir wissen nicht einmal, wie viele Menschen es nutzen. Es verfolgt nur anonyme Nutzungsmuster (geöffnete Seiten, getappte Schaltfläche), um die Benutzerfreundlichkeit zu verbessern. Sie können dies unter Einstellungen → Privatsphäre deaktivieren";

@@ -1210,6 +1210,11 @@
 "terms.title" = "Termos";
 "terms.i_agree" = "Eu concordo";
 
+"terms.item.backup" = "Frases de recuperação de backup seguros para cada carteira. É a única maneira de recuperar o acesso a fundos se o aplicativo não funcionar.";
+"terms.item.private_keys" = "The wallet recovery phrases are randomly generated on the device during setup and are not stored elsewhere.";
+"terms.item.disabling_pin" = "Desabilitando o PIN (código) no smartphone exclui todas as carteiras do aplicativo. As frases de recuperação serão necessárias para restaurar o acesso aos fundos.";
+"terms.item.jailbreaking" = "Jailbreaking (rooting), using outdated OS, and installing apps from unknown sources may endanger the safety of funds.";
+"terms.item.bugs" = "There may be undiscovered software issues in the code powering this app which may cause the app to malfunction.";
 "terms.item.backup_recovery" = "Faça o backup da recovery phrase de cada wallet de forma segura. Essa é a única maneira de recuperar o acesso aos seus fundos caso o app seja excluído ou apresente falhas. Ninguém pode restaurá-la para você.";
 "terms.item.device_pin" = "Desabilitando o PIN (código) no smartphone, exclui todas as carteiras do aplicativo. As frases de recuperação serão necessárias para restaurar o acesso aos fundos.";
 "terms.item.privacy_notice" = "O app não espiona nem coleta dados sobre seus saldos ou transações — nem sequer sabemos quantas pessoas o utilizam. Ele apenas registra padrões de uso anônimos (páginas abertas, botões tocados) para melhorar a usabilidade. Você pode desativar isso em Configurações → Privacidade";

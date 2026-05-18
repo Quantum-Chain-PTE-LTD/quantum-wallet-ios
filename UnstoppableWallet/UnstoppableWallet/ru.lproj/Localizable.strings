@@ -1210,6 +1210,11 @@
 "terms.title" = "Условия использования";
 "terms.i_agree" = "Я принимаю";
 
+"terms.item.backup" = "Безопасное резервное копирование фраз для каждого кошелька. Это единственный способ восстановить доступ к средствам, если приложение будет удалено, утеряно или выйдет из строя. Никто не сможет восстановить её за вас.";
+"terms.item.private_keys" = "The wallet recovery phrases are randomly generated on the device during setup and are not stored elsewhere.";
+"terms.item.disabling_pin" = "Отключение PIN-кода (или пароля) разблокировки телефона полностью удалит все кошельки из приложения. Вам потребуется фраза восстановления, чтобы вернуть доступ.";
+"terms.item.jailbreaking" = "Jailbreaking (rooting), using outdated OS, and installing apps from unknown sources may endanger the safety of funds.";
+"terms.item.bugs" = "There may be undiscovered software issues in the code powering this app which may cause the app to malfunction.";
 "terms.item.backup_recovery" = "Надёжно сохраните фразу восстановления для каждого кошелька. Это единственный способ восстановить доступ к средствам, если приложение будет удалено или перестанет работать. Никто не сможет восстановить её за вас.";
 "terms.item.device_pin" = "Отключение PIN-кода (или пароля) разблокировки телефона полностью удалит все кошельки из приложения. Вам потребуется фраза восстановления, чтобы вернуть доступ.";
 "terms.item.privacy_notice" = "Приложение не отслеживает и не собирает данные о ваших балансах и транзакциях - мы даже не знаем, сколько людей им пользуется. Оно фиксирует только анонимную статистику использования (открытые страницы, нажатия кнопок), чтобы улучшать интерфейс. Это можно отключить в Настройки → Конфиденциальность";

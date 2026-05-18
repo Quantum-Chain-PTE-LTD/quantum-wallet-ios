@@ -1210,6 +1210,11 @@
 "terms.title" = "Conditions";
 "terms.i_agree" = "J'accepte";
 
+"terms.item.backup" = "Sauvegardez en toute sécurité la phrase de récupération pour chaque portefeuille. C'est le seul moyen de récupérer l'accès à vos fonds si l'application est supprimée ou si elle est défectueuse. Personne ne peut la restaurer pour vous.";
+"terms.item.private_keys" = "The wallet recovery phrases are randomly generated on the device during setup and are not stored elsewhere.";
+"terms.item.disabling_pin" = "La désactivation du code PIN (ou mot de passe) de votre smartphone supprime tous les portefeuilles de l'application. Vous aurez besoin de vos phrases de récupération pour restaurer l'accès.";
+"terms.item.jailbreaking" = "Jailbreaking (rooting), using outdated OS, and installing apps from unknown sources may endanger the safety of funds.";
+"terms.item.bugs" = "There may be undiscovered software issues in the code powering this app which may cause the app to malfunction.";
 "terms.item.backup_recovery" = "Sauvegardez de manière sécurisée la recovery phrase de chaque wallet. C’est le seul moyen de récupérer l’accès à vos fonds si l’application est supprimée ou rencontre un dysfonctionnement. Personne ne peut la restaurer à votre place.";
 "terms.item.device_pin" = "La désactivation du code PIN (code) sur le smartphone supprime tous les portefeuilles de l'application. Des phrases de récupération seront nécessaires pour restaurer l'accès aux fonds.";
 "terms.item.privacy_notice" = "L'application n'espionne pas ou ne collecte pas de données sur vos balances ou vos transactions - nous ne savons même pas combien de personnes l'utilisent. Il ne suit que les modèles d'utilisation anonymes (pages ouvertes, boutons appuyés) pour améliorer la convivialité. Vous pouvez désactiver cette option dans Paramètres → Confidentialité";
