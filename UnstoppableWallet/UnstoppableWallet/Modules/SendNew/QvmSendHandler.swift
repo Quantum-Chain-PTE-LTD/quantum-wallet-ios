@@ -22,10 +22,6 @@ extension QvmSendHandler: ISendHandler {
     }
 
     func sendData(transactionSettings: TransactionSettings?) async throws -> ISendData {
-        if !qvmKitWrapper.allowed {
-            throw AppError.quantum(reason: .notAllowed)
-        }
-
         let gasPriceData = transactionSettings?.qvmGasPriceData
         var qvmFeeData: QvmFeeData?
         var transactionError: Error?

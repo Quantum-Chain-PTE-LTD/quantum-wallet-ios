@@ -14,6 +14,7 @@ class SendViewModel: ObservableObject {
     private var ratesCancellable: AnyCancellable?
     private var cancellables = Set<AnyCancellable>()
     private var timer: Timer?
+    private var started = false
 
     let handler: ISendHandler?
     let transactionService: ITransactionService?
@@ -72,8 +73,6 @@ class SendViewModel: ObservableObject {
                 self?.sync()
             }
             .store(in: &cancellables)
-
-        sync()
     }
 
     var cautions: [CautionNew] {
@@ -116,7 +115,7 @@ class SendViewModel: ObservableObject {
     }
 
     @MainActor private func report(error: Error) {
-        errorSubject.send(error.smartDescription)
+        errorSubject.send(error.convertedError.smartDescription)
     }
 }
 
@@ -144,6 +143,15 @@ extension SendViewModel {
                 self?.sync(silent: true)
             }
         }
+    }
+
+    func start() {
+        guard !started else {
+            return
+        }
+
+        started = true
+        sync()
     }
 
     func sync(silent: Bool = false) {

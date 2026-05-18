@@ -28,30 +28,33 @@ extension AddQvmTokenBlockchainService: IAddTokenBlockchainService {
 
     func validate(reference: String) throws {
         do {
-            _ = try QvmKit.Address(hex: reference)
+            _ = try QvmKit.Address(userInput: reference)
         } catch {
             throw TokenError.invalidAddress
         }
     }
 
     func tokenQuery(reference: String) -> TokenQuery {
-        TokenQuery(blockchainType: blockchain.type, tokenType: .qrc20(address: reference.lowercased()))
+        let address = (try? QvmKit.Address(userInput: reference).hex) ?? reference
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+        return TokenQuery(blockchainType: blockchain.type, tokenType: .qrc20(address: address))
     }
 
     func token(reference: String) async throws -> Token {
-        guard let address = try? QvmKit.Address(hex: reference) else {
+        guard let address = try? QvmKit.Address(userInput: reference) else {
             throw TokenError.invalidAddress
         }
 
-        let tokenQuery = tokenQuery(reference: reference)
+        let tokenQuery = tokenQuery(reference: address.hex)
 
         do {
             let tokenInfo = try await Qip20Kit.Kit.tokenInfo(networkManager: networkManager, rpcSource: rpcSource, contractAddress: address)
             return Token(
-                coin: Coin(uid: tokenQuery.customCoinUid, name: tokenInfo.tokenName, code: tokenInfo.tokenSymbol),
+                coin: Coin(uid: tokenQuery.customCoinUid, name: tokenInfo.name, code: tokenInfo.symbol),
                 blockchain: blockchain,
                 type: tokenQuery.tokenType,
-                decimals: tokenInfo.tokenDecimal
+                decimals: tokenInfo.decimals
             )
         } catch {
             throw TokenError.notFound(blockchainName: blockchain.name)

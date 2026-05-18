@@ -372,6 +372,8 @@
 		11B3556C12B91FD86A72A193 /* LitecoinAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B356861F703A5A5C6630B6 /* LitecoinAdapter.swift */; };
 		11B3556CAD6FE74AB654E8B2 /* TonAddressParserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B35C6DF4DEE25B8B4B2E28 /* TonAddressParserItem.swift */; };
 		11B3556FCACE2ECE022138DF /* AddEvmTokenBlockchainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B352ABFDEAEEA84D3FDD8B /* AddEvmTokenBlockchainService.swift */; };
+		7BADD0010000000000000101 /* AddQvmTokenBlockchainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BADD0000000000000000100 /* AddQvmTokenBlockchainService.swift */; };
+		7BADD0020000000000000102 /* AddQvmTokenBlockchainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BADD0000000000000000100 /* AddQvmTokenBlockchainService.swift */; };
 		11B355734D16C412220BBEBD /* NftKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B35665980CEA4D009A9B77 /* NftKit.swift */; };
 		11B355756A2457C64C969024 /* CoinCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B357C17104792A20769560 /* CoinCategory.swift */; };
 		11B3557AF8D64E9897965526 /* ISendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B355A2FFA369C4E89DFF53 /* ISendData.swift */; };
@@ -3788,6 +3790,7 @@
 		11B3529DC8E74672659515B8 /* CoinPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinPageViewModel.swift; sourceTree = "<group>"; };
 		11B352A41EC99ADCC8F3E3E9 /* FormAmountInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormAmountInputView.swift; sourceTree = "<group>"; };
 		11B352ABFDEAEEA84D3FDD8B /* AddEvmTokenBlockchainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEvmTokenBlockchainService.swift; sourceTree = "<group>"; };
+		7BADD0000000000000000100 /* AddQvmTokenBlockchainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQvmTokenBlockchainService.swift; sourceTree = "<group>"; };
 		11B352B4E116BEC01B972A39 /* FaqService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqService.swift; sourceTree = "<group>"; };
 		11B352BACB38FE566F6F575B /* NftEventMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NftEventMetadata.swift; sourceTree = "<group>"; };
 		11B352BD333C9D69ECB82884 /* BadgeViewNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeViewNew.swift; sourceTree = "<group>"; };
@@ -5648,6 +5651,7 @@
 				11B356D5A5F32E88FEC7629D /* AddTokenViewController.swift */,
 				11B352ABFDEAEEA84D3FDD8B /* AddEvmTokenBlockchainService.swift */,
 				11B355267E1A6678B7B5FCF1 /* AddTokenModule.swift */,
+				7BADD0000000000000000100 /* AddQvmTokenBlockchainService.swift */,
 				D05F132D2A31FE0D00C3193F /* AddTronTokenBlockchainService.swift */,
 				D3A87D582C89BEAE00F6F619 /* AddJettonBlockchainService.swift */,
 				6B9563C22F55649C00D9D188 /* AddTokenView.swift */,
@@ -10452,6 +10456,7 @@
 				1A564BC84E6A4F836994ABD3 /* AdapterError.swift in Sources */,
 				D36DE0D9272FD887000BC916 /* OneInchDataSource.swift in Sources */,
 				D36DE0F0272FD89B000BC916 /* SwapSettingsViewController.swift in Sources */,
+				7BADD0020000000000000102 /* AddQvmTokenBlockchainService.swift in Sources */,
 				D05F132F2A31FE0D00C3193F /* AddTronTokenBlockchainService.swift in Sources */,
 				11B355B7E336EB3AED69FA38 /* AddressParserFactory.swift in Sources */,
 				11B35D4E566D1F5D24825050 /* FeeRateProviderFactory.swift in Sources */,
@@ -12329,6 +12334,7 @@
 				11B35C3AFFA5B40481AF15B9 /* AccountRecord_v_0_19.swift in Sources */,
 				6B8BD39E2C11B959003ADE10 /* TextFieldAlert.swift in Sources */,
 				11B3556FCACE2ECE022138DF /* AddEvmTokenBlockchainService.swift in Sources */,
+				7BADD0010000000000000101 /* AddQvmTokenBlockchainService.swift in Sources */,
 				D0E659BB2B875003000D8981 /* ResendBitcoinViewModel.swift in Sources */,
 				11B355FAD0E7823AF5F8EC83 /* SendEvmTransactionService.swift in Sources */,
 				11B355967997A7C65B008BC7 /* SendEvmTransactionViewController.swift in Sources */,

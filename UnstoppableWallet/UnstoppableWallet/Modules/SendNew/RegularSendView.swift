@@ -47,6 +47,9 @@ struct RegularSendView: View {
         }
         .navigationTitle("send.confirmation.title".localized)
         .navigationBarTitleDisplayMode(.inline)
+        .onFirstAppear {
+            sendViewModel.start()
+        }
     }
 }
 

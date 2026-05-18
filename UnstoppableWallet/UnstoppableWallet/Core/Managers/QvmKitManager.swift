@@ -1,7 +1,9 @@
+import Alamofire
 import Qip20Kit
 import QvmKit
 import Foundation
 import MarketKit
+import ObjectMapper
 import TfaKit
 import Combine
 import RxRelay
@@ -186,24 +188,29 @@ class QvmKitWrapper {
     }
 
     func sendSingle(transactionData: TransactionData, gasPrice: GasPrice, gasLimit: Int, nonce: Int? = nil) -> Single<FullTransaction> {
-        guard let signer else {
-            return Single.error(SignerError.signerNotSupported)
-        }
-
-        return qvmKit.rawTransaction(transactionData: transactionData, gasPrice: gasPrice, gasLimit: gasLimit, nonce: nonce)
-            .flatMap { [weak self] rawTransaction in
-                guard let strongSelf = self else {
-                    return Single.error(AppError.weakReference)
-                }
-
+        Single<FullTransaction>.create { [weak self] observer in
+            let task = Task {
                 do {
-                    let signature = try signer.signature(rawTransaction: rawTransaction)
-                    let publicKey = try signer.publicKey()
-                    return strongSelf.qvmKit.sendSingle(rawTransaction: rawTransaction, signature: signature, publicKey: publicKey)
+                    guard let self else {
+                        throw AppError.weakReference
+                    }
+
+                    let fullTransaction = try await self.send(
+                        transactionData: transactionData,
+                        gasPrice: gasPrice,
+                        gasLimit: gasLimit,
+                        nonce: nonce
+                    )
+                    observer(.success(fullTransaction))
                 } catch {
-                    return Single.error(error)
+                    observer(.error(error))
                 }
             }
+
+            return Disposables.create {
+                task.cancel()
+            }
+        }
     }
 
     func send(transactionData: TransactionData, gasPrice: GasPrice, gasLimit: Int, nonce: Int? = nil) async throws -> FullTransaction {
@@ -211,10 +218,35 @@ class QvmKitWrapper {
             throw SignerError.signerNotSupported
         }
 
+        guard try await canSendTransaction() else {
+            throw AppError.quantum(reason: .notAllowed)
+        }
+
         let rawTransaction = try await qvmKit.fetchRawTransaction(transactionData: transactionData, gasPrice: gasPrice, gasLimit: gasLimit, nonce: nonce)
         let signature = try signer.signature(rawTransaction: rawTransaction)
         let publicKey = try signer.publicKey()
         return try await qvmKit.send(rawTransaction: rawTransaction, signature: signature, publicKey: publicKey)
+    }
+
+    private func canSendTransaction() async throws -> Bool {
+        let headers = AppConfig.quantumChainApiKey.flatMap { HTTPHeaders([HTTPHeader(name: "apikey", value: $0)]) }
+        let parameters: Parameters = [
+            "address": qvmKit.receiveAddress.qip55,
+        ]
+        let response: AuthResponse = try await Core.shared.networkManager.fetch(
+            url: "\(AppConfig.quantumChainApiBaseUrl)/v1/authentication-quantum-wallet",
+            parameters: parameters,
+            headers: headers
+        )
+        return response.allowed
+    }
+}
+
+private struct AuthResponse: ImmutableMappable {
+    let allowed: Bool
+
+    init(map: Map) throws {
+        allowed = try map.value("allowed") ?? false
     }
 }
 

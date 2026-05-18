@@ -56,7 +56,7 @@ extension QvmPreSendHandler: IPreSendHandler {
             return .invalid(cautions: [])
         }
 
-        guard let qvmAddress = try? QvmKit.Address(hex: address) else {
+        guard let qvmAddress = try? QvmKit.Address(userInput: address) else {
             return .invalid(cautions: [])
         }
 

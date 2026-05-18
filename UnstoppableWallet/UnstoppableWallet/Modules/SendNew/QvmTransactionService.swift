@@ -63,6 +63,18 @@ class QvmTransactionService {
     private func validateNonce() {
         nonceErrors = Self.validateNonce(nonce: nonce, minimumNonce: minimumNonce)
     }
+
+    private func fetchRecommendedGasPrice() async throws -> GasPrice {
+        guard chain.isQIP1559Supported else {
+            return try await LegacyGasPriceProvider.gasPrice(networkManager: networkManager, rpcSource: rpcSource)
+        }
+
+        do {
+            return try await QIP1559GasPriceProvider.gasPrice(networkManager: networkManager, rpcSource: rpcSource)
+        } catch {
+            return try await LegacyGasPriceProvider.gasPrice(networkManager: networkManager, rpcSource: rpcSource)
+        }
+    }
 }
 
 extension QvmTransactionService: ITransactionService {
@@ -100,14 +112,14 @@ extension QvmTransactionService: ITransactionService {
     }
 
     func sync() async throws {
-        if chain.isQIP1559Supported {
-            recommendedGasPrice = try await QIP1559GasPriceProvider.gasPrice(networkManager: networkManager, rpcSource: rpcSource)
-        } else {
-            recommendedGasPrice = try await LegacyGasPriceProvider.gasPrice(networkManager: networkManager, rpcSource: rpcSource)
-        }
+        async let gasPrice = fetchRecommendedGasPrice()
+        async let latestNonce = qvmKit.nonce(defaultBlockParameter: .latest)
+        async let pendingNonce = qvmKit.nonce(defaultBlockParameter: .pending)
 
-        minimumNonce = try await qvmKit.nonce(defaultBlockParameter: .latest)
-        nextNonce = try await qvmKit.nonce(defaultBlockParameter: .pending)
+        (recommendedGasPrice, minimumNonce, nextNonce) = try await (gasPrice, latestNonce, pendingNonce)
+
+        validateGasPrice()
+        validateNonce()
     }
 }
 

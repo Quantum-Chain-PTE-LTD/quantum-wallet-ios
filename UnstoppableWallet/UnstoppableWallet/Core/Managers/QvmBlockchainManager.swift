@@ -70,7 +70,14 @@ extension QvmBlockchainManager {
     func chain(blockchainType: BlockchainType) throws -> Chain {
         switch blockchainType {
         case .quantumChain:
-            return .quantumChain
+            let chain = Chain.quantumChain
+            return Chain(
+                id: chain.id,
+                coinType: chain.coinType,
+                syncInterval: chain.syncInterval,
+                gasLimit: 2_000_000,
+                isQIP1559Supported: false
+            )
         default: throw ChainError.unsupportedBlockchain
         }
     }

@@ -8,6 +8,7 @@ struct PreSendView: View {
 
     @Environment(\.presentationMode) private var presentationMode
     @FocusState private var focusField: FocusField?
+    @State private var navigationInProgress = false
 
     @Binding var path: NavigationPath
 
@@ -181,16 +182,26 @@ struct PreSendView: View {
         let (title, disabled, showProgress) = buttonState()
 
         Button(action: {
-            guard let sendData = viewModel.sendData else { return }
+            guard let sendData = viewModel.sendData, !navigationInProgress else { return }
             let proceedToSend = {
+                guard !navigationInProgress else { return }
+                navigationInProgress = true
+
                 if #available(iOS 17.0, *) {
-                    focusField = nil
-                    path.append(ConfirmationData(
+                    let confirmationData = ConfirmationData(
                         sendData: sendData.sendData,
                         address: sendData.address
-                    ))
+                    )
+
+                    focusField = nil
+
+                    DispatchQueue.main.async {
+                        path.append(confirmationData)
+                        navigationInProgress = false
+                    }
                 } else {
                     presentRegularSendView(sendData: sendData.sendData, address: sendData.address)
+                    navigationInProgress = false
                 }
             }
             if viewModel.resolvedAddress.issueTypes.isEmpty {
@@ -221,7 +232,7 @@ struct PreSendView: View {
                 Text(title)
             }
         }
-        .disabled(disabled)
+        .disabled(disabled || navigationInProgress)
         .buttonStyle(PrimaryButtonStyle(style: .yellow))
     }
 
