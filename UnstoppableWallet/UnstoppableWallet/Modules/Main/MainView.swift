@@ -11,7 +11,6 @@ struct MainView: View {
     @State private var backupAccount: Account?
 
     var body: some View {
-        let _ = Self._printChanges()
         TabView(selection: $viewModel.selectedTab) {
             if viewModel.showMarket {
                 ThemeNavigationStack {

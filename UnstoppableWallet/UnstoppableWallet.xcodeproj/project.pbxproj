@@ -338,7 +338,6 @@
 		11B354D6DE193776FFACE1B5 /* AddEvmSyncSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B351F33517C6DDA1E7AF59 /* AddEvmSyncSourceViewController.swift */; };
 		11B354DC983042AD922339A6 /* DuressModeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3554BC96C9C24C24CC2B0 /* DuressModeSelectView.swift */; };
 		11B354EB71E52DF79A003231 /* FaqUrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B35759E226171A4969E66E /* FaqUrlHelper.swift */; };
-		D34637FB2DDDD68800187698 /* CrashDebugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34637FA2DDDD68800187698 /* CrashDebugLogger.swift */; };
 		11B354F237E59C24ED8F3759 /* TokenQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B353684493AFDF3711DF2B /* TokenQuery.swift */; };
 		11B354FA80BD8C5512B5ACFE /* WidgetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B35CBAB0A2DA60C3E9A22B /* WidgetConfig.swift */; };
 		11B354FE5CD0F5658C7CCC69 /* RestoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B353A64E88BD68714D4D07 /* RestoreViewController.swift */; };
@@ -865,7 +864,6 @@
 		11B35CA25E02E397E167EEC3 /* QrCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B356F4578E266268264021 /* QrCodeCell.swift */; };
 		11B35CA4F61231F536BE9A24 /* PancakeV2MultiSwapProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3564500A3378D6EB2A477 /* PancakeV2MultiSwapProvider.swift */; };
 		11B35CA6259EDA3708695416 /* FaqUrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B35759E226171A4969E66E /* FaqUrlHelper.swift */; };
-		D34637FC2DDDD68800187698 /* CrashDebugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34637FA2DDDD68800187698 /* CrashDebugLogger.swift */; };
 		11B35CA92AA402BE72B4F5D6 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B352648C452D611F1EDF61 /* Image.swift */; };
 		11B35CAD54059FA55DF81972 /* PasscodeLockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3505A43D9C2787B3BD153 /* PasscodeLockManager.swift */; };
 		11B35CAD5A7E0C8709559FD2 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B352D547F1BB38D2AD6AD5 /* WalletManager.swift */; };
@@ -3947,7 +3945,6 @@
 		11B3575530EE722514F89A61 /* PasteInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteInputView.swift; sourceTree = "<group>"; };
 		11B35758E84DE8577A481571 /* NftContractMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NftContractMetadata.swift; sourceTree = "<group>"; };
 		11B35759E226171A4969E66E /* FaqUrlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqUrlHelper.swift; sourceTree = "<group>"; };
-		D34637FA2DDDD68800187698 /* CrashDebugLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashDebugLogger.swift; sourceTree = "<group>"; };
 		11B35763ED14419B9EE4C6F9 /* EnabledWalletStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnabledWalletStorage.swift; sourceTree = "<group>"; };
 		11B3576749FE2A61E6347F99 /* WidgetDev.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = WidgetDev.entitlements; sourceTree = "<group>"; };
 		11B3576F224007FD4154EBE8 /* LockoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockoutManager.swift; sourceTree = "<group>"; };
@@ -6051,7 +6048,6 @@
 				58AAA0C31F14444C22ACF393 /* Address */,
 				2FA5DA265C9608D0BCF88F17 /* HdWalletExtensions.swift */,
 				11B35759E226171A4969E66E /* FaqUrlHelper.swift */,
-				D34637FA2DDDD68800187698 /* CrashDebugLogger.swift */,
 				ABC9A6A8252FA998E596A81D /* Crypto */,
 			);
 			path = Core;
@@ -11367,7 +11363,6 @@
 				11B356DA0B90ECAB25C520B7 /* CoinTreasury.swift in Sources */,
 				11B35F1440C5946E9C3D94ED /* Auditor.swift in Sources */,
 				11B354EB71E52DF79A003231 /* FaqUrlHelper.swift in Sources */,
-				D34637FB2DDDD68800187698 /* CrashDebugLogger.swift in Sources */,
 				11B3503456D10F362D8CC855 /* RestoreSettingsModule.swift in Sources */,
 				2FA5D68102F8CD6FB793A158 /* EvmSendSettingsModule.swift in Sources */,
 				2FA5D4C40B723434DB9D2DBE /* EvmSendSettingsService.swift in Sources */,
@@ -13044,7 +13039,6 @@
 				6BC574912F5ED02A002CBFBC /* AddressSecurityCheckView.swift in Sources */,
 				11B3512A3557895636BD59A6 /* Auditor.swift in Sources */,
 				11B35CA6259EDA3708695416 /* FaqUrlHelper.swift in Sources */,
-				D34637FC2DDDD68800187698 /* CrashDebugLogger.swift in Sources */,
 				11B3534B12C5E7596E4953F0 /* RestoreSettingsModule.swift in Sources */,
 				D34637E92DD7493A00187698 /* SwitchAccountViewModel.swift in Sources */,
 				2FA5DF494C667E041B22C804 /* EvmSendSettingsModule.swift in Sources */,
