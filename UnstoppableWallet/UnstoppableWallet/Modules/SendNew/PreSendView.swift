@@ -20,6 +20,7 @@ struct PreSendView: View {
     }
 
     var body: some View {
+        let _ = Self._printChanges()
         ThemeView {
             BottomGradientWrapper {
                 ScrollView {

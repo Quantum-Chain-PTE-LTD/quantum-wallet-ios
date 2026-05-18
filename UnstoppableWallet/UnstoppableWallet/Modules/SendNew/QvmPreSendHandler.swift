@@ -15,9 +15,11 @@ class QvmPreSendHandler {
     private let disposeBag = DisposeBag()
 
     init(token: Token, adapter: ISendQuantumAdapter & IBalanceAdapter) {
+        print("[SEND-DEBUG] QvmPreSendHandler.init begin for token \(token.coin.code)")
         self.token = token
         self.adapter = adapter
 
+        print("[SEND-DEBUG] QvmPreSendHandler subscribing to balanceStateUpdatedObservable")
         adapter.balanceStateUpdatedObservable
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
             .subscribe { [weak self] state in
@@ -25,12 +27,14 @@ class QvmPreSendHandler {
             }
             .disposed(by: disposeBag)
 
+        print("[SEND-DEBUG] QvmPreSendHandler subscribing to balanceDataUpdatedObservable")
         adapter.balanceDataUpdatedObservable
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
             .subscribe { [weak self] balanceData in
                 self?.balanceSubject.send(balanceData.available)
             }
             .disposed(by: disposeBag)
+        print("[SEND-DEBUG] QvmPreSendHandler.init end")
     }
 }
 
