@@ -95,7 +95,6 @@ struct MainSettingsView: View {
     }
 
     @ViewBuilder private func blockchainSettings() -> some View {
-        let _ = print("[NAV-DEBUG] MainSettingsView building blockchainSettings row (destination is eagerly constructed)")
         NavigationRow(destination: {
             BlockchainSettingsModule.view()
                 .onAppear { print("[NAV-DEBUG] BlockchainSettings destination .onAppear") }

@@ -20,10 +20,21 @@ class MainSettingsViewModel: ObservableObject {
     private let testNetManager = Core.shared.testNetManager
     private let appStateManager = AppStateManager.instance
 
-    @Published var manageWalletsAlert: Bool = false
-    @Published var securityAlert: Bool = false
-    @Published var aboutAlert: Bool = false
-    @Published var iCloudUnavailable: Bool = false
+    @Published var manageWalletsAlert: Bool = false {
+        didSet { print("[VM-DEBUG] manageWalletsAlert -> \(manageWalletsAlert) (was \(oldValue))") }
+    }
+
+    @Published var securityAlert: Bool = false {
+        didSet { print("[VM-DEBUG] securityAlert -> \(securityAlert) (was \(oldValue))") }
+    }
+
+    @Published var aboutAlert: Bool = false {
+        didSet { print("[VM-DEBUG] aboutAlert -> \(aboutAlert) (was \(oldValue))") }
+    }
+
+    @Published var iCloudUnavailable: Bool = false {
+        didSet { print("[VM-DEBUG] iCloudUnavailable -> \(iCloudUnavailable) (was \(oldValue))") }
+    }
 
     @Published var debu: String?
 
