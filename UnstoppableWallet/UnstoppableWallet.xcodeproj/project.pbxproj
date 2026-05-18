@@ -6381,6 +6381,15 @@
 			path = Ethereum;
 			sourceTree = "<group>";
 		};
+		D34637F92DDDD68800187698 /* AddressChecker */ = {
+			isa = PBXGroup;
+			children = (
+				6BFCC54F2F5A8B5600A35D43 /* AddressSecurityTypeContentView.swift */,
+				6BA897E12F596E9E0013D9F4 /* SecureSendBottomSheetView.swift */,
+			);
+			path = AddressChecker;
+			sourceTree = "<group>";
+		};
 		11B3563CCEF5817CCA5A0C6A /* Appearance */ = {
 			isa = PBXGroup;
 			children = (
