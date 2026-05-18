@@ -18,9 +18,7 @@ private struct BlockchainSettingsScreen: View {
         return BlockchainSettingsViewModel(
             btcBlockchainManager: core.btcBlockchainManager,
             evmBlockchainManager: core.evmBlockchainManager,
-            qvmBlockchainManager: core.qvmBlockchainManager,
             evmSyncSourceManager: core.evmSyncSourceManager,
-            qvmSyncSourceManager: core.qvmSyncSourceManager,
             moneroNodeManager: core.moneroNodeManager,
             zanoNodeManager: core.zanoNodeManager,
             marketKit: core.marketKit
