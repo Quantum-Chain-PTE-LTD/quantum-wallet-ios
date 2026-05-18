@@ -69,11 +69,15 @@ struct MainSettingsView: View {
             }
             .padding(EdgeInsets(top: .margin12, leading: 0, bottom: .margin32, trailing: 0))
         }
+        .onAppear { print("[NAV-DEBUG] MainSettingsView .onAppear") }
+        .onDisappear { print("[NAV-DEBUG] MainSettingsView .onDisappear") }
     }
 
     @ViewBuilder private func manageWallets() -> some View {
         NavigationRow(spacing: .margin8, destination: {
             ManageAccountsView()
+                .onAppear { print("[NAV-DEBUG] ManageAccountsView .onAppear") }
+                .onDisappear { print("[NAV-DEBUG] ManageAccountsView .onDisappear") }
         }) {
             HStack(spacing: .margin16) {
                 ThemeImage("wallet", size: .iconSize24)
@@ -91,9 +95,13 @@ struct MainSettingsView: View {
     }
 
     @ViewBuilder private func blockchainSettings() -> some View {
+        let _ = print("[NAV-DEBUG] MainSettingsView building blockchainSettings row (destination is eagerly constructed)")
         NavigationRow(destination: {
             BlockchainSettingsModule.view()
+                .onAppear { print("[NAV-DEBUG] BlockchainSettings destination .onAppear") }
+                .onDisappear { print("[NAV-DEBUG] BlockchainSettings destination .onDisappear") }
                 .onFirstAppear {
+                    print("[NAV-DEBUG] BlockchainSettings .onFirstAppear")
                     stat(page: .settings, event: .open(page: .blockchainSettings))
                 }
         }) {
@@ -106,7 +114,10 @@ struct MainSettingsView: View {
     @ViewBuilder private func security() -> some View {
         NavigationRow(spacing: .margin8, destination: {
             SecuritySettingsView()
+                .onAppear { print("[NAV-DEBUG] SecuritySettingsView .onAppear") }
+                .onDisappear { print("[NAV-DEBUG] SecuritySettingsView .onDisappear") }
                 .onFirstAppear {
+                    print("[NAV-DEBUG] SecuritySettingsView .onFirstAppear")
                     stat(page: .settings, event: .open(page: .security))
                 }
         }) {
@@ -128,7 +139,10 @@ struct MainSettingsView: View {
     @ViewBuilder private func privacy() -> some View {
         NavigationRow(destination: {
             PrivacyPolicyView(config: .privacy)
+                .onAppear { print("[NAV-DEBUG] PrivacyPolicyView .onAppear") }
+                .onDisappear { print("[NAV-DEBUG] PrivacyPolicyView .onDisappear") }
                 .onFirstAppear {
+                    print("[NAV-DEBUG] PrivacyPolicyView .onFirstAppear")
                     stat(page: .settings, event: .open(page: .privacy))
                 }
         }) {
@@ -154,7 +168,10 @@ struct MainSettingsView: View {
     @ViewBuilder private func appSettings() -> some View {
         NavigationRow(destination: {
             AppearanceView()
+                .onAppear { print("[NAV-DEBUG] AppearanceView .onAppear") }
+                .onDisappear { print("[NAV-DEBUG] AppearanceView .onDisappear") }
                 .onFirstAppear {
+                    print("[NAV-DEBUG] AppearanceView .onFirstAppear")
                     stat(page: .settings, event: .open(page: .appearance))
                 }
         }) {
@@ -192,7 +209,10 @@ struct MainSettingsView: View {
     @ViewBuilder private func backupManager() -> some View {
         NavigationRow(destination: {
             BackupManagerView()
+                .onAppear { print("[NAV-DEBUG] BackupManagerView .onAppear") }
+                .onDisappear { print("[NAV-DEBUG] BackupManagerView .onDisappear") }
                 .onFirstAppear {
+                    print("[NAV-DEBUG] BackupManagerView .onFirstAppear")
                     stat(page: .settings, event: .open(page: .backupManager))
                 }
         }) {

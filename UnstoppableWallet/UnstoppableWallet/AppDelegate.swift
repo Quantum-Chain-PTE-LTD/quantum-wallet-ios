@@ -2,6 +2,11 @@ import Foundation
 import UIKit
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        CrashDebugLogger.install()
+        return true
+    }
+
     func application(_: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
         if extensionPointIdentifier == .keyboard {
             // disable custom keyboards
