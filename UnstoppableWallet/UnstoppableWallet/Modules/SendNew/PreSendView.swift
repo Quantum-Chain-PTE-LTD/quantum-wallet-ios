@@ -72,26 +72,27 @@ struct PreSendView: View {
         //     }
         //     .toolbarRole(.editor)
         // }
-        .navigationTitle(viewModel.title)
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                if let handler = viewModel.handler, handler.hasSettings {
-                    Button(action: {
-                        if let handler = viewModel.handler {
-                            Coordinator.shared.present { _ in
-                                handler.settingsView {
-                                    viewModel.syncSendData()
-                                }
-                            }
-                        }
-                    }) {
-                        Image("gear")
-                            .modifier(ToolbarBadgeModifier(visible: handler.settingsModified))
-                    }
-                }
-            }
-        }
-        .toolbarRole(.editor)
+        // TEMPORARILY DISABLED to test if these NavigationStack modifiers drive the loop
+        // .navigationTitle(viewModel.title)
+        // .toolbar {
+        //     ToolbarItem(placement: .primaryAction) {
+        //         if let handler = viewModel.handler, handler.hasSettings {
+        //             Button(action: {
+        //                 if let handler = viewModel.handler {
+        //                     Coordinator.shared.present { _ in
+        //                         handler.settingsView {
+        //                             viewModel.syncSendData()
+        //                         }
+        //                     }
+        //                 }
+        //             }) {
+        //                 Image("gear")
+        //                     .modifier(ToolbarBadgeModifier(visible: handler.settingsModified))
+        //             }
+        //         }
+        //     }
+        // }
+        // .toolbarRole(.editor)
     }
 
     @ViewBuilder private func availableBalanceView(value: String?) -> some View {
