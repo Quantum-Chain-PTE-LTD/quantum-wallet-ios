@@ -92,6 +92,8 @@
 	<string>$(hs_provider_api_key)</string>
 	<key>QuantumChainApiBaseUrl</key>
 	<string>${quantum_chain_api_base_url}</string>
+	<key>QuantumAuthApiBaseUrl</key>
+	<string>${quantum_auth_api_base_url}</string>
 	<key>QuantumChainApiKey</key>
 	<string>$(quantum_chain_api_key)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>

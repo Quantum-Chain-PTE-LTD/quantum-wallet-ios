@@ -17,7 +17,7 @@ enum AppConfig {
     static let appGitHubAccount = "Quantum-Chain-PTE-LTD"
     static let appGitHubRepository = "quantum-wallet-ios"
     static let appTwitterAccount = "qntmchain"
-    static let appTelegramAccount = "+XF1OapBYfu1iMzg0"
+    static let appTelegramAccount = "qntmchainofficial"
     static let appTelegramSupportSlug = "XF1OapBYfu1iMzg0"
     static let appTokenTelegramAccount = "BeUnstoppable_bot"
     static let mempoolSpaceUrl = "https://mempool.space"
@@ -69,6 +69,11 @@ enum AppConfig {
 
     static var quantumChainApiBaseUrl: String {
         (Bundle.main.object(forInfoDictionaryKey: "QuantumChainApiBaseUrl") as? String) ?? ""
+    }
+
+    static var quantumAuthApiBaseUrl: String {
+        let url = (Bundle.main.object(forInfoDictionaryKey: "QuantumAuthApiBaseUrl") as? String) ?? ""
+        return url.isEmpty ? "https://api.quantumapi.io/v1" : url
     }
 
     static var swapApiUrl: String {
