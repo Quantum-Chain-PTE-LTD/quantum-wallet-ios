@@ -70,9 +70,9 @@ struct PreSendView: View {
             }
             .animation(.easeOut(duration: 0.25), value: focusField)
         }
-        .onFirstAppear {
-            focusField = .amount
-        }
+        // .onFirstAppear {
+        //     focusField = .amount
+        // }
         .navigationDestination(for: ConfirmationData.self) { data in
             RegularSendView(sendData: data.sendData, address: data.address) {
                 HudHelper.instance.show(banner: .sent)
