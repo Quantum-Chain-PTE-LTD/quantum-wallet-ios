@@ -29,7 +29,6 @@ struct AddressView: View {
     }
 
     var body: some View {
-        let _ = Self._printChanges()
         BottomGradientWrapper {
             ScrollView {
                 VStack(spacing: 0) {

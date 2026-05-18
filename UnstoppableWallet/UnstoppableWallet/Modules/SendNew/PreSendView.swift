@@ -20,7 +20,6 @@ struct PreSendView: View {
     }
 
     var body: some View {
-        let _ = Self._printChanges()
         ThemeView {
             BottomGradientWrapper {
                 ScrollView {
@@ -56,43 +55,38 @@ struct PreSendView: View {
             } bottomContent: {
                 buttonView()
             } keyboardContent: {
-                // TEMPORARILY DISABLED to test if @FocusState body read drives the navigationDestination loop
-                EmptyView()
+                AmountAccessoryView(
+                    visible: focusField != nil,
+                    hasPercents: viewModel.availableBalance != nil,
+                    onPercent: { percent in
+                        viewModel.setAmountIn(percent: percent)
+                        focusField = nil
+                    },
+                    onTrash: {
+                        viewModel.clearAmountIn()
+                    }
+                )
             }
-            // .animation(.easeOut(duration: 0.25), value: focusField)
+            .animation(.easeOut(duration: 0.25), value: focusField)
         }
-        // .onFirstAppear {
-        //     focusField = .amount
-        // }
-        // TEMPORARILY DISABLED to test if inner navigationDestination drives the loop
-        // .navigationDestination(for: ConfirmationData.self) { data in
-        //     RegularSendView(sendData: data.sendData, address: data.address) {
-        //         HudHelper.instance.show(banner: .sent)
-        //         onDismiss()
-        //     }
-        //     .toolbarRole(.editor)
-        // }
-        // TEMPORARILY DISABLED to test if these NavigationStack modifiers drive the loop
-        // .navigationTitle(viewModel.title)
-        // .toolbar {
-        //     ToolbarItem(placement: .primaryAction) {
-        //         if let handler = viewModel.handler, handler.hasSettings {
-        //             Button(action: {
-        //                 if let handler = viewModel.handler {
-        //                     Coordinator.shared.present { _ in
-        //                         handler.settingsView {
-        //                             viewModel.syncSendData()
-        //                         }
-        //                     }
-        //                 }
-        //             }) {
-        //                 Image("gear")
-        //                     .modifier(ToolbarBadgeModifier(visible: handler.settingsModified))
-        //             }
-        //         }
-        //     }
-        // }
-        // .toolbarRole(.editor)
+        .onFirstAppear {
+            focusField = .amount
+        }
+        .navigationDestination(for: ConfirmationData.self) { data in
+            RegularSendView(sendData: data.sendData, address: data.address) {
+                HudHelper.instance.show(banner: .sent)
+                onDismiss()
+            }
+            .toolbarRole(.editor)
+        }
+        // TODO: .navigationTitle(viewModel.title) and .toolbar { ... gear button ... }
+        // were removed because they triggered a NavigationStack render loop in iOS:
+        // "Update NavigationRequestObserver tried to update multiple times per frame."
+        // The inner navigationDestination, .onFirstAppear, AmountAccessoryView, and
+        // .animation(value: focusField) were each individually verified NOT to cause it.
+        // Restoring either of the two below brings the loop back. A different approach
+        // is needed (e.g. set the title from the parent navigation stack and replace
+        // the toolbar gear with an inline settings button).
     }
 
     @ViewBuilder private func availableBalanceView(value: String?) -> some View {

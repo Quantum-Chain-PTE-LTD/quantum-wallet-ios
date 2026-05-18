@@ -23,20 +23,15 @@ struct SendAddressView: View {
     }
 
     var body: some View {
-        let _ = Self._printChanges()
         ThemeView {
             AddressView(token: wallet.token, buttonTitle: "send.next_button".localized, destination: .send(fromAddress: fromAddress), address: address) { resolvedAddress in
-                print("[SEND-DEBUG] AddressView onFinish called with resolvedAddress: \(String(describing: resolvedAddress?.address))")
                 if let resolvedAddress {
-                    print("[SEND-DEBUG] About to path.append(resolvedAddress)")
                     path.append(resolvedAddress)
-                    print("[SEND-DEBUG] path.append done")
                 }
             }
         }
         .navigationTitle("address.title".localized)
         .navigationDestination(for: ResolvedAddress.self) { resolvedAddress in
-            let _ = print("[SEND-DEBUG] navigationDestination closure invoked for address: \(resolvedAddress.address)")
             PreSendView(wallet: wallet, resolvedAddress: resolvedAddress, amount: amount, memo: memo, path: $path) {
                 isPresented = false
             }
