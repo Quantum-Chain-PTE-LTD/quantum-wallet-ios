@@ -350,13 +350,6 @@ struct MainSettingsView: View {
     @ViewBuilder private func testSwitchersSection() -> some View {
         ListSection {
             ListRow {
-                Toggle(isOn: $viewModel.forceEnableSwap) {
-                    Text("Force Enable Swap").themeBody()
-                }
-                .toggleStyle(SwitchToggleStyle(tint: .themeYellow))
-            }
-
-            ListRow {
                 Toggle(isOn: $viewModel.testNetEnabled) {
                     Text("TestNet Enabled").themeBody()
                 }

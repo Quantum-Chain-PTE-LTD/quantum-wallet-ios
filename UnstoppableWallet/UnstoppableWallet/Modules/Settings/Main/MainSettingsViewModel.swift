@@ -18,7 +18,6 @@ class MainSettingsViewModel: ObservableObject {
     private let rateAppManager = Core.shared.rateAppManager
     private let localStorage = Core.shared.localStorage
     private let testNetManager = Core.shared.testNetManager
-    private let appStateManager = AppStateManager.instance
 
     @Published var manageWalletsAlert: Bool = false
     @Published var securityAlert: Bool = false
@@ -28,13 +27,6 @@ class MainSettingsViewModel: ObservableObject {
     @Published var debu: String?
 
     let showTestSwitchers: Bool
-
-    @Published var forceEnableSwap: Bool {
-        didSet {
-            localStorage.forceEnableSwap = forceEnableSwap
-            appStateManager.sync()
-        }
-    }
 
     @Published var testNetEnabled: Bool {
         didSet {
@@ -56,7 +48,6 @@ class MainSettingsViewModel: ObservableObject {
 
     init() {
         showTestSwitchers = Bundle.main.object(forInfoDictionaryKey: "ShowTestNetSwitcher") as? String == "true"
-        forceEnableSwap = localStorage.forceEnableSwap
         testNetEnabled = testNetManager.testNetEnabled
         mayaStagenetEnabled = testNetManager.mayaStagenetEnabled
         debuggingAmlResult = localStorage.debuggingAmlCheckResult
