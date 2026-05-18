@@ -56,19 +56,10 @@ struct PreSendView: View {
             } bottomContent: {
                 buttonView()
             } keyboardContent: {
-                AmountAccessoryView(
-                    visible: focusField != nil,
-                    hasPercents: viewModel.availableBalance != nil,
-                    onPercent: { percent in
-                        viewModel.setAmountIn(percent: percent)
-                        focusField = nil
-                    },
-                    onTrash: {
-                        viewModel.clearAmountIn()
-                    }
-                )
+                // TEMPORARILY DISABLED to test if @FocusState body read drives the navigationDestination loop
+                EmptyView()
             }
-            .animation(.easeOut(duration: 0.25), value: focusField)
+            // .animation(.easeOut(duration: 0.25), value: focusField)
         }
         // .onFirstAppear {
         //     focusField = .amount
