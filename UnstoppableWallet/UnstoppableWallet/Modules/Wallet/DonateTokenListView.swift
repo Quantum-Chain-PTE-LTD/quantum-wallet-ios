@@ -62,7 +62,6 @@ struct DonateTokenListView: View {
                 let resolvedAddress = ResolvedAddress(address: data.address, issueTypes: [])
                 PreSendView(
                     wallet: data.wallet,
-                    handler: SendHandlerFactory.preSendHandler(wallet: data.wallet, address: resolvedAddress),
                     resolvedAddress: resolvedAddress,
                     addressVisible: false,
                     path: $path,

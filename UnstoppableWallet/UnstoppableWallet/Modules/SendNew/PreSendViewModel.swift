@@ -94,10 +94,10 @@ class PreSendViewModel: ObservableObject {
     @Published var sendData: ExtendedSendData?
     @Published var cautions = [CautionNew]()
 
-    init(wallet: Wallet, handler: IPreSendHandler?, resolvedAddress: ResolvedAddress, amount: Decimal?, memo: String?) {
+    init(wallet: Wallet, resolvedAddress: ResolvedAddress, amount: Decimal?, memo: String?) {
         self.wallet = wallet
-        self.handler = handler
         self.resolvedAddress = resolvedAddress
+        self.handler = SendHandlerFactory.preSendHandler(wallet: wallet, address: resolvedAddress)
 
         currency = currencyManager.baseCurrency
 

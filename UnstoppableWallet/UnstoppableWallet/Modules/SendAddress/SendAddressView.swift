@@ -37,16 +37,10 @@ struct SendAddressView: View {
         .navigationTitle("address.title".localized)
         .navigationDestination(for: ResolvedAddress.self) { resolvedAddress in
             let _ = print("[SEND-DEBUG] navigationDestination closure invoked for address: \(resolvedAddress.address)")
-            let _ = print("[SEND-DEBUG] About to build preSendHandler")
-            if let handler = SendHandlerFactory.preSendHandler(wallet: wallet, address: resolvedAddress) {
-                let _ = print("[SEND-DEBUG] Handler built: \(type(of: handler))")
-                PreSendView(wallet: wallet, handler: handler, resolvedAddress: resolvedAddress, amount: amount, memo: memo, path: $path) {
-                    isPresented = false
-                }
-                .toolbarRole(.editor)
-            } else {
-                let _ = print("[SEND-DEBUG] Handler is nil — no PreSendView will be shown")
+            PreSendView(wallet: wallet, resolvedAddress: resolvedAddress, amount: amount, memo: memo, path: $path) {
+                isPresented = false
             }
+            .toolbarRole(.editor)
         }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
