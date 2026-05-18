@@ -79,7 +79,6 @@ struct PreSendView: View {
             }
             .toolbarRole(.editor)
         }
-        .navigationTitle(viewModel.title)
         // TODO: .navigationTitle(viewModel.title) and .toolbar { ... gear button ... }
         // were removed because they triggered a NavigationStack render loop in iOS:
         // "Update NavigationRequestObserver tried to update multiple times per frame."
