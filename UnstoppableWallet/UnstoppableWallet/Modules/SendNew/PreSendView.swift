@@ -64,13 +64,14 @@ struct PreSendView: View {
         // .onFirstAppear {
         //     focusField = .amount
         // }
-        .navigationDestination(for: ConfirmationData.self) { data in
-            RegularSendView(sendData: data.sendData, address: data.address) {
-                HudHelper.instance.show(banner: .sent)
-                onDismiss()
-            }
-            .toolbarRole(.editor)
-        }
+        // TEMPORARILY DISABLED to test if inner navigationDestination drives the loop
+        // .navigationDestination(for: ConfirmationData.self) { data in
+        //     RegularSendView(sendData: data.sendData, address: data.address) {
+        //         HudHelper.instance.show(banner: .sent)
+        //         onDismiss()
+        //     }
+        //     .toolbarRole(.editor)
+        // }
         .navigationTitle(viewModel.title)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
