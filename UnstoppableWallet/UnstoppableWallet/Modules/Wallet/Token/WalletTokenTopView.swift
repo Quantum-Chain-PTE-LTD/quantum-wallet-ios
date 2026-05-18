@@ -75,17 +75,6 @@ struct WalletTokenTopView<Content: View>: View {
                 }
                 stat(page: .tokenPage, event: .openSend(token: viewModel.wallet.token))
             case .receive: viewModel.onTapReceive()
-            case .swap:
-                if viewModel.swapEnabled {
-                    Coordinator.shared.present { _ in
-                        RegularMultiSwapView(token: viewModel.wallet.token)
-                    }
-                    stat(page: .tokenPage, event: .open(page: .swap))
-                } else {
-                    Coordinator.shared.present(type: .bottomSheet) { isPresented in
-                        SwapOptionsView(isPresented: isPresented)
-                    }
-                }
             case .chart: Coordinator.shared.presentCoinPage(coin: viewModel.wallet.coin, page: .tokenPage)
             default: ()
             }

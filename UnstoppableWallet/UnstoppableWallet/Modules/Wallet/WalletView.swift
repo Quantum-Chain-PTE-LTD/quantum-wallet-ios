@@ -168,22 +168,6 @@ struct WalletView: View {
                         Image("copy")
                     }
                 }
-                if !item.wallet.account.watchAccount {
-                    Button {
-                        if viewModel.swapEnabled {
-                            Coordinator.shared.present { _ in
-                                RegularMultiSwapView(token: item.wallet.token)
-                            }
-                            stat(page: .balance, event: .open(page: .swap))
-                        } else {
-                            Coordinator.shared.present(type: .bottomSheet) { isPresented in
-                                SwapOptionsView(isPresented: isPresented)
-                            }
-                        }
-                    } label: {
-                        Label("balance.swap".localized, image: "swap_e")
-                    }
-                }
                 if item.wallet.token.blockchainType.hasMarketData {
                     Button {
                         Coordinator.shared.presentCoinPage(coin: item.wallet.coin, page: .tokenPage)
@@ -252,17 +236,6 @@ struct WalletView: View {
                 }
                 stat(page: .balance, event: .open(page: .sendTokenList))
             case .receive: viewModel.onTapReceive()
-            case .swap:
-                if viewModel.swapEnabled {
-                    Coordinator.shared.present { _ in
-                        RegularMultiSwapView()
-                    }
-                    stat(page: .balance, event: .open(page: .swap))
-                } else {
-                    Coordinator.shared.present(type: .bottomSheet) { isPresented in
-                        SwapOptionsView(isPresented: isPresented)
-                    }
-                }
             case .scan:
                 Coordinator.shared.present { isPresented in
                     ScanQrViewNew(reportAfterDismiss: true, isPresented: isPresented) { text in
