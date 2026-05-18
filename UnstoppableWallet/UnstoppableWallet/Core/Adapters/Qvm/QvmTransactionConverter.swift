@@ -151,8 +151,6 @@ extension QvmTransactionConverter {
     func transactionRecord(fromTransaction fullTransaction: FullTransaction) -> QvmTransactionRecord {
         let transaction = fullTransaction.transaction
 
-        print("[QvmTransactionConverter] hash=\(transaction.hash.hs.hexString.prefix(10)) decorationType=\(String(describing: type(of: fullTransaction.decoration)))")
-
         switch fullTransaction.decoration {
         case is ContractCreationDecoration:
             return QvmContractCreationTransactionRecord(

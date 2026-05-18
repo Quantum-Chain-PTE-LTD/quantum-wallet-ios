@@ -286,6 +286,77 @@ class TransactionsViewItemFactory {
             title = "transactions.contract_creation".localized
             subTitle = "---"
 
+        case let record as QvmIncomingTransactionRecord:
+            iconType = singleValueIconType(source: record.source, kind: record.value.kind)
+            title = "transactions.receive".localized
+            subTitle = "transactions.from".localized(mapped(address: record.from, blockchainType: item.record.source.blockchainType))
+
+            primaryValue = TransactionsViewModel.Value(text: coinString(from: record.value), type: type(value: record.value, .incoming))
+
+            if let currencyValue = item.currencyValue {
+                secondaryValue = TransactionsViewModel.Value(text: currencyString(from: currencyValue), type: .secondary)
+            }
+
+        case let record as QvmOutgoingTransactionRecord:
+            iconType = singleValueIconType(source: record.source, kind: record.value.kind, nftMetadata: item.nftMetadata)
+            title = "transactions.send".localized
+            subTitle = "transactions.to".localized(mapped(address: record.to, blockchainType: item.record.source.blockchainType))
+
+            primaryValue = TransactionsViewModel.Value(text: coinString(from: record.value, signType: record.sentToSelf ? .never : .always), type: type(value: record.value, condition: record.sentToSelf, .neutral, .outgoing))
+            secondaryValue = singleValueSecondaryValue(value: record.value, currencyValue: item.currencyValue, nftMetadata: item.nftMetadata)
+
+            sentToSelf = record.sentToSelf
+
+        case let record as QvmApproveTransactionRecord:
+            iconType = singleValueIconType(source: record.source, kind: record.value.kind)
+            title = "transactions.approve".localized
+            subTitle = mapped(address: record.spender, blockchainType: item.record.source.blockchainType)
+
+            if record.value.isMaxValue {
+                primaryValue = TransactionsViewModel.Value(text: "∞ \(record.value.code)", type: .neutral)
+                secondaryValue = TransactionsViewModel.Value(text: "transactions.value.unlimited".localized, type: .secondary)
+            } else {
+                primaryValue = TransactionsViewModel.Value(text: coinString(from: record.value, signType: .never), type: .neutral)
+
+                if let currencyValue = item.currencyValue {
+                    secondaryValue = TransactionsViewModel.Value(text: currencyString(from: currencyValue), type: .secondary)
+                }
+            }
+
+        case let record as QvmContractCallTransactionRecord:
+            let (incomingValues, outgoingValues) = record.combinedValues
+
+            iconType = self.iconType(source: record.source, incomingValues: incomingValues, outgoingValues: outgoingValues, nftMetadata: item.nftMetadata)
+            title = record.method ?? "transactions.contract_call".localized
+            subTitle = mapped(address: record.contractAddress, blockchainType: item.record.source.blockchainType)
+
+            (primaryValue, secondaryValue) = values(incomingValues: incomingValues, outgoingValues: outgoingValues, currencyValue: item.currencyValue, nftMetadata: item.nftMetadata)
+
+        case let record as QvmExternalContractCallTransactionRecord:
+            let (incomingValues, outgoingValues) = record.combinedValues
+
+            iconType = self.iconType(source: record.source, incomingValues: incomingValues, outgoingValues: outgoingValues, nftMetadata: item.nftMetadata)
+
+            if record.outgoingEvents.isEmpty {
+                title = "transactions.receive".localized
+                let addresses = Array(Set(record.incomingEvents.map(\.address)))
+                if addresses.count == 1 {
+                    subTitle = "transactions.from".localized(mapped(address: addresses[0], blockchainType: item.record.source.blockchainType))
+                } else {
+                    subTitle = "transactions.multiple".localized
+                }
+            } else {
+                title = "transactions.external_call".localized
+                subTitle = "---"
+            }
+
+            (primaryValue, secondaryValue) = values(incomingValues: incomingValues, outgoingValues: outgoingValues, currencyValue: item.currencyValue, nftMetadata: item.nftMetadata)
+
+        case let record as QvmContractCreationTransactionRecord:
+            iconType = .localIcon(imageName: record.source.blockchainType.iconPlain32)
+            title = "transactions.contract_creation".localized
+            subTitle = "---"
+
         case let record as BitcoinIncomingTransactionRecord:
             iconType = singleValueIconType(source: record.source, kind: record.value.kind)
             title = "transactions.receive".localized
