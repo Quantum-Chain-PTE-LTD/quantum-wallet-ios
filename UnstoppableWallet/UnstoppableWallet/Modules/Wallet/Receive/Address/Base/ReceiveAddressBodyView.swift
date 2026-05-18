@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ReceiveAddressBodyView<Content: View>: View {
     private let qrSize: CGFloat = 203
-    private let appIconSize: CGFloat = 47
 
     @StateObject var viewModel: BaseReceiveAddressViewModel
     private let content: () -> Content
@@ -65,19 +64,10 @@ struct ReceiveAddressBodyView<Content: View>: View {
     @ViewBuilder private func qrView(item: ReceiveAddressModule.QrItem) -> some View {
         VStack(spacing: .margin24) {
             if let uiImage = UIImage.qrCodeImage(qrCodeString: item.uri ?? item.address, size: qrSize) {
-                ZStack {
-                    Image(uiImage: uiImage)
-                        .frame(width: qrSize, height: qrSize)
-                        .padding(.margin2)
-                        .background(Color.white)
-
-                    Image(AppIcon.main.imageName)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: appIconSize, height: appIconSize)
-                        .padding(.margin8)
-                        .background(Color.white)
-                }
+                Image(uiImage: uiImage)
+                    .frame(width: qrSize, height: qrSize)
+                    .padding(.margin2)
+                    .background(Color.white)
             }
 
             VStack(spacing: .margin12) {

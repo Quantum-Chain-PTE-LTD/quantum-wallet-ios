@@ -6,7 +6,6 @@ import UIKit
 class QrCodeCell: UITableViewCell {
     private static let horizontalMargin: CGFloat = .margin16
     private static let qrCodeSize: CGFloat = 150
-    private static let tokenWrapperSize: CGFloat = 40
     private static let qrCodePadding: CGFloat = .margin4
     private static let qrCodeTopMargin: CGFloat = .margin32
     private static let qrCodeBottomMargin: CGFloat = .margin12
@@ -15,7 +14,6 @@ class QrCodeCell: UITableViewCell {
     private static let textFont: UIFont = .subhead2
 
     private let qrImageView = UIImageView()
-    private let tokenImageView = UIImageView()
     private let label = UILabel()
 
     var onTap: (() -> Void)?
@@ -63,28 +61,6 @@ class QrCodeCell: UITableViewCell {
         qrImageView.isUserInteractionEnabled = true
         qrImageView.backgroundColor = .white
         qrImageView.contentMode = .center
-
-        let tokenWrapperView = UIView()
-        qrImageView.addSubview(tokenWrapperView)
-        tokenWrapperView.snp.makeConstraints { maker in
-            maker.center.equalToSuperview()
-            maker.size.equalTo(Self.tokenWrapperSize)
-        }
-
-        tokenWrapperView.isUserInteractionEnabled = false
-        tokenWrapperView.cornerRadius = .cornerRadius8
-        tokenWrapperView.backgroundColor = .themeWhite
-        tokenWrapperView.clipsToBounds = true
-
-        tokenWrapperView.addSubview(tokenImageView)
-        tokenImageView.snp.makeConstraints { maker in
-            maker.center.equalToSuperview()
-            maker.size.equalTo(CGFloat.iconSize32)
-        }
-
-        tokenImageView.contentMode = .scaleAspectFit
-        tokenImageView.image = UIImage(named: AppIcon.main.imageName)
-        tokenImageView.cornerRadius = 6
 
         wrapperView.addSubview(label)
         label.snp.makeConstraints { make in

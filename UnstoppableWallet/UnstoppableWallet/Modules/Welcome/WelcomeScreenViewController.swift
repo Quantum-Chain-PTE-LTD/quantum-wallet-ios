@@ -50,11 +50,8 @@ class WelcomeScreenViewController: ThemeViewController {
             maker.size.equalTo(120)
         }
 
-        logoImageView.image = UIImage(named: AppIcon.main.imageName)
+        logoImageView.image = UIImage(named: "Q Logo Image")
         logoImageView.contentMode = .scaleAspectFit
-        logoImageView.cornerRadius = .cornerRadius16
-        logoImageView.layer.cornerCurve = .continuous
-        logoImageView.clipsToBounds = true
 
         let logoTitleLabel = UILabel()
         logoView.addSubview(logoTitleLabel)
