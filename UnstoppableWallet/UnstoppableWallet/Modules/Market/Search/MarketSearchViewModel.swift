@@ -31,14 +31,24 @@ class MarketSearchViewModel: ObservableObject {
     private func syncState() {
         if searchText.isEmpty {
             let recentMarketFullCoins = (try? marketKit.fullCoins(coinUids: recentCoinUids)) ?? []
-            let recentFullCoins = recentCoinUids.compactMap { coinUid in recentMarketFullCoins.first { $0.coin.uid == coinUid } }
+            let recentFullCoins = recentCoinUids
+                .compactMap { coinUid in recentMarketFullCoins.first { $0.coin.uid == coinUid } }
+                .filter { isMarketVisible(fullCoin: $0) }
 
-            let popularFullCoins = (try? marketKit.topFullCoins()) ?? []
+            let popularFullCoins = ((try? marketKit.topFullCoins()) ?? [])
+                .filter { isMarketVisible(fullCoin: $0) }
 
             state = .placeholder(recentFullCoins: recentFullCoins, popularFullCoins: popularFullCoins)
         } else {
-            state = .searchResults(fullCoins: (try? marketKit.fullCoins(filter: searchText)) ?? [])
+            let fullCoins = ((try? marketKit.fullCoins(filter: searchText)) ?? [])
+                .filter { isMarketVisible(fullCoin: $0) }
+
+            state = .searchResults(fullCoins: fullCoins)
         }
+    }
+
+    private func isMarketVisible(fullCoin: FullCoin) -> Bool {
+        fullCoin.tokens.contains { $0.blockchainType != .quantumChain }
     }
 }
 
