@@ -9,12 +9,8 @@ enum BlockchainSettingsModule {
 private struct BlockchainSettingsScreen: View {
     @StateObject private var viewModel = BlockchainSettingsScreen.makeViewModel()
 
-    init() {
-        print("[NAV-DEBUG] BlockchainSettingsScreen struct init (cheap)")
-    }
-
     var body: some View {
-        let _ = print("[NAV-DEBUG] BlockchainSettingsScreen body uses VM <\(ObjectIdentifier(viewModel).hashValue)>")
+        let _ = Self._printChanges()
         BlockchainSettingsView(viewModel: viewModel)
             .onAppear { print("[NAV-DEBUG] BlockchainSettingsView .onAppear") }
             .onDisappear { print("[NAV-DEBUG] BlockchainSettingsView .onDisappear") }

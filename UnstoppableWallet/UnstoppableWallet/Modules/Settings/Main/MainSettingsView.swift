@@ -9,6 +9,7 @@ struct MainSettingsView: View {
     @State private var manageWalletsPresented = false
 
     var body: some View {
+        let _ = Self._printChanges()
         ScrollableThemeView {
             VStack(spacing: .margin12) {
                 VStack(spacing: 0) {
