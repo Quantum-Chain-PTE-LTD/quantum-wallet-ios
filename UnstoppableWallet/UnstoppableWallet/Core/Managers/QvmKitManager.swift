@@ -230,11 +230,12 @@ class QvmKitWrapper {
 
     private func canSendTransaction() async throws -> Bool {
         let headers = AppConfig.quantumChainApiKey.flatMap { HTTPHeaders([HTTPHeader(name: "apikey", value: $0)]) }
+        let baseUrl = AppConfig.quantumAuthApiBaseUrl.hasSuffix("/") ? String(AppConfig.quantumAuthApiBaseUrl.dropLast()) : AppConfig.quantumAuthApiBaseUrl
         let parameters: Parameters = [
             "address": qvmKit.receiveAddress.qip55,
         ]
         let response: AuthResponse = try await Core.shared.networkManager.fetch(
-            url: "\(AppConfig.quantumChainApiBaseUrl)/v1/authentication-quantum-wallet",
+            url: "\(baseUrl)/authentication-quantum-wallet",
             parameters: parameters,
             headers: headers
         )
